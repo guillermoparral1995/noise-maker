@@ -19,13 +19,14 @@ const Key = ({ text, frequency }: { text: string; frequency: number }) => {
       1,
       context.currentTime + attack + 0.01,
     );
-    // envelope.gain.exponentialRampToValueAtTime(
-    //   sustain + 0.01,
-    //   context.currentTime + attack + decay,
-    // );
+    envelope.gain.linearRampToValueAtTime(
+      sustain + 0.01,
+      context.currentTime + attack + decay,
+    );
   };
 
   const stop = () => {
+    envelope.gain.cancelAndHoldAtTime(context.currentTime);
     envelope.gain.exponentialRampToValueAtTime(
       0.01,
       context.currentTime + release,
