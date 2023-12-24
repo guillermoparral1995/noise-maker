@@ -1,12 +1,34 @@
 import React, { useContext } from 'react';
 import { audioContext } from '../../providers/AudioContextProvider';
 import { stateContext } from '../../providers/StateProvider';
+import { midiContext } from '../../providers/MIDIProvider';
+import { NoteMessageEvent } from 'webmidi';
 
-const Key = ({ text, frequency }: { text: string; frequency: number }) => {
+const Key = ({
+  identifier,
+  frequency,
+}: {
+  identifier: string;
+  frequency: number;
+}) => {
   const { context, output } = useContext(audioContext);
   const {
     state: { attack, decay, sustain, release, waveform },
   } = useContext(stateContext);
+  const midiInput = useContext(midiContext);
+
+  midiInput.addListener('noteon', (event: NoteMessageEvent) => {
+    if (event.note.identifier === identifier) {
+      play();
+    }
+  });
+
+  midiInput.addListener('noteoff', (event: NoteMessageEvent) => {
+    if (event.note.identifier === identifier) {
+      stop();
+    }
+  });
+
   const oscillator = new OscillatorNode(context, { type: waveform, frequency });
   const envelope = new GainNode(context);
   envelope.connect(output);
@@ -42,7 +64,7 @@ const Key = ({ text, frequency }: { text: string; frequency: number }) => {
   return (
     <>
       <button type="button" onMouseDown={play} onMouseUp={stop}>
-        {text}
+        {identifier}
       </button>
     </>
   );

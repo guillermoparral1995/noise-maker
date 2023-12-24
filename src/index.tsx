@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import { AudioContextProvider } from './providers/AudioContextProvider';
 import { StateProvider } from './providers/StateProvider';
+import { MIDIProvider } from './providers/MIDIProvider';
 
 navigator.mediaDevices.getUserMedia({ audio: true }).then(() => {
   const appContainer = document.createElement('div');
@@ -12,7 +13,9 @@ navigator.mediaDevices.getUserMedia({ audio: true }).then(() => {
   root.render(
     <StateProvider>
       <AudioContextProvider>
-        <App />
+        <MIDIProvider>
+          <App />
+        </MIDIProvider>
       </AudioContextProvider>
     </StateProvider>,
   );
