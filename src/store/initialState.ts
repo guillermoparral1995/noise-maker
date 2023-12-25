@@ -1,4 +1,4 @@
-import { State, Waveform } from '../types';
+import { FilterType, State, Waveform } from '../types';
 
 const initialState: State = {
   volume: 0.5,
@@ -8,6 +8,11 @@ const initialState: State = {
   decay: 0,
   sustain: 1,
   release: 0,
+  filter: {
+    type: FilterType.HIGHPASS,
+    frequency: 350,
+    q: 1,
+  },
 };
 
 export default initialState;

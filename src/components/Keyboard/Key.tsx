@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { audioContext } from '../../providers/AudioContextProvider';
 import { stateContext } from '../../providers/StateProvider';
 import { midiContext } from '../../providers/MIDIProvider';
@@ -17,6 +17,11 @@ const Key = ({
   } = useContext(stateContext);
   const midiInput = useContext(midiContext);
 
+  const oscillator = new OscillatorNode(context, { type: waveform, frequency });
+  const envelope = new GainNode(context);
+  envelope.connect(output);
+  oscillator.start(context.currentTime);
+
   if (midiInput) {
     midiInput.addListener('noteon', (event: NoteMessageEvent) => {
       if (event.note.identifier === identifier) {
@@ -31,10 +36,9 @@ const Key = ({
     });
   }
 
-  const oscillator = new OscillatorNode(context, { type: waveform, frequency });
-  const envelope = new GainNode(context);
-  envelope.connect(output);
-  oscillator.start(context.currentTime);
+  useEffect(() => {
+    return () => oscillator.stop();
+  }, []);
 
   const play = () => {
     envelope.gain.setValueAtTime(0, context.currentTime);

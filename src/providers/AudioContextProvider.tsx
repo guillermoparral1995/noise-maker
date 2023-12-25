@@ -16,18 +16,23 @@ export const AudioContextProvider = ({ children }: PropsWithChildren) => {
   const context = new AudioContext();
   const volumeNode: GainNode = context.createGain();
   const pannerNode: StereoPannerNode = context.createStereoPanner();
+  const filterNode: BiquadFilterNode = context.createBiquadFilter();
 
+  filterNode.connect(volumeNode);
   pannerNode.connect(context.destination);
   volumeNode.connect(pannerNode);
 
   volumeNode.gain.value = state.volume;
   pannerNode.pan.value = state.pan;
+  filterNode.type = state.filter.type;
+  filterNode.frequency.value = state.filter.frequency;
+  filterNode.Q.value = state.filter.q;
 
   return (
     <audioContext.Provider
       value={{
         context,
-        output: volumeNode,
+        output: filterNode,
         volume: volumeNode,
         panner: pannerNode,
       }}

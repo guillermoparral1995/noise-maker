@@ -8,7 +8,7 @@ import {
 } from '../../store/actions';
 import { stateContext } from '../../providers/StateProvider';
 
-const EnvelopeFilterControls = () => {
+const EnvelopeControls = () => {
   const { state } = useContext(stateContext);
   return (
     <div>
@@ -48,4 +48,4 @@ const EnvelopeFilterControls = () => {
   );
 };
 
-export default EnvelopeFilterControls;
+export default EnvelopeControls;

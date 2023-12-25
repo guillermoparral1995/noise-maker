@@ -1,4 +1,4 @@
-import { Actions, Waveform } from '../types';
+import { Actions, FilterType, Waveform } from '../types';
 
 export type ActionTypes =
   | VolumeAction
@@ -7,7 +7,10 @@ export type ActionTypes =
   | AttackAction
   | DecayAction
   | SustainAction
-  | ReleaseAction;
+  | ReleaseAction
+  | FilterTypeAction
+  | FilterFrequencyAction
+  | FilterQAction;
 
 interface VolumeAction {
   type: Actions.UPDATE_VOLUME;
@@ -79,4 +82,38 @@ interface ReleaseAction {
 export const updateRelease: (release: number) => ReleaseAction = (release) => ({
   type: Actions.UPDATE_RELEASE,
   payload: release,
+});
+
+interface FilterTypeAction {
+  type: Actions.UPDATE_FILTER_TYPE;
+  payload: FilterType;
+}
+
+export const updateFilterType: (filterType: FilterType) => FilterTypeAction = (
+  filterType,
+) => ({
+  type: Actions.UPDATE_FILTER_TYPE,
+  payload: filterType,
+});
+
+interface FilterFrequencyAction {
+  type: Actions.UPDATE_FILTER_FREQUENCY;
+  payload: number;
+}
+
+export const updateFilterFrequency: (
+  filterFreq: number,
+) => FilterFrequencyAction = (filterFreq) => ({
+  type: Actions.UPDATE_FILTER_FREQUENCY,
+  payload: filterFreq,
+});
+
+interface FilterQAction {
+  type: Actions.UPDATE_FILTER_Q;
+  payload: number;
+}
+
+export const updateFilterQ: (filterQ: number) => FilterQAction = (filterQ) => ({
+  type: Actions.UPDATE_FILTER_Q,
+  payload: filterQ,
 });

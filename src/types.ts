@@ -12,6 +12,11 @@ export enum Waveform {
   TRIANGLE = 'triangle',
 }
 
+export enum FilterType {
+  LOWPASS = 'lowpass',
+  HIGHPASS = 'highpass',
+}
+
 export interface State {
   volume: number;
   pan: number;
@@ -20,6 +25,11 @@ export interface State {
   decay: number;
   sustain: number;
   release: number;
+  filter: {
+    type: FilterType;
+    frequency: number;
+    q: number;
+  };
 }
 
 export enum Actions {
@@ -30,5 +40,8 @@ export enum Actions {
   UPDATE_DECAY,
   UPDATE_SUSTAIN,
   UPDATE_RELEASE,
+  UPDATE_FILTER_TYPE,
+  UPDATE_FILTER_FREQUENCY,
+  UPDATE_FILTER_Q,
 }
 export type ActionBuilder<T> = (payload: T) => ActionTypes;

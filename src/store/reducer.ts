@@ -40,6 +40,32 @@ const reducer = (state: State, action: ActionTypes): State => {
         ...state,
         release: payload,
       };
+    case Actions.UPDATE_FILTER_TYPE:
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          type: payload,
+        },
+      };
+    case Actions.UPDATE_FILTER_FREQUENCY:
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          frequency: payload,
+        },
+      };
+    case Actions.UPDATE_FILTER_Q:
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          q: payload,
+        },
+      };
+    default:
+      return state;
   }
 };
 
