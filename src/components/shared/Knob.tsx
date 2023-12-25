@@ -1,6 +1,12 @@
-import React, { BaseSyntheticEvent, useContext } from 'react';
+import React, {
+  BaseSyntheticEvent,
+  useContext,
+  useEffect,
+  useMemo,
+} from 'react';
 import { stateContext } from '../../providers/StateProvider';
 import type { ActionBuilder } from '../../types';
+import { throttle } from 'lodash';
 
 interface KnobProps {
   label: string;
@@ -20,11 +26,15 @@ export const Knob = ({
   max,
 }: KnobProps) => {
   const { dispatch } = useContext(stateContext);
-
+  useEffect(() => {
+    return () => throttledHandleChange.cancel();
+  });
   const handleChange = (e: BaseSyntheticEvent) => {
     // range inputs return value as string even if params are specified as numbers
     dispatch(action(parseFloat(e.target.value)));
   };
+
+  const throttledHandleChange = useMemo(() => throttle(handleChange, 1000), []);
 
   return (
     <>
@@ -34,7 +44,7 @@ export const Knob = ({
           type="range"
           defaultValue={defaultValue}
           name={label}
-          onChange={(e) => handleChange(e)}
+          onChange={throttledHandleChange}
           min={min}
           max={max}
           step={0.01}
