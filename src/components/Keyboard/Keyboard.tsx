@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Key from './Key';
 import Selector from '../shared/Selector';
-import noteTable from './noteTable';
+import noteTable from '../../constants/noteTable';
 import { Waveform } from '../../types';
 import { stateContext } from '../../providers/StateProvider';
 import { updateWaveform } from '../../store/actions';

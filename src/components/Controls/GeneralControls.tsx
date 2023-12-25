@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Knob from '../shared/Knob';
 import { updatePan, updateVolume } from '../../store/actions';
 import { stateContext } from '../../providers/StateProvider';
+import { knobsLimits } from '../../constants/knobsLimits';
 
 const GeneralControls = () => {
   const { state } = useContext(stateContext);
@@ -9,19 +10,19 @@ const GeneralControls = () => {
     <div>
       <Knob
         label="volume"
-        defaultValue={0.5}
+        defaultValue={knobsLimits.volume.default}
         value={state.volume}
         action={updateVolume}
-        min={0}
-        max={1}
+        min={knobsLimits.volume.min}
+        max={knobsLimits.volume.max}
       ></Knob>
       <Knob
         label="pan"
-        defaultValue={0}
+        defaultValue={knobsLimits.pan.default}
         value={state.pan}
         action={updatePan}
-        min={-1}
-        max={1}
+        min={knobsLimits.pan.min}
+        max={knobsLimits.pan.max}
       ></Knob>
     </div>
   );

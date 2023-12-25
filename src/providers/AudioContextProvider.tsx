@@ -1,4 +1,9 @@
-import React, { PropsWithChildren, useContext } from 'react';
+import React, {
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useMemo,
+} from 'react';
 import { stateContext } from './StateProvider';
 
 interface AudioContextProviderValue {
@@ -13,14 +18,22 @@ export const audioContext =
 
 export const AudioContextProvider = ({ children }: PropsWithChildren) => {
   const { state } = useContext(stateContext);
-  const context = new AudioContext();
-  const volumeNode: GainNode = context.createGain();
-  const pannerNode: StereoPannerNode = context.createStereoPanner();
-  const filterNode: BiquadFilterNode = context.createBiquadFilter();
+  const context = useMemo(() => new AudioContext(), []);
+  const volumeNode: GainNode = useMemo(() => context.createGain(), []);
+  const pannerNode: StereoPannerNode = useMemo(
+    () => context.createStereoPanner(),
+    [],
+  );
+  const filterNode: BiquadFilterNode = useMemo(
+    () => context.createBiquadFilter(),
+    [],
+  );
 
-  filterNode.connect(volumeNode);
-  pannerNode.connect(context.destination);
-  volumeNode.connect(pannerNode);
+  useEffect(() => {
+    filterNode.connect(volumeNode);
+    pannerNode.connect(context.destination);
+    volumeNode.connect(pannerNode);
+  }, []);
 
   volumeNode.gain.value = state.volume;
   pannerNode.pan.value = state.pan;

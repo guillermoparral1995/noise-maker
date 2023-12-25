@@ -7,6 +7,7 @@ import {
   updateSustain,
 } from '../../store/actions';
 import { stateContext } from '../../providers/StateProvider';
+import { knobsLimits } from '../../constants/knobsLimits';
 
 const EnvelopeControls = () => {
   const { state } = useContext(stateContext);
@@ -14,35 +15,35 @@ const EnvelopeControls = () => {
     <div>
       <Knob
         label="attack"
-        defaultValue={0}
+        defaultValue={knobsLimits.attack.default}
         value={state.attack}
         action={updateAttack}
-        min={0}
-        max={5}
+        min={knobsLimits.attack.min}
+        max={knobsLimits.attack.max}
       ></Knob>
       <Knob
         label="decay"
-        defaultValue={0}
+        defaultValue={knobsLimits.decay.default}
         value={state.decay}
         action={updateDecay}
-        min={0}
-        max={5}
+        min={knobsLimits.decay.min}
+        max={knobsLimits.decay.max}
       ></Knob>
       <Knob
         label="sustain"
-        defaultValue={1}
+        defaultValue={knobsLimits.sustain.default}
         value={state.sustain}
         action={updateSustain}
-        min={0}
-        max={1}
+        min={knobsLimits.sustain.min}
+        max={knobsLimits.sustain.max}
       ></Knob>
       <Knob
         label="release"
-        defaultValue={0}
+        defaultValue={knobsLimits.release.default}
         value={state.release}
         action={updateRelease}
-        min={0}
-        max={5}
+        min={knobsLimits.release.min}
+        max={knobsLimits.release.max}
       ></Knob>
     </div>
   );
