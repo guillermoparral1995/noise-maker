@@ -4,43 +4,54 @@ interface KnobLimit {
   default: number;
 }
 
-export const knobsLimits: Record<string, KnobLimit> = {
-  volume: {
+enum Knobs {
+  VOLUME = 'volume',
+  PAN = 'pan',
+  ATTACK = 'attack',
+  DECAY = 'decay',
+  SUSTAIN = 'sustain',
+  RELEASE = 'release',
+  FILTER_FREQUENCY = 'filterFrequency',
+  FILTER_Q = 'filterQ',
+}
+
+export const knobsLimits: Record<Knobs, KnobLimit> = {
+  [Knobs.VOLUME]: {
     min: 0,
     max: 1,
     default: 0.5,
   },
-  pan: {
+  [Knobs.PAN]: {
     min: -1,
     max: 1,
     default: 0,
   },
-  attack: {
+  [Knobs.ATTACK]: {
     min: 0,
     max: 5,
     default: 0,
   },
-  decay: {
+  [Knobs.DECAY]: {
     min: 0,
     max: 5,
     default: 0,
   },
-  sustain: {
+  [Knobs.SUSTAIN]: {
     min: 0,
     max: 1,
     default: 1,
   },
-  release: {
+  [Knobs.RELEASE]: {
     min: 0,
     max: 1,
     default: 0,
   },
-  filterFrequency: {
+  [Knobs.FILTER_FREQUENCY]: {
     min: 10,
     max: 5000,
     default: 350,
   },
-  filterQ: {
+  [Knobs.FILTER_Q]: {
     min: 0.0001,
     max: 50,
     default: 1,
