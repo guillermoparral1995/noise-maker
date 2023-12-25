@@ -43,7 +43,7 @@ export const knobsLimits: Record<Knobs, KnobLimit> = {
   },
   [Knobs.RELEASE]: {
     min: 0,
-    max: 1,
+    max: 5,
     default: 0,
   },
   [Knobs.FILTER_FREQUENCY]: {
