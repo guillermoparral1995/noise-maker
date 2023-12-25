@@ -1,8 +1,8 @@
 import React, {
   BaseSyntheticEvent,
   useContext,
+  useCallback,
   useEffect,
-  useMemo,
 } from 'react';
 import { stateContext } from '../../providers/StateProvider';
 import type { ActionBuilder } from '../../types';
@@ -26,15 +26,20 @@ export const Knob = ({
   max,
 }: KnobProps) => {
   const { dispatch } = useContext(stateContext);
+
   useEffect(() => {
     return () => throttledHandleChange.cancel();
-  });
+  }, []);
+
   const handleChange = (e: BaseSyntheticEvent) => {
     // range inputs return value as string even if params are specified as numbers
     dispatch(action(parseFloat(e.target.value)));
   };
 
-  const throttledHandleChange = useMemo(() => throttle(handleChange, 1000), []);
+  const throttledHandleChange = useCallback(throttle(handleChange, 200), [
+    dispatch,
+    action,
+  ]);
 
   return (
     <>

@@ -17,17 +17,19 @@ const Key = ({
   } = useContext(stateContext);
   const midiInput = useContext(midiContext);
 
-  midiInput.addListener('noteon', (event: NoteMessageEvent) => {
-    if (event.note.identifier === identifier) {
-      play();
-    }
-  });
+  if (midiInput) {
+    midiInput.addListener('noteon', (event: NoteMessageEvent) => {
+      if (event.note.identifier === identifier) {
+        play();
+      }
+    });
 
-  midiInput.addListener('noteoff', (event: NoteMessageEvent) => {
-    if (event.note.identifier === identifier) {
-      stop();
-    }
-  });
+    midiInput.addListener('noteoff', (event: NoteMessageEvent) => {
+      if (event.note.identifier === identifier) {
+        stop();
+      }
+    });
+  }
 
   const oscillator = new OscillatorNode(context, { type: waveform, frequency });
   const envelope = new GainNode(context);
@@ -37,12 +39,9 @@ const Key = ({
   const play = () => {
     envelope.gain.setValueAtTime(0, context.currentTime);
     oscillator.connect(envelope);
+    envelope.gain.linearRampToValueAtTime(1, context.currentTime + attack);
     envelope.gain.linearRampToValueAtTime(
-      1,
-      context.currentTime + attack + 0.01,
-    );
-    envelope.gain.linearRampToValueAtTime(
-      sustain + 0.01,
+      sustain,
       context.currentTime + attack + decay,
     );
   };
@@ -50,7 +49,7 @@ const Key = ({
   const stop = () => {
     envelope.gain.cancelAndHoldAtTime(context.currentTime);
     envelope.gain.exponentialRampToValueAtTime(
-      0.01,
+      0.001,
       context.currentTime + release,
     );
     setTimeout(
