@@ -7,8 +7,7 @@ import {
 } from '../../store/actions';
 import { stateContext } from '../../providers/StateProvider';
 import Selector from '../shared/Selector';
-import { FilterType } from '../../types';
-import { knobsLimits } from '../../constants/knobsLimits';
+import { FilterType, Knobs } from '../../types';
 
 const FilterControls = () => {
   const { state } = useContext(stateContext);
@@ -20,20 +19,14 @@ const FilterControls = () => {
         action={updateFilterType}
       ></Selector>
       <Knob
-        label="filter_freq"
-        defaultValue={knobsLimits.filterFrequency.default}
+        label={Knobs.FILTER_FREQUENCY}
         value={state.filter.frequency}
         action={updateFilterFrequency}
-        min={knobsLimits.filterFrequency.min}
-        max={knobsLimits.filterFrequency.max}
       ></Knob>
       <Knob
-        label="filter_q"
-        defaultValue={knobsLimits.filterQ.default}
+        label={Knobs.FILTER_Q}
         value={state.filter.q}
         action={updateFilterQ}
-        min={knobsLimits.filterQ.min}
-        max={knobsLimits.filterQ.max}
       ></Knob>
     </div>
   );

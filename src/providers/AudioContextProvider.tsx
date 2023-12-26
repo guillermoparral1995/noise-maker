@@ -11,6 +11,7 @@ interface AudioContextProviderValue {
   output: AudioNode;
   volume: GainNode;
   panner: StereoPannerNode;
+  filter: BiquadFilterNode;
 }
 
 export const audioContext =
@@ -48,6 +49,7 @@ export const AudioContextProvider = ({ children }: PropsWithChildren) => {
         output: filterNode,
         volume: volumeNode,
         panner: pannerNode,
+        filter: filterNode,
       }}
     >
       {children}

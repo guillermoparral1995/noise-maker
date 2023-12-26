@@ -13,6 +13,12 @@ const initialState: State = {
     frequency: 350,
     q: 1,
   },
+  lfo: {
+    target: 'off',
+    waveform: Waveform.SINE,
+    frequency: 1,
+    amplitude: 1,
+  },
 };
 
 export default initialState;

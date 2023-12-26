@@ -1,18 +1,9 @@
+import { Knobs } from '../types';
+
 interface KnobLimit {
   min: number;
   max: number;
   default: number;
-}
-
-enum Knobs {
-  VOLUME = 'volume',
-  PAN = 'pan',
-  ATTACK = 'attack',
-  DECAY = 'decay',
-  SUSTAIN = 'sustain',
-  RELEASE = 'release',
-  FILTER_FREQUENCY = 'filterFrequency',
-  FILTER_Q = 'filterQ',
 }
 
 export const knobsLimits: Record<Knobs, KnobLimit> = {
@@ -54,6 +45,16 @@ export const knobsLimits: Record<Knobs, KnobLimit> = {
   [Knobs.FILTER_Q]: {
     min: 0.0001,
     max: 50,
+    default: 1,
+  },
+  [Knobs.LFO_FREQUENCY]: {
+    min: 0.2,
+    max: 10,
+    default: 1,
+  },
+  [Knobs.LFO_AMPLITUDE]: {
+    min: 0.1,
+    max: 5,
     default: 1,
   },
 };

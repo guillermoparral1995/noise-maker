@@ -5,26 +5,17 @@ import React, {
   useEffect,
 } from 'react';
 import { stateContext } from '../../providers/StateProvider';
-import type { ActionBuilder } from '../../types';
+import type { ActionBuilder, Knobs } from '../../types';
 import { throttle } from 'lodash';
+import { knobsLimits } from '../../constants/knobsLimits';
 
 interface KnobProps {
-  label: string;
+  label: Knobs;
   value: number;
-  defaultValue: number;
   action: ActionBuilder<number>;
-  min: number;
-  max: number;
 }
 
-export const Knob = ({
-  label,
-  defaultValue,
-  value,
-  action,
-  min,
-  max,
-}: KnobProps) => {
+export const Knob = ({ label, value, action }: KnobProps) => {
   const { dispatch } = useContext(stateContext);
 
   useEffect(() => {
@@ -47,11 +38,11 @@ export const Knob = ({
       <div>
         <input
           type="range"
-          defaultValue={defaultValue}
+          defaultValue={knobsLimits[label].default}
           name={label}
           onChange={throttledHandleChange}
-          min={min}
-          max={max}
+          min={knobsLimits[label].min}
+          max={knobsLimits[label].max}
           step={0.01}
         ></input>
         <span>{value}</span>

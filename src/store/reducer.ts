@@ -64,6 +64,38 @@ const reducer = (state: State, action: ActionTypes): State => {
           q: payload,
         },
       };
+    case Actions.UPDATE_LFO_TARGET:
+      return {
+        ...state,
+        lfo: {
+          ...state.lfo,
+          target: payload,
+        },
+      };
+    case Actions.UPDATE_LFO_WAVEFORM:
+      return {
+        ...state,
+        lfo: {
+          ...state.lfo,
+          waveform: payload,
+        },
+      };
+    case Actions.UPDATE_LFO_FREQUENCY:
+      return {
+        ...state,
+        lfo: {
+          ...state.lfo,
+          frequency: payload,
+        },
+      };
+    case Actions.UPDATE_LFO_AMPLITUDE:
+      return {
+        ...state,
+        lfo: {
+          ...state.lfo,
+          amplitude: payload,
+        },
+      };
     default:
       return state;
   }

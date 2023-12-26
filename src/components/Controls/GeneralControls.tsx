@@ -2,28 +2,18 @@ import React, { useContext } from 'react';
 import Knob from '../shared/Knob';
 import { updatePan, updateVolume } from '../../store/actions';
 import { stateContext } from '../../providers/StateProvider';
-import { knobsLimits } from '../../constants/knobsLimits';
+import { Knobs } from '../../types';
 
 const GeneralControls = () => {
   const { state } = useContext(stateContext);
   return (
     <div>
       <Knob
-        label="volume"
-        defaultValue={knobsLimits.volume.default}
+        label={Knobs.VOLUME}
         value={state.volume}
         action={updateVolume}
-        min={knobsLimits.volume.min}
-        max={knobsLimits.volume.max}
       ></Knob>
-      <Knob
-        label="pan"
-        defaultValue={knobsLimits.pan.default}
-        value={state.pan}
-        action={updatePan}
-        min={knobsLimits.pan.min}
-        max={knobsLimits.pan.max}
-      ></Knob>
+      <Knob label={Knobs.PAN} value={state.pan} action={updatePan}></Knob>
     </div>
   );
 };

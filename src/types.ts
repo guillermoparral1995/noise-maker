@@ -17,6 +17,21 @@ export enum FilterType {
   HIGHPASS = 'highpass',
 }
 
+export enum Knobs {
+  VOLUME = 'volume',
+  PAN = 'pan',
+  ATTACK = 'attack',
+  DECAY = 'decay',
+  SUSTAIN = 'sustain',
+  RELEASE = 'release',
+  FILTER_FREQUENCY = 'filterFrequency',
+  FILTER_Q = 'filterQ',
+  LFO_FREQUENCY = 'lfoFrequency',
+  LFO_AMPLITUDE = 'lfoAmplitude',
+}
+
+export type LFOTarget = Exclude<Knobs, Knobs.LFO_FREQUENCY> | 'off';
+
 export interface State {
   volume: number;
   pan: number;
@@ -29,6 +44,12 @@ export interface State {
     type: FilterType;
     frequency: number;
     q: number;
+  };
+  lfo: {
+    target: LFOTarget;
+    waveform: Waveform;
+    frequency: number;
+    amplitude: number;
   };
 }
 
@@ -43,5 +64,9 @@ export enum Actions {
   UPDATE_FILTER_TYPE,
   UPDATE_FILTER_FREQUENCY,
   UPDATE_FILTER_Q,
+  UPDATE_LFO_TARGET,
+  UPDATE_LFO_WAVEFORM,
+  UPDATE_LFO_FREQUENCY,
+  UPDATE_LFO_AMPLITUDE,
 }
 export type ActionBuilder<T> = (payload: T) => ActionTypes;
