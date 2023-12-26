@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import { audioContext } from '../../providers/AudioContextProvider';
-import { stateContext } from '../../providers/StateProvider';
-import { midiContext } from '../../providers/MIDIProvider';
+import { audioContext } from '../../../providers/AudioContextProvider';
+import { stateContext } from '../../../providers/StateProvider';
+import { midiContext } from '../../../providers/MIDIProvider';
 import { NoteMessageEvent } from 'webmidi';
+import './index.scss';
 
 const Key = ({
   identifier,
@@ -85,11 +86,14 @@ const Key = ({
   };
 
   return (
-    <>
-      <button type="button" onMouseDown={play} onMouseUp={stop}>
-        {identifier}
-      </button>
-    </>
+    <button
+      className={`key ${
+        identifier.includes('#') ? 'black' : 'white'
+      } ${identifier.replace('#', 'sharp')}`}
+      type="button"
+      onMouseDown={play}
+      onMouseUp={stop}
+    ></button>
   );
 };
 

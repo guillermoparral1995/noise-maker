@@ -1,5 +1,5 @@
 import React from 'react';
-import Keyboard from './components/Keyboard/Keyboard';
+import Keyboard from './components/Keyboard';
 import GeneralControls from './components/Controls/GeneralControls';
 import EnvelopeFilterControls from './components/Controls/EnvelopeControls';
 import FilterControls from './components/Controls/FilterControls';

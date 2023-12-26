@@ -14,6 +14,18 @@ enum Notes {
   ASharp3 = 'A#3',
   B3 = 'B3',
   C4 = 'C4',
+  CSharp4 = 'C#4',
+  D4 = 'D4',
+  DSharp4 = 'D#4',
+  E4 = 'E4',
+  F4 = 'F4',
+  FSharp4 = 'F#4',
+  G4 = 'G4',
+  GSharp4 = 'G#4',
+  A4 = 'A4',
+  ASharp4 = 'A#4',
+  B4 = 'B4',
+  C5 = 'C5',
 }
 
 const noteTable: NoteTable = {
@@ -30,6 +42,18 @@ const noteTable: NoteTable = {
   [Notes.ASharp3]: 233.08,
   [Notes.B3]: 246.94,
   [Notes.C4]: 261.63,
+  [Notes.CSharp4]: 277.18,
+  [Notes.D4]: 293.66,
+  [Notes.DSharp4]: 311.13,
+  [Notes.E4]: 329.63,
+  [Notes.F4]: 349.23,
+  [Notes.FSharp4]: 369.99,
+  [Notes.G4]: 392,
+  [Notes.GSharp4]: 415.3,
+  [Notes.A4]: 440,
+  [Notes.ASharp4]: 466.16,
+  [Notes.B4]: 493.88,
+  [Notes.C5]: 523.25,
 };
 
 export default noteTable;

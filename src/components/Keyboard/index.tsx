@@ -5,6 +5,7 @@ import noteTable from '../../constants/noteTable';
 import { Selectors, Waveform } from '../../types';
 import { stateContext } from '../../providers/StateProvider';
 import { updateWaveform } from '../../store/actions';
+import './index.scss';
 
 const Keyboard = () => {
   const { state } = useContext(stateContext);
@@ -21,9 +22,11 @@ const Keyboard = () => {
         value={state.waveform}
         action={updateWaveform}
       ></Selector>
-      {Object.entries(noteTable).map(([note, frequency]) => (
-        <Key key={note} identifier={note} frequency={frequency}></Key>
-      ))}
+      <div className="keyboard">
+        {Object.entries(noteTable).map(([note, frequency]) => (
+          <Key key={note} identifier={note} frequency={frequency}></Key>
+        ))}
+      </div>
     </>
   );
 };

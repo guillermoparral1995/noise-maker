@@ -1,0 +1,56 @@
+.key {
+    width: 25px;
+
+    &.white {
+        background-color: white;
+        height: 100px;
+    }
+    
+    &.black {
+        background-color: black;
+        color: white;
+        height: 60px;
+        position: absolute;
+        z-index: 1;
+
+        &.Csharp3 {
+            left: 12px;
+        }
+
+        &.Dsharp3 {
+            left: 37px;
+        }
+
+        &.Fsharp3 {
+            left: 87px;
+        }
+
+        &.Gsharp3 {
+            left: 112px;
+        }
+
+        &.Asharp3 {
+            left: 137px;
+        }
+
+        &.Csharp4 {
+            left: 187px;
+        }
+
+        &.Dsharp4 {
+            left: 212px;
+        }
+
+        &.Fsharp4 {
+            left: 262px;
+        }
+
+        &.Gsharp4 {
+            left: 287px;
+        }
+
+        &.Asharp4 {
+            left: 312px;
+        }
+    }
+}
