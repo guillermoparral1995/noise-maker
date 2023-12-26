@@ -1,10 +1,5 @@
 import { ActionTypes } from './store/actions';
 
-export type Param<T> = {
-  value: T;
-  set: React.Dispatch<React.SetStateAction<T>>;
-};
-
 export enum Waveform {
   SINE = 'sine',
   SQUARE = 'square',
@@ -15,6 +10,13 @@ export enum Waveform {
 export enum FilterType {
   LOWPASS = 'lowpass',
   HIGHPASS = 'highpass',
+}
+
+export enum Selectors {
+  WAVEFORM = 'waveform',
+  FILTER = 'filter',
+  LFO_TARGET = 'lfoTarget',
+  LFO_WAVEFORM = 'lfoWaveform',
 }
 
 export enum Knobs {

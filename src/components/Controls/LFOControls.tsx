@@ -8,7 +8,7 @@ import {
   updateLFOWaveform,
 } from '../../store/actions';
 import { audioContext } from '../../providers/AudioContextProvider';
-import { Knobs, Waveform } from '../../types';
+import { Knobs, Selectors, Waveform } from '../../types';
 import Knob from '../shared/Knob';
 
 const LFOControls = () => {
@@ -68,13 +68,13 @@ const LFOControls = () => {
   return (
     <div>
       <Selector
-        label="lfoTarget"
+        label={Selectors.LFO_TARGET}
         options={['off', 'volume', 'pan', 'filterFrequency']}
         value={target}
         action={updateLFOTarget}
       ></Selector>
       <Selector
-        label="lfoWaveform"
+        label={Selectors.LFO_WAVEFORM}
         options={[
           Waveform.SINE,
           Waveform.SQUARE,

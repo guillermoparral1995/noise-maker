@@ -7,14 +7,14 @@ import {
 } from '../../store/actions';
 import { stateContext } from '../../providers/StateProvider';
 import Selector from '../shared/Selector';
-import { FilterType, Knobs } from '../../types';
+import { FilterType, Knobs, Selectors } from '../../types';
 
 const FilterControls = () => {
   const { state } = useContext(stateContext);
   return (
     <div>
       <Selector
-        label="filter"
+        label={Selectors.FILTER}
         options={[FilterType.HIGHPASS, FilterType.LOWPASS]}
         value={state.filter.type}
         action={updateFilterType}

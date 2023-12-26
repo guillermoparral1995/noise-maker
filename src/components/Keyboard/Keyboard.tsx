@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Key from './Key';
 import Selector from '../shared/Selector';
 import noteTable from '../../constants/noteTable';
-import { Waveform } from '../../types';
+import { Selectors, Waveform } from '../../types';
 import { stateContext } from '../../providers/StateProvider';
 import { updateWaveform } from '../../store/actions';
 
@@ -11,7 +11,7 @@ const Keyboard = () => {
   return (
     <>
       <Selector
-        label="waveform"
+        label={Selectors.WAVEFORM}
         options={[
           Waveform.SINE,
           Waveform.SQUARE,
