@@ -40,6 +40,26 @@ const Key = ({
     return () => oscillator.stop();
   }, []);
 
+  useEffect(() => {
+    if (midiInput) {
+      midiInput.addListener('noteon', (event: NoteMessageEvent) => {
+        if (event.note.identifier === identifier) {
+          play();
+        }
+      });
+
+      midiInput.addListener('noteoff', (event: NoteMessageEvent) => {
+        if (event.note.identifier === identifier) {
+          stop();
+        }
+      });
+    }
+    return () => {
+      midiInput.removeListener('noteon');
+      midiInput.removeListener('noteoff');
+    };
+  }, [waveform]);
+
   const play = () => {
     envelope.gain.setValueAtTime(0, context.currentTime);
     oscillator.connect(envelope);
