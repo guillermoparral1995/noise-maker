@@ -14,6 +14,7 @@ const FilterControls = () => {
   return (
     <div>
       <Selector
+        label="filter"
         options={[FilterType.HIGHPASS, FilterType.LOWPASS]}
         value={state.filter.type}
         action={updateFilterType}

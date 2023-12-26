@@ -11,6 +11,7 @@ const Keyboard = () => {
   return (
     <>
       <Selector
+        label="waveform"
         options={[
           Waveform.SINE,
           Waveform.SQUARE,

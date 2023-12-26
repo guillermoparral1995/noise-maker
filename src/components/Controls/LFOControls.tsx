@@ -68,11 +68,13 @@ const LFOControls = () => {
   return (
     <div>
       <Selector
+        label="lfoTarget"
         options={['off', 'volume', 'pan', 'filterFrequency']}
         value={target}
         action={updateLFOTarget}
       ></Selector>
       <Selector
+        label="lfoWaveform"
         options={[
           Waveform.SINE,
           Waveform.SQUARE,

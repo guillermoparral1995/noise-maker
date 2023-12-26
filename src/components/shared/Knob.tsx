@@ -39,6 +39,7 @@ export const Knob = ({ label, value, action }: KnobProps) => {
         <input
           type="range"
           defaultValue={knobsLimits[label].default}
+          id={label}
           name={label}
           onChange={throttledHandleChange}
           min={knobsLimits[label].min}

@@ -9,7 +9,7 @@ export const MIDIProvider = ({ children }: PropsWithChildren) => {
 
   const enableMidi = async () => {
     try {
-      await WebMidi.enable();
+      await WebMidi.enable({ sysex: true });
       setLoading(false);
     } catch (e) {
       console.error('Could not start Web MIDI', e);
