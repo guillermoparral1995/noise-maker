@@ -17,25 +17,12 @@ const Key = ({
     state: { attack, decay, sustain, release, waveform },
   } = useContext(stateContext);
   const midiInput = useContext(midiContext);
+  let releaseTimeout: NodeJS.Timeout;
 
   const oscillator = new OscillatorNode(context, { type: waveform, frequency });
   const envelope = new GainNode(context);
   envelope.connect(output);
   oscillator.start(context.currentTime);
-
-  if (midiInput) {
-    midiInput.addListener('noteon', (event: NoteMessageEvent) => {
-      if (event.note.identifier === identifier) {
-        play();
-      }
-    });
-
-    midiInput.addListener('noteoff', (event: NoteMessageEvent) => {
-      if (event.note.identifier === identifier) {
-        stop();
-      }
-    });
-  }
 
   useEffect(() => {
     return () => oscillator.stop();
@@ -59,12 +46,21 @@ const Key = ({
       midiInput.removeListener('noteon');
       midiInput.removeListener('noteoff');
     };
-  }, [waveform]);
+  });
 
   const play = () => {
+    // clear all pending scheduled events for envelope
+    envelope.gain.cancelAndHoldAtTime(context.currentTime);
+    clearTimeout(releaseTimeout);
+
+    // reset envelope and connect oscillator
     envelope.gain.setValueAtTime(0, context.currentTime);
     oscillator.connect(envelope);
+
+    // ramp up to attack value
     envelope.gain.linearRampToValueAtTime(1, context.currentTime + attack);
+
+    // ramp down to sustain value in decay time
     envelope.gain.linearRampToValueAtTime(
       sustain,
       context.currentTime + attack + decay,
@@ -72,12 +68,17 @@ const Key = ({
   };
 
   const stop = () => {
+    // clear pending scheduled evenets for envelope
     envelope.gain.cancelAndHoldAtTime(context.currentTime);
+
+    // ramp down to 0 in release time
     envelope.gain.exponentialRampToValueAtTime(
       0.001,
       context.currentTime + release,
     );
-    setTimeout(
+
+    // set timeout for disconnecting oscillator after release
+    releaseTimeout = setTimeout(
       () => {
         oscillator.disconnect();
       },
