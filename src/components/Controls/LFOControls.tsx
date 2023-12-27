@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useCallback, useState } from 'react';
+import React, { useContext } from 'react';
 import { stateContext } from '../../providers/StateProvider';
 import Selector from '../shared/Selector';
 import {
@@ -7,7 +7,6 @@ import {
   updateLFOTarget,
   updateLFOWaveform,
 } from '../../store/actions';
-import { audioContext } from '../../providers/AudioContextProvider';
 import { Knobs, Selectors, Waveform } from '../../types';
 import Knob from '../shared/Knob';
 
@@ -17,53 +16,6 @@ const LFOControls = () => {
       lfo: { target, waveform, frequency, amplitude },
     },
   } = useContext(stateContext);
-  const { volume, panner, filter, context } = useContext(audioContext);
-  const [oscillator, setOscillator] = useState<OscillatorNode>();
-  const [ampNode, setAmpNode] = useState<GainNode>();
-
-  useEffect(() => {
-    if (ampNode) ampNode.disconnect();
-    return () => oscillator.stop();
-  }, []);
-
-  const connectToTarget = useCallback(
-    (ampNode: GainNode) => {
-      if (target === 'volume') {
-        if (ampNode) ampNode.disconnect();
-        ampNode.connect(volume.gain);
-      }
-      if (target === 'pan') {
-        if (ampNode) ampNode.disconnect();
-        ampNode.connect(panner.pan);
-      }
-      if (target === 'filterFrequency') {
-        if (ampNode) ampNode.disconnect();
-        ampNode.connect(filter.frequency);
-      }
-      if (target === 'off') {
-        if (ampNode) ampNode.disconnect();
-      }
-    },
-    [target],
-  );
-
-  useEffect(() => {
-    if (ampNode) ampNode.disconnect();
-    const osc = new OscillatorNode(context, {
-      type: waveform,
-      frequency: frequency,
-    });
-    const amp = new GainNode(context, { gain: amplitude });
-    osc.start();
-    osc.connect(amp);
-    connectToTarget(amp);
-    setOscillator(osc);
-    setAmpNode(amp);
-  }, [waveform, frequency, amplitude]);
-
-  useEffect(() => {
-    connectToTarget(ampNode);
-  }, [target]);
 
   return (
     <div>

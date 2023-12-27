@@ -43,8 +43,10 @@ const Key = ({
       });
     }
     return () => {
-      midiInput.removeListener('noteon');
-      midiInput.removeListener('noteoff');
+      if (midiInput) {
+        midiInput.removeListener('noteon');
+        midiInput.removeListener('noteoff');
+      }
     };
   });
 
