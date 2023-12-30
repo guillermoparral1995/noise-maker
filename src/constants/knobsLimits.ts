@@ -53,8 +53,8 @@ export const knobsLimits: Record<Knobs, KnobLimit> = {
     default: 1,
   },
   [Knobs.LFO_AMPLITUDE]: {
-    min: 0.1,
-    max: 5,
-    default: 1,
+    min: 0,
+    max: 1,
+    default: 0.5,
   },
 };

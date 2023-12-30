@@ -21,7 +21,7 @@ const LFOControls = () => {
     <div>
       <Selector
         label={Selectors.LFO_TARGET}
-        options={['off', 'volume', 'pan', 'filterFrequency']}
+        options={['off', Knobs.VOLUME, Knobs.PAN, Knobs.FILTER_FREQUENCY]}
         value={target}
         action={updateLFOTarget}
       ></Selector>

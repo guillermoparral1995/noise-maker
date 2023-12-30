@@ -17,7 +17,7 @@ const initialState: State = {
     target: 'off',
     waveform: Waveform.SINE,
     frequency: 1,
-    amplitude: 1,
+    amplitude: 0.5,
   },
 };
 

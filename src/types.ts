@@ -20,19 +20,29 @@ export enum Selectors {
 }
 
 export enum Knobs {
-  VOLUME = 'volume',
-  PAN = 'pan',
-  ATTACK = 'attack',
-  DECAY = 'decay',
-  SUSTAIN = 'sustain',
-  RELEASE = 'release',
-  FILTER_FREQUENCY = 'filterFrequency',
-  FILTER_Q = 'filterQ',
-  LFO_FREQUENCY = 'lfoFrequency',
-  LFO_AMPLITUDE = 'lfoAmplitude',
+  VOLUME = 'VOLUME',
+  PAN = 'PAN',
+  ATTACK = 'ATTACK',
+  DECAY = 'DECAY',
+  SUSTAIN = 'SUSTAIN',
+  RELEASE = 'RELEASE',
+  FILTER_FREQUENCY = 'FILTER_FREQUENCY',
+  FILTER_Q = 'FILTER_Q',
+  LFO_FREQUENCY = 'LFO_FREQUENCY',
+  LFO_AMPLITUDE = 'LFO_AMPLITUDE',
 }
 
-export type LFOTarget = Exclude<Knobs, Knobs.LFO_FREQUENCY> | 'off';
+export type LFOTarget =
+  | Exclude<
+      Knobs,
+      | Knobs.LFO_FREQUENCY
+      | Knobs.LFO_AMPLITUDE
+      | Knobs.ATTACK
+      | Knobs.DECAY
+      | Knobs.SUSTAIN
+      | Knobs.RELEASE
+    >
+  | 'off';
 
 export interface State {
   volume: number;

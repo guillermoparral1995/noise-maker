@@ -6,6 +6,7 @@ import React, {
 } from 'react';
 import { stateContext } from './StateProvider';
 import { Knobs } from '../types';
+import { knobsLimits } from '../constants/knobsLimits';
 
 interface AudioContextProviderValue {
   context: AudioContext;
@@ -43,7 +44,6 @@ export const AudioContextProvider = ({ children }: PropsWithChildren) => {
   filterNode.type = state.filter.type;
   filterNode.frequency.value = state.filter.frequency;
   filterNode.Q.value = state.filter.q;
-  lfoGainNode.gain.value = state.lfo.amplitude;
 
   useEffect(() => {
     lfoNode.connect(lfoGainNode);
@@ -59,21 +59,34 @@ export const AudioContextProvider = ({ children }: PropsWithChildren) => {
   }, []);
 
   useEffect(() => {
-    switch (state.lfo.target) {
-      case Knobs.VOLUME:
-        lfoGainNode.connect(volumeNode.gain);
-        break;
-      case Knobs.PAN:
-        lfoGainNode.connect(pannerNode.pan);
-        break;
-      case Knobs.FILTER_FREQUENCY:
-        lfoGainNode.connect(filterNode.frequency);
-        break;
-      default:
-        break;
+    const knob = Knobs[state.lfo.target as keyof typeof Knobs];
+    if (knob) {
+      const range =
+        ((knobsLimits[knob].max - knobsLimits[knob].min) / 2) *
+        state.lfo.amplitude;
+      lfoGainNode.gain.value = range;
+      switch (state.lfo.target) {
+        case Knobs.VOLUME:
+          lfoGainNode.connect(volumeNode.gain);
+          break;
+        case Knobs.PAN:
+          lfoGainNode.connect(pannerNode.pan);
+          break;
+        case Knobs.FILTER_FREQUENCY:
+          lfoGainNode.connect(filterNode.frequency);
+          break;
+        default:
+          break;
+      }
     }
     return () => lfoGainNode.disconnect();
-  }, [state.lfo.target]);
+  }, [
+    state.lfo.target,
+    state.lfo.amplitude,
+    volumeNode.gain.value,
+    pannerNode.pan.value,
+    filterNode.frequency.value,
+  ]);
 
   return (
     <audioContext.Provider
