@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import { audioContext } from '../../../providers/AudioContextProvider';
-import { stateContext } from '../../../providers/StateProvider';
 import { midiContext } from '../../../providers/MIDIProvider';
 import { NoteMessageEvent } from 'webmidi';
+import { envelopeStateContext } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
+
 import './index.scss';
 
 const Key = ({
@@ -15,7 +16,7 @@ const Key = ({
   const { context, output } = useContext(audioContext);
   const {
     state: { attack, decay, sustain, release, waveform },
-  } = useContext(stateContext);
+  } = useContext(envelopeStateContext);
   const midiInput = useContext(midiContext);
   let releaseTimeout: NodeJS.Timeout;
 
@@ -43,6 +44,8 @@ const Key = ({
       });
     }
     return () => {
+      // if oscillator is playing while params change, turn it off
+      oscillator.disconnect();
       if (midiInput) {
         midiInput.removeListener('noteon');
         midiInput.removeListener('noteoff');

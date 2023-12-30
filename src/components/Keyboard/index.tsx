@@ -3,12 +3,12 @@ import Key from './Key';
 import Selector from '../shared/Selector';
 import noteTable from '../../constants/noteTable';
 import { Selectors, Waveform } from '../../types';
-import { stateContext } from '../../providers/StateProvider';
-import { updateWaveform } from '../../store/actions';
 import './index.scss';
+import { envelopeStateContext } from '../Controls/EnvelopeControls/EnvelopeStateProvider';
+import { updateWaveform } from '../Controls/EnvelopeControls/store/actions';
 
 const Keyboard = () => {
-  const { state } = useContext(stateContext);
+  const { state, dispatch } = useContext(envelopeStateContext);
   return (
     <>
       <Selector
@@ -19,6 +19,7 @@ const Keyboard = () => {
           Waveform.SAWTOOTH,
           Waveform.TRIANGLE,
         ]}
+        dispatch={dispatch}
         value={state.waveform}
         action={updateWaveform}
       ></Selector>

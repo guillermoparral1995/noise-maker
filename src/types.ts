@@ -1,4 +1,13 @@
-import { ActionTypes } from './store/actions';
+import type { ActionTypes as EnvelopeActionTypes } from './components/Controls/EnvelopeControls/store/actions';
+import type { ActionTypes as GeneralControlsActionTypes } from './components/Controls/GeneralControls/store/actions';
+import type { ActionTypes as FilterActionTypes } from './components/Controls/FilterControls/store/actions';
+import type { ActionTypes as LFOActionTypes } from './components/Controls/LFOControls/store/actions';
+
+export type ActionTypes =
+  | EnvelopeActionTypes
+  | GeneralControlsActionTypes
+  | FilterActionTypes
+  | LFOActionTypes;
 
 export enum Waveform {
   SINE = 'sine',

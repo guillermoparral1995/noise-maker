@@ -1,23 +1,16 @@
-import React, {
-  BaseSyntheticEvent,
-  useContext,
-  useCallback,
-  useEffect,
-} from 'react';
-import { stateContext } from '../../providers/StateProvider';
-import type { ActionBuilder, Knobs } from '../../types';
+import React, { BaseSyntheticEvent, useCallback, useEffect } from 'react';
+import type { ActionBuilder, ActionTypes, Knobs } from '../../types';
 import { throttle } from 'lodash';
 import { knobsLimits } from '../../constants/knobsLimits';
 
 interface KnobProps {
   label: Knobs;
   value: number;
+  dispatch: React.Dispatch<ActionTypes>;
   action: ActionBuilder<number>;
 }
 
-export const Knob = ({ label, value, action }: KnobProps) => {
-  const { dispatch } = useContext(stateContext);
-
+export const Knob = ({ label, value, action, dispatch }: KnobProps) => {
   useEffect(() => {
     return () => throttledHandleChange.cancel();
   }, []);
@@ -27,7 +20,7 @@ export const Knob = ({ label, value, action }: KnobProps) => {
     dispatch(action(parseFloat(e.target.value)));
   };
 
-  const throttledHandleChange = useCallback(throttle(handleChange, 200), [
+  const throttledHandleChange = useCallback(throttle(handleChange, 50), [
     dispatch,
     action,
   ]);
