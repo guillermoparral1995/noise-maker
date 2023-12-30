@@ -20,13 +20,13 @@ const FilterControls = () => {
         action={updateFilterType}
       ></Selector>
       <Knob
-        label={Knobs.FILTER_FREQUENCY}
-        value={state.filter.frequency}
+        label={Knobs.FILTER_CUTOFF}
+        value={state.filter.cutoff}
         action={updateFilterFrequency}
       ></Knob>
       <Knob
-        label={Knobs.FILTER_Q}
-        value={state.filter.q}
+        label={Knobs.FILTER_RESONANCE}
+        value={state.filter.resonance}
         action={updateFilterQ}
       ></Knob>
     </div>

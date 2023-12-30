@@ -26,8 +26,8 @@ export enum Knobs {
   DECAY = 'DECAY',
   SUSTAIN = 'SUSTAIN',
   RELEASE = 'RELEASE',
-  FILTER_FREQUENCY = 'FILTER_FREQUENCY',
-  FILTER_Q = 'FILTER_Q',
+  FILTER_CUTOFF = 'FILTER_CUTOFF',
+  FILTER_RESONANCE = 'FILTER_RESONANCE',
   LFO_FREQUENCY = 'LFO_FREQUENCY',
   LFO_AMPLITUDE = 'LFO_AMPLITUDE',
 }
@@ -54,8 +54,8 @@ export interface State {
   release: number;
   filter: {
     type: FilterType;
-    frequency: number;
-    q: number;
+    cutoff: number;
+    resonance: number;
   };
   lfo: {
     target: LFOTarget;

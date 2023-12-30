@@ -53,7 +53,7 @@ const reducer = (state: State, action: ActionTypes): State => {
         ...state,
         filter: {
           ...state.filter,
-          frequency: payload,
+          cutoff: payload,
         },
       };
     case Actions.UPDATE_FILTER_Q:
@@ -61,7 +61,7 @@ const reducer = (state: State, action: ActionTypes): State => {
         ...state,
         filter: {
           ...state.filter,
-          q: payload,
+          resonance: payload,
         },
       };
     case Actions.UPDATE_LFO_TARGET:

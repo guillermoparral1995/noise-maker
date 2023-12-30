@@ -10,8 +10,8 @@ const initialState: State = {
   release: 0,
   filter: {
     type: FilterType.HIGHPASS,
-    frequency: 350,
-    q: 1,
+    cutoff: 350,
+    resonance: 1,
   },
   lfo: {
     target: 'off',

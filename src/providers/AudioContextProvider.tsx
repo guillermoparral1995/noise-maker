@@ -42,8 +42,8 @@ export const AudioContextProvider = ({ children }: PropsWithChildren) => {
   volumeNode.gain.value = state.volume;
   pannerNode.pan.value = state.pan;
   filterNode.type = state.filter.type;
-  filterNode.frequency.value = state.filter.frequency;
-  filterNode.Q.value = state.filter.q;
+  filterNode.frequency.value = state.filter.cutoff;
+  filterNode.Q.value = state.filter.resonance;
 
   useEffect(() => {
     lfoNode.connect(lfoGainNode);
@@ -72,8 +72,11 @@ export const AudioContextProvider = ({ children }: PropsWithChildren) => {
         case Knobs.PAN:
           lfoGainNode.connect(pannerNode.pan);
           break;
-        case Knobs.FILTER_FREQUENCY:
+        case Knobs.FILTER_CUTOFF:
           lfoGainNode.connect(filterNode.frequency);
+          break;
+        case Knobs.FILTER_RESONANCE:
+          lfoGainNode.connect(filterNode.Q);
           break;
         default:
           break;

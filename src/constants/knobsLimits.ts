@@ -37,12 +37,12 @@ export const knobsLimits: Record<Knobs, KnobLimit> = {
     max: 5,
     default: 0,
   },
-  [Knobs.FILTER_FREQUENCY]: {
+  [Knobs.FILTER_CUTOFF]: {
     min: 10,
     max: 5000,
     default: 350,
   },
-  [Knobs.FILTER_Q]: {
+  [Knobs.FILTER_RESONANCE]: {
     min: 0.0001,
     max: 50,
     default: 1,
