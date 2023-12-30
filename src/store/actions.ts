@@ -9,8 +9,8 @@ export type ActionTypes =
   | SustainAction
   | ReleaseAction
   | FilterTypeAction
-  | FilterFrequencyAction
-  | FilterQAction
+  | FilterCutoffAction
+  | FilterResonanceAction
   | LFOTargetAction
   | LFOWaveformAction
   | LFOFrequencyAction
@@ -100,26 +100,28 @@ export const updateFilterType: (filterType: FilterType) => FilterTypeAction = (
   payload: filterType,
 });
 
-interface FilterFrequencyAction {
-  type: Actions.UPDATE_FILTER_FREQUENCY;
+interface FilterCutoffAction {
+  type: Actions.UPDATE_FILTER_CUTOFF;
   payload: number;
 }
 
-export const updateFilterFrequency: (
-  filterFreq: number,
-) => FilterFrequencyAction = (filterFreq) => ({
-  type: Actions.UPDATE_FILTER_FREQUENCY,
-  payload: filterFreq,
+export const updateFilterCutoff: (filterFreq: number) => FilterCutoffAction = (
+  cutoff,
+) => ({
+  type: Actions.UPDATE_FILTER_CUTOFF,
+  payload: cutoff,
 });
 
-interface FilterQAction {
-  type: Actions.UPDATE_FILTER_Q;
+interface FilterResonanceAction {
+  type: Actions.UPDATE_FILTER_RESONANCE;
   payload: number;
 }
 
-export const updateFilterQ: (filterQ: number) => FilterQAction = (filterQ) => ({
-  type: Actions.UPDATE_FILTER_Q,
-  payload: filterQ,
+export const updateFilterResonance: (
+  resonance: number,
+) => FilterResonanceAction = (resonance) => ({
+  type: Actions.UPDATE_FILTER_RESONANCE,
+  payload: resonance,
 });
 
 interface LFOTargetAction {

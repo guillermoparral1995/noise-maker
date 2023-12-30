@@ -48,7 +48,7 @@ const reducer = (state: State, action: ActionTypes): State => {
           type: payload,
         },
       };
-    case Actions.UPDATE_FILTER_FREQUENCY:
+    case Actions.UPDATE_FILTER_CUTOFF:
       return {
         ...state,
         filter: {
@@ -56,7 +56,7 @@ const reducer = (state: State, action: ActionTypes): State => {
           cutoff: payload,
         },
       };
-    case Actions.UPDATE_FILTER_Q:
+    case Actions.UPDATE_FILTER_RESONANCE:
       return {
         ...state,
         filter: {

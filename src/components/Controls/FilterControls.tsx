@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import Knob from '../shared/Knob';
 import {
-  updateFilterFrequency,
-  updateFilterQ,
+  updateFilterCutoff,
+  updateFilterResonance,
   updateFilterType,
 } from '../../store/actions';
 import { stateContext } from '../../providers/StateProvider';
@@ -22,12 +22,12 @@ const FilterControls = () => {
       <Knob
         label={Knobs.FILTER_CUTOFF}
         value={state.filter.cutoff}
-        action={updateFilterFrequency}
+        action={updateFilterCutoff}
       ></Knob>
       <Knob
         label={Knobs.FILTER_RESONANCE}
         value={state.filter.resonance}
-        action={updateFilterQ}
+        action={updateFilterResonance}
       ></Knob>
     </div>
   );
