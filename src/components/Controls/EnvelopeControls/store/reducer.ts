@@ -11,6 +11,11 @@ const reducer = (state: EnvelopeState, action: ActionTypes): EnvelopeState => {
         ...state,
         waveform: payload,
       };
+    case Actions.UPDATE_DETUNE:
+      return {
+        ...state,
+        detune: payload,
+      };
     case Actions.UPDATE_ATTACK:
       return {
         ...state,

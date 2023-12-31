@@ -31,6 +31,7 @@ export enum Selectors {
 export enum Knobs {
   VOLUME = 'VOLUME',
   PAN = 'PAN',
+  DETUNE = 'DETUNE',
   ATTACK = 'ATTACK',
   DECAY = 'DECAY',
   SUSTAIN = 'SUSTAIN',
@@ -78,6 +79,7 @@ export enum Actions {
   UPDATE_VOLUME,
   UPDATE_PAN,
   UPDATE_WAVEFORM,
+  UPDATE_DETUNE,
   UPDATE_ATTACK,
   UPDATE_DECAY,
   UPDATE_SUSTAIN,

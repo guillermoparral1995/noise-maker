@@ -2,6 +2,7 @@ import { Actions, Waveform } from '../../../../types';
 
 export type ActionTypes =
   | WaveformAction
+  | DetuneAction
   | AttackAction
   | DecayAction
   | SustainAction
@@ -17,6 +18,16 @@ export const updateWaveform: (waveform: Waveform) => WaveformAction = (
 ) => ({
   type: Actions.UPDATE_WAVEFORM,
   payload: waveform,
+});
+
+interface DetuneAction {
+  type: Actions.UPDATE_DETUNE;
+  payload: number;
+}
+
+export const updateDetune: (detune: number) => DetuneAction = (detune) => ({
+  type: Actions.UPDATE_DETUNE,
+  payload: detune,
 });
 
 interface AttackAction {

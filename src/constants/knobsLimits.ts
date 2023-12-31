@@ -17,6 +17,11 @@ export const knobsLimits: Record<Knobs, KnobLimit> = {
     max: 1,
     default: 0,
   },
+  [Knobs.DETUNE]: {
+    min: -1200,
+    max: 1200,
+    default: 0,
+  },
   [Knobs.ATTACK]: {
     min: 0,
     max: 5,

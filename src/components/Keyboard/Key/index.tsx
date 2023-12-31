@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useMemo } from 'react';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { midiContext } from '../../../providers/MIDIProvider';
 import { NoteMessageEvent } from 'webmidi';
@@ -15,17 +15,27 @@ const Key = ({
 }) => {
   const { context, output } = useContext(audioContext);
   const {
-    state: { attack, decay, sustain, release, waveform },
+    state: { attack, decay, sustain, release, detune, waveform },
   } = useContext(envelopeStateContext);
   const midiInput = useContext(midiContext);
   let releaseTimeout: NodeJS.Timeout;
 
-  const oscillator = new OscillatorNode(context, { type: waveform, frequency });
-  const envelope = new GainNode(context);
-  envelope.connect(output);
-  oscillator.start(context.currentTime);
+  const oscillator = useMemo(
+    () => new OscillatorNode(context, { type: waveform, frequency }),
+    [waveform, frequency],
+  );
+  const envelope = useMemo(() => new GainNode(context), []);
+  oscillator.detune.value = detune;
 
   useEffect(() => {
+    oscillator.start(context.currentTime);
+    return () => {
+      oscillator.disconnect();
+    };
+  }, [waveform, frequency]);
+
+  useEffect(() => {
+    envelope.connect(output);
     return () => oscillator.stop();
   }, []);
 
@@ -44,8 +54,6 @@ const Key = ({
       });
     }
     return () => {
-      // if oscillator is playing while params change, turn it off
-      oscillator.disconnect();
       if (midiInput) {
         midiInput.removeListener('noteon');
         midiInput.removeListener('noteoff');
