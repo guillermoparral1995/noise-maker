@@ -51326,6 +51326,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   updateAttack: () => (/* binding */ updateAttack),
 /* harmony export */   updateDecay: () => (/* binding */ updateDecay),
+/* harmony export */   updateDetune: () => (/* binding */ updateDetune),
 /* harmony export */   updateRelease: () => (/* binding */ updateRelease),
 /* harmony export */   updateSustain: () => (/* binding */ updateSustain),
 /* harmony export */   updateWaveform: () => (/* binding */ updateWaveform)
@@ -51335,6 +51336,10 @@ __webpack_require__.r(__webpack_exports__);
 var updateWaveform = function (waveform) { return ({
     type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_WAVEFORM,
     payload: waveform,
+}); };
+var updateDetune = function (detune) { return ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_DETUNE,
+    payload: detune,
 }); };
 var updateAttack = function (attack) { return ({
     type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_ATTACK,
@@ -51371,6 +51376,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var initialState = {
     waveform: _types__WEBPACK_IMPORTED_MODULE_0__.Waveform.SINE,
+    detune: 0,
     attack: 0,
     decay: 0,
     sustain: 1,
@@ -51410,6 +51416,8 @@ var reducer = function (state, action) {
     switch (type) {
         case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_WAVEFORM:
             return __assign(__assign({}, state), { waveform: payload });
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_DETUNE:
+            return __assign(__assign({}, state), { detune: payload });
         case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_ATTACK:
             return __assign(__assign({}, state), { attack: payload });
         case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_DECAY:
@@ -51484,10 +51492,19 @@ __webpack_require__.r(__webpack_exports__);
 
 var FilterControls = function () {
     var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_FilterStateProvider__WEBPACK_IMPORTED_MODULE_5__.filterStateContext), _b = _a.state, type = _b.type, cutoff = _b.cutoff, resonance = _b.resonance, dispatch = _a.dispatch;
-    var filter = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_6__.audioContext).filter;
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_6__.audioContext), filter = _c.filter, lfo = _c.lfo;
     filter.type = type;
     filter.frequency.value = cutoff;
     filter.Q.value = resonance;
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        if (lfo.target === _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_CUTOFF) {
+            lfo.output.connect(filter.frequency);
+        }
+        if (lfo.target === _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_RESONANCE) {
+            lfo.output.connect(filter.Q);
+        }
+        return function () { return lfo.output.disconnect(); };
+    }, [lfo.target]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_3__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.FILTER, options: [_types__WEBPACK_IMPORTED_MODULE_4__.FilterType.HIGHPASS, _types__WEBPACK_IMPORTED_MODULE_4__.FilterType.LOWPASS], value: type, dispatch: dispatch, action: _store_actions__WEBPACK_IMPORTED_MODULE_2__.updateFilterType }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_1__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_CUTOFF, value: cutoff, action: _store_actions__WEBPACK_IMPORTED_MODULE_2__.updateFilterCutoff, dispatch: dispatch }),
@@ -51649,7 +51666,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var GeneralControls = function () {
     var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_GeneralControlsStateProvider__WEBPACK_IMPORTED_MODULE_4__.generalControlsStateContext), state = _a.state, dispatch = _a.dispatch;
-    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_5__.audioContext), volume = _b.volume, pan = _b.pan;
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_5__.audioContext), volume = _b.volume, pan = _b.pan, lfo = _b.lfo;
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        if (lfo.target === _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.VOLUME) {
+            lfo.output.connect(volume.gain);
+        }
+        if (lfo.target === _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.PAN) {
+            lfo.output.connect(pan.pan);
+        }
+        return function () { return lfo.output.disconnect(); };
+    }, [lfo.target]);
     volume.gain.value = state.volume;
     pan.pan.value = state.pan;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
@@ -51805,51 +51831,47 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var LFOControls = function () {
-    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_LFOStateProvider__WEBPACK_IMPORTED_MODULE_5__.lfoStateContext), _b = _a.state, target = _b.target, waveform = _b.waveform, frequency = _b.frequency, amplitude = _b.amplitude, dispatch = _a.dispatch;
-    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_6__.audioContext), context = _c.context, volume = _c.volume, pan = _c.pan, filter = _c.filter;
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_LFOStateProvider__WEBPACK_IMPORTED_MODULE_5__.lfoStateContext), _b = _a.state, waveform = _b.waveform, frequency = _b.frequency, amplitude = _b.amplitude, dispatch = _a.dispatch;
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_6__.audioContext), context = _c.context, lfo = _c.lfo, audioDispatch = _c.dispatch;
     var lfoNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
         return new OscillatorNode(context, {
             type: waveform,
             frequency: frequency,
         });
-    }, [waveform, frequency]);
-    var lfoGainNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return context.createGain(); }, []);
-    lfoNode.connect(lfoGainNode);
+    }, []);
+    lfoNode.type = waveform;
+    lfoNode.frequency.value = frequency;
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        lfoNode.connect(lfoGainNode);
+        lfoNode.connect(lfo.output);
         lfoNode.start();
         return function () { return lfoNode.disconnect(); };
-    }, [waveform, frequency]);
+    }, []);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        var knob = _types__WEBPACK_IMPORTED_MODULE_3__.Knobs[target];
+        var knob = _types__WEBPACK_IMPORTED_MODULE_3__.Knobs[lfo.target];
         if (knob) {
             var range = ((_constants_knobsLimits__WEBPACK_IMPORTED_MODULE_7__.knobsLimits[knob].max - _constants_knobsLimits__WEBPACK_IMPORTED_MODULE_7__.knobsLimits[knob].min) / 2) * amplitude;
-            lfoGainNode.gain.value = range;
-            switch (target) {
+            lfo.output.gain.value = range;
+            switch (lfo.target) {
                 case _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.VOLUME:
-                    lfoGainNode.connect(volume.gain);
+                    audioDispatch((0,_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_6__.updateLFOTarget)(_types__WEBPACK_IMPORTED_MODULE_3__.Knobs.VOLUME));
                     break;
                 case _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.PAN:
-                    lfoGainNode.connect(pan.pan);
+                    audioDispatch((0,_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_6__.updateLFOTarget)(_types__WEBPACK_IMPORTED_MODULE_3__.Knobs.PAN));
                     break;
                 case _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.FILTER_CUTOFF:
-                    lfoGainNode.connect(filter.frequency);
+                    audioDispatch((0,_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_6__.updateLFOTarget)(_types__WEBPACK_IMPORTED_MODULE_3__.Knobs.FILTER_CUTOFF));
                     break;
                 case _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.FILTER_RESONANCE:
-                    lfoGainNode.connect(filter.Q);
+                    audioDispatch((0,_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_6__.updateLFOTarget)(_types__WEBPACK_IMPORTED_MODULE_3__.Knobs.FILTER_RESONANCE));
+                    break;
+                case _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.DETUNE:
+                    audioDispatch((0,_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_6__.updateLFOTarget)(_types__WEBPACK_IMPORTED_MODULE_3__.Knobs.DETUNE));
                     break;
                 default:
                     break;
             }
         }
-        return function () { return lfoGainNode.disconnect(); };
-    }, [
-        target,
-        amplitude,
-        volume.gain.value,
-        pan.pan.value,
-        filter.frequency.value,
-    ]);
+    }, [amplitude, lfo.target]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_1__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_3__.Selectors.LFO_TARGET, options: [
                 'off',
@@ -51857,7 +51879,8 @@ var LFOControls = function () {
                 _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.PAN,
                 _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.FILTER_CUTOFF,
                 _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.FILTER_RESONANCE,
-            ], value: target, dispatch: dispatch, action: _store_actions__WEBPACK_IMPORTED_MODULE_2__.updateLFOTarget }),
+                _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.DETUNE,
+            ], value: lfo.target, dispatch: audioDispatch, action: _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_6__.updateLFOTarget }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_1__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_3__.Selectors.LFO_WAVEFORM, options: [
                 _types__WEBPACK_IMPORTED_MODULE_3__.Waveform.SINE,
                 _types__WEBPACK_IMPORTED_MODULE_3__.Waveform.SQUARE,
@@ -51883,15 +51906,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   updateLFOAmplitude: () => (/* binding */ updateLFOAmplitude),
 /* harmony export */   updateLFOFrequency: () => (/* binding */ updateLFOFrequency),
-/* harmony export */   updateLFOTarget: () => (/* binding */ updateLFOTarget),
 /* harmony export */   updateLFOWaveform: () => (/* binding */ updateLFOWaveform)
 /* harmony export */ });
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../types */ "./src/types.ts");
 
-var updateLFOTarget = function (target) { return ({
-    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_LFO_TARGET,
-    payload: target,
-}); };
 var updateLFOWaveform = function (waveform) { return ({
     type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_LFO_WAVEFORM,
     payload: waveform,
@@ -51922,7 +51940,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../types */ "./src/types.ts");
 
 var initialState = {
-    target: 'off',
     waveform: _types__WEBPACK_IMPORTED_MODULE_0__.Waveform.SINE,
     frequency: 1,
     amplitude: 0.5,
@@ -51959,8 +51976,6 @@ var __assign = (undefined && undefined.__assign) || function () {
 var reducer = function (state, action) {
     var type = action.type, payload = action.payload;
     switch (type) {
-        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_LFO_TARGET:
-            return __assign(__assign({}, state), { target: payload });
         case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_LFO_WAVEFORM:
             return __assign(__assign({}, state), { waveform: payload });
         case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_LFO_FREQUENCY:
@@ -51993,6 +52008,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../providers/MIDIProvider */ "./src/providers/MIDIProvider.tsx");
 /* harmony import */ var _Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index.scss */ "./src/components/Keyboard/Key/index.scss");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+
 
 
 
@@ -52000,17 +52017,25 @@ __webpack_require__.r(__webpack_exports__);
 
 var Key = function (_a) {
     var identifier = _a.identifier, frequency = _a.frequency;
-    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_1__.audioContext), context = _b.context, output = _b.output;
-    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__.envelopeStateContext).state, attack = _c.attack, decay = _c.decay, sustain = _c.sustain, release = _c.release, waveform = _c.waveform;
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_1__.audioContext), context = _b.context, output = _b.output, lfo = _b.lfo;
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__.envelopeStateContext).state, attack = _c.attack, decay = _c.decay, sustain = _c.sustain, release = _c.release, detune = _c.detune, waveform = _c.waveform;
     var midiInput = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_2__.midiContext);
     var releaseTimeout;
-    var oscillator = new OscillatorNode(context, { type: waveform, frequency: frequency });
-    var envelope = new GainNode(context);
-    envelope.connect(output);
-    oscillator.start(context.currentTime);
+    var oscillator = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new OscillatorNode(context, { type: waveform, frequency: frequency }); }, []);
+    var envelope = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new GainNode(context); }, []);
+    oscillator.type = waveform;
+    oscillator.detune.value = detune;
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        return function () { return oscillator.stop(); };
+        oscillator.start(context.currentTime);
+        envelope.connect(output);
+        return function () { return oscillator.disconnect(); };
     }, []);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        if (lfo.target === _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DETUNE) {
+            lfo.output.connect(oscillator.detune);
+        }
+        return function () { return lfo.output.disconnect(); };
+    }, [lfo.target]);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         if (midiInput) {
             midiInput.addListener('noteon', function (event) {
@@ -52025,8 +52050,6 @@ var Key = function (_a) {
             });
         }
         return function () {
-            // if oscillator is playing while params change, turn it off
-            oscillator.disconnect();
             if (midiInput) {
                 midiInput.removeListener('noteon');
                 midiInput.removeListener('noteoff');
@@ -52079,9 +52102,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/Selector */ "./src/components/shared/Selector.tsx");
 /* harmony import */ var _constants_noteTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../constants/noteTable */ "./src/constants/noteTable.ts");
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../types */ "./src/types.ts");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index.scss */ "./src/components/Keyboard/index.scss");
-/* harmony import */ var _Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
-/* harmony import */ var _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Controls/EnvelopeControls/store/actions */ "./src/components/Controls/EnvelopeControls/store/actions.ts");
+/* harmony import */ var _Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
+/* harmony import */ var _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Controls/EnvelopeControls/store/actions */ "./src/components/Controls/EnvelopeControls/store/actions.ts");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/Knob */ "./src/components/shared/Knob.tsx");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index.scss */ "./src/components/Keyboard/index.scss");
+
 
 
 
@@ -52091,14 +52116,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Keyboard = function () {
-    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_6__.envelopeStateContext), state = _a.state, dispatch = _a.dispatch;
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_5__.envelopeStateContext), state = _a.state, dispatch = _a.dispatch;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_2__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.WAVEFORM, options: [
                 _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.SINE,
                 _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.SQUARE,
                 _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.SAWTOOTH,
                 _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.TRIANGLE,
-            ], dispatch: dispatch, value: state.waveform, action: _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_7__.updateWaveform }),
+            ], dispatch: dispatch, value: state.waveform, action: _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_6__.updateWaveform }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.DETUNE, value: state.detune, action: _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_6__.updateDetune, dispatch: dispatch }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "keyboard" }, Object.entries(_constants_noteTable__WEBPACK_IMPORTED_MODULE_3__["default"]).map(function (_a) {
             var note = _a[0], frequency = _a[1];
             return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Key__WEBPACK_IMPORTED_MODULE_1__["default"], { key: note, identifier: note, frequency: frequency }));
@@ -52204,6 +52230,11 @@ var knobsLimits = (_a = {},
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.PAN] = {
         min: -1,
         max: 1,
+        default: 0,
+    },
+    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.DETUNE] = {
+        min: -1200,
+        max: 1200,
         default: 0,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.ATTACK] = {
@@ -52333,18 +52364,50 @@ var noteTable = (_a = {},
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   AudioContextProvider: () => (/* binding */ AudioContextProvider),
-/* harmony export */   audioContext: () => (/* binding */ audioContext)
+/* harmony export */   audioContext: () => (/* binding */ audioContext),
+/* harmony export */   updateLFOTarget: () => (/* binding */ updateLFOTarget)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../types */ "./src/types.ts");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 
+
+var initialState = {
+    lfoTarget: 'off',
+};
+var updateLFOTarget = function (target) { return ({
+    type: _types__WEBPACK_IMPORTED_MODULE_1__.Actions.UPDATE_LFO_TARGET,
+    payload: target,
+}); };
+var reducer = function (state, action) {
+    var type = action.type, payload = action.payload;
+    switch (type) {
+        case _types__WEBPACK_IMPORTED_MODULE_1__.Actions.UPDATE_LFO_TARGET:
+            return __assign(__assign({}, state), { lfoTarget: payload });
+        default:
+            return state;
+    }
+};
 var audioContext = react__WEBPACK_IMPORTED_MODULE_0___default().createContext(undefined);
 var AudioContextProvider = function (_a) {
     var children = _a.children;
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(reducer, initialState), state = _b[0], dispatch = _b[1];
     var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new AudioContext(); }, []);
     var volumeNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new GainNode(context); }, []);
     var pannerNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new StereoPannerNode(context); }, []);
     var filterNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new BiquadFilterNode(context); }, []);
+    var lfoOutputNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new GainNode(context); }, []);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         filterNode.connect(volumeNode);
         volumeNode.connect(pannerNode);
@@ -52355,7 +52418,12 @@ var AudioContextProvider = function (_a) {
             volume: volumeNode,
             pan: pannerNode,
             filter: filterNode,
+            lfo: {
+                output: lfoOutputNode,
+                target: state.lfoTarget,
+            },
             output: filterNode,
+            dispatch: dispatch,
         } }, children));
 };
 
@@ -52492,6 +52560,7 @@ var Knobs;
 (function (Knobs) {
     Knobs["VOLUME"] = "VOLUME";
     Knobs["PAN"] = "PAN";
+    Knobs["DETUNE"] = "DETUNE";
     Knobs["ATTACK"] = "ATTACK";
     Knobs["DECAY"] = "DECAY";
     Knobs["SUSTAIN"] = "SUSTAIN";
@@ -52506,17 +52575,18 @@ var Actions;
     Actions[Actions["UPDATE_VOLUME"] = 0] = "UPDATE_VOLUME";
     Actions[Actions["UPDATE_PAN"] = 1] = "UPDATE_PAN";
     Actions[Actions["UPDATE_WAVEFORM"] = 2] = "UPDATE_WAVEFORM";
-    Actions[Actions["UPDATE_ATTACK"] = 3] = "UPDATE_ATTACK";
-    Actions[Actions["UPDATE_DECAY"] = 4] = "UPDATE_DECAY";
-    Actions[Actions["UPDATE_SUSTAIN"] = 5] = "UPDATE_SUSTAIN";
-    Actions[Actions["UPDATE_RELEASE"] = 6] = "UPDATE_RELEASE";
-    Actions[Actions["UPDATE_FILTER_TYPE"] = 7] = "UPDATE_FILTER_TYPE";
-    Actions[Actions["UPDATE_FILTER_CUTOFF"] = 8] = "UPDATE_FILTER_CUTOFF";
-    Actions[Actions["UPDATE_FILTER_RESONANCE"] = 9] = "UPDATE_FILTER_RESONANCE";
-    Actions[Actions["UPDATE_LFO_TARGET"] = 10] = "UPDATE_LFO_TARGET";
-    Actions[Actions["UPDATE_LFO_WAVEFORM"] = 11] = "UPDATE_LFO_WAVEFORM";
-    Actions[Actions["UPDATE_LFO_FREQUENCY"] = 12] = "UPDATE_LFO_FREQUENCY";
-    Actions[Actions["UPDATE_LFO_AMPLITUDE"] = 13] = "UPDATE_LFO_AMPLITUDE";
+    Actions[Actions["UPDATE_DETUNE"] = 3] = "UPDATE_DETUNE";
+    Actions[Actions["UPDATE_ATTACK"] = 4] = "UPDATE_ATTACK";
+    Actions[Actions["UPDATE_DECAY"] = 5] = "UPDATE_DECAY";
+    Actions[Actions["UPDATE_SUSTAIN"] = 6] = "UPDATE_SUSTAIN";
+    Actions[Actions["UPDATE_RELEASE"] = 7] = "UPDATE_RELEASE";
+    Actions[Actions["UPDATE_FILTER_TYPE"] = 8] = "UPDATE_FILTER_TYPE";
+    Actions[Actions["UPDATE_FILTER_CUTOFF"] = 9] = "UPDATE_FILTER_CUTOFF";
+    Actions[Actions["UPDATE_FILTER_RESONANCE"] = 10] = "UPDATE_FILTER_RESONANCE";
+    Actions[Actions["UPDATE_LFO_TARGET"] = 11] = "UPDATE_LFO_TARGET";
+    Actions[Actions["UPDATE_LFO_WAVEFORM"] = 12] = "UPDATE_LFO_WAVEFORM";
+    Actions[Actions["UPDATE_LFO_FREQUENCY"] = 13] = "UPDATE_LFO_FREQUENCY";
+    Actions[Actions["UPDATE_LFO_AMPLITUDE"] = 14] = "UPDATE_LFO_AMPLITUDE";
 })(Actions || (Actions = {}));
 
 
