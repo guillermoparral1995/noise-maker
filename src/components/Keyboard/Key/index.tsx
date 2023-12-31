@@ -22,21 +22,16 @@ const Key = ({
 
   const oscillator = useMemo(
     () => new OscillatorNode(context, { type: waveform, frequency }),
-    [waveform, frequency],
+    [],
   );
   const envelope = useMemo(() => new GainNode(context), []);
+  oscillator.type = waveform;
   oscillator.detune.value = detune;
 
   useEffect(() => {
     oscillator.start(context.currentTime);
-    return () => {
-      oscillator.disconnect();
-    };
-  }, [waveform, frequency]);
-
-  useEffect(() => {
     envelope.connect(output);
-    return () => oscillator.stop();
+    return () => oscillator.disconnect();
   }, []);
 
   useEffect(() => {
