@@ -5,6 +5,7 @@ import { NoteMessageEvent } from 'webmidi';
 import { envelopeStateContext } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
 
 import './index.scss';
+import { Knobs } from '../../../types';
 
 const Key = ({
   identifier,
@@ -13,7 +14,7 @@ const Key = ({
   identifier: string;
   frequency: number;
 }) => {
-  const { context, output } = useContext(audioContext);
+  const { context, output, lfo } = useContext(audioContext);
   const {
     state: { attack, decay, sustain, release, detune, waveform },
   } = useContext(envelopeStateContext);
@@ -33,6 +34,13 @@ const Key = ({
     envelope.connect(output);
     return () => oscillator.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (lfo.target === Knobs.DETUNE) {
+      lfo.output.connect(oscillator.detune);
+    }
+    return () => lfo.output.disconnect();
+  }, [lfo.target]);
 
   useEffect(() => {
     if (midiInput) {

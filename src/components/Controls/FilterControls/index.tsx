@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Knob from '../../shared/Knob';
 import {
   updateFilterCutoff,
@@ -15,11 +15,21 @@ const FilterControls = () => {
     state: { type, cutoff, resonance },
     dispatch,
   } = useContext(filterStateContext);
-  const { filter } = useContext(audioContext);
+  const { filter, lfo } = useContext(audioContext);
 
   filter.type = type;
   filter.frequency.value = cutoff;
   filter.Q.value = resonance;
+
+  useEffect(() => {
+    if (lfo.target === Knobs.FILTER_CUTOFF) {
+      lfo.output.connect(filter.frequency);
+    }
+    if (lfo.target === Knobs.FILTER_RESONANCE) {
+      lfo.output.connect(filter.Q);
+    }
+    return () => lfo.output.disconnect();
+  }, [lfo.target]);
 
   return (
     <div>

@@ -1,22 +1,9 @@
-import { Actions, LFOTarget, Waveform } from '../../../../types';
+import { Actions, Waveform } from '../../../../types';
 
 export type ActionTypes =
-  | LFOTargetAction
   | LFOWaveformAction
   | LFOFrequencyAction
   | LFOAmplitudeAction;
-
-interface LFOTargetAction {
-  type: Actions.UPDATE_LFO_TARGET;
-  payload: LFOTarget;
-}
-
-export const updateLFOTarget: (target: LFOTarget) => LFOTargetAction = (
-  target,
-) => ({
-  type: Actions.UPDATE_LFO_TARGET,
-  payload: target,
-});
 
 interface LFOWaveformAction {
   type: Actions.UPDATE_LFO_WAVEFORM;

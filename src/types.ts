@@ -2,11 +2,13 @@ import type { ActionTypes as EnvelopeActionTypes } from './components/Controls/E
 import type { ActionTypes as GeneralControlsActionTypes } from './components/Controls/GeneralControls/store/actions';
 import type { ActionTypes as FilterActionTypes } from './components/Controls/FilterControls/store/actions';
 import type { ActionTypes as LFOActionTypes } from './components/Controls/LFOControls/store/actions';
+import { LFOTargetAction } from './providers/AudioContextProvider';
 
 export type ActionTypes =
   | EnvelopeActionTypes
   | GeneralControlsActionTypes
   | FilterActionTypes
+  | LFOTargetAction
   | LFOActionTypes;
 
 export enum Waveform {

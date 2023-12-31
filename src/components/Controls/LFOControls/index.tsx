@@ -3,21 +3,23 @@ import Selector from '../../shared/Selector';
 import {
   updateLFOAmplitude,
   updateLFOFrequency,
-  updateLFOTarget,
   updateLFOWaveform,
 } from './store/actions';
 import { Knobs, Selectors, Waveform } from '../../../types';
 import Knob from '../../shared/Knob';
 import { lfoStateContext } from './LFOStateProvider';
-import { audioContext } from '../../../providers/AudioContextProvider';
+import {
+  audioContext,
+  updateLFOTarget,
+} from '../../../providers/AudioContextProvider';
 import { knobsLimits } from '../../../constants/knobsLimits';
 
 const LFOControls = () => {
   const {
-    state: { target, waveform, frequency, amplitude },
+    state: { waveform, frequency, amplitude },
     dispatch,
   } = useContext(lfoStateContext);
-  const { context, volume, pan, filter } = useContext(audioContext);
+  const { context, lfo, dispatch: audioDispatch } = useContext(audioContext);
   const lfoNode: OscillatorNode = useMemo(
     () =>
       new OscillatorNode(context, {
@@ -26,49 +28,43 @@ const LFOControls = () => {
       }),
     [],
   );
-  const lfoGainNode: GainNode = useMemo(() => context.createGain(), []);
-  lfoNode.connect(lfoGainNode);
   lfoNode.type = waveform;
   lfoNode.frequency.value = frequency;
 
   useEffect(() => {
-    lfoNode.connect(lfoGainNode);
+    lfoNode.connect(lfo.output);
     lfoNode.start();
 
     return () => lfoNode.disconnect();
   }, []);
 
   useEffect(() => {
-    const knob = Knobs[target as keyof typeof Knobs];
+    const knob = Knobs[lfo.target as keyof typeof Knobs];
     if (knob) {
       const range =
         ((knobsLimits[knob].max - knobsLimits[knob].min) / 2) * amplitude;
-      lfoGainNode.gain.value = range;
-      switch (target) {
+      lfo.output.gain.value = range;
+      switch (lfo.target) {
         case Knobs.VOLUME:
-          lfoGainNode.connect(volume.gain);
+          audioDispatch(updateLFOTarget(Knobs.VOLUME));
           break;
         case Knobs.PAN:
-          lfoGainNode.connect(pan.pan);
+          audioDispatch(updateLFOTarget(Knobs.PAN));
           break;
         case Knobs.FILTER_CUTOFF:
-          lfoGainNode.connect(filter.frequency);
+          audioDispatch(updateLFOTarget(Knobs.FILTER_CUTOFF));
           break;
         case Knobs.FILTER_RESONANCE:
-          lfoGainNode.connect(filter.Q);
+          audioDispatch(updateLFOTarget(Knobs.FILTER_RESONANCE));
+          break;
+        case Knobs.DETUNE:
+          audioDispatch(updateLFOTarget(Knobs.DETUNE));
           break;
         default:
           break;
       }
     }
-    return () => lfoGainNode.disconnect();
-  }, [
-    target,
-    amplitude,
-    volume.gain.value,
-    pan.pan.value,
-    filter.frequency.value,
-  ]);
+  }, [amplitude, lfo.target]);
 
   return (
     <div>
@@ -80,9 +76,10 @@ const LFOControls = () => {
           Knobs.PAN,
           Knobs.FILTER_CUTOFF,
           Knobs.FILTER_RESONANCE,
+          Knobs.DETUNE,
         ]}
-        value={target}
-        dispatch={dispatch}
+        value={lfo.target}
+        dispatch={audioDispatch}
         action={updateLFOTarget}
       ></Selector>
       <Selector

@@ -6,11 +6,6 @@ const reducer = (state: LFOState, action: ActionTypes): LFOState => {
   const { type, payload } = action;
 
   switch (type) {
-    case Actions.UPDATE_LFO_TARGET:
-      return {
-        ...state,
-        target: payload,
-      };
     case Actions.UPDATE_LFO_WAVEFORM:
       return {
         ...state,
