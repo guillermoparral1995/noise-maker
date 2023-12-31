@@ -24,17 +24,19 @@ const LFOControls = () => {
         type: waveform,
         frequency: frequency,
       }),
-    [waveform, frequency],
+    [],
   );
   const lfoGainNode: GainNode = useMemo(() => context.createGain(), []);
   lfoNode.connect(lfoGainNode);
+  lfoNode.type = waveform;
+  lfoNode.frequency.value = frequency;
 
   useEffect(() => {
     lfoNode.connect(lfoGainNode);
     lfoNode.start();
 
     return () => lfoNode.disconnect();
-  }, [waveform, frequency]);
+  }, []);
 
   useEffect(() => {
     const knob = Knobs[target as keyof typeof Knobs];
