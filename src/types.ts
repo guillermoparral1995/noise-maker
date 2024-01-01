@@ -2,13 +2,13 @@ import type { ActionTypes as EnvelopeActionTypes } from './components/Controls/E
 import type { ActionTypes as GeneralControlsActionTypes } from './components/Controls/GeneralControls/store/actions';
 import type { ActionTypes as FilterActionTypes } from './components/Controls/FilterControls/store/actions';
 import type { ActionTypes as LFOActionTypes } from './components/Controls/LFOControls/store/actions';
-import { LFOTargetAction } from './providers/AudioContextProvider';
+import type { ActionTypes as LFOTargetActionTypes } from './providers/AudioContextProvider/store/actions';
 
 export type ActionTypes =
   | EnvelopeActionTypes
   | GeneralControlsActionTypes
   | FilterActionTypes
-  | LFOTargetAction
+  | LFOTargetActionTypes
   | LFOActionTypes;
 
 export enum Waveform {
@@ -24,10 +24,12 @@ export enum FilterType {
 }
 
 export enum Selectors {
-  WAVEFORM = 'waveform',
-  FILTER = 'filter',
-  LFO_TARGET = 'lfoTarget',
-  LFO_WAVEFORM = 'lfoWaveform',
+  WAVEFORM = 'WAVEFORM',
+  FILTER = 'FILTER',
+  LFO_1_TARGET = 'LFO_1_TARGET',
+  LFO_1_WAVEFORM = 'LFO_1_WAVEFORM',
+  LFO_2_TARGET = 'LFO_2_TARGET',
+  LFO_2_WAVEFORM = 'LFO_2_WAVEFORM',
 }
 
 export enum Knobs {
@@ -40,15 +42,19 @@ export enum Knobs {
   RELEASE = 'RELEASE',
   FILTER_CUTOFF = 'FILTER_CUTOFF',
   FILTER_RESONANCE = 'FILTER_RESONANCE',
-  LFO_FREQUENCY = 'LFO_FREQUENCY',
-  LFO_AMPLITUDE = 'LFO_AMPLITUDE',
+  LFO_1_FREQUENCY = 'LFO_1_FREQUENCY',
+  LFO_1_AMPLITUDE = 'LFO_1_AMPLITUDE',
+  LFO_2_FREQUENCY = 'LFO_2_FREQUENCY',
+  LFO_2_AMPLITUDE = 'LFO_2_AMPLITUDE',
 }
 
-export type LFOTarget =
+export type LFO1Target =
   | Exclude<
       Knobs,
-      | Knobs.LFO_FREQUENCY
-      | Knobs.LFO_AMPLITUDE
+      | Knobs.LFO_1_FREQUENCY
+      | Knobs.LFO_1_AMPLITUDE
+      | Knobs.LFO_2_FREQUENCY
+      | Knobs.LFO_2_AMPLITUDE
       | Knobs.ATTACK
       | Knobs.DECAY
       | Knobs.SUSTAIN
@@ -56,26 +62,17 @@ export type LFOTarget =
     >
   | 'off';
 
-export interface State {
-  volume: number;
-  pan: number;
-  waveform: Waveform;
-  attack: number;
-  decay: number;
-  sustain: number;
-  release: number;
-  filter: {
-    type: FilterType;
-    cutoff: number;
-    resonance: number;
-  };
-  lfo: {
-    target: LFOTarget;
-    waveform: Waveform;
-    frequency: number;
-    amplitude: number;
-  };
-}
+export type LFO2Target =
+  | Exclude<
+      Knobs,
+      | Knobs.LFO_2_FREQUENCY
+      | Knobs.LFO_2_AMPLITUDE
+      | Knobs.ATTACK
+      | Knobs.DECAY
+      | Knobs.SUSTAIN
+      | Knobs.RELEASE
+    >
+  | 'off';
 
 export enum Actions {
   UPDATE_VOLUME,
@@ -89,9 +86,13 @@ export enum Actions {
   UPDATE_FILTER_TYPE,
   UPDATE_FILTER_CUTOFF,
   UPDATE_FILTER_RESONANCE,
-  UPDATE_LFO_TARGET,
-  UPDATE_LFO_WAVEFORM,
-  UPDATE_LFO_FREQUENCY,
-  UPDATE_LFO_AMPLITUDE,
+  UPDATE_LFO_1_TARGET,
+  UPDATE_LFO_1_WAVEFORM,
+  UPDATE_LFO_1_FREQUENCY,
+  UPDATE_LFO_1_AMPLITUDE,
+  UPDATE_LFO_2_TARGET,
+  UPDATE_LFO_2_WAVEFORM,
+  UPDATE_LFO_2_FREQUENCY,
+  UPDATE_LFO_2_AMPLITUDE,
 }
 export type ActionBuilder<T> = (payload: T) => ActionTypes;

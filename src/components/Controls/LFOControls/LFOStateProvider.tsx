@@ -1,10 +1,10 @@
 import React, { PropsWithChildren, useReducer } from 'react';
-import initialState, { LFOState } from './store/initialState';
+import initialState, { LFOControlsState } from './store/initialState';
 import { ActionTypes } from './store/actions';
 import reducer from './store/reducer';
 
 interface LFOStateProviderValue {
-  state: LFOState;
+  state: LFOControlsState;
   dispatch: React.Dispatch<ActionTypes>;
 }
 

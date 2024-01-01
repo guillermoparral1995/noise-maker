@@ -5,12 +5,18 @@
     width: 25px;
 
     &.white {
+        &.pressed {
+            background-color: gray;
+        }
         background-color: white;
         box-shadow: 2px 2px 2px black;
         height: 100px;
     }
     
     &.black {
+        &.pressed {
+            background-color: gray;
+        }
         background-color: black;
         border-color: white;
         border-top-color: black;

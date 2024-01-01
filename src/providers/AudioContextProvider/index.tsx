@@ -4,53 +4,26 @@ import React, {
   useMemo,
   useReducer,
 } from 'react';
-import { ActionTypes, Actions, LFOTarget } from '../types';
+import { ActionTypes, LFO1Target, LFO2Target } from '../../types';
+import { reducer } from './store/reducer';
+import { initialState } from './store/initialState';
 
 interface AudioContextProviderValue {
   context: AudioContext;
   volume: GainNode;
   pan: StereoPannerNode;
   filter: BiquadFilterNode;
-  lfo: {
+  lfo1: {
     output: GainNode;
-    target: LFOTarget;
+    target: LFO1Target;
+  };
+  lfo2: {
+    output: GainNode;
+    target: LFO2Target;
   };
   dispatch: React.Dispatch<ActionTypes>;
   output: AudioNode;
 }
-
-interface AudioContextState {
-  lfoTarget: LFOTarget;
-}
-
-const initialState: AudioContextState = {
-  lfoTarget: 'off',
-};
-
-export type LFOTargetAction = {
-  type: Actions.UPDATE_LFO_TARGET;
-  payload: LFOTarget;
-};
-
-export const updateLFOTarget: (target: LFOTarget) => LFOTargetAction = (
-  target,
-) => ({
-  type: Actions.UPDATE_LFO_TARGET,
-  payload: target,
-});
-
-const reducer = (state: AudioContextState, action: ActionTypes) => {
-  const { type, payload } = action;
-  switch (type) {
-    case Actions.UPDATE_LFO_TARGET:
-      return {
-        ...state,
-        lfoTarget: payload,
-      };
-    default:
-      return state;
-  }
-};
 
 export const audioContext =
   React.createContext<AudioContextProviderValue>(undefined);
@@ -67,7 +40,8 @@ export const AudioContextProvider = ({ children }: PropsWithChildren) => {
     () => new BiquadFilterNode(context),
     [],
   );
-  const lfoOutputNode: GainNode = useMemo(() => new GainNode(context), []);
+  const lfo1OutputNode: GainNode = useMemo(() => new GainNode(context), []);
+  const lfo2OutputNode: GainNode = useMemo(() => new GainNode(context), []);
 
   useEffect(() => {
     filterNode.connect(volumeNode);
@@ -82,9 +56,13 @@ export const AudioContextProvider = ({ children }: PropsWithChildren) => {
         volume: volumeNode,
         pan: pannerNode,
         filter: filterNode,
-        lfo: {
-          output: lfoOutputNode,
-          target: state.lfoTarget,
+        lfo1: {
+          output: lfo1OutputNode,
+          target: state.lfo1Target,
+        },
+        lfo2: {
+          output: lfo2OutputNode,
+          target: state.lfo2Target,
         },
         output: filterNode,
         dispatch,

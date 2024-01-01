@@ -15,21 +15,31 @@ const FilterControls = () => {
     state: { type, cutoff, resonance },
     dispatch,
   } = useContext(filterStateContext);
-  const { filter, lfo } = useContext(audioContext);
+  const { filter, lfo1, lfo2 } = useContext(audioContext);
 
   filter.type = type;
   filter.frequency.value = cutoff;
   filter.Q.value = resonance;
 
   useEffect(() => {
-    if (lfo.target === Knobs.FILTER_CUTOFF) {
-      lfo.output.connect(filter.frequency);
+    if (lfo1.target === Knobs.FILTER_CUTOFF) {
+      lfo1.output.connect(filter.frequency);
     }
-    if (lfo.target === Knobs.FILTER_RESONANCE) {
-      lfo.output.connect(filter.Q);
+    if (lfo1.target === Knobs.FILTER_RESONANCE) {
+      lfo1.output.connect(filter.Q);
     }
-    return () => lfo.output.disconnect();
-  }, [lfo.target]);
+    return () => lfo1.output.disconnect();
+  }, [lfo1.target]);
+
+  useEffect(() => {
+    if (lfo2.target === Knobs.FILTER_CUTOFF) {
+      lfo2.output.connect(filter.frequency);
+    }
+    if (lfo2.target === Knobs.FILTER_RESONANCE) {
+      lfo2.output.connect(filter.Q);
+    }
+    return () => lfo2.output.disconnect();
+  }, [lfo2.target]);
 
   return (
     <div>

@@ -7,17 +7,27 @@ import { audioContext } from '../../../providers/AudioContextProvider';
 
 const GeneralControls = () => {
   const { state, dispatch } = useContext(generalControlsStateContext);
-  const { volume, pan, lfo } = useContext(audioContext);
+  const { volume, pan, lfo1, lfo2 } = useContext(audioContext);
 
   useEffect(() => {
-    if (lfo.target === Knobs.VOLUME) {
-      lfo.output.connect(volume.gain);
+    if (lfo1.target === Knobs.VOLUME) {
+      lfo1.output.connect(volume.gain);
     }
-    if (lfo.target === Knobs.PAN) {
-      lfo.output.connect(pan.pan);
+    if (lfo1.target === Knobs.PAN) {
+      lfo1.output.connect(pan.pan);
     }
-    return () => lfo.output.disconnect();
-  }, [lfo.target]);
+    return () => lfo1.output.disconnect();
+  }, [lfo1.target]);
+
+  useEffect(() => {
+    if (lfo2.target === Knobs.VOLUME) {
+      lfo2.output.connect(volume.gain);
+    }
+    if (lfo2.target === Knobs.PAN) {
+      lfo2.output.connect(pan.pan);
+    }
+    return () => lfo2.output.disconnect();
+  }, [lfo2.target]);
 
   volume.gain.value = state.volume;
   pan.pan.value = state.pan;

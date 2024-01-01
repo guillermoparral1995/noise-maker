@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo } from 'react';
+import React, { useContext, useEffect, useMemo, useRef } from 'react';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { midiContext } from '../../../providers/MIDIProvider';
 import { NoteMessageEvent } from 'webmidi';
@@ -14,7 +14,8 @@ const Key = ({
   identifier: string;
   frequency: number;
 }) => {
-  const { context, output, lfo } = useContext(audioContext);
+  const keyRef = useRef<HTMLButtonElement>(null);
+  const { context, output, lfo1, lfo2 } = useContext(audioContext);
   const {
     state: { attack, decay, sustain, release, detune, waveform },
   } = useContext(envelopeStateContext);
@@ -36,11 +37,18 @@ const Key = ({
   }, []);
 
   useEffect(() => {
-    if (lfo.target === Knobs.DETUNE) {
-      lfo.output.connect(oscillator.detune);
+    if (lfo1.target === Knobs.DETUNE) {
+      lfo1.output.connect(oscillator.detune);
     }
-    return () => lfo.output.disconnect();
-  }, [lfo.target]);
+    return () => lfo1.output.disconnect();
+  }, [lfo1.target]);
+
+  useEffect(() => {
+    if (lfo2.target === Knobs.DETUNE) {
+      lfo2.output.connect(oscillator.detune);
+    }
+    return () => lfo2.output.disconnect();
+  }, [lfo2.target]);
 
   useEffect(() => {
     if (midiInput) {
@@ -65,6 +73,9 @@ const Key = ({
   });
 
   const play = () => {
+    if (keyRef.current) {
+      keyRef.current.classList.add('pressed');
+    }
     // clear all pending scheduled events for envelope
     envelope.gain.cancelAndHoldAtTime(context.currentTime);
     clearTimeout(releaseTimeout);
@@ -84,6 +95,9 @@ const Key = ({
   };
 
   const stop = () => {
+    if (keyRef.current) {
+      keyRef.current.classList.remove('pressed');
+    }
     // clear pending scheduled evenets for envelope
     envelope.gain.cancelAndHoldAtTime(context.currentTime);
 
@@ -104,6 +118,7 @@ const Key = ({
 
   return (
     <button
+      ref={keyRef}
       className={`key ${
         identifier.includes('#') ? 'black' : 'white'
       } ${identifier.replace('#', 'sharp')}`}
