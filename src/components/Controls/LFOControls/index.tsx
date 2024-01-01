@@ -70,66 +70,24 @@ const LFOControls = () => {
   }, [lfo2.target]);
 
   useEffect(() => {
-    const knob = Knobs[lfo1.target as keyof typeof Knobs];
-    if (knob) {
+    if (lfo1.target !== 'off') {
+      const knob = Knobs[lfo1.target];
       const range =
         ((knobsLimits[knob].max - knobsLimits[knob].min) / 2) *
         state.lfo1.amplitude;
       lfo1.output.gain.value = range;
-      switch (lfo1.target) {
-        case Knobs.VOLUME:
-          audioDispatch(updateLFO1Target(Knobs.VOLUME));
-          break;
-        case Knobs.PAN:
-          audioDispatch(updateLFO1Target(Knobs.PAN));
-          break;
-        case Knobs.FILTER_CUTOFF:
-          audioDispatch(updateLFO1Target(Knobs.FILTER_CUTOFF));
-          break;
-        case Knobs.FILTER_RESONANCE:
-          audioDispatch(updateLFO1Target(Knobs.FILTER_RESONANCE));
-          break;
-        case Knobs.DETUNE:
-          audioDispatch(updateLFO1Target(Knobs.DETUNE));
-          break;
-        default:
-          break;
-      }
+      audioDispatch(updateLFO1Target(knob));
     }
   }, [state.lfo1.amplitude, lfo1.target]);
 
   useEffect(() => {
-    const knob = Knobs[lfo2.target as keyof typeof Knobs];
-    if (knob) {
+    if (lfo2.target !== 'off') {
+      const knob = Knobs[lfo2.target];
       const range =
         ((knobsLimits[knob].max - knobsLimits[knob].min) / 2) *
         state.lfo2.amplitude;
       lfo2.output.gain.value = range;
-      switch (lfo2.target) {
-        case Knobs.VOLUME:
-          audioDispatch(updateLFO2Target(Knobs.VOLUME));
-          break;
-        case Knobs.PAN:
-          audioDispatch(updateLFO2Target(Knobs.PAN));
-          break;
-        case Knobs.FILTER_CUTOFF:
-          audioDispatch(updateLFO2Target(Knobs.FILTER_CUTOFF));
-          break;
-        case Knobs.FILTER_RESONANCE:
-          audioDispatch(updateLFO2Target(Knobs.FILTER_RESONANCE));
-          break;
-        case Knobs.DETUNE:
-          audioDispatch(updateLFO2Target(Knobs.DETUNE));
-          break;
-        case Knobs.LFO_1_AMPLITUDE:
-          audioDispatch(updateLFO2Target(Knobs.LFO_1_AMPLITUDE));
-          break;
-        case Knobs.LFO_1_FREQUENCY:
-          audioDispatch(updateLFO2Target(Knobs.LFO_1_FREQUENCY));
-          break;
-        default:
-          break;
-      }
+      audioDispatch(updateLFO2Target(knob));
     }
   }, [state.lfo2.amplitude, lfo2.target]);
 
