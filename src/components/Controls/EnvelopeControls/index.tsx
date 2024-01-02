@@ -12,7 +12,7 @@ import {
 const EnvelopeControls = () => {
   const { state, dispatch } = useContext(envelopeStateContext);
   return (
-    <div>
+    <>
       <Knob
         label={Knobs.ATTACK}
         value={state.attack}
@@ -37,7 +37,7 @@ const EnvelopeControls = () => {
         action={updateRelease}
         dispatch={dispatch}
       ></Knob>
-    </div>
+    </>
   );
 };
 

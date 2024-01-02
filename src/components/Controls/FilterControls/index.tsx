@@ -42,7 +42,7 @@ const FilterControls_ = () => {
   }, [lfo2.target]);
 
   return (
-    <div>
+    <>
       <Selector
         label={Selectors.FILTER}
         options={[FilterType.HIGHPASS, FilterType.LOWPASS]}
@@ -62,7 +62,7 @@ const FilterControls_ = () => {
         action={updateFilterResonance}
         dispatch={dispatch}
       ></Knob>
-    </div>
+    </>
   );
 };
 

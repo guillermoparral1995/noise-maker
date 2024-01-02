@@ -17,28 +17,31 @@ const App = () => {
   }, []);
   return (
     <main>
-      <section id="controls">
-        <div className="column">
+      <section id="controls-section">
+        <div className="column" id="general-controls-column">
           <GeneralControls></GeneralControls>
         </div>
-        <div className="column">
+        <div className="column" id="filter-controls-column">
           <FilterControls></FilterControls>
         </div>
-        <div className="column">
+        <div className="column" id="lfo-controls-column">
           <LFOControls></LFOControls>
         </div>
-        <div className="column">
+        <div className="column" id="envelope-controls-column">
           <EnvelopeStateProvider>
             <EnvelopeFilterControls></EnvelopeFilterControls>
             {isMounted &&
-              createPortal(<Keyboard />, document.getElementById('keyboard'))}
+              createPortal(
+                <Keyboard />,
+                document.getElementById('keyboard-section'),
+              )}
           </EnvelopeStateProvider>
         </div>
-        <div className="column">
+        <div className="column" id="oscilloscope-column">
           <Oscilloscope></Oscilloscope>
         </div>
       </section>
-      <section id="keyboard"></section>
+      <section id="keyboard-section"></section>
     </main>
   );
 };

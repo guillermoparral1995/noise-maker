@@ -24,13 +24,15 @@ const Selector = <T extends string>({
   return (
     <>
       <label htmlFor={label}>{label}</label>
-      <Dropdown
-        id={label}
-        name={label}
-        onChange={handleSelect}
-        value={value}
-        options={options}
-      ></Dropdown>
+      <div>
+        <Dropdown
+          id={label}
+          name={label}
+          onChange={handleSelect}
+          value={value}
+          options={options}
+        ></Dropdown>
+      </div>
     </>
   );
 };

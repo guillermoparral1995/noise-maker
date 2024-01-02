@@ -15,25 +15,27 @@ const Keyboard = () => {
   const { state, dispatch } = useContext(envelopeStateContext);
   return (
     <>
-      <Selector
-        label={Selectors.WAVEFORM}
-        options={[
-          Waveform.SINE,
-          Waveform.SQUARE,
-          Waveform.SAWTOOTH,
-          Waveform.TRIANGLE,
-        ]}
-        dispatch={dispatch}
-        value={state.waveform}
-        action={updateWaveform}
-      ></Selector>
-      <Knob
-        label={Knobs.DETUNE}
-        value={state.detune}
-        action={updateDetune}
-        dispatch={dispatch}
-      ></Knob>
-      <div className="keyboard">
+      <div id="keyboard-controls" className="column">
+        <Selector
+          label={Selectors.WAVEFORM}
+          options={[
+            Waveform.SINE,
+            Waveform.SQUARE,
+            Waveform.SAWTOOTH,
+            Waveform.TRIANGLE,
+          ]}
+          dispatch={dispatch}
+          value={state.waveform}
+          action={updateWaveform}
+        ></Selector>
+        <Knob
+          label={Knobs.DETUNE}
+          value={state.detune}
+          action={updateDetune}
+          dispatch={dispatch}
+        ></Knob>
+      </div>
+      <div id="keyboard-container">
         {Object.entries(noteTable).map(([note, frequency]) => (
           <Key key={note} identifier={note} frequency={frequency}></Key>
         ))}

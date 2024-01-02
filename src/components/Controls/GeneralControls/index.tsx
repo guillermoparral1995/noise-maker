@@ -35,7 +35,7 @@ const GeneralControls_ = () => {
   volume.gain.value = state.volume;
   pan.pan.value = state.pan;
   return (
-    <div>
+    <>
       <Knob
         label={Knobs.VOLUME}
         value={state.volume}
@@ -48,7 +48,7 @@ const GeneralControls_ = () => {
         action={updatePan}
         dispatch={dispatch}
       ></Knob>
-    </div>
+    </>
   );
 };
 

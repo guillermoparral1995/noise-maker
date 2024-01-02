@@ -26,7 +26,7 @@ export const Knob = ({ label, value, action, dispatch }: KnobProps) => {
   ]);
 
   return (
-    <>
+    <div className="knob-container">
       <label htmlFor={label}>{label}</label>
       <PrimeReactKnob
         defaultValue={knobsLimits[label].default}
@@ -37,8 +37,10 @@ export const Knob = ({ label, value, action, dispatch }: KnobProps) => {
         min={knobsLimits[label].min}
         max={knobsLimits[label].max}
         step={knobsLimits[label].step ?? 0.01}
+        strokeWidth={5}
+        size={50}
       ></PrimeReactKnob>
-    </>
+    </div>
   );
 };
 
