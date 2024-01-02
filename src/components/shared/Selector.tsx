@@ -1,18 +1,17 @@
 import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
 import React from 'react';
-import { ActionBuilder, ActionTypes } from '../../types';
+import { ActionBuilder, ActionTypes, Selectors } from '../../types';
+import { selectorValues } from '../../constants/selectorsValues';
 
 interface SelectorProps<T> {
-  label: string;
-  options: Array<T>;
+  id: Selectors;
   value: T;
   dispatch: React.Dispatch<ActionTypes>;
   action: ActionBuilder<T>;
 }
 
 const Selector = <T extends string>({
-  label,
-  options,
+  id,
   value,
   dispatch,
   action,
@@ -23,14 +22,14 @@ const Selector = <T extends string>({
 
   return (
     <>
-      <label htmlFor={label}>{label}</label>
+      <label htmlFor={id}>{selectorValues[id].label}</label>
       <div>
         <Dropdown
-          id={label}
-          name={label}
+          id={id}
+          name={id}
           onChange={handleSelect}
           value={value}
-          options={options}
+          options={selectorValues[id].options}
         ></Dropdown>
       </div>
     </>

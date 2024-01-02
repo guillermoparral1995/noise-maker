@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { audioContext } from '../../../providers/AudioContextProvider';
-import { FilterType, Knobs, Selectors } from '../../../types';
+import { Knobs, Selectors } from '../../../types';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
 import { filterStateContext, FilterStateProvider } from './FilterStateProvider';
@@ -44,20 +44,19 @@ const FilterControls_ = () => {
   return (
     <>
       <Selector
-        label={Selectors.FILTER}
-        options={[FilterType.HIGHPASS, FilterType.LOWPASS]}
+        id={Selectors.FILTER}
         value={type}
         dispatch={dispatch}
         action={updateFilterType}
       ></Selector>
       <Knob
-        label={Knobs.FILTER_CUTOFF}
+        id={Knobs.FILTER_CUTOFF}
         value={cutoff}
         action={updateFilterCutoff}
         dispatch={dispatch}
       ></Knob>
       <Knob
-        label={Knobs.FILTER_RESONANCE}
+        id={Knobs.FILTER_RESONANCE}
         value={resonance}
         action={updateFilterResonance}
         dispatch={dispatch}

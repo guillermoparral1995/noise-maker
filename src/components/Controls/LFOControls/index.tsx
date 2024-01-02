@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useMemo } from 'react';
-import { knobsLimits } from '../../../constants/knobsLimits';
+import { knobsValues } from '../../../constants/knobsValues';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import {
   updateLFO1Target,
   updateLFO2Target,
 } from '../../../providers/AudioContextProvider/store/actions';
-import { Knobs, Selectors, Waveform } from '../../../types';
+import { Knobs, Selectors } from '../../../types';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
 import { lfoStateContext, LFOStateProvider } from './LFOStateProvider';
@@ -74,7 +74,7 @@ const LFOControls_ = () => {
     if (lfo1.target !== 'off') {
       const knob = Knobs[lfo1.target];
       const range =
-        ((knobsLimits[knob].max - knobsLimits[knob].min) / 2) *
+        ((knobsValues[knob].max - knobsValues[knob].min) / 2) *
         state.lfo1.amplitude;
       lfo1.output.gain.value = range;
       audioDispatch(updateLFO1Target(knob));
@@ -85,7 +85,7 @@ const LFOControls_ = () => {
     if (lfo2.target !== 'off') {
       const knob = Knobs[lfo2.target];
       const range =
-        ((knobsLimits[knob].max - knobsLimits[knob].min) / 2) *
+        ((knobsValues[knob].max - knobsValues[knob].min) / 2) *
         state.lfo2.amplitude;
       lfo2.output.gain.value = range;
       audioDispatch(updateLFO2Target(knob));
@@ -96,39 +96,25 @@ const LFOControls_ = () => {
     <>
       <div className="lfo-column">
         <Selector
-          label={Selectors.LFO_1_TARGET}
-          options={[
-            'off',
-            Knobs.VOLUME,
-            Knobs.PAN,
-            Knobs.FILTER_CUTOFF,
-            Knobs.FILTER_RESONANCE,
-            Knobs.DETUNE,
-          ]}
+          id={Selectors.LFO_1_TARGET}
           value={lfo1.target}
           dispatch={audioDispatch}
           action={updateLFO1Target}
         ></Selector>
         <Selector
-          label={Selectors.LFO_1_WAVEFORM}
-          options={[
-            Waveform.SINE,
-            Waveform.SQUARE,
-            Waveform.SAWTOOTH,
-            Waveform.TRIANGLE,
-          ]}
+          id={Selectors.LFO_1_WAVEFORM}
           value={state.lfo1.waveform}
           dispatch={dispatch}
           action={updateLFO1Waveform}
         ></Selector>
         <Knob
-          label={Knobs.LFO_1_FREQUENCY}
+          id={Knobs.LFO_1_FREQUENCY}
           value={state.lfo1.frequency}
           action={updateLFO1Frequency}
           dispatch={dispatch}
         ></Knob>
         <Knob
-          label={Knobs.LFO_1_AMPLITUDE}
+          id={Knobs.LFO_1_AMPLITUDE}
           value={state.lfo1.amplitude}
           action={updateLFO1Amplitude}
           dispatch={dispatch}
@@ -136,41 +122,25 @@ const LFOControls_ = () => {
       </div>
       <div className="lfo-column">
         <Selector
-          label={Selectors.LFO_2_TARGET}
-          options={[
-            'off',
-            Knobs.VOLUME,
-            Knobs.PAN,
-            Knobs.FILTER_CUTOFF,
-            Knobs.FILTER_RESONANCE,
-            Knobs.DETUNE,
-            Knobs.LFO_1_AMPLITUDE,
-            Knobs.LFO_1_FREQUENCY,
-          ]}
+          id={Selectors.LFO_2_TARGET}
           value={lfo2.target}
           dispatch={audioDispatch}
           action={updateLFO2Target}
         ></Selector>
         <Selector
-          label={Selectors.LFO_2_WAVEFORM}
-          options={[
-            Waveform.SINE,
-            Waveform.SQUARE,
-            Waveform.SAWTOOTH,
-            Waveform.TRIANGLE,
-          ]}
+          id={Selectors.LFO_2_WAVEFORM}
           value={state.lfo2.waveform}
           dispatch={dispatch}
           action={updateLFO2Waveform}
         ></Selector>
         <Knob
-          label={Knobs.LFO_2_FREQUENCY}
+          id={Knobs.LFO_2_FREQUENCY}
           value={state.lfo2.frequency}
           action={updateLFO2Frequency}
           dispatch={dispatch}
         ></Knob>
         <Knob
-          label={Knobs.LFO_2_AMPLITUDE}
+          id={Knobs.LFO_2_AMPLITUDE}
           value={state.lfo2.amplitude}
           action={updateLFO2Amplitude}
           dispatch={dispatch}

@@ -1,17 +1,17 @@
 import { throttle } from 'lodash';
 import { KnobChangeEvent, Knob as PrimeReactKnob } from 'primereact/knob';
 import React, { useCallback, useEffect } from 'react';
-import { knobsLimits } from '../../constants/knobsLimits';
+import { knobsValues } from '../../constants/knobsValues';
 import type { ActionBuilder, ActionTypes, Knobs } from '../../types';
 
 interface KnobProps {
-  label: Knobs;
+  id: Knobs;
   value: number;
   dispatch: React.Dispatch<ActionTypes>;
   action: ActionBuilder<number>;
 }
 
-export const Knob = ({ label, value, action, dispatch }: KnobProps) => {
+export const Knob = ({ id, value, action, dispatch }: KnobProps) => {
   useEffect(() => {
     return () => throttledHandleChange.cancel();
   }, []);
@@ -27,16 +27,16 @@ export const Knob = ({ label, value, action, dispatch }: KnobProps) => {
 
   return (
     <div className="knob-container">
-      <label htmlFor={label}>{label}</label>
+      <label htmlFor={id}>{knobsValues[id].label}</label>
       <PrimeReactKnob
-        defaultValue={knobsLimits[label].default}
+        defaultValue={knobsValues[id].default}
         value={value}
-        id={label}
-        name={label}
+        id={id}
+        name={id}
         onChange={throttledHandleChange}
-        min={knobsLimits[label].min}
-        max={knobsLimits[label].max}
-        step={knobsLimits[label].step ?? 0.01}
+        min={knobsValues[id].min}
+        max={knobsValues[id].max}
+        step={knobsValues[id].step ?? 0.01}
         strokeWidth={5}
         size={50}
       ></PrimeReactKnob>

@@ -37,13 +37,13 @@ const GeneralControls_ = () => {
   return (
     <>
       <Knob
-        label={Knobs.VOLUME}
+        id={Knobs.VOLUME}
         value={state.volume}
         action={updateVolume}
         dispatch={dispatch}
       ></Knob>
       <Knob
-        label={Knobs.PAN}
+        id={Knobs.PAN}
         value={state.pan}
         action={updatePan}
         dispatch={dispatch}

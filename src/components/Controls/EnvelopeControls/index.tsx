@@ -14,25 +14,25 @@ const EnvelopeControls = () => {
   return (
     <>
       <Knob
-        label={Knobs.ATTACK}
+        id={Knobs.ATTACK}
         value={state.attack}
         action={updateAttack}
         dispatch={dispatch}
       ></Knob>
       <Knob
-        label={Knobs.DECAY}
+        id={Knobs.DECAY}
         value={state.decay}
         action={updateDecay}
         dispatch={dispatch}
       ></Knob>
       <Knob
-        label={Knobs.SUSTAIN}
+        id={Knobs.SUSTAIN}
         value={state.sustain}
         action={updateSustain}
         dispatch={dispatch}
       ></Knob>
       <Knob
-        label={Knobs.RELEASE}
+        id={Knobs.RELEASE}
         value={state.release}
         action={updateRelease}
         dispatch={dispatch}

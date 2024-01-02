@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import noteTable from '../../constants/noteTable';
-import { Knobs, Selectors, Waveform } from '../../types';
+import { Knobs, Selectors } from '../../types';
 import { envelopeStateContext } from '../Controls/EnvelopeControls/EnvelopeStateProvider';
 import {
   updateDetune,
@@ -17,19 +17,13 @@ const Keyboard = () => {
     <>
       <div id="keyboard-controls" className="column">
         <Selector
-          label={Selectors.WAVEFORM}
-          options={[
-            Waveform.SINE,
-            Waveform.SQUARE,
-            Waveform.SAWTOOTH,
-            Waveform.TRIANGLE,
-          ]}
+          id={Selectors.WAVEFORM}
           dispatch={dispatch}
           value={state.waveform}
           action={updateWaveform}
         ></Selector>
         <Knob
-          label={Knobs.DETUNE}
+          id={Knobs.DETUNE}
           value={state.detune}
           action={updateDetune}
           dispatch={dispatch}
