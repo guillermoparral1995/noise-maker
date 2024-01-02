@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useReducer } from 'react';
-import initialState, { EnvelopeState } from './store/initialState';
 import { ActionTypes } from './store/actions';
+import initialState, { EnvelopeState } from './store/initialState';
 import reducer from './store/reducer';
 
 interface EnvelopeStateProviderValue {

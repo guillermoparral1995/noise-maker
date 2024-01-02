@@ -1,11 +1,14 @@
 import React, { useContext, useEffect } from 'react';
-import Knob from '../../shared/Knob';
-import { updatePan, updateVolume } from './store/actions';
-import { Knobs } from '../../../types';
-import { generalControlsStateContext } from './GeneralControlsStateProvider';
 import { audioContext } from '../../../providers/AudioContextProvider';
+import { Knobs } from '../../../types';
+import Knob from '../../shared/Knob';
+import {
+  generalControlsStateContext,
+  GeneralControlsStateProvider,
+} from './GeneralControlsStateProvider';
+import { updatePan, updateVolume } from './store/actions';
 
-const GeneralControls = () => {
+const GeneralControls_ = () => {
   const { state, dispatch } = useContext(generalControlsStateContext);
   const { volume, pan, lfo1, lfo2 } = useContext(audioContext);
 
@@ -49,4 +52,8 @@ const GeneralControls = () => {
   );
 };
 
-export default GeneralControls;
+export default () => (
+  <GeneralControlsStateProvider>
+    <GeneralControls_></GeneralControls_>
+  </GeneralControlsStateProvider>
+);

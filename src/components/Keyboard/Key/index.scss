@@ -1,70 +1,70 @@
 .key {
-    border: 1px solid black;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-    width: 25px;
+  border: 1px solid black;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  width: 25px;
 
-    &.white {
-        &.pressed {
-            background-color: gray;
-        }
-        background-color: white;
-        box-shadow: 2px 2px 2px black;
-        height: 100px;
+  &.white {
+    &.pressed {
+      background-color: gray;
     }
-    
-    &.black {
-        &.pressed {
-            background-color: gray;
-        }
-        background-color: black;
-        border-color: white;
-        border-top-color: black;
+    background-color: white;
+    box-shadow: 2px 2px 2px black;
+    height: 100px;
+  }
 
-        box-shadow: 2px 2px 2px black;
-        color: white;
-        height: 60px;
-        position: absolute;
-        z-index: 1;
-
-        &.Csharp3 {
-            left: 12px;
-        }
-
-        &.Dsharp3 {
-            left: 37px;
-        }
-
-        &.Fsharp3 {
-            left: 87px;
-        }
-
-        &.Gsharp3 {
-            left: 112px;
-        }
-
-        &.Asharp3 {
-            left: 137px;
-        }
-
-        &.Csharp4 {
-            left: 187px;
-        }
-
-        &.Dsharp4 {
-            left: 212px;
-        }
-
-        &.Fsharp4 {
-            left: 262px;
-        }
-
-        &.Gsharp4 {
-            left: 287px;
-        }
-
-        &.Asharp4 {
-            left: 312px;
-        }
+  &.black {
+    &.pressed {
+      background-color: gray;
     }
+    background-color: black;
+    border-color: white;
+    border-top-color: black;
+
+    box-shadow: 2px 2px 2px black;
+    color: white;
+    height: 60px;
+    position: absolute;
+    z-index: 1;
+
+    &.Csharp3 {
+      left: 12px;
+    }
+
+    &.Dsharp3 {
+      left: 37px;
+    }
+
+    &.Fsharp3 {
+      left: 87px;
+    }
+
+    &.Gsharp3 {
+      left: 112px;
+    }
+
+    &.Asharp3 {
+      left: 137px;
+    }
+
+    &.Csharp4 {
+      left: 187px;
+    }
+
+    &.Dsharp4 {
+      left: 212px;
+    }
+
+    &.Fsharp4 {
+      left: 262px;
+    }
+
+    &.Gsharp4 {
+      left: 287px;
+    }
+
+    &.Asharp4 {
+      left: 312px;
+    }
+  }
 }

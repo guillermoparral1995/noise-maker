@@ -1,3 +1,4 @@
+import { PrimeReactProvider } from 'primereact/api';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
@@ -10,10 +11,12 @@ navigator.mediaDevices.getUserMedia({ audio: true }).then(() => {
   const root = createRoot(appContainer);
 
   root.render(
-    <AudioContextProvider>
-      <MIDIProvider>
-        <App />
-      </MIDIProvider>
-    </AudioContextProvider>,
+    <PrimeReactProvider>
+      <AudioContextProvider>
+        <MIDIProvider>
+          <App />
+        </MIDIProvider>
+      </AudioContextProvider>
+    </PrimeReactProvider>,
   );
 });

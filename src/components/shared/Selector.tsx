@@ -1,4 +1,5 @@
-import React, { BaseSyntheticEvent } from 'react';
+import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
+import React from 'react';
 import { ActionBuilder, ActionTypes } from '../../types';
 
 interface SelectorProps<T> {
@@ -16,20 +17,20 @@ const Selector = <T extends string>({
   dispatch,
   action,
 }: SelectorProps<T>) => {
-  const handleSelect = (e: BaseSyntheticEvent) => {
+  const handleSelect = (e: DropdownChangeEvent) => {
     dispatch(action(e.target.value));
   };
 
   return (
     <>
       <label htmlFor={label}>{label}</label>
-      <select id={label} name={label} onChange={handleSelect} value={value}>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
+      <Dropdown
+        id={label}
+        name={label}
+        onChange={handleSelect}
+        value={value}
+        options={options}
+      ></Dropdown>
     </>
   );
 };

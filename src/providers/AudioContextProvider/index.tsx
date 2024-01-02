@@ -5,8 +5,8 @@ import React, {
   useReducer,
 } from 'react';
 import { ActionTypes, LFO1Target, LFO2Target } from '../../types';
-import { reducer } from './store/reducer';
 import { initialState } from './store/initialState';
+import { reducer } from './store/reducer';
 
 interface AudioContextProviderValue {
   context: AudioContext;

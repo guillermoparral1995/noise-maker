@@ -1,6 +1,4 @@
 import React, { useContext } from 'react';
-import Key from './Key';
-import Selector from '../shared/Selector';
 import noteTable from '../../constants/noteTable';
 import { Knobs, Selectors, Waveform } from '../../types';
 import { envelopeStateContext } from '../Controls/EnvelopeControls/EnvelopeStateProvider';
@@ -9,7 +7,8 @@ import {
   updateWaveform,
 } from '../Controls/EnvelopeControls/store/actions';
 import Knob from '../shared/Knob';
-
+import Selector from '../shared/Selector';
+import Key from './Key';
 import './index.scss';
 
 const Keyboard = () => {

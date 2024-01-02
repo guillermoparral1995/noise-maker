@@ -1,5 +1,14 @@
 import React, { useContext, useEffect, useMemo } from 'react';
+import { knobsLimits } from '../../../constants/knobsLimits';
+import { audioContext } from '../../../providers/AudioContextProvider';
+import {
+  updateLFO1Target,
+  updateLFO2Target,
+} from '../../../providers/AudioContextProvider/store/actions';
+import { Knobs, Selectors, Waveform } from '../../../types';
+import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
+import { lfoStateContext, LFOStateProvider } from './LFOStateProvider';
 import {
   updateLFO1Amplitude,
   updateLFO1Frequency,
@@ -8,17 +17,9 @@ import {
   updateLFO2Frequency,
   updateLFO2Waveform,
 } from './store/actions';
-import { Knobs, Selectors, Waveform } from '../../../types';
-import Knob from '../../shared/Knob';
-import { lfoStateContext } from './LFOStateProvider';
-import { audioContext } from '../../../providers/AudioContextProvider';
-import { knobsLimits } from '../../../constants/knobsLimits';
-import {
-  updateLFO1Target,
-  updateLFO2Target,
-} from '../../../providers/AudioContextProvider/store/actions';
+import './index.scss';
 
-const LFOControls = () => {
+const LFOControls_ = () => {
   const { state, dispatch } = useContext(lfoStateContext);
   const {
     context,
@@ -92,87 +93,95 @@ const LFOControls = () => {
   }, [state.lfo2.amplitude, lfo2.target]);
 
   return (
-    <div>
-      <Selector
-        label={Selectors.LFO_1_TARGET}
-        options={[
-          'off',
-          Knobs.VOLUME,
-          Knobs.PAN,
-          Knobs.FILTER_CUTOFF,
-          Knobs.FILTER_RESONANCE,
-          Knobs.DETUNE,
-        ]}
-        value={lfo1.target}
-        dispatch={audioDispatch}
-        action={updateLFO1Target}
-      ></Selector>
-      <Selector
-        label={Selectors.LFO_1_WAVEFORM}
-        options={[
-          Waveform.SINE,
-          Waveform.SQUARE,
-          Waveform.SAWTOOTH,
-          Waveform.TRIANGLE,
-        ]}
-        value={state.lfo1.waveform}
-        dispatch={dispatch}
-        action={updateLFO1Waveform}
-      ></Selector>
-      <Knob
-        label={Knobs.LFO_1_FREQUENCY}
-        value={state.lfo1.frequency}
-        action={updateLFO1Frequency}
-        dispatch={dispatch}
-      ></Knob>
-      <Knob
-        label={Knobs.LFO_1_AMPLITUDE}
-        value={state.lfo1.amplitude}
-        action={updateLFO1Amplitude}
-        dispatch={dispatch}
-      ></Knob>
-      <Selector
-        label={Selectors.LFO_2_TARGET}
-        options={[
-          'off',
-          Knobs.VOLUME,
-          Knobs.PAN,
-          Knobs.FILTER_CUTOFF,
-          Knobs.FILTER_RESONANCE,
-          Knobs.DETUNE,
-          Knobs.LFO_1_AMPLITUDE,
-          Knobs.LFO_1_FREQUENCY,
-        ]}
-        value={lfo2.target}
-        dispatch={audioDispatch}
-        action={updateLFO2Target}
-      ></Selector>
-      <Selector
-        label={Selectors.LFO_2_WAVEFORM}
-        options={[
-          Waveform.SINE,
-          Waveform.SQUARE,
-          Waveform.SAWTOOTH,
-          Waveform.TRIANGLE,
-        ]}
-        value={state.lfo2.waveform}
-        dispatch={dispatch}
-        action={updateLFO2Waveform}
-      ></Selector>
-      <Knob
-        label={Knobs.LFO_2_FREQUENCY}
-        value={state.lfo2.frequency}
-        action={updateLFO2Frequency}
-        dispatch={dispatch}
-      ></Knob>
-      <Knob
-        label={Knobs.LFO_2_AMPLITUDE}
-        value={state.lfo2.amplitude}
-        action={updateLFO2Amplitude}
-        dispatch={dispatch}
-      ></Knob>
-    </div>
+    <>
+      <div className="lfo-column">
+        <Selector
+          label={Selectors.LFO_1_TARGET}
+          options={[
+            'off',
+            Knobs.VOLUME,
+            Knobs.PAN,
+            Knobs.FILTER_CUTOFF,
+            Knobs.FILTER_RESONANCE,
+            Knobs.DETUNE,
+          ]}
+          value={lfo1.target}
+          dispatch={audioDispatch}
+          action={updateLFO1Target}
+        ></Selector>
+        <Selector
+          label={Selectors.LFO_1_WAVEFORM}
+          options={[
+            Waveform.SINE,
+            Waveform.SQUARE,
+            Waveform.SAWTOOTH,
+            Waveform.TRIANGLE,
+          ]}
+          value={state.lfo1.waveform}
+          dispatch={dispatch}
+          action={updateLFO1Waveform}
+        ></Selector>
+        <Knob
+          label={Knobs.LFO_1_FREQUENCY}
+          value={state.lfo1.frequency}
+          action={updateLFO1Frequency}
+          dispatch={dispatch}
+        ></Knob>
+        <Knob
+          label={Knobs.LFO_1_AMPLITUDE}
+          value={state.lfo1.amplitude}
+          action={updateLFO1Amplitude}
+          dispatch={dispatch}
+        ></Knob>
+      </div>
+      <div className="lfo-column">
+        <Selector
+          label={Selectors.LFO_2_TARGET}
+          options={[
+            'off',
+            Knobs.VOLUME,
+            Knobs.PAN,
+            Knobs.FILTER_CUTOFF,
+            Knobs.FILTER_RESONANCE,
+            Knobs.DETUNE,
+            Knobs.LFO_1_AMPLITUDE,
+            Knobs.LFO_1_FREQUENCY,
+          ]}
+          value={lfo2.target}
+          dispatch={audioDispatch}
+          action={updateLFO2Target}
+        ></Selector>
+        <Selector
+          label={Selectors.LFO_2_WAVEFORM}
+          options={[
+            Waveform.SINE,
+            Waveform.SQUARE,
+            Waveform.SAWTOOTH,
+            Waveform.TRIANGLE,
+          ]}
+          value={state.lfo2.waveform}
+          dispatch={dispatch}
+          action={updateLFO2Waveform}
+        ></Selector>
+        <Knob
+          label={Knobs.LFO_2_FREQUENCY}
+          value={state.lfo2.frequency}
+          action={updateLFO2Frequency}
+          dispatch={dispatch}
+        ></Knob>
+        <Knob
+          label={Knobs.LFO_2_AMPLITUDE}
+          value={state.lfo2.amplitude}
+          action={updateLFO2Amplitude}
+          dispatch={dispatch}
+        ></Knob>
+      </div>
+    </>
   );
 };
 
-export default LFOControls;
+export default () => (
+  <LFOStateProvider>
+    <LFOControls_></LFOControls_>
+  </LFOStateProvider>
+);

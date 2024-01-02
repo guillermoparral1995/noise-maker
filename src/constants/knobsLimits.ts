@@ -4,6 +4,7 @@ interface KnobLimit {
   min: number;
   max: number;
   default: number;
+  step?: number;
 }
 
 export const knobsLimits: Record<Knobs, KnobLimit> = {
@@ -46,11 +47,13 @@ export const knobsLimits: Record<Knobs, KnobLimit> = {
     min: 10,
     max: 5000,
     default: 350,
+    step: 1,
   },
   [Knobs.FILTER_RESONANCE]: {
     min: 0.0001,
     max: 50,
     default: 1,
+    step: 0.1,
   },
   [Knobs.LFO_1_FREQUENCY]: {
     min: 0.2,

@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useMemo, useRef } from 'react';
+import { NoteMessageEvent } from 'webmidi';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { midiContext } from '../../../providers/MIDIProvider';
-import { NoteMessageEvent } from 'webmidi';
 import { envelopeStateContext } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
-
 import './index.scss';
 import { Knobs } from '../../../types';
 

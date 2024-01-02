@@ -1,7 +1,8 @@
-import React, { BaseSyntheticEvent, useCallback, useEffect } from 'react';
-import type { ActionBuilder, ActionTypes, Knobs } from '../../types';
 import { throttle } from 'lodash';
+import { KnobChangeEvent, Knob as PrimeReactKnob } from 'primereact/knob';
+import React, { useCallback, useEffect } from 'react';
 import { knobsLimits } from '../../constants/knobsLimits';
+import type { ActionBuilder, ActionTypes, Knobs } from '../../types';
 
 interface KnobProps {
   label: Knobs;
@@ -15,9 +16,8 @@ export const Knob = ({ label, value, action, dispatch }: KnobProps) => {
     return () => throttledHandleChange.cancel();
   }, []);
 
-  const handleChange = (e: BaseSyntheticEvent) => {
-    // range inputs return value as string even if params are specified as numbers
-    dispatch(action(parseFloat(e.target.value)));
+  const handleChange = (e: KnobChangeEvent) => {
+    dispatch(action(Math.round(100 * e.value) / 100));
   };
 
   const throttledHandleChange = useCallback(throttle(handleChange, 50), [
@@ -28,19 +28,16 @@ export const Knob = ({ label, value, action, dispatch }: KnobProps) => {
   return (
     <>
       <label htmlFor={label}>{label}</label>
-      <div>
-        <input
-          type="range"
-          defaultValue={knobsLimits[label].default}
-          id={label}
-          name={label}
-          onChange={throttledHandleChange}
-          min={knobsLimits[label].min}
-          max={knobsLimits[label].max}
-          step={0.01}
-        ></input>
-        <span>{value}</span>
-      </div>
+      <PrimeReactKnob
+        defaultValue={knobsLimits[label].default}
+        value={value}
+        id={label}
+        name={label}
+        onChange={throttledHandleChange}
+        min={knobsLimits[label].min}
+        max={knobsLimits[label].max}
+        step={knobsLimits[label].step ?? 0.01}
+      ></PrimeReactKnob>
     </>
   );
 };

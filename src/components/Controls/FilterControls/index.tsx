@@ -1,16 +1,16 @@
 import React, { useContext, useEffect } from 'react';
+import { audioContext } from '../../../providers/AudioContextProvider';
+import { FilterType, Knobs, Selectors } from '../../../types';
 import Knob from '../../shared/Knob';
+import Selector from '../../shared/Selector';
+import { filterStateContext, FilterStateProvider } from './FilterStateProvider';
 import {
   updateFilterCutoff,
   updateFilterResonance,
   updateFilterType,
 } from './store/actions';
-import Selector from '../../shared/Selector';
-import { FilterType, Knobs, Selectors } from '../../../types';
-import { filterStateContext } from './FilterStateProvider';
-import { audioContext } from '../../../providers/AudioContextProvider';
 
-const FilterControls = () => {
+const FilterControls_ = () => {
   const {
     state: { type, cutoff, resonance },
     dispatch,
@@ -66,4 +66,8 @@ const FilterControls = () => {
   );
 };
 
-export default FilterControls;
+export default () => (
+  <FilterStateProvider>
+    <FilterControls_></FilterControls_>
+  </FilterStateProvider>
+);

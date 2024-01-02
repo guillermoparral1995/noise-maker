@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import Knob from '../../shared/Knob';
 import { Knobs } from '../../../types';
+import Knob from '../../shared/Knob';
 import { envelopeStateContext } from './EnvelopeStateProvider';
 import {
   updateAttack,

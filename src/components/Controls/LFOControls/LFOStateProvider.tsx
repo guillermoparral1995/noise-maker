@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useReducer } from 'react';
-import initialState, { LFOControlsState } from './store/initialState';
 import { ActionTypes } from './store/actions';
+import initialState, { LFOControlsState } from './store/initialState';
 import reducer from './store/reducer';
 
 interface LFOStateProviderValue {
