@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useEffect, useState } from 'react';
-import { WebMidi } from 'webmidi';
+import { ControlChangeMessageEvent, WebMidi } from 'webmidi';
 
 export const midiContext = React.createContext(undefined);
 
@@ -10,6 +10,10 @@ export const MIDIProvider = ({ children }: PropsWithChildren) => {
   const enableMidi = async () => {
     try {
       await WebMidi.enable({ sysex: true });
+      const input = WebMidi.getInputByName('Arturia MiniLab mkII');
+      input.addListener('controlchange', (e: ControlChangeMessageEvent) => {
+        console.log(e);
+      });
       setLoading(false);
     } catch (e) {
       console.error('Could not start Web MIDI', e);
