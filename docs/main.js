@@ -6105,8 +6105,11 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.lfo-column {
-  display: inline-block;
-}`, "",{"version":3,"sources":["webpack://./src/components/Controls/LFOControls/index.scss"],"names":[],"mappings":"AAAA;EACE,qBAAA;AACF","sourcesContent":[".lfo-column {\n  display: inline-block;\n}\n"],"sourceRoot":""}]);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
+}`, "",{"version":3,"sources":["webpack://./src/components/Controls/LFOControls/index.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,sBAAA;EACA,SAAA;EACA,6BAAA;AACF","sourcesContent":[".lfo-column {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  justify-content: space-around;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6137,12 +6140,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.key {
   border: 1px solid black;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
-  width: 25px;
+  width: 3em;
 }
 .key.white {
   background-color: white;
   box-shadow: 2px 2px 2px black;
-  height: 100px;
+  height: 12em;
 }
 .key.white.pressed {
   background-color: gray;
@@ -6153,7 +6156,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.key {
   border-top-color: black;
   box-shadow: 2px 2px 2px black;
   color: white;
-  height: 60px;
+  height: 7.2em;
   position: absolute;
   z-index: 1;
 }
@@ -6161,35 +6164,35 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.key {
   background-color: gray;
 }
 .key.black.Csharp3 {
-  left: 12px;
+  left: 1.5em;
 }
 .key.black.Dsharp3 {
-  left: 37px;
+  left: 4.5em;
 }
 .key.black.Fsharp3 {
-  left: 87px;
+  left: 10.5em;
 }
 .key.black.Gsharp3 {
-  left: 112px;
+  left: 13.5em;
 }
 .key.black.Asharp3 {
-  left: 137px;
+  left: 16.5em;
 }
 .key.black.Csharp4 {
-  left: 187px;
+  left: 22.5em;
 }
 .key.black.Dsharp4 {
-  left: 212px;
+  left: 25.5em;
 }
 .key.black.Fsharp4 {
-  left: 262px;
+  left: 31.5em;
 }
 .key.black.Gsharp4 {
-  left: 287px;
+  left: 34.5em;
 }
 .key.black.Asharp4 {
-  left: 312px;
-}`, "",{"version":3,"sources":["webpack://./src/components/Keyboard/Key/index.scss"],"names":[],"mappings":"AAAA;EACE,uBAAA;EACA,8BAAA;EACA,+BAAA;EACA,WAAA;AACF;AACE;EAIE,uBAAA;EACA,6BAAA;EACA,aAAA;AAFJ;AAHI;EACE,sBAAA;AAKN;AAEE;EAIE,uBAAA;EACA,mBAAA;EACA,uBAAA;EAEA,6BAAA;EACA,YAAA;EACA,YAAA;EACA,kBAAA;EACA,UAAA;AAJJ;AAPI;EACE,sBAAA;AASN;AAGI;EACE,UAAA;AADN;AAII;EACE,UAAA;AAFN;AAKI;EACE,UAAA;AAHN;AAMI;EACE,WAAA;AAJN;AAOI;EACE,WAAA;AALN;AAQI;EACE,WAAA;AANN;AASI;EACE,WAAA;AAPN;AAUI;EACE,WAAA;AARN;AAWI;EACE,WAAA;AATN;AAYI;EACE,WAAA;AAVN","sourcesContent":[".key {\n  border: 1px solid black;\n  border-bottom-left-radius: 2px;\n  border-bottom-right-radius: 2px;\n  width: 25px;\n\n  &.white {\n    &.pressed {\n      background-color: gray;\n    }\n    background-color: white;\n    box-shadow: 2px 2px 2px black;\n    height: 100px;\n  }\n\n  &.black {\n    &.pressed {\n      background-color: gray;\n    }\n    background-color: black;\n    border-color: white;\n    border-top-color: black;\n\n    box-shadow: 2px 2px 2px black;\n    color: white;\n    height: 60px;\n    position: absolute;\n    z-index: 1;\n\n    &.Csharp3 {\n      left: 12px;\n    }\n\n    &.Dsharp3 {\n      left: 37px;\n    }\n\n    &.Fsharp3 {\n      left: 87px;\n    }\n\n    &.Gsharp3 {\n      left: 112px;\n    }\n\n    &.Asharp3 {\n      left: 137px;\n    }\n\n    &.Csharp4 {\n      left: 187px;\n    }\n\n    &.Dsharp4 {\n      left: 212px;\n    }\n\n    &.Fsharp4 {\n      left: 262px;\n    }\n\n    &.Gsharp4 {\n      left: 287px;\n    }\n\n    &.Asharp4 {\n      left: 312px;\n    }\n  }\n}\n"],"sourceRoot":""}]);
+  left: 37.5em;
+}`, "",{"version":3,"sources":["webpack://./src/components/Keyboard/Key/index.scss"],"names":[],"mappings":"AAAA;EACE,uBAAA;EACA,8BAAA;EACA,+BAAA;EACA,UAAA;AACF;AACE;EAIE,uBAAA;EACA,6BAAA;EACA,YAAA;AAFJ;AAHI;EACE,sBAAA;AAKN;AAEE;EAIE,uBAAA;EACA,mBAAA;EACA,uBAAA;EAEA,6BAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;EACA,UAAA;AAJJ;AAPI;EACE,sBAAA;AASN;AAGI;EACE,WAAA;AADN;AAII;EACE,WAAA;AAFN;AAKI;EACE,YAAA;AAHN;AAMI;EACE,YAAA;AAJN;AAOI;EACE,YAAA;AALN;AAQI;EACE,YAAA;AANN;AASI;EACE,YAAA;AAPN;AAUI;EACE,YAAA;AARN;AAWI;EACE,YAAA;AATN;AAYI;EACE,YAAA;AAVN","sourcesContent":[".key {\n  border: 1px solid black;\n  border-bottom-left-radius: 2px;\n  border-bottom-right-radius: 2px;\n  width: 3em;\n\n  &.white {\n    &.pressed {\n      background-color: gray;\n    }\n    background-color: white;\n    box-shadow: 2px 2px 2px black;\n    height: 12em;\n  }\n\n  &.black {\n    &.pressed {\n      background-color: gray;\n    }\n    background-color: black;\n    border-color: white;\n    border-top-color: black;\n\n    box-shadow: 2px 2px 2px black;\n    color: white;\n    height: 7.2em;\n    position: absolute;\n    z-index: 1;\n\n    &.Csharp3 {\n      left: 1.5em;\n    }\n\n    &.Dsharp3 {\n      left: 4.5em;\n    }\n\n    &.Fsharp3 {\n      left: 10.5em;\n    }\n\n    &.Gsharp3 {\n      left: 13.5em;\n    }\n\n    &.Asharp3 {\n      left: 16.5em;\n    }\n\n    &.Csharp4 {\n      left: 22.5em;\n    }\n\n    &.Dsharp4 {\n      left: 25.5em;\n    }\n\n    &.Fsharp4 {\n      left: 31.5em;\n    }\n\n    &.Gsharp4 {\n      left: 34.5em;\n    }\n\n    &.Asharp4 {\n      left: 37.5em;\n    }\n  }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6216,9 +6219,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.keyboard {
+___CSS_LOADER_EXPORT___.push([module.id, `#keyboard-container {
   position: relative;
-}`, "",{"version":3,"sources":["webpack://./src/components/Keyboard/index.scss"],"names":[],"mappings":"AAAA;EACE,kBAAA;AACF","sourcesContent":[".keyboard {\n  position: relative;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/Keyboard/index.scss"],"names":[],"mappings":"AAAA;EACE,kBAAA;AACF","sourcesContent":["#keyboard-container {\n  position: relative;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6245,9 +6248,37 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `#controls {
+___CSS_LOADER_EXPORT___.push([module.id, `main {
+  height: 100vh;
   display: flex;
-}`, "",{"version":3,"sources":["webpack://./src/index.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;AACF","sourcesContent":["#controls {\n  display: flex;\n}\n"],"sourceRoot":""}]);
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 40px;
+}
+
+#controls-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+#keyboard-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.column#lfo-controls-column {
+  flex-direction: row;
+}`, "",{"version":3,"sources":["webpack://./src/index.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,aAAA;EACA,8BAAA;EACA,sBAAA;EACA,aAAA;AACJ;;AAEA;EACI,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,kBAAA;AACJ;;AAEA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACA,SAAA;AACJ;;AAEA;EACI,aAAA;EACA,sBAAA;EACA,SAAA;AACJ;AACI;EACI,mBAAA;AACR","sourcesContent":["main {\n    height: 100vh;\n    display: flex;\n    justify-content: space-between;\n    flex-direction: column;\n    padding: 40px;\n}\n\n#controls-section {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    text-align: center;\n}\n\n#keyboard-section {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    text-align: center;\n    gap: 20px;\n}\n\n.column {\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n\n    &#lfo-controls-column {\n        flex-direction: row;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -70338,21 +70369,21 @@ var App = function () {
         setIsMounted(true);
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", { id: "controls" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "column" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", { id: "controls-section" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "column", id: "general-controls-column" },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_GeneralControls__WEBPACK_IMPORTED_MODULE_5__["default"], null)),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "column" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "column", id: "filter-controls-column" },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_FilterControls__WEBPACK_IMPORTED_MODULE_4__["default"], null)),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "column" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "column", id: "lfo-controls-column" },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_LFOControls__WEBPACK_IMPORTED_MODULE_6__["default"], null)),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "column" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "column", id: "envelope-controls-column" },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__.EnvelopeStateProvider, null,
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_EnvelopeControls__WEBPACK_IMPORTED_MODULE_2__["default"], null),
                     isMounted &&
-                        (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Keyboard__WEBPACK_IMPORTED_MODULE_7__["default"], null), document.getElementById('keyboard')))),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "column" },
+                        (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Keyboard__WEBPACK_IMPORTED_MODULE_7__["default"], null), document.getElementById('keyboard-section')))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "column", id: "oscilloscope-column" },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Oscilloscope__WEBPACK_IMPORTED_MODULE_8__["default"], null))),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", { id: "keyboard" })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", { id: "keyboard-section" })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
@@ -70412,11 +70443,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var EnvelopeControls = function () {
     var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__.envelopeStateContext), state = _a.state, dispatch = _a.dispatch;
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.ATTACK, value: state.attack, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateAttack, dispatch: dispatch }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.DECAY, value: state.decay, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateDecay, dispatch: dispatch }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.SUSTAIN, value: state.sustain, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateSustain, dispatch: dispatch }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.RELEASE, value: state.release, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateRelease, dispatch: dispatch })));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.ATTACK, value: state.attack, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateAttack, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.DECAY, value: state.decay, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateDecay, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.SUSTAIN, value: state.sustain, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateSustain, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.RELEASE, value: state.release, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateRelease, dispatch: dispatch })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EnvelopeControls);
 
@@ -70622,10 +70653,10 @@ var FilterControls_ = function () {
         }
         return function () { return lfo2.output.disconnect(); };
     }, [lfo2.target]);
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_4__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_2__.Selectors.FILTER, options: [_types__WEBPACK_IMPORTED_MODULE_2__.FilterType.HIGHPASS, _types__WEBPACK_IMPORTED_MODULE_2__.FilterType.LOWPASS], value: type, dispatch: dispatch, action: _store_actions__WEBPACK_IMPORTED_MODULE_6__.updateFilterType }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.FILTER_CUTOFF, value: cutoff, action: _store_actions__WEBPACK_IMPORTED_MODULE_6__.updateFilterCutoff, dispatch: dispatch }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.FILTER_RESONANCE, value: resonance, action: _store_actions__WEBPACK_IMPORTED_MODULE_6__.updateFilterResonance, dispatch: dispatch })));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_4__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Selectors.FILTER, value: type, dispatch: dispatch, action: _store_actions__WEBPACK_IMPORTED_MODULE_6__.updateFilterType }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.FILTER_CUTOFF, value: cutoff, action: _store_actions__WEBPACK_IMPORTED_MODULE_6__.updateFilterCutoff, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.FILTER_RESONANCE, value: resonance, action: _store_actions__WEBPACK_IMPORTED_MODULE_6__.updateFilterResonance, dispatch: dispatch })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FilterStateProvider__WEBPACK_IMPORTED_MODULE_5__.FilterStateProvider, null,
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(FilterControls_, null))); });
@@ -70805,9 +70836,9 @@ var GeneralControls_ = function () {
     }, [lfo2.target]);
     volume.gain.value = state.volume;
     pan.pan.value = state.pan;
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.VOLUME, value: state.volume, action: _store_actions__WEBPACK_IMPORTED_MODULE_5__.updateVolume, dispatch: dispatch }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.PAN, value: state.pan, action: _store_actions__WEBPACK_IMPORTED_MODULE_5__.updatePan, dispatch: dispatch })));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.VOLUME, value: state.volume, action: _store_actions__WEBPACK_IMPORTED_MODULE_5__.updateVolume, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.PAN, value: state.pan, action: _store_actions__WEBPACK_IMPORTED_MODULE_5__.updatePan, dispatch: dispatch })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_GeneralControlsStateProvider__WEBPACK_IMPORTED_MODULE_4__.GeneralControlsStateProvider, null,
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(GeneralControls_, null))); });
@@ -70943,7 +70974,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _constants_knobsLimits__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../constants/knobsLimits */ "./src/constants/knobsLimits.ts");
+/* harmony import */ var _constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../constants/knobsValues */ "./src/constants/knobsValues.ts");
 /* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
 /* harmony import */ var _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../providers/AudioContextProvider/store/actions */ "./src/providers/AudioContextProvider/store/actions.ts");
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
@@ -71003,7 +71034,7 @@ var LFOControls_ = function () {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         if (lfo1.target !== 'off') {
             var knob = _types__WEBPACK_IMPORTED_MODULE_4__.Knobs[lfo1.target];
-            var range = ((_constants_knobsLimits__WEBPACK_IMPORTED_MODULE_1__.knobsLimits[knob].max - _constants_knobsLimits__WEBPACK_IMPORTED_MODULE_1__.knobsLimits[knob].min) / 2) *
+            var range = ((_constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].max - _constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].min) / 2) *
                 state.lfo1.amplitude;
             lfo1.output.gain.value = range;
             audioDispatch((0,_providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO1Target)(knob));
@@ -71012,7 +71043,7 @@ var LFOControls_ = function () {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         if (lfo2.target !== 'off') {
             var knob = _types__WEBPACK_IMPORTED_MODULE_4__.Knobs[lfo2.target];
-            var range = ((_constants_knobsLimits__WEBPACK_IMPORTED_MODULE_1__.knobsLimits[knob].max - _constants_knobsLimits__WEBPACK_IMPORTED_MODULE_1__.knobsLimits[knob].min) / 2) *
+            var range = ((_constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].max - _constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].min) / 2) *
                 state.lfo2.amplitude;
             lfo2.output.gain.value = range;
             audioDispatch((0,_providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO2Target)(knob));
@@ -71020,41 +71051,15 @@ var LFOControls_ = function () {
     }, [state.lfo2.amplitude, lfo2.target]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "lfo-column" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_1_TARGET, options: [
-                    'off',
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.VOLUME,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PAN,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_CUTOFF,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_RESONANCE,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.DETUNE,
-                ], value: lfo1.target, dispatch: audioDispatch, action: _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO1Target }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_1_WAVEFORM, options: [
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.SINE,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.SQUARE,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.SAWTOOTH,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.TRIANGLE,
-                ], value: state.lfo1.waveform, dispatch: dispatch, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO1Waveform }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_FREQUENCY, value: state.lfo1.frequency, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO1Frequency, dispatch: dispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_AMPLITUDE, value: state.lfo1.amplitude, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO1Amplitude, dispatch: dispatch })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_1_TARGET, value: lfo1.target, dispatch: audioDispatch, action: _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO1Target }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_1_WAVEFORM, value: state.lfo1.waveform, dispatch: dispatch, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO1Waveform }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_FREQUENCY, value: state.lfo1.frequency, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO1Frequency, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_AMPLITUDE, value: state.lfo1.amplitude, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO1Amplitude, dispatch: dispatch })),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "lfo-column" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_2_TARGET, options: [
-                    'off',
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.VOLUME,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PAN,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_CUTOFF,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_RESONANCE,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.DETUNE,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_AMPLITUDE,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_FREQUENCY,
-                ], value: lfo2.target, dispatch: audioDispatch, action: _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO2Target }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_2_WAVEFORM, options: [
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.SINE,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.SQUARE,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.SAWTOOTH,
-                    _types__WEBPACK_IMPORTED_MODULE_4__.Waveform.TRIANGLE,
-                ], value: state.lfo2.waveform, dispatch: dispatch, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO2Waveform }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_2_FREQUENCY, value: state.lfo2.frequency, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO2Frequency, dispatch: dispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_2_AMPLITUDE, value: state.lfo2.amplitude, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO2Amplitude, dispatch: dispatch }))));
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_2_TARGET, value: lfo2.target, dispatch: audioDispatch, action: _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO2Target }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_2_WAVEFORM, value: state.lfo2.waveform, dispatch: dispatch, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO2Waveform }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_2_FREQUENCY, value: state.lfo2.frequency, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO2Frequency, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_2_AMPLITUDE, value: state.lfo2.amplitude, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO2Amplitude, dispatch: dispatch }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_LFOStateProvider__WEBPACK_IMPORTED_MODULE_7__.LFOStateProvider, null,
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(LFOControls_, null))); });
@@ -71326,14 +71331,10 @@ __webpack_require__.r(__webpack_exports__);
 var Keyboard = function () {
     var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__.envelopeStateContext), state = _a.state, dispatch = _a.dispatch;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_2__.Selectors.WAVEFORM, options: [
-                _types__WEBPACK_IMPORTED_MODULE_2__.Waveform.SINE,
-                _types__WEBPACK_IMPORTED_MODULE_2__.Waveform.SQUARE,
-                _types__WEBPACK_IMPORTED_MODULE_2__.Waveform.SAWTOOTH,
-                _types__WEBPACK_IMPORTED_MODULE_2__.Waveform.TRIANGLE,
-            ], dispatch: dispatch, value: state.waveform, action: _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateWaveform }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { label: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.DETUNE, value: state.detune, action: _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateDetune, dispatch: dispatch }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "keyboard" }, Object.entries(_constants_noteTable__WEBPACK_IMPORTED_MODULE_1__["default"]).map(function (_a) {
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "keyboard-controls", className: "column" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Selectors.WAVEFORM, dispatch: dispatch, value: state.waveform, action: _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateWaveform }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.DETUNE, value: state.detune, action: _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateDetune, dispatch: dispatch })),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "keyboard-container" }, Object.entries(_constants_noteTable__WEBPACK_IMPORTED_MODULE_1__["default"]).map(function (_a) {
             var note = _a[0], frequency = _a[1];
             return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Key__WEBPACK_IMPORTED_MODULE_7__["default"], { key: note, identifier: note, frequency: frequency }));
         }))));
@@ -71422,14 +71423,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var primereact_knob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! primereact/knob */ "./node_modules/primereact/knob/knob.esm.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _constants_knobsLimits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constants/knobsLimits */ "./src/constants/knobsLimits.ts");
+/* harmony import */ var _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constants/knobsValues */ "./src/constants/knobsValues.ts");
 
 
 
 
 var Knob = function (_a) {
     var _b;
-    var label = _a.label, value = _a.value, action = _a.action, dispatch = _a.dispatch;
+    var id = _a.id, value = _a.value, action = _a.action, dispatch = _a.dispatch;
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
         return function () { return throttledHandleChange.cancel(); };
     }, []);
@@ -71440,9 +71441,9 @@ var Knob = function (_a) {
         dispatch,
         action,
     ]);
-    return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_1___default().createElement("label", { htmlFor: label }, label),
-        react__WEBPACK_IMPORTED_MODULE_1___default().createElement(primereact_knob__WEBPACK_IMPORTED_MODULE_3__.Knob, { defaultValue: _constants_knobsLimits__WEBPACK_IMPORTED_MODULE_2__.knobsLimits[label].default, value: value, id: label, name: label, onChange: throttledHandleChange, min: _constants_knobsLimits__WEBPACK_IMPORTED_MODULE_2__.knobsLimits[label].min, max: _constants_knobsLimits__WEBPACK_IMPORTED_MODULE_2__.knobsLimits[label].max, step: (_b = _constants_knobsLimits__WEBPACK_IMPORTED_MODULE_2__.knobsLimits[label].step) !== null && _b !== void 0 ? _b : 0.01 })));
+    return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", { className: "knob-container" },
+        react__WEBPACK_IMPORTED_MODULE_1___default().createElement("label", { htmlFor: id }, _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].label),
+        react__WEBPACK_IMPORTED_MODULE_1___default().createElement(primereact_knob__WEBPACK_IMPORTED_MODULE_3__.Knob, { defaultValue: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].default, value: value, id: id, name: id, onChange: throttledHandleChange, min: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].min, max: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].max, step: (_b = _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].step) !== null && _b !== void 0 ? _b : 0.01, strokeWidth: 5, size: 50 })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Knob);
 
@@ -71460,103 +71461,120 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var primereact_dropdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! primereact/dropdown */ "./node_modules/primereact/dropdown/dropdown.esm.js");
+/* harmony import */ var primereact_dropdown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! primereact/dropdown */ "./node_modules/primereact/dropdown/dropdown.esm.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _constants_selectorsValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../constants/selectorsValues */ "./src/constants/selectorsValues.ts");
+
 
 
 var Selector = function (_a) {
-    var label = _a.label, options = _a.options, value = _a.value, dispatch = _a.dispatch, action = _a.action;
+    var id = _a.id, value = _a.value, dispatch = _a.dispatch, action = _a.action;
     var handleSelect = function (e) {
         dispatch(action(e.target.value));
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", { htmlFor: label }, label),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(primereact_dropdown__WEBPACK_IMPORTED_MODULE_1__.Dropdown, { id: label, name: label, onChange: handleSelect, value: value, options: options })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", { htmlFor: id }, _constants_selectorsValues__WEBPACK_IMPORTED_MODULE_1__.selectorValues[id].label),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(primereact_dropdown__WEBPACK_IMPORTED_MODULE_2__.Dropdown, { id: id, name: id, onChange: handleSelect, value: value, options: _constants_selectorsValues__WEBPACK_IMPORTED_MODULE_1__.selectorValues[id].options }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Selector);
 
 
 /***/ }),
 
-/***/ "./src/constants/knobsLimits.ts":
+/***/ "./src/constants/knobsValues.ts":
 /*!**************************************!*\
-  !*** ./src/constants/knobsLimits.ts ***!
+  !*** ./src/constants/knobsValues.ts ***!
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   knobsLimits: () => (/* binding */ knobsLimits)
+/* harmony export */   knobsValues: () => (/* binding */ knobsValues)
 /* harmony export */ });
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types */ "./src/types.ts");
 var _a;
 
-var knobsLimits = (_a = {},
+var knobsValues = (_a = {},
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.VOLUME] = {
+        label: 'Volume',
         min: 0,
         max: 1,
         default: 0.5,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.PAN] = {
+        label: 'Pan',
         min: -1,
         max: 1,
         default: 0,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.DETUNE] = {
+        label: 'Detune',
         min: -1200,
         max: 1200,
         default: 0,
+        step: 1,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.ATTACK] = {
+        label: 'Attack',
         min: 0,
         max: 5,
         default: 0,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.DECAY] = {
+        label: 'Decay',
         min: 0,
         max: 5,
         default: 0,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.SUSTAIN] = {
+        label: 'Sustain',
         min: 0,
         max: 1,
         default: 1,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.RELEASE] = {
+        label: 'Release',
         min: 0,
         max: 5,
         default: 0,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.FILTER_CUTOFF] = {
+        label: 'Cut-off',
         min: 10,
         max: 5000,
         default: 350,
         step: 1,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.FILTER_RESONANCE] = {
+        label: 'Resonance',
         min: 0.0001,
         max: 50,
         default: 1,
         step: 0.1,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_1_FREQUENCY] = {
+        label: 'Frequency',
         min: 0.2,
         max: 10,
         default: 1,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_1_AMPLITUDE] = {
+        label: 'Amplitude',
         min: 0,
         max: 1,
         default: 0.5,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_2_FREQUENCY] = {
+        label: 'Frequency',
         min: 0.2,
         max: 10,
         default: 1,
     },
     _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_2_AMPLITUDE] = {
+        label: 'Amplitude',
         min: 0,
         max: 1,
         default: 0.5,
@@ -71634,6 +71652,122 @@ var noteTable = (_a = {},
     _a[Notes.C5] = 523.25,
     _a);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (noteTable);
+
+
+/***/ }),
+
+/***/ "./src/constants/selectorsValues.ts":
+/*!******************************************!*\
+  !*** ./src/constants/selectorsValues.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   selectorValues: () => (/* binding */ selectorValues)
+/* harmony export */ });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types */ "./src/types.ts");
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
+var _a;
+
+var waveforms = [
+    {
+        label: 'Sine',
+        value: _types__WEBPACK_IMPORTED_MODULE_0__.Waveform.SINE,
+    },
+    {
+        label: 'Square',
+        value: _types__WEBPACK_IMPORTED_MODULE_0__.Waveform.SQUARE,
+    },
+    {
+        label: 'Sawtooth',
+        value: _types__WEBPACK_IMPORTED_MODULE_0__.Waveform.SAWTOOTH,
+    },
+    {
+        label: 'Triangle',
+        value: _types__WEBPACK_IMPORTED_MODULE_0__.Waveform.TRIANGLE,
+    },
+];
+var filterTypes = [
+    {
+        label: 'Low-pass',
+        value: _types__WEBPACK_IMPORTED_MODULE_0__.FilterType.LOWPASS,
+    },
+    {
+        label: 'High-pass',
+        value: _types__WEBPACK_IMPORTED_MODULE_0__.FilterType.HIGHPASS,
+    },
+];
+var lfo1Targets = [
+    {
+        label: 'Off',
+        value: 'off',
+    },
+    {
+        label: 'Volume',
+        value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.VOLUME,
+    },
+    {
+        label: 'Pan',
+        value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.PAN,
+    },
+    {
+        label: 'Cut-off',
+        value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.FILTER_CUTOFF,
+    },
+    {
+        label: 'Resonance',
+        value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.FILTER_RESONANCE,
+    },
+    {
+        label: 'Detune',
+        value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.DETUNE,
+    },
+];
+var selectorValues = (_a = {},
+    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.WAVEFORM] = {
+        label: 'Waveform',
+        options: waveforms,
+    },
+    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.LFO_1_WAVEFORM] = {
+        label: 'Waveform',
+        options: waveforms,
+    },
+    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.LFO_2_WAVEFORM] = {
+        label: 'Waveform',
+        options: waveforms,
+    },
+    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.FILTER] = {
+        label: 'Type',
+        options: filterTypes,
+    },
+    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.LFO_1_TARGET] = {
+        label: 'Target',
+        options: lfo1Targets,
+    },
+    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.LFO_2_TARGET] = {
+        label: 'Target',
+        options: __spreadArray(__spreadArray([], lfo1Targets, true), [
+            {
+                label: 'LFO 1 Frequency',
+                value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_1_FREQUENCY,
+            },
+            {
+                label: 'LFO 1 Amplitude',
+                value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_1_AMPLITUDE,
+            },
+        ], false),
+    },
+    _a);
 
 
 /***/ }),
