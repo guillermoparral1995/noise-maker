@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useMemo, useRef } from 'react';
 import { audioContext } from '../../providers/AudioContextProvider';
 
+import './index.scss';
+
 const Oscilloscope = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { context, output } = useContext(audioContext);
@@ -25,11 +27,11 @@ const Oscilloscope = () => {
     if (!canvas) return;
     const canvasCtx = canvasRef.current.getContext('2d');
 
-    canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+    canvasCtx.fillStyle = 'rgb(0, 0, 0)';
     canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
     canvasCtx.lineWidth = 2;
-    canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+    canvasCtx.strokeStyle = '#39ff14';
 
     canvasCtx.beginPath();
 
