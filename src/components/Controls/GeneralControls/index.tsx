@@ -1,16 +1,18 @@
+import { round, throttle } from 'lodash';
 import React, { useCallback, useContext, useEffect } from 'react';
-import { throttle } from 'lodash';
+import { ControlChangeMessageEvent } from 'webmidi';
+import { knobsValues } from '../../../constants/knobsValues';
 import { audioContext } from '../../../providers/AudioContextProvider';
+import { midiContext } from '../../../providers/MIDIProvider';
 import { Knobs } from '../../../types';
 import Knob from '../../shared/Knob';
 import {
   generalControlsStateContext,
   GeneralControlsStateProvider,
 } from './GeneralControlsStateProvider';
-import { ActionBuilder, updatePan, updateVolume } from './store/actions';
-import { midiContext } from '../../../providers/MIDIProvider';
-import { ControlChangeMessageEvent } from 'webmidi';
-import { roundValue } from '../../../utils';
+import { ActionTypes, updatePan, updateVolume } from './store/actions';
+
+type ActionBuilder = (payload: number) => ActionTypes;
 
 const GeneralControls_ = () => {
   const { state, dispatch } = useContext(generalControlsStateContext);
@@ -25,14 +27,14 @@ const GeneralControls_ = () => {
 
   useEffect(() => {
     midiInput.addListener('controlchange', (e: ControlChangeMessageEvent) => {
-      const value = roundValue(e.value as number);
-      if (e.controller.number === 74) {
+      const value = round(e.value as number, 2);
+      if (e.controller.number === knobsValues[Knobs.VOLUME].midiControl) {
         throttledUpdate(updateVolume, value);
       }
 
-      if (e.controller.number === 18) {
+      if (e.controller.number === knobsValues[Knobs.PAN].midiControl) {
         const panValue = value * 2 - 1;
-        throttledUpdate(updatePan, roundValue(panValue));
+        throttledUpdate(updatePan, round(panValue, 2));
       }
     });
   }, []);

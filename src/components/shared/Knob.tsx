@@ -1,9 +1,8 @@
-import { throttle } from 'lodash';
+import { round, throttle } from 'lodash';
 import { KnobChangeEvent, Knob as PrimeReactKnob } from 'primereact/knob';
 import React, { useCallback, useEffect } from 'react';
 import { knobsValues } from '../../constants/knobsValues';
 import type { ActionBuilder, ActionTypes, Knobs } from '../../types';
-import { roundValue } from '../../utils';
 
 interface KnobProps {
   id: Knobs;
@@ -18,7 +17,7 @@ export const Knob = ({ id, value, action, dispatch }: KnobProps) => {
   }, []);
 
   const handleChange = (e: KnobChangeEvent) => {
-    dispatch(action(roundValue(e.value)));
+    dispatch(action(round(e.value, 2)));
   };
 
   const throttledHandleChange = useCallback(throttle(handleChange, 50), [

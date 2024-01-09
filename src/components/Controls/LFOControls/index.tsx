@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo } from 'react';
+import React, { useCallback, useContext, useEffect, useMemo } from 'react';
 import { knobsValues } from '../../../constants/knobsValues';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import {
@@ -10,6 +10,7 @@ import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
 import { lfoStateContext, LFOStateProvider } from './LFOStateProvider';
 import {
+  ActionTypes,
   updateLFO1Amplitude,
   updateLFO1Frequency,
   updateLFO1Waveform,
@@ -18,6 +19,11 @@ import {
   updateLFO2Waveform,
 } from './store/actions';
 import './index.scss';
+import { round, throttle } from 'lodash';
+import { ControlChangeMessageEvent } from 'webmidi';
+import { midiContext } from '../../../providers/MIDIProvider';
+
+type ActionBuilder = (payload: number) => ActionTypes;
 
 const LFOControls_ = () => {
   const { state, dispatch } = useContext(lfoStateContext);
@@ -27,6 +33,7 @@ const LFOControls_ = () => {
     lfo2,
     dispatch: audioDispatch,
   } = useContext(audioContext);
+  const midiInput = useContext(midiContext);
   const lfo1Node: OscillatorNode = useMemo(
     () =>
       new OscillatorNode(context, {
@@ -48,11 +55,44 @@ const LFOControls_ = () => {
   lfo2Node.type = state.lfo2.waveform;
   lfo2Node.frequency.value = state.lfo2.frequency;
 
+  const handleUpdate = (action: ActionBuilder, value: number) => {
+    dispatch(action(value));
+  };
+
+  const throttledUpdate = useCallback(throttle(handleUpdate, 100), [dispatch]);
+
   useEffect(() => {
     lfo1Node.connect(lfo1.output);
     lfo2Node.connect(lfo2.output);
     lfo1Node.start();
     lfo2Node.start();
+
+    midiInput.addListener('controlchange', (e: ControlChangeMessageEvent) => {
+      const value = round(e.value as number, 2);
+      if (
+        e.controller.number === knobsValues[Knobs.LFO_1_FREQUENCY].midiControl
+      ) {
+        throttledUpdate(updateLFO1Frequency, value);
+      }
+
+      if (
+        e.controller.number === knobsValues[Knobs.LFO_1_AMPLITUDE].midiControl
+      ) {
+        throttledUpdate(updateLFO1Amplitude, value);
+      }
+
+      if (
+        e.controller.number === knobsValues[Knobs.LFO_2_FREQUENCY].midiControl
+      ) {
+        throttledUpdate(updateLFO2Frequency, value);
+      }
+
+      if (
+        e.controller.number === knobsValues[Knobs.LFO_2_AMPLITUDE].midiControl
+      ) {
+        throttledUpdate(updateLFO2Amplitude, value);
+      }
+    });
 
     return () => {
       lfo1Node.disconnect();

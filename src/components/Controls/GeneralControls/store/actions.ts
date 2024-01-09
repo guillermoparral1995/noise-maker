@@ -2,8 +2,6 @@ import { Actions } from '../../../../types';
 
 export type ActionTypes = VolumeAction | PanAction;
 
-export type ActionBuilder = (payload: number) => ActionTypes;
-
 interface VolumeAction {
   type: Actions.UPDATE_VOLUME;
   payload: number;
