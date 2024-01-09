@@ -4,6 +4,7 @@ import { audioContext } from '../../../providers/AudioContextProvider';
 import { midiContext } from '../../../providers/MIDIProvider';
 import { envelopeStateContext } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
 import './index.scss';
+import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import { Knobs } from '../../../types';
 
 const Key = ({
@@ -35,19 +36,12 @@ const Key = ({
     return () => oscillator.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (lfo1.target === Knobs.DETUNE) {
-      lfo1.output.connect(oscillator.detune);
-    }
-    return () => lfo1.output.disconnect();
-  }, [lfo1.target]);
-
-  useEffect(() => {
-    if (lfo2.target === Knobs.DETUNE) {
-      lfo2.output.connect(oscillator.detune);
-    }
-    return () => lfo2.output.disconnect();
-  }, [lfo2.target]);
+  useConnectLFOTargets(lfo1, [
+    { knob: Knobs.DETUNE, param: oscillator.detune },
+  ]);
+  useConnectLFOTargets(lfo2, [
+    { knob: Knobs.DETUNE, param: oscillator.detune },
+  ]);
 
   useEffect(() => {
     if (midiInput) {

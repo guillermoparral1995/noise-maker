@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useMemo } from 'react';
 import { knobsValues } from '../../../constants/knobsValues';
 import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
+import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import {
   updateLFO1Target,
@@ -63,15 +64,10 @@ const LFOControls_ = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (lfo2.target === Knobs.LFO_1_FREQUENCY) {
-      lfo2.output.connect(lfo1Node.frequency);
-    }
-    if (lfo2.target === Knobs.LFO_1_AMPLITUDE) {
-      lfo2.output.connect(lfo1.output.gain);
-    }
-    return () => lfo2.output.disconnect();
-  }, [lfo2.target]);
+  useConnectLFOTargets(lfo2, [
+    { knob: Knobs.LFO_1_FREQUENCY, param: lfo1Node.frequency },
+    { knob: Knobs.LFO_1_AMPLITUDE, param: lfo1.output.gain },
+  ]);
 
   useEffect(() => {
     if (lfo1.target !== 'off') {

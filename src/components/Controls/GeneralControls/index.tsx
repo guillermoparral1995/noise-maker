@@ -1,5 +1,6 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
+import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { Knobs } from '../../../types';
 import Knob from '../../shared/Knob';
@@ -12,26 +13,14 @@ const GeneralControls_ = () => {
   const { state, dispatch } = useContext(generalControlsStateContext);
   const { volume, pan, lfo1, lfo2 } = useContext(audioContext);
   useAddMidiListeners([Knobs.VOLUME, Knobs.PAN], dispatch);
-
-  useEffect(() => {
-    if (lfo1.target === Knobs.VOLUME) {
-      lfo1.output.connect(volume.gain);
-    }
-    if (lfo1.target === Knobs.PAN) {
-      lfo1.output.connect(pan.pan);
-    }
-    return () => lfo1.output.disconnect();
-  }, [lfo1.target]);
-
-  useEffect(() => {
-    if (lfo2.target === Knobs.VOLUME) {
-      lfo2.output.connect(volume.gain);
-    }
-    if (lfo2.target === Knobs.PAN) {
-      lfo2.output.connect(pan.pan);
-    }
-    return () => lfo2.output.disconnect();
-  }, [lfo2.target]);
+  useConnectLFOTargets(lfo1, [
+    { knob: Knobs.VOLUME, param: volume.gain },
+    { knob: Knobs.PAN, param: pan.pan },
+  ]);
+  useConnectLFOTargets(lfo2, [
+    { knob: Knobs.VOLUME, param: volume.gain },
+    { knob: Knobs.PAN, param: pan.pan },
+  ]);
 
   volume.gain.value = state.volume;
   pan.pan.value = state.pan;

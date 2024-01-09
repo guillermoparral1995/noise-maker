@@ -1,5 +1,6 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
+import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { Knobs, Selectors } from '../../../types';
 import Knob from '../../shared/Knob';
@@ -13,30 +14,18 @@ const FilterControls_ = () => {
   } = useContext(filterStateContext);
   const { filter, lfo1, lfo2 } = useContext(audioContext);
   useAddMidiListeners([Knobs.FILTER_CUTOFF, Knobs.FILTER_RESONANCE], dispatch);
+  useConnectLFOTargets(lfo1, [
+    { knob: Knobs.FILTER_CUTOFF, param: filter.frequency },
+    { knob: Knobs.FILTER_RESONANCE, param: filter.Q },
+  ]);
+  useConnectLFOTargets(lfo2, [
+    { knob: Knobs.FILTER_CUTOFF, param: filter.frequency },
+    { knob: Knobs.FILTER_RESONANCE, param: filter.Q },
+  ]);
 
   filter.type = type;
   filter.frequency.value = cutoff;
   filter.Q.value = resonance;
-
-  useEffect(() => {
-    if (lfo1.target === Knobs.FILTER_CUTOFF) {
-      lfo1.output.connect(filter.frequency);
-    }
-    if (lfo1.target === Knobs.FILTER_RESONANCE) {
-      lfo1.output.connect(filter.Q);
-    }
-    return () => lfo1.output.disconnect();
-  }, [lfo1.target]);
-
-  useEffect(() => {
-    if (lfo2.target === Knobs.FILTER_CUTOFF) {
-      lfo2.output.connect(filter.frequency);
-    }
-    if (lfo2.target === Knobs.FILTER_RESONANCE) {
-      lfo2.output.connect(filter.Q);
-    }
-    return () => lfo2.output.disconnect();
-  }, [lfo2.target]);
 
   return (
     <>

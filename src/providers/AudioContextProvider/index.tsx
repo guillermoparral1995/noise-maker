@@ -8,19 +8,18 @@ import { ActionTypes, LFO1Target, LFO2Target } from '../../types';
 import { initialState } from './store/initialState';
 import { reducer } from './store/reducer';
 
+export interface LFO<T> {
+  output: GainNode;
+  target: T;
+}
+
 interface AudioContextProviderValue {
   context: AudioContext;
   volume: GainNode;
   pan: StereoPannerNode;
   filter: BiquadFilterNode;
-  lfo1: {
-    output: GainNode;
-    target: LFO1Target;
-  };
-  lfo2: {
-    output: GainNode;
-    target: LFO2Target;
-  };
+  lfo1: LFO<LFO1Target>;
+  lfo2: LFO<LFO2Target>;
   dispatch: React.Dispatch<ActionTypes>;
   output: AudioNode;
 }
