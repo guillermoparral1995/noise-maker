@@ -63,18 +63,8 @@ const GeneralControls_ = () => {
   pan.pan.value = state.pan;
   return (
     <>
-      <Knob
-        id={Knobs.VOLUME}
-        value={state.volume}
-        action={updateVolume}
-        dispatch={dispatch}
-      ></Knob>
-      <Knob
-        id={Knobs.PAN}
-        value={state.pan}
-        action={updatePan}
-        dispatch={dispatch}
-      ></Knob>
+      <Knob id={Knobs.VOLUME} value={state.volume} dispatch={dispatch}></Knob>
+      <Knob id={Knobs.PAN} value={state.pan} dispatch={dispatch}></Knob>
     </>
   );
 };

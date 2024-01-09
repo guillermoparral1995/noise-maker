@@ -12,7 +12,6 @@ import {
   ActionTypes,
   updateFilterCutoff,
   updateFilterResonance,
-  updateFilterType,
 } from './store/actions';
 
 type ActionBuilder = (payload: number) => ActionTypes;
@@ -78,18 +77,11 @@ const FilterControls_ = () => {
         id={Selectors.FILTER}
         value={type}
         dispatch={dispatch}
-        action={updateFilterType}
       ></Selector>
-      <Knob
-        id={Knobs.FILTER_CUTOFF}
-        value={cutoff}
-        action={updateFilterCutoff}
-        dispatch={dispatch}
-      ></Knob>
+      <Knob id={Knobs.FILTER_CUTOFF} value={cutoff} dispatch={dispatch}></Knob>
       <Knob
         id={Knobs.FILTER_RESONANCE}
         value={resonance}
-        action={updateFilterResonance}
         dispatch={dispatch}
       ></Knob>
     </>

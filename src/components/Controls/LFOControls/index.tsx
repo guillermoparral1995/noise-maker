@@ -1,10 +1,13 @@
+import { round, throttle } from 'lodash';
 import React, { useCallback, useContext, useEffect, useMemo } from 'react';
+import { ControlChangeMessageEvent } from 'webmidi';
 import { knobsValues } from '../../../constants/knobsValues';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import {
   updateLFO1Target,
   updateLFO2Target,
 } from '../../../providers/AudioContextProvider/store/actions';
+import { midiContext } from '../../../providers/MIDIProvider';
 import { Knobs, Selectors } from '../../../types';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
@@ -13,15 +16,10 @@ import {
   ActionTypes,
   updateLFO1Amplitude,
   updateLFO1Frequency,
-  updateLFO1Waveform,
   updateLFO2Amplitude,
   updateLFO2Frequency,
-  updateLFO2Waveform,
 } from './store/actions';
 import './index.scss';
-import { round, throttle } from 'lodash';
-import { ControlChangeMessageEvent } from 'webmidi';
-import { midiContext } from '../../../providers/MIDIProvider';
 
 type ActionBuilder = (payload: number) => ActionTypes;
 
@@ -139,24 +137,20 @@ const LFOControls_ = () => {
           id={Selectors.LFO_1_TARGET}
           value={lfo1.target}
           dispatch={audioDispatch}
-          action={updateLFO1Target}
         ></Selector>
         <Selector
           id={Selectors.LFO_1_WAVEFORM}
           value={state.lfo1.waveform}
           dispatch={dispatch}
-          action={updateLFO1Waveform}
         ></Selector>
         <Knob
           id={Knobs.LFO_1_FREQUENCY}
           value={state.lfo1.frequency}
-          action={updateLFO1Frequency}
           dispatch={dispatch}
         ></Knob>
         <Knob
           id={Knobs.LFO_1_AMPLITUDE}
           value={state.lfo1.amplitude}
-          action={updateLFO1Amplitude}
           dispatch={dispatch}
         ></Knob>
       </div>
@@ -165,24 +159,20 @@ const LFOControls_ = () => {
           id={Selectors.LFO_2_TARGET}
           value={lfo2.target}
           dispatch={audioDispatch}
-          action={updateLFO2Target}
         ></Selector>
         <Selector
           id={Selectors.LFO_2_WAVEFORM}
           value={state.lfo2.waveform}
           dispatch={dispatch}
-          action={updateLFO2Waveform}
         ></Selector>
         <Knob
           id={Knobs.LFO_2_FREQUENCY}
           value={state.lfo2.frequency}
-          action={updateLFO2Frequency}
           dispatch={dispatch}
         ></Knob>
         <Knob
           id={Knobs.LFO_2_AMPLITUDE}
           value={state.lfo2.amplitude}
-          action={updateLFO2Amplitude}
           dispatch={dispatch}
         ></Knob>
       </div>

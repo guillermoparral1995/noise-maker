@@ -9,7 +9,6 @@ import { envelopeStateContext } from '../Controls/EnvelopeControls/EnvelopeState
 import {
   ActionTypes,
   updateDetune,
-  updateWaveform,
 } from '../Controls/EnvelopeControls/store/actions';
 import Knob from '../shared/Knob';
 import Selector from '../shared/Selector';
@@ -42,14 +41,8 @@ const Keyboard = () => {
           id={Selectors.WAVEFORM}
           dispatch={dispatch}
           value={state.waveform}
-          action={updateWaveform}
         ></Selector>
-        <Knob
-          id={Knobs.DETUNE}
-          value={state.detune}
-          action={updateDetune}
-          dispatch={dispatch}
-        ></Knob>
+        <Knob id={Knobs.DETUNE} value={state.detune} dispatch={dispatch}></Knob>
       </div>
       <div id="keyboard-container">
         {Object.entries(noteTable).map(([note, frequency]) => (

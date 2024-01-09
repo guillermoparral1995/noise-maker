@@ -48,30 +48,10 @@ const EnvelopeControls = () => {
   }, []);
   return (
     <>
-      <Knob
-        id={Knobs.ATTACK}
-        value={state.attack}
-        action={updateAttack}
-        dispatch={dispatch}
-      ></Knob>
-      <Knob
-        id={Knobs.DECAY}
-        value={state.decay}
-        action={updateDecay}
-        dispatch={dispatch}
-      ></Knob>
-      <Knob
-        id={Knobs.SUSTAIN}
-        value={state.sustain}
-        action={updateSustain}
-        dispatch={dispatch}
-      ></Knob>
-      <Knob
-        id={Knobs.RELEASE}
-        value={state.release}
-        action={updateRelease}
-        dispatch={dispatch}
-      ></Knob>
+      <Knob id={Knobs.ATTACK} value={state.attack} dispatch={dispatch}></Knob>
+      <Knob id={Knobs.DECAY} value={state.decay} dispatch={dispatch}></Knob>
+      <Knob id={Knobs.SUSTAIN} value={state.sustain} dispatch={dispatch}></Knob>
+      <Knob id={Knobs.RELEASE} value={state.release} dispatch={dispatch}></Knob>
     </>
   );
 };

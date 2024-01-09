@@ -1,23 +1,21 @@
 import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
 import React from 'react';
 import { selectorValues } from '../../constants/selectorsValues';
-import { ActionBuilder, ActionTypes, Selectors } from '../../types';
+import { ActionTypes, Selectors } from '../../types';
 
 interface SelectorProps<T> {
   id: Selectors;
   value: T;
   dispatch: React.Dispatch<ActionTypes>;
-  action: ActionBuilder<T>;
 }
 
 const Selector = <T extends string>({
   id,
   value,
   dispatch,
-  action,
 }: SelectorProps<T>) => {
   const handleSelect = (e: DropdownChangeEvent) => {
-    dispatch(action(e.target.value));
+    dispatch(selectorValues[id].action(e.target.value));
   };
 
   return (

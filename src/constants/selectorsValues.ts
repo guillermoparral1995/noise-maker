@@ -1,4 +1,15 @@
+import { updateWaveform } from '../components/Controls/EnvelopeControls/store/actions';
+import { updateFilterType } from '../components/Controls/FilterControls/store/actions';
 import {
+  updateLFO1Waveform,
+  updateLFO2Waveform,
+} from '../components/Controls/LFOControls/store/actions';
+import {
+  updateLFO1Target,
+  updateLFO2Target,
+} from '../providers/AudioContextProvider/store/actions';
+import {
+  ActionBuilder,
   FilterType,
   Knobs,
   LFO1Target,
@@ -7,13 +18,16 @@ import {
   Waveform,
 } from '../types';
 
+type DropdownValue = Waveform | FilterType | LFO1Target | LFO2Target;
+
 interface DropdownOption {
   label: string;
-  value: Waveform | FilterType | LFO1Target | LFO2Target;
+  value: DropdownValue;
 }
 
 interface SelectorValues {
   label: string;
+  action: ActionBuilder<DropdownValue>;
   options: DropdownOption[];
 }
 
@@ -77,26 +91,32 @@ const lfo1Targets: DropdownOption[] = [
 export const selectorValues: Record<Selectors, SelectorValues> = {
   [Selectors.WAVEFORM]: {
     label: 'Waveform',
+    action: updateWaveform,
     options: waveforms,
   },
   [Selectors.LFO_1_WAVEFORM]: {
     label: 'Waveform',
+    action: updateLFO1Waveform,
     options: waveforms,
   },
   [Selectors.LFO_2_WAVEFORM]: {
     label: 'Waveform',
+    action: updateLFO2Waveform,
     options: waveforms,
   },
   [Selectors.FILTER]: {
     label: 'Type',
+    action: updateFilterType,
     options: filterTypes,
   },
   [Selectors.LFO_1_TARGET]: {
     label: 'Target',
+    action: updateLFO1Target,
     options: lfo1Targets,
   },
   [Selectors.LFO_2_TARGET]: {
     label: 'Target',
+    action: updateLFO2Target,
     options: [
       ...lfo1Targets,
       {
