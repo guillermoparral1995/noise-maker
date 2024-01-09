@@ -1,45 +1,16 @@
-import { round } from 'lodash';
-import React, { useContext, useEffect } from 'react';
-import { ControlChangeMessageEvent } from 'webmidi';
-import { knobsValues } from '../../../constants/knobsValues';
-import useThrottledUpdate from '../../../hooks/useThrottledUpdate';
-import { midiContext } from '../../../providers/MIDIProvider';
+import React, { useContext } from 'react';
+import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
 import { Knobs } from '../../../types';
 import Knob from '../../shared/Knob';
 import { envelopeStateContext } from './EnvelopeStateProvider';
-import {
-  updateAttack,
-  updateDecay,
-  updateRelease,
-  updateSustain,
-} from './store/actions';
 
 const EnvelopeControls = () => {
   const { state, dispatch } = useContext(envelopeStateContext);
-  const midiInput = useContext(midiContext);
+  useAddMidiListeners(
+    [Knobs.ATTACK, Knobs.DECAY, Knobs.SUSTAIN, Knobs.RELEASE],
+    dispatch,
+  );
 
-  const throttledUpdate = useThrottledUpdate(dispatch);
-
-  useEffect(() => {
-    midiInput.addListener('controlchange', (e: ControlChangeMessageEvent) => {
-      const value = round(e.value as number, 2);
-      if (e.controller.number === knobsValues[Knobs.ATTACK].midiControl) {
-        throttledUpdate(updateAttack, value);
-      }
-
-      if (e.controller.number === knobsValues[Knobs.DECAY].midiControl) {
-        throttledUpdate(updateDecay, value);
-      }
-
-      if (e.controller.number === knobsValues[Knobs.SUSTAIN].midiControl) {
-        throttledUpdate(updateSustain, value);
-      }
-
-      if (e.controller.number === knobsValues[Knobs.RELEASE].midiControl) {
-        throttledUpdate(updateRelease, value);
-      }
-    });
-  }, []);
   return (
     <>
       <Knob id={Knobs.ATTACK} value={state.attack} dispatch={dispatch}></Knob>

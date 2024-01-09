@@ -1,15 +1,10 @@
-import { round } from 'lodash';
 import React, { useContext, useEffect } from 'react';
-import { ControlChangeMessageEvent } from 'webmidi';
-import { knobsValues } from '../../../constants/knobsValues';
-import useThrottledUpdate from '../../../hooks/useThrottledUpdate';
+import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
 import { audioContext } from '../../../providers/AudioContextProvider';
-import { midiContext } from '../../../providers/MIDIProvider';
 import { Knobs, Selectors } from '../../../types';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
 import { filterStateContext, FilterStateProvider } from './FilterStateProvider';
-import { updateFilterCutoff, updateFilterResonance } from './store/actions';
 
 const FilterControls_ = () => {
   const {
@@ -17,29 +12,11 @@ const FilterControls_ = () => {
     dispatch,
   } = useContext(filterStateContext);
   const { filter, lfo1, lfo2 } = useContext(audioContext);
-  const midiInput = useContext(midiContext);
-  const throttledUpdate = useThrottledUpdate(dispatch);
+  useAddMidiListeners([Knobs.FILTER_CUTOFF, Knobs.FILTER_RESONANCE], dispatch);
 
   filter.type = type;
   filter.frequency.value = cutoff;
   filter.Q.value = resonance;
-
-  useEffect(() => {
-    midiInput.addListener('controlchange', (e: ControlChangeMessageEvent) => {
-      const value = round(e.value as number, 2);
-      if (
-        e.controller.number === knobsValues[Knobs.FILTER_CUTOFF].midiControl
-      ) {
-        throttledUpdate(updateFilterCutoff, value);
-      }
-
-      if (
-        e.controller.number === knobsValues[Knobs.FILTER_RESONANCE].midiControl
-      ) {
-        throttledUpdate(updateFilterResonance, value);
-      }
-    });
-  }, []);
 
   useEffect(() => {
     if (lfo1.target === Knobs.FILTER_CUTOFF) {
