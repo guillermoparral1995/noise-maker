@@ -1,20 +1,15 @@
-import { round, throttle } from 'lodash';
-import React, { useCallback, useContext, useEffect } from 'react';
+import { round } from 'lodash';
+import React, { useContext, useEffect } from 'react';
 import { ControlChangeMessageEvent } from 'webmidi';
 import { knobsValues } from '../../../constants/knobsValues';
+import useThrottledUpdate from '../../../hooks/useThrottledUpdate';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { midiContext } from '../../../providers/MIDIProvider';
 import { Knobs, Selectors } from '../../../types';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
 import { filterStateContext, FilterStateProvider } from './FilterStateProvider';
-import {
-  ActionTypes,
-  updateFilterCutoff,
-  updateFilterResonance,
-} from './store/actions';
-
-type ActionBuilder = (payload: number) => ActionTypes;
+import { updateFilterCutoff, updateFilterResonance } from './store/actions';
 
 const FilterControls_ = () => {
   const {
@@ -23,16 +18,11 @@ const FilterControls_ = () => {
   } = useContext(filterStateContext);
   const { filter, lfo1, lfo2 } = useContext(audioContext);
   const midiInput = useContext(midiContext);
+  const throttledUpdate = useThrottledUpdate(dispatch);
 
   filter.type = type;
   filter.frequency.value = cutoff;
   filter.Q.value = resonance;
-
-  const handleUpdate = (action: ActionBuilder, value: number) => {
-    dispatch(action(value));
-  };
-
-  const throttledUpdate = useCallback(throttle(handleUpdate, 100), [dispatch]);
 
   useEffect(() => {
     midiInput.addListener('controlchange', (e: ControlChangeMessageEvent) => {

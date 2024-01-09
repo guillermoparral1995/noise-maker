@@ -1,7 +1,8 @@
-import { round, throttle } from 'lodash';
-import React, { useCallback, useContext, useEffect } from 'react';
+import { round } from 'lodash';
+import React, { useContext, useEffect } from 'react';
 import { ControlChangeMessageEvent } from 'webmidi';
 import { knobsValues } from '../../../constants/knobsValues';
+import useThrottledUpdate from '../../../hooks/useThrottledUpdate';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { midiContext } from '../../../providers/MIDIProvider';
 import { Knobs } from '../../../types';
@@ -10,20 +11,14 @@ import {
   generalControlsStateContext,
   GeneralControlsStateProvider,
 } from './GeneralControlsStateProvider';
-import { ActionTypes, updatePan, updateVolume } from './store/actions';
-
-type ActionBuilder = (payload: number) => ActionTypes;
+import { updatePan, updateVolume } from './store/actions';
 
 const GeneralControls_ = () => {
   const { state, dispatch } = useContext(generalControlsStateContext);
   const { volume, pan, lfo1, lfo2 } = useContext(audioContext);
   const midiInput = useContext(midiContext);
 
-  const handleUpdate = (action: ActionBuilder, value: number) => {
-    dispatch(action(value));
-  };
-
-  const throttledUpdate = useCallback(throttle(handleUpdate, 100), [dispatch]);
+  const throttledUpdate = useThrottledUpdate(dispatch);
 
   useEffect(() => {
     midiInput.addListener('controlchange', (e: ControlChangeMessageEvent) => {
