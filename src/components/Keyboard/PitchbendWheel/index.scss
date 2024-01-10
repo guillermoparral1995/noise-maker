@@ -1,0 +1,19 @@
+#pitchbend-wheel {
+    transform: rotate(270deg);
+    appearance: none;
+    height: 3em;
+    width: 12em;
+    margin: -10px;
+    box-shadow: 1px 1px 5px mediumpurple;
+}
+
+#pitchbend-wheel::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 15px;
+    background: mediumpurple;
+    border-radius: 4px;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    cursor:move;
+}

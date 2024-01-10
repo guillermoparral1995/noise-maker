@@ -7,6 +7,7 @@ export interface EnvelopeState {
   decay: number;
   sustain: number;
   release: number;
+  pitchbend: number;
 }
 
 const initialState: EnvelopeState = {
@@ -16,6 +17,7 @@ const initialState: EnvelopeState = {
   decay: 0,
   sustain: 1,
   release: 0,
+  pitchbend: 0,
 };
 
 export default initialState;

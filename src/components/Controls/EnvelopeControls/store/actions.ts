@@ -6,7 +6,8 @@ export type ActionTypes =
   | AttackAction
   | DecayAction
   | SustainAction
-  | ReleaseAction;
+  | ReleaseAction
+  | PitchbendAction;
 
 interface WaveformAction {
   type: Actions.UPDATE_WAVEFORM;
@@ -68,4 +69,16 @@ interface ReleaseAction {
 export const updateRelease: (release: number) => ReleaseAction = (release) => ({
   type: Actions.UPDATE_RELEASE,
   payload: release,
+});
+
+interface PitchbendAction {
+  type: Actions.UPDATE_PITCHBEND;
+  payload: number;
+}
+
+export const updatePitchbend: (pitchbend: number) => PitchbendAction = (
+  pitchbend,
+) => ({
+  type: Actions.UPDATE_PITCHBEND,
+  payload: pitchbend,
 });

@@ -36,6 +36,11 @@ const reducer = (state: EnvelopeState, action: ActionTypes): EnvelopeState => {
         ...state,
         release: payload,
       };
+    case Actions.UPDATE_PITCHBEND:
+      return {
+        ...state,
+        pitchbend: payload,
+      };
     default:
       return state;
   }

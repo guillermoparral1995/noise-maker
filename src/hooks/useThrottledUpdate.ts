@@ -4,7 +4,7 @@ import { ActionBuilder, ActionTypes } from '../types';
 
 export default <T>(
   dispatch: React.Dispatch<ActionTypes>,
-  throttleTime: number = 100,
+  throttleTime: number = 50,
 ) => {
   const handleUpdate = (action: ActionBuilder<T>, value: T) => {
     dispatch(action(value));

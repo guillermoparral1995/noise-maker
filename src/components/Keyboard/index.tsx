@@ -7,6 +7,7 @@ import Knob from '../shared/Knob';
 import Selector from '../shared/Selector';
 import Key from './Key';
 import './index.scss';
+import PitchbendWheel from './PitchbendWheel';
 
 const Keyboard = () => {
   const { state, dispatch } = useContext(envelopeStateContext);
@@ -20,6 +21,9 @@ const Keyboard = () => {
           value={state.waveform}
         ></Selector>
         <Knob id={Knobs.DETUNE} value={state.detune} dispatch={dispatch}></Knob>
+      </div>
+      <div id="keyboard-wheels" className="column">
+        <PitchbendWheel></PitchbendWheel>
       </div>
       <div id="keyboard-container">
         {Object.entries(noteTable).map(([note, frequency]) => (

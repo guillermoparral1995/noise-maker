@@ -17,7 +17,7 @@ const Key = ({
   const keyRef = useRef<HTMLButtonElement>(null);
   const { context, output, lfo1, lfo2 } = useContext(audioContext);
   const {
-    state: { attack, decay, sustain, release, detune, waveform },
+    state: { attack, decay, sustain, release, detune, pitchbend, waveform },
   } = useContext(envelopeStateContext);
   const { selectedInput: midiInput } = useContext(midiContext);
   let releaseTimeout: NodeJS.Timeout;
@@ -28,7 +28,7 @@ const Key = ({
   );
   const envelope = useMemo(() => new GainNode(context), []);
   oscillator.type = waveform;
-  oscillator.detune.value = detune;
+  oscillator.detune.value = detune + pitchbend;
 
   useEffect(() => {
     oscillator.start(context.currentTime);

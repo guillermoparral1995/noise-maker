@@ -2,6 +2,7 @@ import {
   updateAttack,
   updateDecay,
   updateDetune,
+  updatePitchbend,
   updateRelease,
   updateSustain,
 } from '../components/Controls/EnvelopeControls/store/actions';
@@ -26,7 +27,7 @@ interface KnobValue {
   min: number;
   max: number;
   default: number;
-  midiControl: number;
+  midiControl?: number;
   action: ActionBuilder<number>;
   step?: number;
 }
@@ -55,6 +56,14 @@ export const knobsValues: Record<Knobs, KnobValue> = {
     default: 0,
     midiControl: 75,
     action: updateDetune,
+    step: 1,
+  },
+  [Knobs.PITCHBEND]: {
+    label: 'Pitchbend',
+    min: -300,
+    max: 300,
+    default: 0,
+    action: updatePitchbend,
     step: 1,
   },
   [Knobs.ATTACK]: {
