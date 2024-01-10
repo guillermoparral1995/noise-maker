@@ -3,13 +3,15 @@ import type { ActionTypes as FilterActionTypes } from './components/Controls/Fil
 import type { ActionTypes as GeneralControlsActionTypes } from './components/Controls/GeneralControls/store/actions';
 import type { ActionTypes as LFOActionTypes } from './components/Controls/LFOControls/store/actions';
 import type { ActionTypes as LFOTargetActionTypes } from './providers/AudioContextProvider/store/actions';
+import type { ActionTypes as MIDIActionTypes } from './providers/MIDIProvider/store/actions';
 
 export type ActionTypes =
   | EnvelopeActionTypes
   | GeneralControlsActionTypes
   | FilterActionTypes
   | LFOTargetActionTypes
-  | LFOActionTypes;
+  | LFOActionTypes
+  | MIDIActionTypes;
 
 export enum Waveform {
   SINE = 'sine',
@@ -30,6 +32,7 @@ export enum Selectors {
   LFO_1_WAVEFORM = 'LFO_1_WAVEFORM',
   LFO_2_TARGET = 'LFO_2_TARGET',
   LFO_2_WAVEFORM = 'LFO_2_WAVEFORM',
+  MIDI_INPUT = 'MIDI_INPUT',
 }
 
 export enum Knobs {
@@ -94,5 +97,8 @@ export enum Actions {
   UPDATE_LFO_2_WAVEFORM,
   UPDATE_LFO_2_FREQUENCY,
   UPDATE_LFO_2_AMPLITUDE,
+  UPDATE_MIDI_LOADING,
+  UPDATE_MIDI_ERROR,
+  UPDATE_MIDI_INPUT,
 }
 export type ActionBuilder<T> = (payload: T) => ActionTypes;

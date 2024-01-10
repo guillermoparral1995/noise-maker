@@ -9,6 +9,7 @@ import Keyboard from './components/Keyboard';
 import Oscilloscope from './components/Oscilloscope';
 import 'primereact/resources/themes/lara-dark-purple/theme.css';
 import './index.scss';
+import MIDIInputSelector from './components/Config/MIDIInputSelector';
 
 const App = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
@@ -17,6 +18,9 @@ const App = () => {
   }, []);
   return (
     <main>
+      <section id="config-section">
+        <MIDIInputSelector></MIDIInputSelector>
+      </section>
       <section id="controls-section">
         <div className="column" id="general-controls-column">
           <GeneralControls></GeneralControls>

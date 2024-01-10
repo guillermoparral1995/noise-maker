@@ -8,6 +8,7 @@ import {
   updateLFO1Target,
   updateLFO2Target,
 } from '../providers/AudioContextProvider/store/actions';
+import { updateMIDIInput } from '../providers/MIDIProvider/store/actions';
 import {
   ActionBuilder,
   FilterType,
@@ -18,9 +19,9 @@ import {
   Waveform,
 } from '../types';
 
-type DropdownValue = Waveform | FilterType | LFO1Target | LFO2Target;
+type DropdownValue = Waveform | FilterType | LFO1Target | LFO2Target | string;
 
-interface DropdownOption {
+export interface DropdownOption {
   label: string;
   value: DropdownValue;
 }
@@ -128,5 +129,10 @@ export const selectorValues: Record<Selectors, SelectorValues> = {
         value: Knobs.LFO_1_AMPLITUDE,
       },
     ],
+  },
+  [Selectors.MIDI_INPUT]: {
+    label: 'MIDI Input',
+    action: updateMIDIInput,
+    options: [],
   },
 };

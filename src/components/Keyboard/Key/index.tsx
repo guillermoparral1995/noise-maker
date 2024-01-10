@@ -19,7 +19,7 @@ const Key = ({
   const {
     state: { attack, decay, sustain, release, detune, waveform },
   } = useContext(envelopeStateContext);
-  const midiInput = useContext(midiContext);
+  const { selectedInput: midiInput } = useContext(midiContext);
   let releaseTimeout: NodeJS.Timeout;
 
   const oscillator = useMemo(
