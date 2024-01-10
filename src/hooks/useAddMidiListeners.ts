@@ -22,5 +22,5 @@ export default (knobs: Knobs[], dispatch: React.Dispatch<ActionTypes>) => {
         });
       });
     }
-  }, []);
+  }, [midiInput]);
 };

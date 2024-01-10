@@ -6199,6 +6199,51 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.key {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Keyboard/PitchbendWheel/index.scss":
+/*!****************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Keyboard/PitchbendWheel/index.scss ***!
+  \****************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `#pitchbend-wheel {
+  transform: rotate(270deg);
+  appearance: none;
+  height: 3em;
+  width: 12em;
+  margin: -10px;
+  box-shadow: 1px 1px 5px mediumpurple;
+}
+
+#pitchbend-wheel::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 15px;
+  background: mediumpurple;
+  border-radius: 4px;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  cursor: move;
+}`, "",{"version":3,"sources":["webpack://./src/components/Keyboard/PitchbendWheel/index.scss"],"names":[],"mappings":"AAAA;EACI,yBAAA;EACA,gBAAA;EACA,WAAA;EACA,WAAA;EACA,aAAA;EACA,oCAAA;AACJ;;AAEA;EACI,wBAAA;EACA,WAAA;EACA,YAAA;EACA,wBAAA;EACA,kBAAA;EACA,iBAAA;EACA,oBAAA;EACA,YAAA;AACJ","sourcesContent":["#pitchbend-wheel {\n    transform: rotate(270deg);\n    appearance: none;\n    height: 3em;\n    width: 12em;\n    margin: -10px;\n    box-shadow: 1px 1px 5px mediumpurple;\n}\n\n#pitchbend-wheel::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    width: 10px;\n    height: 15px;\n    background: mediumpurple;\n    border-radius: 4px;\n    cursor: -moz-grab;\n    cursor: -webkit-grab;\n    cursor:move;\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Keyboard/index.scss":
 /*!*************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Keyboard/index.scss ***!
@@ -69977,6 +70022,61 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./src/components/Keyboard/PitchbendWheel/index.scss":
+/*!***********************************************************!*\
+  !*** ./src/components/Keyboard/PitchbendWheel/index.scss ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./index.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Keyboard/PitchbendWheel/index.scss");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./src/components/Keyboard/index.scss":
 /*!********************************************!*\
   !*** ./src/components/Keyboard/index.scss ***!
@@ -70438,6 +70538,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Oscilloscope__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Oscilloscope */ "./src/components/Oscilloscope/index.tsx");
 /* harmony import */ var primereact_resources_themes_lara_dark_purple_theme_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! primereact/resources/themes/lara-dark-purple/theme.css */ "./node_modules/primereact/resources/themes/lara-dark-purple/theme.css");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss");
+/* harmony import */ var _components_Config_MIDIInputSelector__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/Config/MIDIInputSelector */ "./src/components/Config/MIDIInputSelector/index.tsx");
+
 
 
 
@@ -70455,6 +70557,8 @@ var App = function () {
         setIsMounted(true);
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", { id: "config-section" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Config_MIDIInputSelector__WEBPACK_IMPORTED_MODULE_11__["default"], null)),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", { id: "controls-section" },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "column", id: "general-controls-column" },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_GeneralControls__WEBPACK_IMPORTED_MODULE_5__["default"], null)),
@@ -70472,6 +70576,36 @@ var App = function () {
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", { id: "keyboard-section" })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+
+/***/ }),
+
+/***/ "./src/components/Config/MIDIInputSelector/index.tsx":
+/*!***********************************************************!*\
+  !*** ./src/components/Config/MIDIInputSelector/index.tsx ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../providers/MIDIProvider */ "./src/providers/MIDIProvider/index.tsx");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+/* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/Selector */ "./src/components/shared/Selector.tsx");
+
+
+
+
+var MIDIInputSelector = function () {
+    var _a;
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_1__.midiContext), inputs = _b.inputs, selectedInput = _b.selectedInput, dispatch = _b.dispatch;
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Selectors.MIDI_INPUT, dispatch: dispatch, value: (_a = selectedInput === null || selectedInput === void 0 ? void 0 : selectedInput.name) !== null && _a !== void 0 ? _a : '', disabled: !inputs.length, options: inputs.map(function (i) { return ({ value: i, label: i }); }) }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MIDIInputSelector);
 
 
 /***/ }),
@@ -70518,22 +70652,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
-/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
-/* harmony import */ var _EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
-/* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store/actions */ "./src/components/Controls/EnvelopeControls/store/actions.ts");
+/* harmony import */ var _hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../hooks/useAddMidiListeners */ "./src/hooks/useAddMidiListeners.ts");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
+/* harmony import */ var _EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
 
 
 
 
 
 var EnvelopeControls = function () {
-    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__.envelopeStateContext), state = _a.state, dispatch = _a.dispatch;
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_4__.envelopeStateContext), state = _a.state, dispatch = _a.dispatch;
+    (0,_hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_1__["default"])([_types__WEBPACK_IMPORTED_MODULE_2__.Knobs.ATTACK, _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.DECAY, _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.SUSTAIN, _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.RELEASE], dispatch);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.ATTACK, value: state.attack, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateAttack, dispatch: dispatch }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.DECAY, value: state.decay, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateDecay, dispatch: dispatch }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.SUSTAIN, value: state.sustain, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateSustain, dispatch: dispatch }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_2__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_1__.Knobs.RELEASE, value: state.release, action: _store_actions__WEBPACK_IMPORTED_MODULE_4__.updateRelease, dispatch: dispatch })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.ATTACK, value: state.attack, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.DECAY, value: state.decay, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.SUSTAIN, value: state.sustain, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.RELEASE, value: state.release, dispatch: dispatch })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EnvelopeControls);
 
@@ -70552,6 +70687,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   updateAttack: () => (/* binding */ updateAttack),
 /* harmony export */   updateDecay: () => (/* binding */ updateDecay),
 /* harmony export */   updateDetune: () => (/* binding */ updateDetune),
+/* harmony export */   updatePitchbend: () => (/* binding */ updatePitchbend),
 /* harmony export */   updateRelease: () => (/* binding */ updateRelease),
 /* harmony export */   updateSustain: () => (/* binding */ updateSustain),
 /* harmony export */   updateWaveform: () => (/* binding */ updateWaveform)
@@ -70582,6 +70718,10 @@ var updateRelease = function (release) { return ({
     type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_RELEASE,
     payload: release,
 }); };
+var updatePitchbend = function (pitchbend) { return ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_PITCHBEND,
+    payload: pitchbend,
+}); };
 
 
 /***/ }),
@@ -70606,6 +70746,7 @@ var initialState = {
     decay: 0,
     sustain: 1,
     release: 0,
+    pitchbend: 0,
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initialState);
 
@@ -70651,6 +70792,8 @@ var reducer = function (state, action) {
             return __assign(__assign({}, state), { sustain: payload });
         case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_RELEASE:
             return __assign(__assign({}, state), { release: payload });
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_PITCHBEND:
+            return __assign(__assign({}, state), { pitchbend: payload });
         default:
             return state;
     }
@@ -70702,12 +70845,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
-/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
-/* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared/Selector */ "./src/components/shared/Selector.tsx");
-/* harmony import */ var _FilterStateProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./FilterStateProvider */ "./src/components/Controls/FilterControls/FilterStateProvider.tsx");
-/* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./store/actions */ "./src/components/Controls/FilterControls/store/actions.ts");
+/* harmony import */ var _hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../hooks/useAddMidiListeners */ "./src/hooks/useAddMidiListeners.ts");
+/* harmony import */ var _hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useConnectLFOTargets */ "./src/hooks/useConnectLFOTargets.ts");
+/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
+/* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../shared/Selector */ "./src/components/shared/Selector.tsx");
+/* harmony import */ var _FilterStateProvider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./FilterStateProvider */ "./src/components/Controls/FilterControls/FilterStateProvider.tsx");
+
 
 
 
@@ -70716,35 +70861,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var FilterControls_ = function () {
-    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_FilterStateProvider__WEBPACK_IMPORTED_MODULE_5__.filterStateContext), _b = _a.state, type = _b.type, cutoff = _b.cutoff, resonance = _b.resonance, dispatch = _a.dispatch;
-    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_1__.audioContext), filter = _c.filter, lfo1 = _c.lfo1, lfo2 = _c.lfo2;
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_FilterStateProvider__WEBPACK_IMPORTED_MODULE_7__.filterStateContext), _b = _a.state, type = _b.type, cutoff = _b.cutoff, resonance = _b.resonance, dispatch = _a.dispatch;
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__.audioContext), filter = _c.filter, lfo1 = _c.lfo1, lfo2 = _c.lfo2;
+    (0,_hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_1__["default"])([_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_CUTOFF, _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_RESONANCE], dispatch);
+    (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_2__["default"])(lfo1, [
+        { knob: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_CUTOFF, param: filter.frequency },
+        { knob: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_RESONANCE, param: filter.Q },
+    ]);
+    (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_2__["default"])(lfo2, [
+        { knob: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_CUTOFF, param: filter.frequency },
+        { knob: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_RESONANCE, param: filter.Q },
+    ]);
     filter.type = type;
     filter.frequency.value = cutoff;
     filter.Q.value = resonance;
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        if (lfo1.target === _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.FILTER_CUTOFF) {
-            lfo1.output.connect(filter.frequency);
-        }
-        if (lfo1.target === _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.FILTER_RESONANCE) {
-            lfo1.output.connect(filter.Q);
-        }
-        return function () { return lfo1.output.disconnect(); };
-    }, [lfo1.target]);
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        if (lfo2.target === _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.FILTER_CUTOFF) {
-            lfo2.output.connect(filter.frequency);
-        }
-        if (lfo2.target === _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.FILTER_RESONANCE) {
-            lfo2.output.connect(filter.Q);
-        }
-        return function () { return lfo2.output.disconnect(); };
-    }, [lfo2.target]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_4__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Selectors.FILTER, value: type, dispatch: dispatch, action: _store_actions__WEBPACK_IMPORTED_MODULE_6__.updateFilterType }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.FILTER_CUTOFF, value: cutoff, action: _store_actions__WEBPACK_IMPORTED_MODULE_6__.updateFilterCutoff, dispatch: dispatch }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.FILTER_RESONANCE, value: resonance, action: _store_actions__WEBPACK_IMPORTED_MODULE_6__.updateFilterResonance, dispatch: dispatch })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.FILTER, value: type, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_CUTOFF, value: cutoff, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_RESONANCE, value: resonance, dispatch: dispatch })));
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FilterStateProvider__WEBPACK_IMPORTED_MODULE_5__.FilterStateProvider, null,
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_FilterStateProvider__WEBPACK_IMPORTED_MODULE_7__.FilterStateProvider, null,
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(FilterControls_, null))); });
 
 
@@ -70888,17 +71024,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
-/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
-/* harmony import */ var _GeneralControlsStateProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./GeneralControlsStateProvider */ "./src/components/Controls/GeneralControls/GeneralControlsStateProvider.tsx");
-/* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./store/actions */ "./src/components/Controls/GeneralControls/store/actions.ts");
-/* harmony import */ var _providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../providers/MIDIProvider */ "./src/providers/MIDIProvider.tsx");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../utils */ "./src/utils/index.ts");
-
-
+/* harmony import */ var _hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../hooks/useAddMidiListeners */ "./src/hooks/useAddMidiListeners.ts");
+/* harmony import */ var _hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useConnectLFOTargets */ "./src/hooks/useConnectLFOTargets.ts");
+/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
+/* harmony import */ var _GeneralControlsStateProvider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./GeneralControlsStateProvider */ "./src/components/Controls/GeneralControls/GeneralControlsStateProvider.tsx");
 
 
 
@@ -70907,50 +71038,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var GeneralControls_ = function () {
-    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_GeneralControlsStateProvider__WEBPACK_IMPORTED_MODULE_5__.generalControlsStateContext), state = _a.state, dispatch = _a.dispatch;
-    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__.audioContext), volume = _b.volume, pan = _b.pan, lfo1 = _b.lfo1, lfo2 = _b.lfo2;
-    var midiInput = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_7__.midiContext);
-    var handleUpdate = function (action, value) {
-        dispatch(action(value));
-    };
-    var throttledUpdate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((0,lodash__WEBPACK_IMPORTED_MODULE_1__.throttle)(handleUpdate, 100), [dispatch]);
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        midiInput.addListener('controlchange', function (e) {
-            var value = (0,_utils__WEBPACK_IMPORTED_MODULE_8__.roundValue)(e.value);
-            if (e.controller.number === 74) {
-                throttledUpdate(_store_actions__WEBPACK_IMPORTED_MODULE_6__.updateVolume, value);
-            }
-            if (e.controller.number === 18) {
-                var panValue = value * 2 - 1;
-                throttledUpdate(_store_actions__WEBPACK_IMPORTED_MODULE_6__.updatePan, (0,_utils__WEBPACK_IMPORTED_MODULE_8__.roundValue)(panValue));
-            }
-        });
-    }, []);
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        if (lfo1.target === _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.VOLUME) {
-            lfo1.output.connect(volume.gain);
-        }
-        if (lfo1.target === _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.PAN) {
-            lfo1.output.connect(pan.pan);
-        }
-        return function () { return lfo1.output.disconnect(); };
-    }, [lfo1.target]);
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        if (lfo2.target === _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.VOLUME) {
-            lfo2.output.connect(volume.gain);
-        }
-        if (lfo2.target === _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.PAN) {
-            lfo2.output.connect(pan.pan);
-        }
-        return function () { return lfo2.output.disconnect(); };
-    }, [lfo2.target]);
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_GeneralControlsStateProvider__WEBPACK_IMPORTED_MODULE_6__.generalControlsStateContext), state = _a.state, dispatch = _a.dispatch;
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__.audioContext), volume = _b.volume, pan = _b.pan, lfo1 = _b.lfo1, lfo2 = _b.lfo2;
+    (0,_hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_1__["default"])([_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.VOLUME, _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PAN], dispatch);
+    (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_2__["default"])(lfo1, [
+        { knob: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.VOLUME, param: volume.gain },
+        { knob: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PAN, param: pan.pan },
+    ]);
+    (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_2__["default"])(lfo2, [
+        { knob: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.VOLUME, param: volume.gain },
+        { knob: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PAN, param: pan.pan },
+    ]);
     volume.gain.value = state.volume;
     pan.pan.value = state.pan;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_4__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.VOLUME, value: state.volume, action: _store_actions__WEBPACK_IMPORTED_MODULE_6__.updateVolume, dispatch: dispatch }),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_4__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.PAN, value: state.pan, action: _store_actions__WEBPACK_IMPORTED_MODULE_6__.updatePan, dispatch: dispatch })));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.VOLUME, value: state.volume, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PAN, value: state.pan, dispatch: dispatch })));
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_GeneralControlsStateProvider__WEBPACK_IMPORTED_MODULE_5__.GeneralControlsStateProvider, null,
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_GeneralControlsStateProvider__WEBPACK_IMPORTED_MODULE_6__.GeneralControlsStateProvider, null,
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(GeneralControls_, null))); });
 
 
@@ -71085,14 +71190,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../constants/knobsValues */ "./src/constants/knobsValues.ts");
-/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
-/* harmony import */ var _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../providers/AudioContextProvider/store/actions */ "./src/providers/AudioContextProvider/store/actions.ts");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
-/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
-/* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../shared/Selector */ "./src/components/shared/Selector.tsx");
-/* harmony import */ var _LFOStateProvider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./LFOStateProvider */ "./src/components/Controls/LFOControls/LFOStateProvider.tsx");
-/* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./store/actions */ "./src/components/Controls/LFOControls/store/actions.ts");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./index.scss */ "./src/components/Controls/LFOControls/index.scss");
+/* harmony import */ var _hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useAddMidiListeners */ "./src/hooks/useAddMidiListeners.ts");
+/* harmony import */ var _hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../hooks/useConnectLFOTargets */ "./src/hooks/useConnectLFOTargets.ts");
+/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
+/* harmony import */ var _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../providers/AudioContextProvider/store/actions */ "./src/providers/AudioContextProvider/store/actions.ts");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
+/* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../shared/Selector */ "./src/components/shared/Selector.tsx");
+/* harmony import */ var _LFOStateProvider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./LFOStateProvider */ "./src/components/Controls/LFOControls/LFOStateProvider.tsx");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./index.scss */ "./src/components/Controls/LFOControls/index.scss");
+
 
 
 
@@ -71104,8 +71211,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var LFOControls_ = function () {
-    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_LFOStateProvider__WEBPACK_IMPORTED_MODULE_7__.lfoStateContext), state = _a.state, dispatch = _a.dispatch;
-    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__.audioContext), context = _b.context, lfo1 = _b.lfo1, lfo2 = _b.lfo2, audioDispatch = _b.dispatch;
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_LFOStateProvider__WEBPACK_IMPORTED_MODULE_9__.lfoStateContext), state = _a.state, dispatch = _a.dispatch;
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_4__.audioContext), context = _b.context, lfo1 = _b.lfo1, lfo2 = _b.lfo2, audioDispatch = _b.dispatch;
+    (0,_hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_2__["default"])([
+        _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_FREQUENCY,
+        _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_AMPLITUDE,
+        _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_2_FREQUENCY,
+        _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_2_AMPLITUDE,
+    ], dispatch);
     var lfo1Node = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
         return new OscillatorNode(context, {
             type: state.lfo1.waveform,
@@ -71132,46 +71245,41 @@ var LFOControls_ = function () {
             lfo2Node.disconnect();
         };
     }, []);
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        if (lfo2.target === _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_FREQUENCY) {
-            lfo2.output.connect(lfo1Node.frequency);
-        }
-        if (lfo2.target === _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_AMPLITUDE) {
-            lfo2.output.connect(lfo1.output.gain);
-        }
-        return function () { return lfo2.output.disconnect(); };
-    }, [lfo2.target]);
+    (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_3__["default"])(lfo2, [
+        { knob: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_FREQUENCY, param: lfo1Node.frequency },
+        { knob: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_AMPLITUDE, param: lfo1.output.gain },
+    ]);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         if (lfo1.target !== 'off') {
-            var knob = _types__WEBPACK_IMPORTED_MODULE_4__.Knobs[lfo1.target];
+            var knob = _types__WEBPACK_IMPORTED_MODULE_6__.Knobs[lfo1.target];
             var range = ((_constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].max - _constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].min) / 2) *
                 state.lfo1.amplitude;
             lfo1.output.gain.value = range;
-            audioDispatch((0,_providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO1Target)(knob));
+            audioDispatch((0,_providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_5__.updateLFO1Target)(knob));
         }
     }, [state.lfo1.amplitude, lfo1.target]);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         if (lfo2.target !== 'off') {
-            var knob = _types__WEBPACK_IMPORTED_MODULE_4__.Knobs[lfo2.target];
+            var knob = _types__WEBPACK_IMPORTED_MODULE_6__.Knobs[lfo2.target];
             var range = ((_constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].max - _constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].min) / 2) *
                 state.lfo2.amplitude;
             lfo2.output.gain.value = range;
-            audioDispatch((0,_providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO2Target)(knob));
+            audioDispatch((0,_providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_5__.updateLFO2Target)(knob));
         }
     }, [state.lfo2.amplitude, lfo2.target]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "lfo-column" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_1_TARGET, value: lfo1.target, dispatch: audioDispatch, action: _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO1Target }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_1_WAVEFORM, value: state.lfo1.waveform, dispatch: dispatch, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO1Waveform }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_FREQUENCY, value: state.lfo1.frequency, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO1Frequency, dispatch: dispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_AMPLITUDE, value: state.lfo1.amplitude, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO1Amplitude, dispatch: dispatch })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_1_TARGET, value: lfo1.target, dispatch: audioDispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_1_WAVEFORM, value: state.lfo1.waveform, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_FREQUENCY, value: state.lfo1.frequency, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_AMPLITUDE, value: state.lfo1.amplitude, dispatch: dispatch })),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "lfo-column" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_2_TARGET, value: lfo2.target, dispatch: audioDispatch, action: _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO2Target }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.LFO_2_WAVEFORM, value: state.lfo2.waveform, dispatch: dispatch, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO2Waveform }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_2_FREQUENCY, value: state.lfo2.frequency, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO2Frequency, dispatch: dispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_2_AMPLITUDE, value: state.lfo2.amplitude, action: _store_actions__WEBPACK_IMPORTED_MODULE_8__.updateLFO2Amplitude, dispatch: dispatch }))));
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_2_TARGET, value: lfo2.target, dispatch: audioDispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_2_WAVEFORM, value: state.lfo2.waveform, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_2_FREQUENCY, value: state.lfo2.frequency, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_2_AMPLITUDE, value: state.lfo2.amplitude, dispatch: dispatch }))));
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_LFOStateProvider__WEBPACK_IMPORTED_MODULE_7__.LFOStateProvider, null,
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_LFOStateProvider__WEBPACK_IMPORTED_MODULE_9__.LFOStateProvider, null,
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(LFOControls_, null))); });
 
 
@@ -71315,10 +71423,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
-/* harmony import */ var _providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../providers/MIDIProvider */ "./src/providers/MIDIProvider.tsx");
+/* harmony import */ var _providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../providers/MIDIProvider */ "./src/providers/MIDIProvider/index.tsx");
 /* harmony import */ var _Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index.scss */ "./src/components/Keyboard/Key/index.scss");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+/* harmony import */ var _hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../hooks/useConnectLFOTargets */ "./src/hooks/useConnectLFOTargets.ts");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+
 
 
 
@@ -71329,30 +71439,24 @@ var Key = function (_a) {
     var identifier = _a.identifier, frequency = _a.frequency;
     var keyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
     var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_1__.audioContext), context = _b.context, output = _b.output, lfo1 = _b.lfo1, lfo2 = _b.lfo2;
-    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__.envelopeStateContext).state, attack = _c.attack, decay = _c.decay, sustain = _c.sustain, release = _c.release, detune = _c.detune, waveform = _c.waveform;
-    var midiInput = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_2__.midiContext);
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__.envelopeStateContext).state, attack = _c.attack, decay = _c.decay, sustain = _c.sustain, release = _c.release, detune = _c.detune, pitchbend = _c.pitchbend, waveform = _c.waveform;
+    var midiInput = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_2__.midiContext).selectedInput;
     var releaseTimeout;
     var oscillator = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new OscillatorNode(context, { type: waveform, frequency: frequency }); }, []);
     var envelope = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new GainNode(context); }, []);
     oscillator.type = waveform;
-    oscillator.detune.value = detune;
+    oscillator.detune.value = detune + pitchbend;
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         oscillator.start(context.currentTime);
         envelope.connect(output);
         return function () { return oscillator.disconnect(); };
     }, []);
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        if (lfo1.target === _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DETUNE) {
-            lfo1.output.connect(oscillator.detune);
-        }
-        return function () { return lfo1.output.disconnect(); };
-    }, [lfo1.target]);
-    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-        if (lfo2.target === _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DETUNE) {
-            lfo2.output.connect(oscillator.detune);
-        }
-        return function () { return lfo2.output.disconnect(); };
-    }, [lfo2.target]);
+    (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_5__["default"])(lfo1, [
+        { knob: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.DETUNE, param: oscillator.detune },
+    ]);
+    (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_5__["default"])(lfo2, [
+        { knob: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.DETUNE, param: oscillator.detune },
+    ]);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         if (midiInput) {
             midiInput.addListener('noteon', function (event) {
@@ -71408,6 +71512,64 @@ var Key = function (_a) {
 
 /***/ }),
 
+/***/ "./src/components/Keyboard/PitchbendWheel/index.tsx":
+/*!**********************************************************!*\
+  !*** ./src/components/Keyboard/PitchbendWheel/index.tsx ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   PitchbendWheel: () => (/* binding */ PitchbendWheel),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../constants/knobsValues */ "./src/constants/knobsValues.ts");
+/* harmony import */ var _providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../providers/MIDIProvider */ "./src/providers/MIDIProvider/index.tsx");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+/* harmony import */ var _Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
+/* harmony import */ var _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Controls/EnvelopeControls/store/actions */ "./src/components/Controls/EnvelopeControls/store/actions.ts");
+/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./index.scss */ "./src/components/Keyboard/PitchbendWheel/index.scss");
+
+
+
+
+
+
+
+
+var PitchbendWheel = function () {
+    var midiInput = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_3__.midiContext).selectedInput;
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_5__.envelopeStateContext), state = _a.state, dispatch = _a.dispatch;
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (midiInput) {
+            midiInput.addListener('pitchbend', function (e) {
+                var multiplier = (_constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND].max -
+                    _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND].min) /
+                    2;
+                var value = (0,lodash__WEBPACK_IMPORTED_MODULE_0__.round)(e.value * multiplier, 2);
+                dispatch((0,_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_6__.updatePitchbend)(value));
+            });
+        }
+    }, [midiInput]);
+    var handleChange = function (e) {
+        var pitchbendValue = (0,lodash__WEBPACK_IMPORTED_MODULE_0__.round)(e.target.value, 2);
+        dispatch((0,_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_6__.updatePitchbend)(pitchbendValue));
+    };
+    var handleDragEnd = function () {
+        dispatch((0,_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_6__.updatePitchbend)(0));
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement("input", { id: "pitchbend-wheel", type: "range", min: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND].min, max: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND].max, step: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND].step, value: state.pitchbend, onChange: handleChange, onMouseUp: handleDragEnd }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PitchbendWheel);
+
+
+/***/ }),
+
 /***/ "./src/components/Keyboard/index.tsx":
 /*!*******************************************!*\
   !*** ./src/components/Keyboard/index.tsx ***!
@@ -71422,13 +71584,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _constants_noteTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../constants/noteTable */ "./src/constants/noteTable.ts");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../types */ "./src/types.ts");
-/* harmony import */ var _Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
-/* harmony import */ var _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Controls/EnvelopeControls/store/actions */ "./src/components/Controls/EnvelopeControls/store/actions.ts");
+/* harmony import */ var _hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../hooks/useAddMidiListeners */ "./src/hooks/useAddMidiListeners.ts");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../types */ "./src/types.ts");
+/* harmony import */ var _Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
 /* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/Knob */ "./src/components/shared/Knob.tsx");
 /* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/Selector */ "./src/components/shared/Selector.tsx");
 /* harmony import */ var _Key__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Key */ "./src/components/Keyboard/Key/index.tsx");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index.scss */ "./src/components/Keyboard/index.scss");
+/* harmony import */ var _PitchbendWheel__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./PitchbendWheel */ "./src/components/Keyboard/PitchbendWheel/index.tsx");
+
 
 
 
@@ -71439,11 +71603,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Keyboard = function () {
-    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__.envelopeStateContext), state = _a.state, dispatch = _a.dispatch;
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_4__.envelopeStateContext), state = _a.state, dispatch = _a.dispatch;
+    (0,_hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_2__["default"])([_types__WEBPACK_IMPORTED_MODULE_3__.Knobs.DETUNE], dispatch);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "keyboard-controls", className: "column" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Selectors.WAVEFORM, dispatch: dispatch, value: state.waveform, action: _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateWaveform }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.DETUNE, value: state.detune, action: _Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateDetune, dispatch: dispatch })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Selectors.WAVEFORM, dispatch: dispatch, value: state.waveform }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.DETUNE, value: state.detune, dispatch: dispatch })),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "keyboard-wheels", className: "column" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_PitchbendWheel__WEBPACK_IMPORTED_MODULE_9__["default"], null)),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: "keyboard-container" }, Object.entries(_constants_noteTable__WEBPACK_IMPORTED_MODULE_1__["default"]).map(function (_a) {
             var note = _a[0], frequency = _a[1];
             return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Key__WEBPACK_IMPORTED_MODULE_7__["default"], { key: note, identifier: note, frequency: frequency }));
@@ -71474,12 +71641,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var Oscilloscope = function () {
     var canvasRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_1__.audioContext), context = _a.context, output = _a.output;
-    var analyser = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new AnalyserNode(context, { fftSize: 512 }); }, []);
+    var analyser = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_1__.audioContext).analyser;
     var bufferLength = analyser.frequencyBinCount;
     var dataArray = new Uint8Array(bufferLength);
     analyser.getByteTimeDomainData(dataArray);
-    output.connect(analyser);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         draw();
     }, [canvasRef]);
@@ -71532,32 +71697,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var primereact_knob__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! primereact/knob */ "./node_modules/primereact/knob/knob.esm.js");
+/* harmony import */ var primereact_knob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! primereact/knob */ "./node_modules/primereact/knob/knob.esm.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constants/knobsValues */ "./src/constants/knobsValues.ts");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils */ "./src/utils/index.ts");
-
 
 
 
 
 var Knob = function (_a) {
     var _b;
-    var id = _a.id, value = _a.value, action = _a.action, dispatch = _a.dispatch;
+    var id = _a.id, value = _a.value, dispatch = _a.dispatch;
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
         return function () { return throttledHandleChange.cancel(); };
     }, []);
     var handleChange = function (e) {
-        dispatch(action((0,_utils__WEBPACK_IMPORTED_MODULE_3__.roundValue)(e.value)));
+        dispatch(_constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].action((0,lodash__WEBPACK_IMPORTED_MODULE_0__.round)(e.value, 2)));
     };
     var throttledHandleChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)((0,lodash__WEBPACK_IMPORTED_MODULE_0__.throttle)(handleChange, 50), [
         dispatch,
-        action,
     ]);
     return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", { className: "knob-container" },
         react__WEBPACK_IMPORTED_MODULE_1___default().createElement("label", { htmlFor: id }, _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].label),
-        react__WEBPACK_IMPORTED_MODULE_1___default().createElement(primereact_knob__WEBPACK_IMPORTED_MODULE_4__.Knob, { defaultValue: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].default, value: value, id: id, name: id, onChange: throttledHandleChange, min: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].min, max: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].max, step: (_b = _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].step) !== null && _b !== void 0 ? _b : 0.01, strokeWidth: 5, size: 50 })));
+        react__WEBPACK_IMPORTED_MODULE_1___default().createElement(primereact_knob__WEBPACK_IMPORTED_MODULE_3__.Knob, { defaultValue: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].default, value: value, id: id, name: id, onChange: throttledHandleChange, min: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].min, max: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].max, step: (_b = _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].step) !== null && _b !== void 0 ? _b : 0.01, strokeWidth: 5, size: 50 })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Knob);
 
@@ -71583,14 +71745,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Selector = function (_a) {
-    var id = _a.id, value = _a.value, dispatch = _a.dispatch, action = _a.action;
+    var id = _a.id, value = _a.value, dispatch = _a.dispatch, options = _a.options, disabled = _a.disabled;
     var handleSelect = function (e) {
-        dispatch(action(e.target.value));
+        dispatch(_constants_selectorsValues__WEBPACK_IMPORTED_MODULE_1__.selectorValues[id].action(e.target.value));
     };
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", { htmlFor: id }, _constants_selectorsValues__WEBPACK_IMPORTED_MODULE_1__.selectorValues[id].label),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(primereact_dropdown__WEBPACK_IMPORTED_MODULE_2__.Dropdown, { id: id, name: id, onChange: handleSelect, value: value, options: _constants_selectorsValues__WEBPACK_IMPORTED_MODULE_1__.selectorValues[id].options }))));
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(primereact_dropdown__WEBPACK_IMPORTED_MODULE_2__.Dropdown, { id: id, name: id, onChange: handleSelect, value: value, options: options !== null && options !== void 0 ? options : _constants_selectorsValues__WEBPACK_IMPORTED_MODULE_1__.selectorValues[id].options, disabled: disabled }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Selector);
 
@@ -71608,90 +71770,132 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   knobsValues: () => (/* binding */ knobsValues)
 /* harmony export */ });
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types */ "./src/types.ts");
+/* harmony import */ var _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Controls/EnvelopeControls/store/actions */ "./src/components/Controls/EnvelopeControls/store/actions.ts");
+/* harmony import */ var _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Controls/FilterControls/store/actions */ "./src/components/Controls/FilterControls/store/actions.ts");
+/* harmony import */ var _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Controls/GeneralControls/store/actions */ "./src/components/Controls/GeneralControls/store/actions.ts");
+/* harmony import */ var _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Controls/LFOControls/store/actions */ "./src/components/Controls/LFOControls/store/actions.ts");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../types */ "./src/types.ts");
 var _a;
 
+
+
+
+
 var knobsValues = (_a = {},
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.VOLUME] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.VOLUME] = {
         label: 'Volume',
         min: 0,
         max: 1,
         default: 0.5,
+        midiControl: 74,
+        action: _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateVolume,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.PAN] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PAN] = {
         label: 'Pan',
         min: -1,
         max: 1,
         default: 0,
+        midiControl: 18,
+        action: _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updatePan,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.DETUNE] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.DETUNE] = {
         label: 'Detune',
         min: -1200,
         max: 1200,
         default: 0,
+        midiControl: 75,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateDetune,
         step: 1,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.ATTACK] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND] = {
+        label: 'Pitchbend',
+        min: -300,
+        max: 300,
+        default: 0,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updatePitchbend,
+        step: 1,
+    },
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.ATTACK] = {
         label: 'Attack',
         min: 0,
         max: 5,
         default: 0,
+        midiControl: 93,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateAttack,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.DECAY] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.DECAY] = {
         label: 'Decay',
         min: 0,
         max: 5,
         default: 0,
+        midiControl: 91,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateDecay,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.SUSTAIN] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.SUSTAIN] = {
         label: 'Sustain',
         min: 0,
         max: 1,
         default: 1,
+        midiControl: 73,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateSustain,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.RELEASE] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.RELEASE] = {
         label: 'Release',
         min: 0,
         max: 5,
         default: 0,
+        midiControl: 79,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateRelease,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.FILTER_CUTOFF] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_CUTOFF] = {
         label: 'Cut-off',
         min: 10,
         max: 5000,
         default: 350,
+        midiControl: 71,
+        action: _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateFilterCutoff,
         step: 1,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.FILTER_RESONANCE] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_RESONANCE] = {
         label: 'Resonance',
         min: 0.0001,
         max: 50,
         default: 1,
+        midiControl: 19,
+        action: _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateFilterResonance,
         step: 0.1,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_1_FREQUENCY] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_FREQUENCY] = {
         label: 'Frequency',
         min: 0.2,
         max: 10,
         default: 1,
+        midiControl: 76,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO1Frequency,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_1_AMPLITUDE] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_AMPLITUDE] = {
         label: 'Amplitude',
         min: 0,
         max: 1,
         default: 0.5,
+        midiControl: 16,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO1Amplitude,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_2_FREQUENCY] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_2_FREQUENCY] = {
         label: 'Frequency',
         min: 0.2,
         max: 10,
         default: 1,
+        midiControl: 77,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO2Frequency,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_2_AMPLITUDE] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_2_AMPLITUDE] = {
         label: 'Amplitude',
         min: 0,
         max: 1,
         default: 0.5,
+        midiControl: 17,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO2Amplitude,
     },
     _a);
 
@@ -71781,7 +71985,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   selectorValues: () => (/* binding */ selectorValues)
 /* harmony export */ });
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types */ "./src/types.ts");
+/* harmony import */ var _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Controls/EnvelopeControls/store/actions */ "./src/components/Controls/EnvelopeControls/store/actions.ts");
+/* harmony import */ var _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Controls/FilterControls/store/actions */ "./src/components/Controls/FilterControls/store/actions.ts");
+/* harmony import */ var _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Controls/LFOControls/store/actions */ "./src/components/Controls/LFOControls/store/actions.ts");
+/* harmony import */ var _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../providers/AudioContextProvider/store/actions */ "./src/providers/AudioContextProvider/store/actions.ts");
+/* harmony import */ var _providers_MIDIProvider_store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../providers/MIDIProvider/store/actions */ "./src/providers/MIDIProvider/store/actions.ts");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../types */ "./src/types.ts");
 var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -71793,32 +72002,37 @@ var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from
 };
 var _a;
 
+
+
+
+
+
 var waveforms = [
     {
         label: 'Sine',
-        value: _types__WEBPACK_IMPORTED_MODULE_0__.Waveform.SINE,
+        value: _types__WEBPACK_IMPORTED_MODULE_5__.Waveform.SINE,
     },
     {
         label: 'Square',
-        value: _types__WEBPACK_IMPORTED_MODULE_0__.Waveform.SQUARE,
+        value: _types__WEBPACK_IMPORTED_MODULE_5__.Waveform.SQUARE,
     },
     {
         label: 'Sawtooth',
-        value: _types__WEBPACK_IMPORTED_MODULE_0__.Waveform.SAWTOOTH,
+        value: _types__WEBPACK_IMPORTED_MODULE_5__.Waveform.SAWTOOTH,
     },
     {
         label: 'Triangle',
-        value: _types__WEBPACK_IMPORTED_MODULE_0__.Waveform.TRIANGLE,
+        value: _types__WEBPACK_IMPORTED_MODULE_5__.Waveform.TRIANGLE,
     },
 ];
 var filterTypes = [
     {
         label: 'Low-pass',
-        value: _types__WEBPACK_IMPORTED_MODULE_0__.FilterType.LOWPASS,
+        value: _types__WEBPACK_IMPORTED_MODULE_5__.FilterType.LOWPASS,
     },
     {
         label: 'High-pass',
-        value: _types__WEBPACK_IMPORTED_MODULE_0__.FilterType.HIGHPASS,
+        value: _types__WEBPACK_IMPORTED_MODULE_5__.FilterType.HIGHPASS,
     },
 ];
 var lfo1Targets = [
@@ -71828,60 +72042,176 @@ var lfo1Targets = [
     },
     {
         label: 'Volume',
-        value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.VOLUME,
+        value: _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.VOLUME,
     },
     {
         label: 'Pan',
-        value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.PAN,
+        value: _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.PAN,
     },
     {
         label: 'Cut-off',
-        value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.FILTER_CUTOFF,
+        value: _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.FILTER_CUTOFF,
     },
     {
         label: 'Resonance',
-        value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.FILTER_RESONANCE,
+        value: _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.FILTER_RESONANCE,
     },
     {
         label: 'Detune',
-        value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.DETUNE,
+        value: _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DETUNE,
     },
 ];
 var selectorValues = (_a = {},
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.WAVEFORM] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_5__.Selectors.WAVEFORM] = {
         label: 'Waveform',
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateWaveform,
         options: waveforms,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.LFO_1_WAVEFORM] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_5__.Selectors.LFO_1_WAVEFORM] = {
         label: 'Waveform',
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateLFO1Waveform,
         options: waveforms,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.LFO_2_WAVEFORM] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_5__.Selectors.LFO_2_WAVEFORM] = {
         label: 'Waveform',
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateLFO2Waveform,
         options: waveforms,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.FILTER] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_5__.Selectors.FILTER] = {
         label: 'Type',
+        action: _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateFilterType,
         options: filterTypes,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.LFO_1_TARGET] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_5__.Selectors.LFO_1_TARGET] = {
         label: 'Target',
+        action: _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO1Target,
         options: lfo1Targets,
     },
-    _a[_types__WEBPACK_IMPORTED_MODULE_0__.Selectors.LFO_2_TARGET] = {
+    _a[_types__WEBPACK_IMPORTED_MODULE_5__.Selectors.LFO_2_TARGET] = {
         label: 'Target',
+        action: _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO2Target,
         options: __spreadArray(__spreadArray([], lfo1Targets, true), [
             {
                 label: 'LFO 1 Frequency',
-                value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_1_FREQUENCY,
+                value: _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.LFO_1_FREQUENCY,
             },
             {
                 label: 'LFO 1 Amplitude',
-                value: _types__WEBPACK_IMPORTED_MODULE_0__.Knobs.LFO_1_AMPLITUDE,
+                value: _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.LFO_1_AMPLITUDE,
             },
         ], false),
     },
+    _a[_types__WEBPACK_IMPORTED_MODULE_5__.Selectors.MIDI_INPUT] = {
+        label: 'MIDI Input',
+        action: _providers_MIDIProvider_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateMIDIInput,
+        options: [],
+    },
     _a);
+
+
+/***/ }),
+
+/***/ "./src/hooks/useAddMidiListeners.ts":
+/*!******************************************!*\
+  !*** ./src/hooks/useAddMidiListeners.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants/knobsValues */ "./src/constants/knobsValues.ts");
+/* harmony import */ var _providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../providers/MIDIProvider */ "./src/providers/MIDIProvider/index.tsx");
+/* harmony import */ var _useThrottledUpdate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useThrottledUpdate */ "./src/hooks/useThrottledUpdate.ts");
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (knobs, dispatch) {
+    var midiInput = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_3__.midiContext).selectedInput;
+    var throttledUpdate = (0,_useThrottledUpdate__WEBPACK_IMPORTED_MODULE_4__["default"])(dispatch);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        if (midiInput) {
+            midiInput.addListener('controlchange', function (e) {
+                knobs.forEach(function (knob) {
+                    if (e.controller.number === _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[knob].midiControl) {
+                        var multiplier = _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[knob].max - _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[knob].min;
+                        var offset = _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[knob].min;
+                        var value = (0,lodash__WEBPACK_IMPORTED_MODULE_0__.round)(e.value * multiplier + offset, 2);
+                        throttledUpdate(_constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[knob].action, value);
+                    }
+                });
+            });
+        }
+    }, [midiInput]);
+});
+
+
+/***/ }),
+
+/***/ "./src/hooks/useConnectLFOTargets.ts":
+/*!*******************************************!*\
+  !*** ./src/hooks/useConnectLFOTargets.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (lfo, connections) {
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        connections.forEach(function (connection) {
+            if (lfo.target === connection.knob) {
+                lfo.output.connect(connection.param);
+            }
+        });
+        return function () { return lfo.output.disconnect(); };
+    }, [lfo.target]);
+});
+
+
+/***/ }),
+
+/***/ "./src/hooks/useThrottledUpdate.ts":
+/*!*****************************************!*\
+  !*** ./src/hooks/useThrottledUpdate.ts ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (dispatch, throttleTime) {
+    if (throttleTime === void 0) { throttleTime = 50; }
+    var handleUpdate = function (action, value) {
+        dispatch(action(value));
+    };
+    var throttledHandleChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)((0,lodash__WEBPACK_IMPORTED_MODULE_0__.throttle)(handleUpdate, throttleTime), [dispatch]);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        return function () { return throttledHandleChange.cancel(); };
+    }, []);
+    return throttledHandleChange;
+});
 
 
 /***/ }),
@@ -71913,12 +72243,14 @@ var AudioContextProvider = function (_a) {
     var volumeNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new GainNode(context); }, []);
     var pannerNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new StereoPannerNode(context); }, []);
     var filterNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new BiquadFilterNode(context); }, []);
+    var analyser = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new AnalyserNode(context, { fftSize: 512 }); }, []);
     var lfo1OutputNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new GainNode(context); }, []);
     var lfo2OutputNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new GainNode(context); }, []);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         filterNode.connect(volumeNode);
         volumeNode.connect(pannerNode);
-        pannerNode.connect(context.destination);
+        pannerNode.connect(analyser);
+        analyser.connect(context.destination);
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(audioContext.Provider, { value: {
             context: context,
@@ -71933,6 +72265,7 @@ var AudioContextProvider = function (_a) {
                 output: lfo2OutputNode,
                 target: state.lfo2Target,
             },
+            analyser: analyser,
             output: filterNode,
             dispatch: dispatch,
         } }, children));
@@ -72025,10 +72358,10 @@ var reducer = function (state, action) {
 
 /***/ }),
 
-/***/ "./src/providers/MIDIProvider.tsx":
-/*!****************************************!*\
-  !*** ./src/providers/MIDIProvider.tsx ***!
-  \****************************************/
+/***/ "./src/providers/MIDIProvider/index.tsx":
+/*!**********************************************!*\
+  !*** ./src/providers/MIDIProvider/index.tsx ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -72040,6 +72373,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var webmidi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! webmidi */ "./node_modules/webmidi/dist/esm/webmidi.esm.js");
+/* harmony import */ var _store_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/actions */ "./src/providers/MIDIProvider/store/actions.ts");
+/* harmony import */ var _store_initialState__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/initialState */ "./src/providers/MIDIProvider/store/initialState.ts");
+/* harmony import */ var _store_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store/reducer */ "./src/providers/MIDIProvider/store/reducer.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -72078,13 +72414,15 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 };
 
 
+
+
+
 var midiContext = react__WEBPACK_IMPORTED_MODULE_0___default().createContext(undefined);
 var MIDIProvider = function (_a) {
     var children = _a.children;
-    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true), loading = _b[0], setLoading = _b[1];
-    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), error = _c[0], setError = _c[1];
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_store_reducer__WEBPACK_IMPORTED_MODULE_4__.reducer, _store_initialState__WEBPACK_IMPORTED_MODULE_3__.initialState), state = _b[0], dispatch = _b[1];
     var enableMidi = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var input, e_1;
+        var e_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -72092,17 +72430,16 @@ var MIDIProvider = function (_a) {
                     return [4 /*yield*/, webmidi__WEBPACK_IMPORTED_MODULE_1__.WebMidi.enable({ sysex: true })];
                 case 1:
                     _a.sent();
-                    input = webmidi__WEBPACK_IMPORTED_MODULE_1__.WebMidi.getInputByName('Arturia MiniLab mkII');
-                    input.addListener('controlchange', function (e) {
-                        console.log(e);
-                    });
-                    setLoading(false);
+                    if (webmidi__WEBPACK_IMPORTED_MODULE_1__.WebMidi.inputs.length) {
+                        dispatch((0,_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateMIDIInput)(webmidi__WEBPACK_IMPORTED_MODULE_1__.WebMidi.inputs[0].name));
+                    }
+                    dispatch((0,_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateMIDILoading)(false));
                     return [3 /*break*/, 3];
                 case 2:
                     e_1 = _a.sent();
                     console.error('Could not start Web MIDI', e_1);
-                    setLoading(false);
-                    setError(true);
+                    dispatch((0,_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateMIDILoading)(false));
+                    dispatch((0,_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateMIDIError)(true));
                     return [3 /*break*/, 3];
                 case 3: return [2 /*return*/];
             }
@@ -72111,11 +72448,109 @@ var MIDIProvider = function (_a) {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
         enableMidi();
     }, []);
-    if (loading)
+    if (state.loading)
         return;
-    if (!loading && !error)
-        return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(midiContext.Provider, { value: webmidi__WEBPACK_IMPORTED_MODULE_1__.WebMidi.getInputByName('Arturia MiniLab mkII') }, children));
-    return children;
+    if (!state.loading && !state.error) {
+        var inputs = webmidi__WEBPACK_IMPORTED_MODULE_1__.WebMidi.inputs.map(function (input) { return input.name; });
+        return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(midiContext.Provider, { value: {
+                dispatch: dispatch,
+                inputs: inputs,
+                selectedInput: state.input
+                    ? webmidi__WEBPACK_IMPORTED_MODULE_1__.WebMidi.getInputByName(state.input)
+                    : undefined,
+            } }, children));
+    }
+};
+
+
+/***/ }),
+
+/***/ "./src/providers/MIDIProvider/store/actions.ts":
+/*!*****************************************************!*\
+  !*** ./src/providers/MIDIProvider/store/actions.ts ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   updateMIDIError: () => (/* binding */ updateMIDIError),
+/* harmony export */   updateMIDIInput: () => (/* binding */ updateMIDIInput),
+/* harmony export */   updateMIDILoading: () => (/* binding */ updateMIDILoading)
+/* harmony export */ });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+
+var updateMIDILoading = function (loading) { return ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_MIDI_LOADING,
+    payload: loading,
+}); };
+var updateMIDIError = function (error) { return ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_MIDI_ERROR,
+    payload: error,
+}); };
+var updateMIDIInput = function (input) { return ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_MIDI_INPUT,
+    payload: input,
+}); };
+
+
+/***/ }),
+
+/***/ "./src/providers/MIDIProvider/store/initialState.ts":
+/*!**********************************************************!*\
+  !*** ./src/providers/MIDIProvider/store/initialState.ts ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initialState: () => (/* binding */ initialState)
+/* harmony export */ });
+var initialState = {
+    loading: true,
+    error: false,
+};
+
+
+/***/ }),
+
+/***/ "./src/providers/MIDIProvider/store/reducer.ts":
+/*!*****************************************************!*\
+  !*** ./src/providers/MIDIProvider/store/reducer.ts ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   reducer: () => (/* binding */ reducer)
+/* harmony export */ });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+var reducer = function (state, action) {
+    var type = action.type, payload = action.payload;
+    switch (type) {
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_MIDI_LOADING:
+            return __assign(__assign({}, state), { loading: payload });
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_MIDI_ERROR:
+            return __assign(__assign({}, state), { error: payload });
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_MIDI_INPUT:
+            return __assign(__assign({}, state), { input: payload });
+        default:
+            return state;
+    }
 };
 
 
@@ -72156,12 +72591,14 @@ var Selectors;
     Selectors["LFO_1_WAVEFORM"] = "LFO_1_WAVEFORM";
     Selectors["LFO_2_TARGET"] = "LFO_2_TARGET";
     Selectors["LFO_2_WAVEFORM"] = "LFO_2_WAVEFORM";
+    Selectors["MIDI_INPUT"] = "MIDI_INPUT";
 })(Selectors || (Selectors = {}));
 var Knobs;
 (function (Knobs) {
     Knobs["VOLUME"] = "VOLUME";
     Knobs["PAN"] = "PAN";
     Knobs["DETUNE"] = "DETUNE";
+    Knobs["PITCHBEND"] = "PITCHBEND";
     Knobs["ATTACK"] = "ATTACK";
     Knobs["DECAY"] = "DECAY";
     Knobs["SUSTAIN"] = "SUSTAIN";
@@ -72183,34 +72620,22 @@ var Actions;
     Actions[Actions["UPDATE_DECAY"] = 5] = "UPDATE_DECAY";
     Actions[Actions["UPDATE_SUSTAIN"] = 6] = "UPDATE_SUSTAIN";
     Actions[Actions["UPDATE_RELEASE"] = 7] = "UPDATE_RELEASE";
-    Actions[Actions["UPDATE_FILTER_TYPE"] = 8] = "UPDATE_FILTER_TYPE";
-    Actions[Actions["UPDATE_FILTER_CUTOFF"] = 9] = "UPDATE_FILTER_CUTOFF";
-    Actions[Actions["UPDATE_FILTER_RESONANCE"] = 10] = "UPDATE_FILTER_RESONANCE";
-    Actions[Actions["UPDATE_LFO_1_TARGET"] = 11] = "UPDATE_LFO_1_TARGET";
-    Actions[Actions["UPDATE_LFO_1_WAVEFORM"] = 12] = "UPDATE_LFO_1_WAVEFORM";
-    Actions[Actions["UPDATE_LFO_1_FREQUENCY"] = 13] = "UPDATE_LFO_1_FREQUENCY";
-    Actions[Actions["UPDATE_LFO_1_AMPLITUDE"] = 14] = "UPDATE_LFO_1_AMPLITUDE";
-    Actions[Actions["UPDATE_LFO_2_TARGET"] = 15] = "UPDATE_LFO_2_TARGET";
-    Actions[Actions["UPDATE_LFO_2_WAVEFORM"] = 16] = "UPDATE_LFO_2_WAVEFORM";
-    Actions[Actions["UPDATE_LFO_2_FREQUENCY"] = 17] = "UPDATE_LFO_2_FREQUENCY";
-    Actions[Actions["UPDATE_LFO_2_AMPLITUDE"] = 18] = "UPDATE_LFO_2_AMPLITUDE";
+    Actions[Actions["UPDATE_PITCHBEND"] = 8] = "UPDATE_PITCHBEND";
+    Actions[Actions["UPDATE_FILTER_TYPE"] = 9] = "UPDATE_FILTER_TYPE";
+    Actions[Actions["UPDATE_FILTER_CUTOFF"] = 10] = "UPDATE_FILTER_CUTOFF";
+    Actions[Actions["UPDATE_FILTER_RESONANCE"] = 11] = "UPDATE_FILTER_RESONANCE";
+    Actions[Actions["UPDATE_LFO_1_TARGET"] = 12] = "UPDATE_LFO_1_TARGET";
+    Actions[Actions["UPDATE_LFO_1_WAVEFORM"] = 13] = "UPDATE_LFO_1_WAVEFORM";
+    Actions[Actions["UPDATE_LFO_1_FREQUENCY"] = 14] = "UPDATE_LFO_1_FREQUENCY";
+    Actions[Actions["UPDATE_LFO_1_AMPLITUDE"] = 15] = "UPDATE_LFO_1_AMPLITUDE";
+    Actions[Actions["UPDATE_LFO_2_TARGET"] = 16] = "UPDATE_LFO_2_TARGET";
+    Actions[Actions["UPDATE_LFO_2_WAVEFORM"] = 17] = "UPDATE_LFO_2_WAVEFORM";
+    Actions[Actions["UPDATE_LFO_2_FREQUENCY"] = 18] = "UPDATE_LFO_2_FREQUENCY";
+    Actions[Actions["UPDATE_LFO_2_AMPLITUDE"] = 19] = "UPDATE_LFO_2_AMPLITUDE";
+    Actions[Actions["UPDATE_MIDI_LOADING"] = 20] = "UPDATE_MIDI_LOADING";
+    Actions[Actions["UPDATE_MIDI_ERROR"] = 21] = "UPDATE_MIDI_ERROR";
+    Actions[Actions["UPDATE_MIDI_INPUT"] = 22] = "UPDATE_MIDI_INPUT";
 })(Actions || (Actions = {}));
-
-
-/***/ }),
-
-/***/ "./src/utils/index.ts":
-/*!****************************!*\
-  !*** ./src/utils/index.ts ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   roundValue: () => (/* binding */ roundValue)
-/* harmony export */ });
-var roundValue = function (value) { return Math.round(100 * value) / 100; };
 
 
 /***/ }),
@@ -85308,7 +85733,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./src/App.tsx");
 /* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
-/* harmony import */ var _providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./providers/MIDIProvider */ "./src/providers/MIDIProvider.tsx");
+/* harmony import */ var _providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./providers/MIDIProvider */ "./src/providers/MIDIProvider/index.tsx");
 
 
 

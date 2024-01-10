@@ -22,7 +22,7 @@ export const PitchbendWheel = () => {
         dispatch(updatePitchbend(value));
       });
     }
-  }, []);
+  }, [midiInput]);
 
   const handleChange = (e: BaseSyntheticEvent) => {
     const pitchbendValue = round(e.target.value as number, 2);
