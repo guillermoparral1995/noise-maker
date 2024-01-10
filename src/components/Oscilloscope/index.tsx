@@ -1,20 +1,14 @@
-import React, { useContext, useEffect, useMemo, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { audioContext } from '../../providers/AudioContextProvider';
-
 import './index.scss';
 
 const Oscilloscope = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const { context, output } = useContext(audioContext);
-  const analyser = useMemo(
-    () => new AnalyserNode(context, { fftSize: 512 }),
-    [],
-  );
+  const { analyser } = useContext(audioContext);
 
   const bufferLength = analyser.frequencyBinCount;
   const dataArray = new Uint8Array(bufferLength);
   analyser.getByteTimeDomainData(dataArray);
-  output.connect(analyser);
 
   useEffect(() => {
     draw();

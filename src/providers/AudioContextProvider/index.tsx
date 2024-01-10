@@ -20,6 +20,7 @@ interface AudioContextProviderValue {
   filter: BiquadFilterNode;
   lfo1: LFO<LFO1Target>;
   lfo2: LFO<LFO2Target>;
+  analyser: AnalyserNode;
   dispatch: React.Dispatch<ActionTypes>;
   output: AudioNode;
 }
@@ -39,13 +40,18 @@ export const AudioContextProvider = ({ children }: PropsWithChildren) => {
     () => new BiquadFilterNode(context),
     [],
   );
+  const analyser = useMemo(
+    () => new AnalyserNode(context, { fftSize: 512 }),
+    [],
+  );
   const lfo1OutputNode: GainNode = useMemo(() => new GainNode(context), []);
   const lfo2OutputNode: GainNode = useMemo(() => new GainNode(context), []);
 
   useEffect(() => {
     filterNode.connect(volumeNode);
     volumeNode.connect(pannerNode);
-    pannerNode.connect(context.destination);
+    pannerNode.connect(analyser);
+    analyser.connect(context.destination);
   }, []);
 
   return (
@@ -63,6 +69,7 @@ export const AudioContextProvider = ({ children }: PropsWithChildren) => {
           output: lfo2OutputNode,
           target: state.lfo2Target,
         },
+        analyser,
         output: filterNode,
         dispatch,
       }}
