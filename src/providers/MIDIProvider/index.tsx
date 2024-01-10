@@ -40,9 +40,7 @@ export const MIDIProvider = ({ children }: PropsWithChildren) => {
 
   if (state.loading) return;
   if (!state.loading && !state.error) {
-    const inputs = WebMidi.inputs.length
-      ? WebMidi.inputs.map((input) => input.name)
-      : [];
+    const inputs = WebMidi.inputs.map((input) => input.name);
     return (
       <midiContext.Provider
         value={{
