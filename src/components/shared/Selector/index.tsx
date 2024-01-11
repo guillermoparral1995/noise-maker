@@ -3,8 +3,8 @@ import React from 'react';
 import {
   DropdownOption,
   selectorValues,
-} from '../../constants/selectorsValues';
-import { ActionTypes, Selectors } from '../../types';
+} from '../../../constants/selectorsValues';
+import { ActionTypes, Selectors } from '../../../types';
 
 interface SelectorProps<T> {
   id: Selectors;
@@ -26,19 +26,17 @@ const Selector = <T extends string>({
   };
 
   return (
-    <>
+    <span className="p-float-label" data-testid={id}>
+      <Dropdown
+        inputId={id}
+        name={id}
+        onChange={handleSelect}
+        value={value}
+        options={options ?? selectorValues[id].options}
+        disabled={disabled}
+      ></Dropdown>
       <label htmlFor={id}>{selectorValues[id].label}</label>
-      <div>
-        <Dropdown
-          id={id}
-          name={id}
-          onChange={handleSelect}
-          value={value}
-          options={options ?? selectorValues[id].options}
-          disabled={disabled}
-        ></Dropdown>
-      </div>
-    </>
+    </span>
   );
 };
 
