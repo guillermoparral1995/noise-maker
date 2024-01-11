@@ -1,4 +1,4 @@
-#pitchbend-wheel {
+#pitchbend_wheel {
     transform: rotate(270deg);
     appearance: none;
     height: 3em;
@@ -7,7 +7,7 @@
     box-shadow: 1px 1px 5px mediumpurple;
 }
 
-#pitchbend-wheel::-webkit-slider-thumb {
+#pitchbend_wheel::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 10px;
     height: 15px;

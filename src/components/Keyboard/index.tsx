@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
-import noteTable from '../../constants/noteTable';
+import noteTable, { Notes } from '../../constants/noteTable';
 import useAddMidiListeners from '../../hooks/useAddMidiListeners';
+import appStyles from '../../index.module.scss';
 import { Knobs, Selectors } from '../../types';
 import { envelopeStateContext } from '../Controls/EnvelopeControls/EnvelopeStateProvider';
 import Knob from '../shared/Knob';
 import Selector from '../shared/Selector';
+import styles from './index.module.scss';
 import Key from './Key';
-import './index.scss';
 import PitchbendWheel from './PitchbendWheel';
 
 const Keyboard = () => {
@@ -14,7 +15,7 @@ const Keyboard = () => {
   useAddMidiListeners([Knobs.DETUNE], dispatch);
   return (
     <>
-      <div id="keyboard-controls" className="column">
+      <div className={appStyles.column}>
         <Selector
           id={Selectors.WAVEFORM}
           dispatch={dispatch}
@@ -22,11 +23,11 @@ const Keyboard = () => {
         ></Selector>
         <Knob id={Knobs.DETUNE} value={state.detune} dispatch={dispatch}></Knob>
       </div>
-      <div id="keyboard-wheels" className="column">
+      <div className={appStyles.column}>
         <PitchbendWheel></PitchbendWheel>
       </div>
-      <div id="keyboard-container">
-        {Object.entries(noteTable).map(([note, frequency]) => (
+      <div id={styles.keyboard_container}>
+        {Object.entries(noteTable).map(([note, frequency]: [Notes, number]) => (
           <Key key={note} identifier={note} frequency={frequency}></Key>
         ))}
       </div>

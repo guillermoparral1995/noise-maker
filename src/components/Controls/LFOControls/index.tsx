@@ -10,8 +10,8 @@ import {
 import { Knobs, Selectors } from '../../../types';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
+import styles from './index.module.scss';
 import { lfoStateContext, LFOStateProvider } from './LFOStateProvider';
-import './index.scss';
 
 const LFOControls_ = () => {
   const { state, dispatch } = useContext(lfoStateContext);
@@ -93,7 +93,7 @@ const LFOControls_ = () => {
 
   return (
     <>
-      <div className="lfo-column">
+      <div className={styles.lfo_column}>
         <Selector
           id={Selectors.LFO_1_TARGET}
           value={lfo1.target}
@@ -115,7 +115,7 @@ const LFOControls_ = () => {
           dispatch={dispatch}
         ></Knob>
       </div>
-      <div className="lfo-column">
+      <div className={styles.lfo_column}>
         <Selector
           id={Selectors.LFO_2_TARGET}
           value={lfo2.target}

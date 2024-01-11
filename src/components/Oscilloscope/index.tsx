@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { audioContext } from '../../providers/AudioContextProvider';
-import './index.scss';
+import styles from './index.module.scss';
 
 const Oscilloscope = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -48,7 +48,7 @@ const Oscilloscope = () => {
     canvasCtx.stroke();
   };
 
-  return <canvas id="oscilloscope" ref={canvasRef}></canvas>;
+  return <canvas id={styles.oscilloscope} ref={canvasRef}></canvas>;
 };
 
 export default Oscilloscope;

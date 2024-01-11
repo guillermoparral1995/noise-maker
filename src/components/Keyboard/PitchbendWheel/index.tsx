@@ -5,7 +5,7 @@ import { midiContext } from '../../../providers/MIDIProvider';
 import { Knobs } from '../../../types';
 import { envelopeStateContext } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
 import { updatePitchbend } from '../../Controls/EnvelopeControls/store/actions';
-import './index.scss';
+import styles from './index.module.scss';
 
 export const PitchbendWheel = () => {
   const { selectedInput: midiInput } = useContext(midiContext);
@@ -35,7 +35,7 @@ export const PitchbendWheel = () => {
 
   return (
     <input
-      id="pitchbend-wheel"
+      id={styles.pitchbend_wheel}
       type="range"
       min={knobsValues[Knobs.PITCHBEND].min}
       max={knobsValues[Knobs.PITCHBEND].max}

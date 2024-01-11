@@ -6,14 +6,14 @@ main {
     padding: 40px;
 }
 
-#controls-section {
+#controls_section {
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
 }
 
-#keyboard-section {
+#keyboard_section {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +26,7 @@ main {
     flex-direction: column;
     gap: 10px;
 
-    &#lfo-controls-column {
+    &#lfo_controls_column {
         flex-direction: row;
     }
 }

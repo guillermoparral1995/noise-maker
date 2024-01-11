@@ -1,6 +1,6 @@
 type NoteTable = Record<Notes, number>;
 
-enum Notes {
+export enum Notes {
   C3 = 'C3',
   CSharp3 = 'C#3',
   D3 = 'D3',

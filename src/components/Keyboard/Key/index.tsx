@@ -1,17 +1,18 @@
 import React, { useContext, useEffect, useMemo, useRef } from 'react';
 import { NoteMessageEvent } from 'webmidi';
+import { Notes } from '../../../constants/noteTable';
+import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { midiContext } from '../../../providers/MIDIProvider';
-import { envelopeStateContext } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
-import './index.scss';
-import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import { Knobs } from '../../../types';
+import { envelopeStateContext } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
+import styles from './index.module.scss';
 
 const Key = ({
   identifier,
   frequency,
 }: {
-  identifier: string;
+  identifier: Notes;
   frequency: number;
 }) => {
   const keyRef = useRef<HTMLButtonElement>(null);
@@ -67,7 +68,7 @@ const Key = ({
 
   const play = () => {
     if (keyRef.current) {
-      keyRef.current.classList.add('pressed');
+      keyRef.current.classList.add(styles.pressed);
     }
     // clear all pending scheduled events for envelope
     envelope.gain.cancelAndHoldAtTime(context.currentTime);
@@ -89,7 +90,7 @@ const Key = ({
 
   const stop = () => {
     if (keyRef.current) {
-      keyRef.current.classList.remove('pressed');
+      keyRef.current.classList.remove(styles.pressed);
     }
     // clear pending scheduled evenets for envelope
     envelope.gain.cancelAndHoldAtTime(context.currentTime);
@@ -112,9 +113,14 @@ const Key = ({
   return (
     <button
       ref={keyRef}
-      className={`key ${
-        identifier.includes('#') ? 'black' : 'white'
-      } ${identifier.replace('#', 'sharp')}`}
+      className={`${styles.key} ${
+        identifier.includes('#')
+          ? `${styles.black} ${
+              // TODO: find a nicer way to do this
+              styles[identifier.replace('#', 'sharp') as keyof typeof styles]
+            }`
+          : styles.white
+      }`}
       type="button"
       onMouseDown={play}
       onMouseUp={stop}

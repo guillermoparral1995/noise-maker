@@ -8,8 +8,8 @@ import LFOControls from './components/Controls/LFOControls';
 import Keyboard from './components/Keyboard';
 import Oscilloscope from './components/Oscilloscope';
 import 'primereact/resources/themes/lara-dark-purple/theme.css';
-import './index.scss';
 import MIDIInputSelector from './components/Config/MIDIInputSelector';
+import styles from './index.module.scss';
 
 const App = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
@@ -19,33 +19,35 @@ const App = () => {
   return (
     <main>
       <section id="config-section">
-        <MIDIInputSelector></MIDIInputSelector>
+        <div className={styles.column}>
+          <MIDIInputSelector></MIDIInputSelector>
+        </div>
       </section>
-      <section id="controls-section">
-        <div className="column" id="general-controls-column">
+      <section id={styles.controls_section}>
+        <div className={styles.column}>
           <GeneralControls></GeneralControls>
         </div>
-        <div className="column" id="filter-controls-column">
+        <div className={styles.column}>
           <FilterControls></FilterControls>
         </div>
-        <div className="column" id="lfo-controls-column">
+        <div className={styles.column} id={styles.lfo_controls_column}>
           <LFOControls></LFOControls>
         </div>
-        <div className="column" id="envelope-controls-column">
+        <div className={styles.column}>
           <EnvelopeStateProvider>
             <EnvelopeFilterControls></EnvelopeFilterControls>
             {isMounted &&
               createPortal(
                 <Keyboard />,
-                document.getElementById('keyboard-section'),
+                document.getElementById(styles.keyboard_section),
               )}
           </EnvelopeStateProvider>
         </div>
-        <div className="column" id="oscilloscope-column">
+        <div className={styles.column}>
           <Oscilloscope></Oscilloscope>
         </div>
       </section>
-      <section id="keyboard-section"></section>
+      <section id={styles.keyboard_section}></section>
     </main>
   );
 };

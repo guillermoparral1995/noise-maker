@@ -24,12 +24,12 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.scss$/i,
         use: [
           // Creates `style` nodes from JS strings
           'style-loader',
           // Translates CSS into CommonJS
-          'css-loader',
+          { loader: 'css-loader', options: { modules: true } },
           // Compiles Sass to CSS
           'sass-loader',
         ],
