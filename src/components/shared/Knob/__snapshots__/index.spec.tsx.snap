@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Knob should render with knob value 1`] = `
+<div
+  data-testid="VOLUME"
+  tabindex="0"
+>
+  <label
+    for="VOLUME"
+  >
+    Volume
+  </label>
+  <div
+    class="p-knob p-component"
+    data-pc-name="knob"
+    data-pc-section="root"
+    id="VOLUME"
+  >
+    <svg
+      data-pc-section="svg"
+      height="50"
+      viewBox="0 0 100 100"
+      width="50"
+    >
+      <path
+        class="p-knob-range"
+        d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+        data-pc-section="range"
+        stroke="var(--surface-border, LightGray)"
+        stroke-width="5"
+      />
+      <path
+        class="p-knob-value"
+        d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 50 10"
+        data-pc-section="value"
+        stroke="var(--primary-color, Black)"
+        stroke-width="5"
+      />
+      <text
+        class="p-knob-text"
+        data-pc-section="label"
+        fill="var(--text-color-secondary, Black)"
+        name="VOLUME"
+        text-anchor="middle"
+        x="50"
+        y="57"
+      >
+        0.5
+      </text>
+    </svg>
+  </div>
+</div>
+`;

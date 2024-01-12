@@ -7,6 +7,7 @@
     "dev": "webpack serve",
     "build": "webpack",
     "test": "jest",
+    "test:dev": "jest --watch",
     "prepare": "husky install"
   },
   "author": "Guillermo Parral",

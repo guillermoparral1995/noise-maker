@@ -112,6 +112,7 @@ const Key = ({
 
   return (
     <button
+      tabIndex={-1}
       ref={keyRef}
       className={`${styles.key} ${
         identifier.includes('#')

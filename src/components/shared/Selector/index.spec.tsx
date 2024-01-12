@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import Selector from '.';
@@ -6,6 +6,10 @@ import { Actions, Selectors, Waveform } from '../../../types';
 import '@testing-library/jest-dom';
 
 describe('Selector', () => {
+  afterEach(() => {
+    cleanup();
+  });
+
   it('should render with options based on selector id', async () => {
     const { findByTestId } = render(
       <Selector

@@ -70779,7 +70779,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../hooks/useAddMidiListeners */ "./src/hooks/useAddMidiListeners.ts");
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
-/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob/index.tsx");
 /* harmony import */ var _EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
 
 
@@ -70983,7 +70983,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useConnectLFOTargets */ "./src/hooks/useConnectLFOTargets.ts");
 /* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
-/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob/index.tsx");
 /* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../shared/Selector */ "./src/components/shared/Selector/index.tsx");
 /* harmony import */ var _FilterStateProvider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./FilterStateProvider */ "./src/components/Controls/FilterControls/FilterStateProvider.tsx");
 
@@ -71159,7 +71159,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useConnectLFOTargets */ "./src/hooks/useConnectLFOTargets.ts");
 /* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
-/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob/index.tsx");
 /* harmony import */ var _GeneralControlsStateProvider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./GeneralControlsStateProvider */ "./src/components/Controls/GeneralControls/GeneralControlsStateProvider.tsx");
 
 
@@ -71320,7 +71320,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
 /* harmony import */ var _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../providers/AudioContextProvider/store/actions */ "./src/providers/AudioContextProvider/store/actions.ts");
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
-/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob.tsx");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob/index.tsx");
 /* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../shared/Selector */ "./src/components/shared/Selector/index.tsx");
 /* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./index.module.scss */ "./src/components/Controls/LFOControls/index.module.scss");
 /* harmony import */ var _LFOStateProvider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./LFOStateProvider */ "./src/components/Controls/LFOControls/LFOStateProvider.tsx");
@@ -71650,7 +71650,7 @@ const Key = ({ identifier, frequency, }) => {
             oscillator.disconnect();
         }, (context.currentTime + release) * 1000 + 10);
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { ref: keyRef, className: `${_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].key} ${identifier.includes('#')
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { tabIndex: -1, ref: keyRef, className: `${_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].key} ${identifier.includes('#')
             ? `${_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].black} ${
             // TODO: find a nicer way to do this
             _index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"][identifier.replace('#', 'sharp')]}`
@@ -71737,7 +71737,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../index.module.scss */ "./src/index.module.scss");
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../types */ "./src/types.ts");
 /* harmony import */ var _Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
-/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/Knob */ "./src/components/shared/Knob.tsx");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/Knob */ "./src/components/shared/Knob/index.tsx");
 /* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/Selector */ "./src/components/shared/Selector/index.tsx");
 /* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index.module.scss */ "./src/components/Keyboard/index.module.scss");
 /* harmony import */ var _Key__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Key */ "./src/components/Keyboard/Key/index.tsx");
@@ -71831,10 +71831,10 @@ const Oscilloscope = () => {
 
 /***/ }),
 
-/***/ "./src/components/shared/Knob.tsx":
-/*!****************************************!*\
-  !*** ./src/components/shared/Knob.tsx ***!
-  \****************************************/
+/***/ "./src/components/shared/Knob/index.tsx":
+/*!**********************************************!*\
+  !*** ./src/components/shared/Knob/index.tsx ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -71848,12 +71848,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var primereact_knob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! primereact/knob */ "./node_modules/primereact/knob/knob.esm.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constants/knobsValues */ "./src/constants/knobsValues.ts");
+/* harmony import */ var _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../constants/knobsValues */ "./src/constants/knobsValues.ts");
 
 
 
 
 const Knob = ({ id, value, dispatch }) => {
+    const [isFocused, setIsFocused] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
         return () => throttledHandleChange.cancel();
     }, []);
@@ -71863,7 +71864,23 @@ const Knob = ({ id, value, dispatch }) => {
     const throttledHandleChange = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)((0,lodash__WEBPACK_IMPORTED_MODULE_0__.throttle)(handleChange, 50), [
         dispatch,
     ]);
-    return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", { className: "knob-container" },
+    const handleKeyDown = (event) => {
+        if (isFocused) {
+            if (event.code === 'ArrowUp') {
+                dispatch(_constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].action((0,lodash__WEBPACK_IMPORTED_MODULE_0__.round)(value + (_constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].step ?? 0.01), 2)));
+            }
+            if (event.code === 'ArrowDown') {
+                dispatch(_constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].action((0,lodash__WEBPACK_IMPORTED_MODULE_0__.round)(value - (_constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].step ?? 0.01), 2)));
+            }
+        }
+    };
+    const handleFocus = () => {
+        setIsFocused(true);
+    };
+    const handleBlur = () => {
+        setIsFocused(false);
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", { "data-testid": id, tabIndex: 0, onFocus: handleFocus, onBlur: handleBlur, onKeyDown: handleKeyDown },
         react__WEBPACK_IMPORTED_MODULE_1___default().createElement("label", { htmlFor: id }, _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].label),
         react__WEBPACK_IMPORTED_MODULE_1___default().createElement(primereact_knob__WEBPACK_IMPORTED_MODULE_3__.Knob, { defaultValue: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].default, value: value, id: id, name: id, onChange: throttledHandleChange, min: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].min, max: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].max, step: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[id].step ?? 0.01, strokeWidth: 5, size: 50 })));
 };
