@@ -11,7 +11,6 @@ const MIDIInputSelector = () => {
       id={Selectors.MIDI_INPUT}
       dispatch={dispatch}
       value={selectedInput?.name ?? ''}
-      disabled={!inputs.length}
       options={inputs.map((i) => ({ value: i, label: i }))}
     ></Selector>
   );
