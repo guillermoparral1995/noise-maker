@@ -3,6 +3,7 @@ import { KnobChangeEvent, Knob as PrimeReactKnob } from 'primereact/knob';
 import React, { KeyboardEvent, useCallback, useEffect, useState } from 'react';
 import { knobsValues } from '../../../constants/knobsValues';
 import type { ActionTypes, Knobs } from '../../../types';
+import styles from './index.module.scss';
 
 interface KnobProps {
   id: Knobs;
@@ -60,7 +61,9 @@ export const Knob = ({ id, value, dispatch }: KnobProps) => {
       onBlur={handleBlur}
       onKeyDown={handleKeyDown}
     >
-      <label htmlFor={id}>{knobsValues[id].label}</label>
+      <label className={styles.label} htmlFor={id}>
+        {knobsValues[id].label}
+      </label>
       <PrimeReactKnob
         defaultValue={knobsValues[id].default}
         value={value}

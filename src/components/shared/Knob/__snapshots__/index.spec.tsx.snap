@@ -6,6 +6,7 @@ exports[`Knob should render with knob value 1`] = `
   tabindex="0"
 >
   <label
+    class="label"
     for="VOLUME"
   >
     Volume
