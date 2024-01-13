@@ -3,6 +3,7 @@ import React from 'react';
 import Key from '.';
 import {
   AudioContextMock,
+  AudioNodeMock,
   GainNodeMock,
   OscillatorNodeMock,
 } from '../../../../__mocks__';
@@ -15,7 +16,7 @@ import {
   withMockedMIDIInput,
   withMockedMIDINoInput,
 } from '../../../providers/MIDIProvider';
-import { LFO1Target, LFO2Target } from '../../../types';
+import { Knobs, LFO1Target, LFO2Target } from '../../../types';
 import { EnvelopeStateProvider } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
 
 const __mockGetInputByName = jest.fn();
@@ -87,6 +88,9 @@ describe('Key', () => {
       target: 'off',
       output: new GainNodeMock(),
     };
+    const mockOutput = new AudioNodeMock();
+    const mockOscillator = new OscillatorNodeMock();
+    const mockEnvelope = new GainNodeMock();
     const { findByTestId } = render(
       withMockedMIDINoInput(
         <AudioContextProvider
@@ -94,16 +98,25 @@ describe('Key', () => {
             context: mockContext,
             lfo1: mockLfo1,
             lfo2: mockLfo2,
+            output: mockOutput,
           }}
         >
           <EnvelopeStateProvider>
-            <Key identifier={Notes.C3} frequency={noteTable[Notes.C3]}></Key>,
+            <Key
+              identifier={Notes.C3}
+              frequency={noteTable[Notes.C3]}
+              __mockOscillator={mockOscillator}
+              __mockEnvelope={mockEnvelope}
+            ></Key>
+            ,
           </EnvelopeStateProvider>
         </AudioContextProvider>,
       ),
     );
 
     const key = await findByTestId(Notes.C3);
+    expect(mockOscillator.__mockStart).toHaveBeenCalled();
+    expect(mockEnvelope.__mockConnect).toHaveBeenCalledWith(mockOutput);
     expect(key).toMatchSnapshot();
   });
 
@@ -301,5 +314,83 @@ describe('Key', () => {
     const key = await findByTestId(Notes.C3);
     checkSoundIsStopped(mockOscillator, mockEnvelope);
     expect(key).toMatchSnapshot();
+  });
+
+  it('should connect lfo1 with oscillator detune', async () => {
+    const mockContext = new AudioContextMock();
+    const mockLfo1: LFOMock<LFO1Target> = {
+      target: Knobs.DETUNE,
+      output: new GainNodeMock(),
+    };
+    const mockLfo2: LFOMock<LFO2Target> = {
+      target: 'off',
+      output: new GainNodeMock(),
+    };
+    const mockOscillator = new OscillatorNodeMock();
+    const { findByTestId } = render(
+      withMockedMIDIInput(
+        <AudioContextProvider
+          __mocks={{
+            context: mockContext,
+            lfo1: mockLfo1,
+            lfo2: mockLfo2,
+          }}
+        >
+          <EnvelopeStateProvider>
+            <Key
+              identifier={Notes.C3}
+              frequency={noteTable[Notes.C3]}
+              __mockOscillator={mockOscillator}
+            ></Key>
+            ,
+          </EnvelopeStateProvider>
+        </AudioContextProvider>,
+      ),
+    );
+    await findByTestId(Notes.C3);
+
+    expect(mockLfo1.output.__mockConnect).toHaveBeenCalledWith(
+      mockOscillator.detune,
+    );
+    expect(mockLfo2.output.__mockConnect).not.toHaveBeenCalled();
+  });
+
+  it('should connect lfo2 with oscillator detune', async () => {
+    const mockContext = new AudioContextMock();
+    const mockLfo1: LFOMock<LFO1Target> = {
+      target: 'off',
+      output: new GainNodeMock(),
+    };
+    const mockLfo2: LFOMock<LFO2Target> = {
+      target: Knobs.DETUNE,
+      output: new GainNodeMock(),
+    };
+    const mockOscillator = new OscillatorNodeMock();
+    const { findByTestId } = render(
+      withMockedMIDIInput(
+        <AudioContextProvider
+          __mocks={{
+            context: mockContext,
+            lfo1: mockLfo1,
+            lfo2: mockLfo2,
+          }}
+        >
+          <EnvelopeStateProvider>
+            <Key
+              identifier={Notes.C3}
+              frequency={noteTable[Notes.C3]}
+              __mockOscillator={mockOscillator}
+            ></Key>
+            ,
+          </EnvelopeStateProvider>
+        </AudioContextProvider>,
+      ),
+    );
+    await findByTestId(Notes.C3);
+
+    expect(mockLfo2.output.__mockConnect).toHaveBeenCalledWith(
+      mockOscillator.detune,
+    );
+    expect(mockLfo1.output.__mockConnect).not.toHaveBeenCalledWith();
   });
 });
