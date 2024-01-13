@@ -9,7 +9,7 @@ import {
   GeneralControlsStateProvider,
 } from './GeneralControlsStateProvider';
 
-const GeneralControls_ = () => {
+export const GeneralControls_ = () => {
   const { state, dispatch } = useContext(generalControlsStateContext);
   const { volume, pan, lfo1, lfo2 } = useContext(audioContext);
   useAddMidiListeners([Knobs.VOLUME, Knobs.PAN], dispatch);

@@ -13,11 +13,14 @@ export const generalControlsStateContext =
 
 export const GeneralControlsStateProvider = ({
   children,
-}: PropsWithChildren) => {
+  __mockDispatch,
+}: { __mockDispatch?: React.Dispatch<ActionTypes> } & PropsWithChildren) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <generalControlsStateContext.Provider value={{ state, dispatch }}>
+    <generalControlsStateContext.Provider
+      value={{ state, dispatch: __mockDispatch ?? dispatch }}
+    >
       {children}
     </generalControlsStateContext.Provider>
   );
