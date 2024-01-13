@@ -36,6 +36,7 @@ export const PitchbendWheel = () => {
   return (
     <input
       id={styles.pitchbend_wheel}
+      data-testid="pitchbend_wheel"
       type="range"
       min={knobsValues[Knobs.PITCHBEND].min}
       max={knobsValues[Knobs.PITCHBEND].max}

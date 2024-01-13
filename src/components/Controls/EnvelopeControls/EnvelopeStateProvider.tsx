@@ -11,11 +11,16 @@ interface EnvelopeStateProviderValue {
 export const envelopeStateContext =
   React.createContext<EnvelopeStateProviderValue>(undefined);
 
-export const EnvelopeStateProvider = ({ children }: PropsWithChildren) => {
+export const EnvelopeStateProvider = ({
+  children,
+  __mockDispatch,
+}: { __mockDispatch?: React.Dispatch<ActionTypes> } & PropsWithChildren) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <envelopeStateContext.Provider value={{ state, dispatch }}>
+    <envelopeStateContext.Provider
+      value={{ state, dispatch: __mockDispatch ?? dispatch }}
+    >
       {children}
     </envelopeStateContext.Provider>
   );

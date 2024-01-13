@@ -6,8 +6,13 @@ import {
   updateMIDIInput,
   updateMIDILoading,
 } from './store/actions';
-import { initialState } from './store/initialState';
+import { initialState, MIDIContextState } from './store/initialState';
 import { reducer } from './store/reducer';
+
+interface MIDIContextMocks {
+  inputs?: string[];
+  state?: MIDIContextState;
+}
 
 interface MIDIContextValue {
   dispatch: React.Dispatch<ActionTypes>;
@@ -17,7 +22,10 @@ interface MIDIContextValue {
 
 export const midiContext = React.createContext<MIDIContextValue>(undefined);
 
-export const MIDIProvider = ({ children }: PropsWithChildren) => {
+export const MIDIProvider = ({
+  children,
+  __mocks,
+}: { __mocks?: MIDIContextMocks } & PropsWithChildren) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const enableMidi = async () => {
@@ -37,18 +45,20 @@ export const MIDIProvider = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     enableMidi();
   }, []);
+  const isLoading = __mocks?.state ? __mocks.state.loading : state.loading;
+  const isError = __mocks?.state ? __mocks.state.error : state.error;
 
-  if (state.loading) return;
-  if (!state.loading && !state.error) {
+  if (isLoading) return;
+  if (!isLoading && !isError) {
     const inputs = WebMidi.inputs.map((input) => input.name);
+    const input = __mocks?.state?.input ?? state.input;
+    const selectedInput = input ? WebMidi.getInputByName(input) : undefined;
     return (
       <midiContext.Provider
         value={{
           dispatch,
           inputs,
-          selectedInput: state.input
-            ? WebMidi.getInputByName(state.input)
-            : undefined,
+          selectedInput,
         }}
       >
         {children}

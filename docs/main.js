@@ -70938,9 +70938,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const envelopeStateContext = react__WEBPACK_IMPORTED_MODULE_0___default().createContext(undefined);
-const EnvelopeStateProvider = ({ children }) => {
+const EnvelopeStateProvider = ({ children, __mockDispatch, }) => {
     const [state, dispatch] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_store_reducer__WEBPACK_IMPORTED_MODULE_2__["default"], _store_initialState__WEBPACK_IMPORTED_MODULE_1__["default"]);
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(envelopeStateContext.Provider, { value: { state, dispatch } }, children));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(envelopeStateContext.Provider, { value: { state, dispatch: __mockDispatch ?? dispatch } }, children));
 };
 
 
@@ -71892,7 +71892,7 @@ const PitchbendWheel = () => {
     const handleDragEnd = () => {
         dispatch((0,_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_6__.updatePitchbend)(0));
     };
-    return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement("input", { id: _index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].pitchbend_wheel, type: "range", min: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND].min, max: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND].max, step: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND].step, value: state.pitchbend, onChange: handleChange, onMouseUp: handleDragEnd }));
+    return (react__WEBPACK_IMPORTED_MODULE_1___default().createElement("input", { id: _index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].pitchbend_wheel, "data-testid": "pitchbend_wheel", type: "range", min: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND].min, max: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND].max, step: _constants_knobsValues__WEBPACK_IMPORTED_MODULE_2__.knobsValues[_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND].step, value: state.pitchbend, onChange: handleChange, onMouseUp: handleDragEnd }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PitchbendWheel);
 
@@ -72769,7 +72769,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const midiContext = react__WEBPACK_IMPORTED_MODULE_0___default().createContext(undefined);
-const MIDIProvider = ({ children }) => {
+const MIDIProvider = ({ children, __mocks, }) => {
     const [state, dispatch] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_store_reducer__WEBPACK_IMPORTED_MODULE_4__.reducer, _store_initialState__WEBPACK_IMPORTED_MODULE_3__.initialState);
     const enableMidi = async () => {
         try {
@@ -72788,16 +72788,18 @@ const MIDIProvider = ({ children }) => {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         enableMidi();
     }, []);
-    if (state.loading)
+    const isLoading = __mocks?.state ? __mocks.state.loading : state.loading;
+    const isError = __mocks?.state ? __mocks.state.error : state.error;
+    if (isLoading)
         return;
-    if (!state.loading && !state.error) {
+    if (!isLoading && !isError) {
         const inputs = webmidi__WEBPACK_IMPORTED_MODULE_1__.WebMidi.inputs.map((input) => input.name);
+        const input = __mocks?.state?.input ?? state.input;
+        const selectedInput = input ? webmidi__WEBPACK_IMPORTED_MODULE_1__.WebMidi.getInputByName(input) : undefined;
         return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(midiContext.Provider, { value: {
                 dispatch,
                 inputs,
-                selectedInput: state.input
-                    ? webmidi__WEBPACK_IMPORTED_MODULE_1__.WebMidi.getInputByName(state.input)
-                    : undefined,
+                selectedInput,
             } }, children));
     }
 };
