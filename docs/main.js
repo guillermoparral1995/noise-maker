@@ -70728,6 +70728,101 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./__mocks__/index.tsx":
+/*!*****************************!*\
+  !*** ./__mocks__/index.tsx ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AnalyserNodeMock: () => (/* binding */ AnalyserNodeMock),
+/* harmony export */   AudioContextMock: () => (/* binding */ AudioContextMock),
+/* harmony export */   AudioNodeMock: () => (/* binding */ AudioNodeMock),
+/* harmony export */   BiquadFilterNodeMock: () => (/* binding */ BiquadFilterNodeMock),
+/* harmony export */   GainNodeMock: () => (/* binding */ GainNodeMock),
+/* harmony export */   OscillatorNodeMock: () => (/* binding */ OscillatorNodeMock),
+/* harmony export */   StereoPannerNodeMock: () => (/* binding */ StereoPannerNodeMock)
+/* harmony export */ });
+class AudioContextMock {
+    currentTime;
+    constructor() { }
+}
+class AudioNodeMock extends EventTarget {
+    automationRate;
+    defaultValue;
+    maxValue;
+    minValue;
+    channelCount;
+    channelCountMode;
+    channelInterpretation;
+    context;
+    numberOfInputs;
+    numberOfOutputs;
+    __mockConnect = jest.fn();
+    __mockDisconnect = jest.fn();
+    constructor() {
+        super();
+    }
+    connect() {
+        return this.__mockConnect();
+    }
+    disconnect() {
+        return this.__mockDisconnect();
+    }
+}
+class GainNodeMock extends AudioNodeMock {
+    gain;
+    constructor() {
+        super();
+    }
+}
+class StereoPannerNodeMock extends AudioNodeMock {
+    pan;
+    constructor() {
+        super();
+    }
+}
+class BiquadFilterNodeMock extends AudioNodeMock {
+    Q;
+    type;
+    frequency;
+    constructor() {
+        super();
+    }
+}
+class AnalyserNodeMock extends AudioNodeMock {
+    fftSize = 512;
+    frequencyBinCount = 256;
+    __mockGetByteTimeDomainData = jest.fn();
+    constructor() {
+        super();
+    }
+    getByteTimeDomainData(array) {
+        return this.__mockGetByteTimeDomainData(array);
+    }
+}
+class OscillatorNodeMock extends AudioNodeMock {
+    type;
+    detune;
+    frequency;
+    __mockStart = jest.fn();
+    __mockStop = jest.fn();
+    constructor() {
+        super();
+    }
+    start(currentTime) {
+        return this.__mockStart(currentTime);
+    }
+    stop(currentTime) {
+        return this.__mockStop(currentTime);
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/App.tsx":
 /*!*********************!*\
   !*** ./src/App.tsx ***!
@@ -71404,13 +71499,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../constants/knobsValues */ "./src/constants/knobsValues.ts");
 /* harmony import */ var _hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useAddMidiListeners */ "./src/hooks/useAddMidiListeners.ts");
 /* harmony import */ var _hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../hooks/useConnectLFOTargets */ "./src/hooks/useConnectLFOTargets.ts");
-/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
-/* harmony import */ var _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../providers/AudioContextProvider/store/actions */ "./src/providers/AudioContextProvider/store/actions.ts");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
-/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob/index.tsx");
-/* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../shared/Selector */ "./src/components/shared/Selector/index.tsx");
-/* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./index.module.scss */ "./src/components/Controls/LFOControls/index.module.scss");
-/* harmony import */ var _LFOStateProvider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./LFOStateProvider */ "./src/components/Controls/LFOControls/LFOStateProvider.tsx");
+/* harmony import */ var _hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../hooks/useInstantiateAudioNode */ "./src/hooks/useInstantiateAudioNode.ts");
+/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
+/* harmony import */ var _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../providers/AudioContextProvider/store/actions */ "./src/providers/AudioContextProvider/store/actions.ts");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob/index.tsx");
+/* harmony import */ var _shared_Selector__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../shared/Selector */ "./src/components/shared/Selector/index.tsx");
+/* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./index.module.scss */ "./src/components/Controls/LFOControls/index.module.scss");
+/* harmony import */ var _LFOStateProvider__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./LFOStateProvider */ "./src/components/Controls/LFOControls/LFOStateProvider.tsx");
+
 
 
 
@@ -71423,22 +71520,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const LFOControls_ = () => {
-    const { state, dispatch } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_LFOStateProvider__WEBPACK_IMPORTED_MODULE_10__.lfoStateContext);
-    const { context, lfo1, lfo2, dispatch: audioDispatch, } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_4__.audioContext);
+    const { state, dispatch } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_LFOStateProvider__WEBPACK_IMPORTED_MODULE_11__.lfoStateContext);
+    const { lfo1, lfo2, dispatch: audioDispatch } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_5__.audioContext);
     (0,_hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_2__["default"])([
-        _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_FREQUENCY,
-        _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_AMPLITUDE,
-        _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_2_FREQUENCY,
-        _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_2_AMPLITUDE,
+        _types__WEBPACK_IMPORTED_MODULE_7__.Knobs.LFO_1_FREQUENCY,
+        _types__WEBPACK_IMPORTED_MODULE_7__.Knobs.LFO_1_AMPLITUDE,
+        _types__WEBPACK_IMPORTED_MODULE_7__.Knobs.LFO_2_FREQUENCY,
+        _types__WEBPACK_IMPORTED_MODULE_7__.Knobs.LFO_2_AMPLITUDE,
     ], dispatch);
-    const lfo1Node = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new OscillatorNode(context, {
-        type: state.lfo1.waveform,
-        frequency: state.lfo1.frequency,
-    }), []);
-    const lfo2Node = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new OscillatorNode(context, {
-        type: state.lfo2.waveform,
-        frequency: state.lfo2.frequency,
-    }), []);
+    const lfo1Node = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_4__.useInstantiateOscillatorNode)(state.lfo1.waveform, state.lfo1.frequency);
+    const lfo2Node = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_4__.useInstantiateOscillatorNode)(state.lfo2.waveform, state.lfo2.frequency);
     lfo1Node.type = state.lfo1.waveform;
     lfo1Node.frequency.value = state.lfo1.frequency;
     lfo2Node.type = state.lfo2.waveform;
@@ -71454,40 +71545,40 @@ const LFOControls_ = () => {
         };
     }, []);
     (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_3__["default"])(lfo2, [
-        { knob: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_FREQUENCY, param: lfo1Node.frequency },
-        { knob: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_AMPLITUDE, param: lfo1.output.gain },
+        { knob: _types__WEBPACK_IMPORTED_MODULE_7__.Knobs.LFO_1_FREQUENCY, param: lfo1Node.frequency },
+        { knob: _types__WEBPACK_IMPORTED_MODULE_7__.Knobs.LFO_1_AMPLITUDE, param: lfo1.output.gain },
     ]);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         if (lfo1.target !== 'off') {
-            const knob = _types__WEBPACK_IMPORTED_MODULE_6__.Knobs[lfo1.target];
+            const knob = _types__WEBPACK_IMPORTED_MODULE_7__.Knobs[lfo1.target];
             const range = ((_constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].max - _constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].min) / 2) *
                 state.lfo1.amplitude;
             lfo1.output.gain.value = range;
-            audioDispatch((0,_providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_5__.updateLFO1Target)(knob));
+            audioDispatch((0,_providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_6__.updateLFO1Target)(knob));
         }
     }, [state.lfo1.amplitude, lfo1.target]);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         if (lfo2.target !== 'off') {
-            const knob = _types__WEBPACK_IMPORTED_MODULE_6__.Knobs[lfo2.target];
+            const knob = _types__WEBPACK_IMPORTED_MODULE_7__.Knobs[lfo2.target];
             const range = ((_constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].max - _constants_knobsValues__WEBPACK_IMPORTED_MODULE_1__.knobsValues[knob].min) / 2) *
                 state.lfo2.amplitude;
             lfo2.output.gain.value = range;
-            audioDispatch((0,_providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_5__.updateLFO2Target)(knob));
+            audioDispatch((0,_providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_6__.updateLFO2Target)(knob));
         }
     }, [state.lfo2.amplitude, lfo2.target]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_9__["default"].lfo_column },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_1_TARGET, value: lfo1.target, dispatch: audioDispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_1_WAVEFORM, value: state.lfo1.waveform, dispatch: dispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_FREQUENCY, value: state.lfo1.frequency, dispatch: dispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_AMPLITUDE, value: state.lfo1.amplitude, dispatch: dispatch })),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_9__["default"].lfo_column },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_2_TARGET, value: lfo2.target, dispatch: audioDispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_2_WAVEFORM, value: state.lfo2.waveform, dispatch: dispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_2_FREQUENCY, value: state.lfo2.frequency, dispatch: dispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_2_AMPLITUDE, value: state.lfo2.amplitude, dispatch: dispatch }))));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_10__["default"].lfo_column },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_9__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_7__.Selectors.LFO_1_TARGET, value: lfo1.target, dispatch: audioDispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_9__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_7__.Selectors.LFO_1_WAVEFORM, value: state.lfo1.waveform, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_7__.Knobs.LFO_1_FREQUENCY, value: state.lfo1.frequency, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_7__.Knobs.LFO_1_AMPLITUDE, value: state.lfo1.amplitude, dispatch: dispatch })),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_10__["default"].lfo_column },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_9__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_7__.Selectors.LFO_2_TARGET, value: lfo2.target, dispatch: audioDispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_9__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_7__.Selectors.LFO_2_WAVEFORM, value: state.lfo2.waveform, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_7__.Knobs.LFO_2_FREQUENCY, value: state.lfo2.frequency, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_7__.Knobs.LFO_2_AMPLITUDE, value: state.lfo2.amplitude, dispatch: dispatch }))));
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_LFOStateProvider__WEBPACK_IMPORTED_MODULE_10__.LFOStateProvider, null,
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_LFOStateProvider__WEBPACK_IMPORTED_MODULE_11__.LFOStateProvider, null,
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(LFOControls_, null))));
 
 
@@ -71656,11 +71747,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../hooks/useConnectLFOTargets */ "./src/hooks/useConnectLFOTargets.ts");
-/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
-/* harmony import */ var _providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../providers/MIDIProvider */ "./src/providers/MIDIProvider/index.tsx");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
-/* harmony import */ var _Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
-/* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index.module.scss */ "./src/components/Keyboard/Key/index.module.scss");
+/* harmony import */ var _hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../hooks/useInstantiateAudioNode */ "./src/hooks/useInstantiateAudioNode.ts");
+/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
+/* harmony import */ var _providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../providers/MIDIProvider */ "./src/providers/MIDIProvider/index.tsx");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+/* harmony import */ var _Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
+/* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./index.module.scss */ "./src/components/Keyboard/Key/index.module.scss");
+
 
 
 
@@ -71670,12 +71763,12 @@ __webpack_require__.r(__webpack_exports__);
 
 const Key = ({ identifier, frequency, }) => {
     const keyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-    const { context, output, lfo1, lfo2 } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__.audioContext);
-    const { state: { attack, decay, sustain, release, detune, pitchbend, waveform }, } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_5__.envelopeStateContext);
-    const { selectedInput: midiInput } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_3__.midiContext);
+    const { context, output, lfo1, lfo2 } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__.audioContext);
+    const { state: { attack, decay, sustain, release, detune, pitchbend, waveform }, } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_6__.envelopeStateContext);
+    const { selectedInput: midiInput } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_4__.midiContext);
     let releaseTimeout;
-    const oscillator = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new OscillatorNode(context, { type: waveform, frequency }), []);
-    const envelope = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new GainNode(context), []);
+    const oscillator = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__.useInstantiateOscillatorNode)(waveform, frequency);
+    const envelope = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__.useInstantiateGainNode)();
     oscillator.type = waveform;
     oscillator.detune.value = detune + pitchbend;
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -71684,10 +71777,10 @@ const Key = ({ identifier, frequency, }) => {
         return () => oscillator.disconnect();
     }, []);
     (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_1__["default"])(lfo1, [
-        { knob: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.DETUNE, param: oscillator.detune },
+        { knob: _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DETUNE, param: oscillator.detune },
     ]);
     (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_1__["default"])(lfo2, [
-        { knob: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.DETUNE, param: oscillator.detune },
+        { knob: _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DETUNE, param: oscillator.detune },
     ]);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         if (midiInput) {
@@ -71711,7 +71804,7 @@ const Key = ({ identifier, frequency, }) => {
     });
     const play = () => {
         if (keyRef.current) {
-            keyRef.current.classList.add(_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].pressed);
+            keyRef.current.classList.add(_index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].pressed);
         }
         // clear all pending scheduled events for envelope
         envelope.gain.cancelAndHoldAtTime(context.currentTime);
@@ -71726,7 +71819,7 @@ const Key = ({ identifier, frequency, }) => {
     };
     const stop = () => {
         if (keyRef.current) {
-            keyRef.current.classList.remove(_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].pressed);
+            keyRef.current.classList.remove(_index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].pressed);
         }
         // clear pending scheduled evenets for envelope
         envelope.gain.cancelAndHoldAtTime(context.currentTime);
@@ -71737,11 +71830,11 @@ const Key = ({ identifier, frequency, }) => {
             oscillator.disconnect();
         }, (context.currentTime + release) * 1000 + 10);
     };
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { tabIndex: -1, ref: keyRef, className: `${_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].key} ${identifier.includes('#')
-            ? `${_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].black} ${
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", { tabIndex: -1, ref: keyRef, className: `${_index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].key} ${identifier.includes('#')
+            ? `${_index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].black} ${
             // TODO: find a nicer way to do this
-            _index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"][identifier.replace('#', 'sharp')]}`
-            : _index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].white}`, type: "button", onMouseDown: play, onMouseUp: stop }));
+            _index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"][identifier.replace('#', 'sharp')]}`
+            : _index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].white}`, type: "button", onMouseDown: play, onMouseUp: stop }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Key);
 
@@ -71911,7 +72004,7 @@ const Oscilloscope = () => {
         canvasCtx.lineTo(canvas.width, canvas.height / 2);
         canvasCtx.stroke();
     };
-    return react__WEBPACK_IMPORTED_MODULE_0___default().createElement("canvas", { id: _index_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].oscilloscope, ref: canvasRef });
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("canvas", { id: _index_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].oscilloscope, ref: canvasRef, "data-testid": "oscilloscope" }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Oscilloscope);
 
@@ -72426,6 +72519,44 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/hooks/useInstantiateAudioNode.ts":
+/*!**********************************************!*\
+  !*** ./src/hooks/useInstantiateAudioNode.ts ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useInstantiateGainNode: () => (/* binding */ useInstantiateGainNode),
+/* harmony export */   useInstantiateOscillatorNode: () => (/* binding */ useInstantiateOscillatorNode)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _mocks___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../__mocks__ */ "./__mocks__/index.tsx");
+/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
+
+
+
+const useInstantiateOscillatorNode = (waveform, frequency) => {
+    const { __isMock, context } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__.audioContext);
+    const oscillator = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => __isMock
+        ? new _mocks___WEBPACK_IMPORTED_MODULE_1__.OscillatorNodeMock()
+        : new OscillatorNode(context, {
+            type: waveform,
+            frequency,
+        }), []);
+    return oscillator;
+};
+const useInstantiateGainNode = () => {
+    const { __isMock, context } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__.audioContext);
+    const gainNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => __isMock ? new _mocks___WEBPACK_IMPORTED_MODULE_1__.GainNodeMock() : new GainNode(context), []);
+    return gainNode;
+};
+
+
+/***/ }),
+
 /***/ "./src/hooks/useThrottledUpdate.ts":
 /*!*****************************************!*\
   !*** ./src/hooks/useThrottledUpdate.ts ***!
@@ -72477,8 +72608,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const audioContext = react__WEBPACK_IMPORTED_MODULE_0___default().createContext(undefined);
-const AudioContextProvider = ({ children }) => {
+const AudioContextProvider = ({ children, __mocks, }) => {
     const [state, dispatch] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_store_reducer__WEBPACK_IMPORTED_MODULE_2__.reducer, _store_initialState__WEBPACK_IMPORTED_MODULE_1__.initialState);
+    if (__mocks?.context) {
+        return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(audioContext.Provider, { value: {
+                __isMock: true,
+                context: __mocks.context,
+                volume: __mocks.volume,
+                pan: __mocks.pan,
+                filter: __mocks.filter,
+                lfo1: {
+                    output: __mocks.lfo1?.output,
+                    target: __mocks.lfo1?.target,
+                },
+                lfo2: {
+                    output: __mocks.lfo2?.output,
+                    target: __mocks.lfo2?.target,
+                },
+                analyser: __mocks.analyser,
+                output: __mocks.output,
+                dispatch: __mocks.dispatch,
+            } }, children));
+    }
     const context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new AudioContext(), []);
     const volumeNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new GainNode(context), []);
     const pannerNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new StereoPannerNode(context), []);
@@ -72493,6 +72644,7 @@ const AudioContextProvider = ({ children }) => {
         analyser.connect(context.destination);
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(audioContext.Provider, { value: {
+            __isMock: false,
             context,
             volume: volumeNode,
             pan: pannerNode,

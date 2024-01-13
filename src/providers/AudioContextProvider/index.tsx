@@ -4,6 +4,14 @@ import React, {
   useMemo,
   useReducer,
 } from 'react';
+import {
+  AnalyserNodeMock,
+  AudioContextMock,
+  AudioNodeMock,
+  BiquadFilterNodeMock,
+  GainNodeMock,
+  StereoPannerNodeMock,
+} from '../../../__mocks__';
 import { ActionTypes, LFO1Target, LFO2Target } from '../../types';
 import { initialState } from './store/initialState';
 import { reducer } from './store/reducer';
@@ -13,7 +21,24 @@ export interface LFO<T> {
   target: T;
 }
 
-interface AudioContextProviderValue {
+export interface LFOMock<T> {
+  output: GainNodeMock;
+  target: T;
+}
+
+interface AudioContextProviderMocks {
+  context: AudioContextMock;
+  volume?: GainNodeMock;
+  pan?: StereoPannerNodeMock;
+  filter?: BiquadFilterNodeMock;
+  lfo1?: LFOMock<LFO1Target>;
+  lfo2?: LFOMock<LFO2Target>;
+  analyser?: AnalyserNodeMock;
+  dispatch?: React.Dispatch<ActionTypes>;
+  output?: AudioNodeMock;
+}
+
+interface AudioContextProviderParams {
   context: AudioContext;
   volume: GainNode;
   pan: StereoPannerNode;
@@ -25,11 +50,45 @@ interface AudioContextProviderValue {
   output: AudioNode;
 }
 
+type AudioContextProviderValue = { __isMock: boolean } & (
+  | AudioContextProviderParams
+  | AudioContextProviderMocks
+);
+
 export const audioContext =
   React.createContext<AudioContextProviderValue>(undefined);
 
-export const AudioContextProvider = ({ children }: PropsWithChildren) => {
+export const AudioContextProvider = ({
+  children,
+  __mocks,
+}: { __mocks?: AudioContextProviderMocks } & PropsWithChildren) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  if (__mocks?.context) {
+    return (
+      <audioContext.Provider
+        value={{
+          __isMock: true,
+          context: __mocks.context,
+          volume: __mocks.volume,
+          pan: __mocks.pan,
+          filter: __mocks.filter,
+          lfo1: {
+            output: __mocks.lfo1?.output,
+            target: __mocks.lfo1?.target,
+          },
+          lfo2: {
+            output: __mocks.lfo2?.output,
+            target: __mocks.lfo2?.target,
+          },
+          analyser: __mocks.analyser,
+          output: __mocks.output,
+          dispatch: __mocks.dispatch,
+        }}
+      >
+        {children}
+      </audioContext.Provider>
+    );
+  }
   const context = useMemo(() => new AudioContext(), []);
   const volumeNode: GainNode = useMemo(() => new GainNode(context), []);
   const pannerNode: StereoPannerNode = useMemo(
@@ -57,6 +116,7 @@ export const AudioContextProvider = ({ children }: PropsWithChildren) => {
   return (
     <audioContext.Provider
       value={{
+        __isMock: false,
         context,
         volume: volumeNode,
         pan: pannerNode,

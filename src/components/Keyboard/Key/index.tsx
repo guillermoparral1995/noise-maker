@@ -1,7 +1,11 @@
-import React, { useContext, useEffect, useMemo, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { NoteMessageEvent } from 'webmidi';
 import { Notes } from '../../../constants/noteTable';
 import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
+import {
+  useInstantiateGainNode,
+  useInstantiateOscillatorNode,
+} from '../../../hooks/useInstantiateAudioNode';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { midiContext } from '../../../providers/MIDIProvider';
 import { Knobs } from '../../../types';
@@ -23,11 +27,8 @@ const Key = ({
   const { selectedInput: midiInput } = useContext(midiContext);
   let releaseTimeout: NodeJS.Timeout;
 
-  const oscillator = useMemo(
-    () => new OscillatorNode(context, { type: waveform, frequency }),
-    [],
-  );
-  const envelope = useMemo(() => new GainNode(context), []);
+  const oscillator = useInstantiateOscillatorNode(waveform, frequency);
+  const envelope = useInstantiateGainNode();
   oscillator.type = waveform;
   oscillator.detune.value = detune + pitchbend;
 

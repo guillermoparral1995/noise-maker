@@ -48,7 +48,13 @@ const Oscilloscope = () => {
     canvasCtx.stroke();
   };
 
-  return <canvas id={styles.oscilloscope} ref={canvasRef}></canvas>;
+  return (
+    <canvas
+      id={styles.oscilloscope}
+      ref={canvasRef}
+      data-testid="oscilloscope"
+    ></canvas>
+  );
 };
 
 export default Oscilloscope;

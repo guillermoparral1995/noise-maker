@@ -1,7 +1,8 @@
-import React, { useContext, useEffect, useMemo } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { knobsValues } from '../../../constants/knobsValues';
 import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
 import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
+import { useInstantiateOscillatorNode } from '../../../hooks/useInstantiateAudioNode';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import {
   updateLFO1Target,
@@ -15,12 +16,7 @@ import { lfoStateContext, LFOStateProvider } from './LFOStateProvider';
 
 const LFOControls_ = () => {
   const { state, dispatch } = useContext(lfoStateContext);
-  const {
-    context,
-    lfo1,
-    lfo2,
-    dispatch: audioDispatch,
-  } = useContext(audioContext);
+  const { lfo1, lfo2, dispatch: audioDispatch } = useContext(audioContext);
   useAddMidiListeners(
     [
       Knobs.LFO_1_FREQUENCY,
@@ -30,21 +26,14 @@ const LFOControls_ = () => {
     ],
     dispatch,
   );
-  const lfo1Node: OscillatorNode = useMemo(
-    () =>
-      new OscillatorNode(context, {
-        type: state.lfo1.waveform,
-        frequency: state.lfo1.frequency,
-      }),
-    [],
+
+  const lfo1Node = useInstantiateOscillatorNode(
+    state.lfo1.waveform,
+    state.lfo1.frequency,
   );
-  const lfo2Node: OscillatorNode = useMemo(
-    () =>
-      new OscillatorNode(context, {
-        type: state.lfo2.waveform,
-        frequency: state.lfo2.frequency,
-      }),
-    [],
+  const lfo2Node = useInstantiateOscillatorNode(
+    state.lfo2.waveform,
+    state.lfo2.frequency,
   );
 
   lfo1Node.type = state.lfo1.waveform;
