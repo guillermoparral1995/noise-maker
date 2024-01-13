@@ -6,13 +6,14 @@ import { Waveform } from '../types';
 export const useInstantiateOscillatorNode = (
   waveform: Waveform,
   frequency: number,
+  __mockOscillator?: OscillatorNodeMock,
 ) => {
   const { __isMock, context } = useContext(audioContext);
 
   const oscillator = useMemo(
     () =>
       __isMock
-        ? new OscillatorNodeMock()
+        ? __mockOscillator ?? new OscillatorNodeMock()
         : new OscillatorNode(context as AudioContext, {
             type: waveform,
             frequency,
@@ -23,12 +24,14 @@ export const useInstantiateOscillatorNode = (
   return oscillator;
 };
 
-export const useInstantiateGainNode = () => {
+export const useInstantiateGainNode = (__mockGainNode?: GainNodeMock) => {
   const { __isMock, context } = useContext(audioContext);
 
   const gainNode = useMemo(
     () =>
-      __isMock ? new GainNodeMock() : new GainNode(context as AudioContext),
+      __isMock
+        ? __mockGainNode ?? new GainNodeMock()
+        : new GainNode(context as AudioContext),
     [],
   );
 

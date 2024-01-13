@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { NoteMessageEvent } from 'webmidi';
+import { GainNodeMock, OscillatorNodeMock } from '../../../../__mocks__';
 import { Notes } from '../../../constants/noteTable';
 import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import {
@@ -12,13 +13,19 @@ import { Knobs } from '../../../types';
 import { envelopeStateContext } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
 import styles from './index.module.scss';
 
+interface KeyProps {
+  identifier: Notes;
+  frequency: number;
+  __mockOscillator?: OscillatorNodeMock;
+  __mockEnvelope?: GainNodeMock;
+}
+
 const Key = ({
   identifier,
   frequency,
-}: {
-  identifier: Notes;
-  frequency: number;
-}) => {
+  __mockOscillator,
+  __mockEnvelope,
+}: KeyProps) => {
   const keyRef = useRef<HTMLButtonElement>(null);
   const { context, output, lfo1, lfo2 } = useContext(audioContext);
   const {
@@ -27,8 +34,12 @@ const Key = ({
   const { selectedInput: midiInput } = useContext(midiContext);
   let releaseTimeout: NodeJS.Timeout;
 
-  const oscillator = useInstantiateOscillatorNode(waveform, frequency);
-  const envelope = useInstantiateGainNode();
+  const oscillator = useInstantiateOscillatorNode(
+    waveform,
+    frequency,
+    __mockOscillator,
+  );
+  const envelope = useInstantiateGainNode(__mockEnvelope);
   oscillator.type = waveform;
   oscillator.detune.value = detune + pitchbend;
 
@@ -124,6 +135,7 @@ const Key = ({
           : styles.white
       }`}
       type="button"
+      data-testid={identifier}
       onMouseDown={play}
       onMouseUp={stop}
     ></button>

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Key should play sound on MIDI press 1`] = `
+<button
+  class="key white pressed"
+  data-testid="C3"
+  tabindex="-1"
+  type="button"
+/>
+`;
+
+exports[`Key should play sound on mouse down 1`] = `
+<button
+  class="key white pressed"
+  data-testid="C3"
+  tabindex="-1"
+  type="button"
+/>
+`;
+
+exports[`Key should render correctly 1`] = `
+<button
+  class="key white"
+  data-testid="C3"
+  tabindex="-1"
+  type="button"
+/>
+`;
+
+exports[`Key should stop sound on MIDI unpress 1`] = `
+<button
+  class="key white"
+  data-testid="C3"
+  tabindex="-1"
+  type="button"
+/>
+`;
+
+exports[`Key should stop sound on mouse up 1`] = `
+<button
+  class="key white"
+  data-testid="C3"
+  tabindex="-1"
+  type="button"
+/>
+`;

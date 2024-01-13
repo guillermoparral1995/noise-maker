@@ -70745,15 +70745,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   OscillatorNodeMock: () => (/* binding */ OscillatorNodeMock),
 /* harmony export */   StereoPannerNodeMock: () => (/* binding */ StereoPannerNodeMock)
 /* harmony export */ });
+/* harmony import */ var _src_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../src/types */ "./src/types.ts");
+
+class AudioParamMock {
+    value;
+    defaultValue;
+    minValue;
+    maxValue;
+    automationRate;
+    __mockExponentialRampToValueAtTime = jest.fn();
+    __mockLinearRampToValueAtTime = jest.fn();
+    __mockCancelAndHoldAtTime = jest.fn();
+    __mockSetValueAtTime = jest.fn();
+    __mockCancelScheduledValues = jest.fn();
+    __mockSetTargetAtTime = jest.fn();
+    __mockSetValueCurveAtTime = jest.fn();
+    constructor() { }
+    exponentialRampToValueAtTime(value, time) {
+        return this.__mockExponentialRampToValueAtTime(value, time);
+    }
+    linearRampToValueAtTime(value, time) {
+        return this.__mockLinearRampToValueAtTime(value, time);
+    }
+    cancelAndHoldAtTime(time) {
+        return this.__mockCancelAndHoldAtTime(time);
+    }
+    setValueAtTime(value, time) {
+        return this.__mockSetValueAtTime(value, time);
+    }
+    cancelScheduledValues() {
+        return this.__mockCancelScheduledValues();
+    }
+    setTargetAtTime() {
+        return this.__mockSetTargetAtTime();
+    }
+    setValueCurveAtTime() {
+        return this.__mockSetValueCurveAtTime();
+    }
+}
 class AudioContextMock {
     currentTime;
-    constructor() { }
+    constructor() {
+        this.currentTime = 1000;
+    }
 }
 class AudioNodeMock extends EventTarget {
-    automationRate;
-    defaultValue;
-    maxValue;
-    minValue;
     channelCount;
     channelCountMode;
     channelInterpretation;
@@ -70765,8 +70801,10 @@ class AudioNodeMock extends EventTarget {
     constructor() {
         super();
     }
-    connect() {
-        return this.__mockConnect();
+    // TODO: this is hard to type!
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    connect(node) {
+        return this.__mockConnect(node);
     }
     disconnect() {
         return this.__mockDisconnect();
@@ -70776,12 +70814,14 @@ class GainNodeMock extends AudioNodeMock {
     gain;
     constructor() {
         super();
+        this.gain = new AudioParamMock();
     }
 }
 class StereoPannerNodeMock extends AudioNodeMock {
     pan;
     constructor() {
         super();
+        this.pan = new AudioParamMock();
     }
 }
 class BiquadFilterNodeMock extends AudioNodeMock {
@@ -70790,14 +70830,19 @@ class BiquadFilterNodeMock extends AudioNodeMock {
     frequency;
     constructor() {
         super();
+        this.type = _src_types__WEBPACK_IMPORTED_MODULE_0__.FilterType.HIGHPASS;
+        this.Q = new AudioParamMock();
+        this.frequency = new AudioParamMock();
     }
 }
 class AnalyserNodeMock extends AudioNodeMock {
-    fftSize = 512;
-    frequencyBinCount = 256;
+    fftSize;
+    frequencyBinCount;
     __mockGetByteTimeDomainData = jest.fn();
     constructor() {
         super();
+        this.fftSize = 512;
+        this.frequencyBinCount = 256;
     }
     getByteTimeDomainData(array) {
         return this.__mockGetByteTimeDomainData(array);
@@ -70811,6 +70856,9 @@ class OscillatorNodeMock extends AudioNodeMock {
     __mockStop = jest.fn();
     constructor() {
         super();
+        this.detune = new AudioParamMock();
+        this.type = 'sine';
+        this.frequency = new AudioParamMock();
     }
     start(currentTime) {
         return this.__mockStart(currentTime);
@@ -71761,14 +71809,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const Key = ({ identifier, frequency, }) => {
+const Key = ({ identifier, frequency, __mockOscillator, __mockEnvelope, }) => {
     const keyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
     const { context, output, lfo1, lfo2 } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__.audioContext);
     const { state: { attack, decay, sustain, release, detune, pitchbend, waveform }, } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_6__.envelopeStateContext);
     const { selectedInput: midiInput } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_4__.midiContext);
     let releaseTimeout;
-    const oscillator = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__.useInstantiateOscillatorNode)(waveform, frequency);
-    const envelope = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__.useInstantiateGainNode)();
+    const oscillator = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__.useInstantiateOscillatorNode)(waveform, frequency, __mockOscillator);
+    const envelope = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__.useInstantiateGainNode)(__mockEnvelope);
     oscillator.type = waveform;
     oscillator.detune.value = detune + pitchbend;
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -71834,7 +71882,7 @@ const Key = ({ identifier, frequency, }) => {
             ? `${_index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].black} ${
             // TODO: find a nicer way to do this
             _index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"][identifier.replace('#', 'sharp')]}`
-            : _index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].white}`, type: "button", onMouseDown: play, onMouseUp: stop }));
+            : _index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].white}`, type: "button", "data-testid": identifier, onMouseDown: play, onMouseUp: stop }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Key);
 
@@ -72538,19 +72586,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const useInstantiateOscillatorNode = (waveform, frequency) => {
+const useInstantiateOscillatorNode = (waveform, frequency, __mockOscillator) => {
     const { __isMock, context } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__.audioContext);
     const oscillator = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => __isMock
-        ? new _mocks___WEBPACK_IMPORTED_MODULE_1__.OscillatorNodeMock()
+        ? __mockOscillator ?? new _mocks___WEBPACK_IMPORTED_MODULE_1__.OscillatorNodeMock()
         : new OscillatorNode(context, {
             type: waveform,
             frequency,
         }), []);
     return oscillator;
 };
-const useInstantiateGainNode = () => {
+const useInstantiateGainNode = (__mockGainNode) => {
     const { __isMock, context } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__.audioContext);
-    const gainNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => __isMock ? new _mocks___WEBPACK_IMPORTED_MODULE_1__.GainNodeMock() : new GainNode(context), []);
+    const gainNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => __isMock
+        ? __mockGainNode ?? new _mocks___WEBPACK_IMPORTED_MODULE_1__.GainNodeMock()
+        : new GainNode(context), []);
     return gainNode;
 };
 
@@ -72755,7 +72805,9 @@ const reducer = (state, action) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   MIDIProvider: () => (/* binding */ MIDIProvider),
-/* harmony export */   midiContext: () => (/* binding */ midiContext)
+/* harmony export */   midiContext: () => (/* binding */ midiContext),
+/* harmony export */   withMockedMIDIInput: () => (/* binding */ withMockedMIDIInput),
+/* harmony export */   withMockedMIDINoInput: () => (/* binding */ withMockedMIDINoInput)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -72802,6 +72854,16 @@ const MIDIProvider = ({ children, __mocks, }) => {
                 selectedInput,
             } }, children));
     }
+};
+const withMockedMIDIInput = (Component) => {
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MIDIProvider, { __mocks: {
+            state: { loading: false, error: false, input: 'midi input' },
+        } }, Component));
+};
+const withMockedMIDINoInput = (Component) => {
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MIDIProvider, { __mocks: {
+            state: { loading: false, error: false },
+        } }, Component));
 };
 
 

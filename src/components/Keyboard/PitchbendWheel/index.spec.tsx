@@ -1,7 +1,10 @@
-import { fireEvent, render } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import PitchbendWheel from '.';
-import { MIDIProvider } from '../../../providers/MIDIProvider';
+import {
+  withMockedMIDIInput,
+  withMockedMIDINoInput,
+} from '../../../providers/MIDIProvider';
 import { Actions } from '../../../types';
 import { EnvelopeStateProvider } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
 
@@ -18,17 +21,17 @@ jest.mock('webmidi', () => {
 });
 
 describe('Pitchbend wheel', () => {
+  afterEach(() => {
+    cleanup();
+  });
+
   it('should render correctly', async () => {
     const { findByTestId } = render(
-      <MIDIProvider
-        __mocks={{
-          state: { loading: false, error: false },
-        }}
-      >
+      withMockedMIDINoInput(
         <EnvelopeStateProvider>
           <PitchbendWheel></PitchbendWheel>
-        </EnvelopeStateProvider>
-      </MIDIProvider>,
+        </EnvelopeStateProvider>,
+      ),
     );
 
     const pitchbendWheel = await findByTestId('pitchbend_wheel');
@@ -38,15 +41,11 @@ describe('Pitchbend wheel', () => {
   it('should dispatch event when changing input', async () => {
     const mockDispatch = jest.fn();
     const { findByTestId } = render(
-      <MIDIProvider
-        __mocks={{
-          state: { loading: false, error: false },
-        }}
-      >
+      withMockedMIDINoInput(
         <EnvelopeStateProvider __mockDispatch={mockDispatch}>
           <PitchbendWheel></PitchbendWheel>
-        </EnvelopeStateProvider>
-      </MIDIProvider>,
+        </EnvelopeStateProvider>,
+      ),
     );
 
     const pitchbendWheel = await findByTestId('pitchbend_wheel');
@@ -61,15 +60,11 @@ describe('Pitchbend wheel', () => {
   it('should dispatch event when dragging ends', async () => {
     const mockDispatch = jest.fn();
     const { findByTestId } = render(
-      <MIDIProvider
-        __mocks={{
-          state: { loading: false, error: false },
-        }}
-      >
+      withMockedMIDINoInput(
         <EnvelopeStateProvider __mockDispatch={mockDispatch}>
           <PitchbendWheel></PitchbendWheel>
-        </EnvelopeStateProvider>
-      </MIDIProvider>,
+        </EnvelopeStateProvider>,
+      ),
     );
 
     const pitchbendWheel = await findByTestId('pitchbend_wheel');
@@ -97,15 +92,11 @@ describe('Pitchbend wheel', () => {
     });
 
     const { findByTestId } = render(
-      <MIDIProvider
-        __mocks={{
-          state: { loading: false, error: false, input: 'midi input' },
-        }}
-      >
+      withMockedMIDIInput(
         <EnvelopeStateProvider __mockDispatch={mockDispatch}>
           <PitchbendWheel></PitchbendWheel>
-        </EnvelopeStateProvider>
-      </MIDIProvider>,
+        </EnvelopeStateProvider>,
+      ),
     );
 
     await findByTestId('pitchbend_wheel');

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { LFO } from '../providers/AudioContextProvider';
+import { LFO, LFOMock } from '../providers/AudioContextProvider';
 import { Knobs, LFO1Target, LFO2Target } from '../types';
 
 interface Connection {
@@ -8,7 +8,7 @@ interface Connection {
 }
 
 export default (
-  lfo: LFO<LFO1Target | LFO2Target>,
+  lfo: LFO<LFO1Target | LFO2Target> | LFOMock<LFO1Target | LFO2Target>,
   connections: Connection[],
 ) => {
   useEffect(() => {
