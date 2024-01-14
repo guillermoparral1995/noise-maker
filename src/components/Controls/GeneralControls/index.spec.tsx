@@ -1,4 +1,10 @@
-import { cleanup, render } from '@testing-library/react';
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+} from '@testing-library/react';
 import React from 'react';
 import { GeneralControls_ as GeneralControls } from '.';
 import {
@@ -70,6 +76,35 @@ describe('General controls', () => {
     expect(controls).toMatchSnapshot();
   });
 
+  it('should adjust param when knob is moved', async () => {
+    render(
+      withMockedMIDINoInput(
+        <AudioContextProvider
+          __mocks={{
+            context: mockContext,
+            volume: mockVolume,
+            pan: mockPan,
+            lfo1: mockLfo1,
+            lfo2: mockLfo2,
+          }}
+        >
+          <GeneralControlsStateProvider>
+            <GeneralControls></GeneralControls>
+          </GeneralControlsStateProvider>
+        </AudioContextProvider>,
+      ),
+    );
+
+    const knob = screen.getByTestId(Knobs.VOLUME);
+    act(() => {
+      knob.focus();
+    });
+    act(() => {
+      fireEvent.keyDown(knob, { key: 'ArrowUp', code: 'ArrowUp' });
+    });
+    expect(mockVolume.gain.value).toEqual(0.51);
+  });
+
   it('should trigger dispatch on MIDI knob change', async () => {
     const mockDispatch = jest.fn();
     let mockEventName: string;
@@ -120,7 +155,7 @@ describe('General controls', () => {
     };
     const mockDispatch = jest.fn();
     const { findByTestId } = render(
-      withMockedMIDIInput(
+      withMockedMIDINoInput(
         <AudioContextProvider
           __mocks={{
             context: mockContext,
@@ -149,7 +184,7 @@ describe('General controls', () => {
     };
     const mockDispatch = jest.fn();
     const { findByTestId } = render(
-      withMockedMIDIInput(
+      withMockedMIDINoInput(
         <AudioContextProvider
           __mocks={{
             context: mockContext,

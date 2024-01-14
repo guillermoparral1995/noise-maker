@@ -70945,13 +70945,13 @@ class DynamicsCompressorNodeMock extends AudioNodeMock {
     knee;
     attack;
     release;
-    constructor({ threshold, ratio, knee, attack, release, }) {
+    constructor() {
         super();
-        this.threshold = new AudioParamMock(threshold);
-        this.ratio = new AudioParamMock(ratio);
-        this.knee = new AudioParamMock(knee);
-        this.attack = new AudioParamMock(attack);
-        this.release = new AudioParamMock(release);
+        this.threshold = new AudioParamMock();
+        this.ratio = new AudioParamMock();
+        this.knee = new AudioParamMock();
+        this.attack = new AudioParamMock();
+        this.release = new AudioParamMock();
     }
 }
 class AnalyserNodeMock extends AudioNodeMock {
@@ -73199,7 +73199,7 @@ const MIDIProvider = ({ children, __mocks, }) => {
         }
     };
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        enableMidi();
+        !__mocks?.state && enableMidi();
     }, []);
     const isLoading = __mocks?.state ? __mocks.state.loading : state.loading;
     const isError = __mocks?.state ? __mocks.state.error : state.error;

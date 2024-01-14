@@ -1,4 +1,10 @@
-import { cleanup, render } from '@testing-library/react';
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+} from '@testing-library/react';
 import React from 'react';
 import { FilterControls_ as FilterControls } from '.';
 import {
@@ -42,6 +48,7 @@ describe('Filter controls', () => {
 
   afterEach(() => {
     cleanup();
+    jest.resetAllMocks();
   });
 
   it('should render correctly', async () => {
@@ -166,5 +173,33 @@ describe('Filter controls', () => {
 
     expect(mockLfo2.output.__mockConnect).toHaveBeenCalledWith(mockFilter.Q);
     expect(mockLfo1.output.__mockConnect).not.toHaveBeenCalled();
+  });
+
+  it('should adjust param when knob is moved', async () => {
+    render(
+      withMockedMIDINoInput(
+        <AudioContextProvider
+          __mocks={{
+            context: mockContext,
+            filter: mockFilter,
+            lfo1: mockLfo1,
+            lfo2: mockLfo2,
+          }}
+        >
+          <FilterStateProvider>
+            <FilterControls></FilterControls>
+          </FilterStateProvider>
+        </AudioContextProvider>,
+      ),
+    );
+
+    const knob = screen.getByTestId(Knobs.FILTER_CUTOFF);
+    act(() => {
+      knob.focus();
+    });
+    act(() => {
+      fireEvent.keyDown(knob, { key: 'ArrowUp', code: 'ArrowUp' });
+    });
+    expect(mockFilter.frequency.value).toEqual(351);
   });
 });

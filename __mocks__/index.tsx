@@ -104,6 +104,7 @@ export class BiquadFilterNodeMock extends AudioNodeMock {
   Q: AudioParamMock;
   type: FilterType;
   frequency: AudioParamMock;
+
   constructor() {
     super();
 
@@ -120,26 +121,14 @@ export class DynamicsCompressorNodeMock extends AudioNodeMock {
   attack: AudioParamMock;
   release: AudioParamMock;
 
-  constructor({
-    threshold,
-    ratio,
-    knee,
-    attack,
-    release,
-  }: {
-    threshold?: number;
-    ratio?: number;
-    knee?: number;
-    attack?: number;
-    release?: number;
-  }) {
+  constructor() {
     super();
 
-    this.threshold = new AudioParamMock(threshold);
-    this.ratio = new AudioParamMock(ratio);
-    this.knee = new AudioParamMock(knee);
-    this.attack = new AudioParamMock(attack);
-    this.release = new AudioParamMock(release);
+    this.threshold = new AudioParamMock();
+    this.ratio = new AudioParamMock();
+    this.knee = new AudioParamMock();
+    this.attack = new AudioParamMock();
+    this.release = new AudioParamMock();
   }
 }
 

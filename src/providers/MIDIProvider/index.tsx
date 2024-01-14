@@ -43,7 +43,7 @@ export const MIDIProvider = ({
   };
 
   useEffect(() => {
-    enableMidi();
+    !__mocks?.state && enableMidi();
   }, []);
   const isLoading = __mocks?.state ? __mocks.state.loading : state.loading;
   const isError = __mocks?.state ? __mocks.state.error : state.error;

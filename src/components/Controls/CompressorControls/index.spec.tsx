@@ -33,7 +33,7 @@ describe('Compressor controls', () => {
   });
 
   const mockContext = new AudioContextMock();
-  const mockCompressor = new DynamicsCompressorNodeMock({ ratio: 12 });
+  const mockCompressor = new DynamicsCompressorNodeMock();
 
   it('should render correctly', async () => {
     const { findByTestId } = render(
