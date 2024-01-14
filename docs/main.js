@@ -6389,7 +6389,8 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.e5KJt7eumSZ8cRJT4wPC {
   font-size: 12px;
-}`, "",{"version":3,"sources":["webpack://./src/components/shared/Knob/index.module.scss"],"names":[],"mappings":"AAAA;EACI,eAAA;AACJ","sourcesContent":[".label {\n    font-size: 12px\n}"],"sourceRoot":""}]);
+  color: rgba(255, 255, 255, 0.6);
+}`, "",{"version":3,"sources":["webpack://./src/components/shared/Knob/index.module.scss"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,+BAAA;AACJ","sourcesContent":[".label {\n    font-size: 12px;\n    color: rgba(255, 255, 255, 0.6);\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"label": `e5KJt7eumSZ8cRJT4wPC`
