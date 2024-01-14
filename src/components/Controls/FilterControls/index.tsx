@@ -7,7 +7,7 @@ import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
 import { filterStateContext, FilterStateProvider } from './FilterStateProvider';
 
-const FilterControls_ = () => {
+export const FilterControls_ = () => {
   const {
     state: { type, cutoff, resonance },
     dispatch,

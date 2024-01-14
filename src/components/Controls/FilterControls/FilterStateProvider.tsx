@@ -11,11 +11,16 @@ interface FilterStateProviderValue {
 export const filterStateContext =
   React.createContext<FilterStateProviderValue>(undefined);
 
-export const FilterStateProvider = ({ children }: PropsWithChildren) => {
+export const FilterStateProvider = ({
+  children,
+  __mockDispatch,
+}: { __mockDispatch?: React.Dispatch<ActionTypes> } & PropsWithChildren) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <filterStateContext.Provider value={{ state, dispatch }}>
+    <filterStateContext.Provider
+      value={{ state, dispatch: __mockDispatch ?? dispatch }}
+    >
       {children}
     </filterStateContext.Provider>
   );

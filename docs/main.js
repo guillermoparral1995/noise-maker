@@ -71188,9 +71188,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const filterStateContext = react__WEBPACK_IMPORTED_MODULE_0___default().createContext(undefined);
-const FilterStateProvider = ({ children }) => {
+const FilterStateProvider = ({ children, __mockDispatch, }) => {
     const [state, dispatch] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_store_reducer__WEBPACK_IMPORTED_MODULE_2__["default"], _store_initialState__WEBPACK_IMPORTED_MODULE_1__["default"]);
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(filterStateContext.Provider, { value: { state, dispatch } }, children));
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(filterStateContext.Provider, { value: { state, dispatch: __mockDispatch ?? dispatch } }, children));
 };
 
 
@@ -71205,6 +71205,7 @@ const FilterStateProvider = ({ children }) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FilterControls_: () => (/* binding */ FilterControls_),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
