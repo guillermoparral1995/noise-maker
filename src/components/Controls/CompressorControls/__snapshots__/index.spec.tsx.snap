@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compressor controls should render correctly 1`] = `
+<div
+  data-testid="compressor-controls"
+>
+  <div
+    class="compressor_column"
+  >
+    <div
+      data-testid="COMPRESSOR_THRESHOLD"
+      tabindex="0"
+    >
+      <label
+        class="label"
+        for="COMPRESSOR_THRESHOLD"
+      >
+        Threshold
+      </label>
+      <div
+        class="p-knob p-component"
+        data-pc-name="knob"
+        data-pc-section="root"
+        id="COMPRESSOR_THRESHOLD"
+      >
+        <svg
+          data-pc-section="svg"
+          height="50"
+          viewBox="0 0 100 100"
+          width="50"
+        >
+          <path
+            class="p-knob-range"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+            data-pc-section="range"
+            stroke="var(--surface-border, LightGray)"
+            stroke-width="5"
+          />
+          <path
+            class="p-knob-value"
+            d="M 70.00000000000004 84.64101615137753 A 40 40 0 0 0 89.12590402935223 41.68353236728963"
+            data-pc-section="value"
+            stroke="var(--primary-color, Black)"
+            stroke-width="5"
+          />
+          <text
+            class="p-knob-text"
+            data-pc-section="label"
+            fill="var(--text-color-secondary, Black)"
+            name="COMPRESSOR_THRESHOLD"
+            text-anchor="middle"
+            x="50"
+            y="57"
+          >
+            -24
+          </text>
+        </svg>
+      </div>
+    </div>
+    <div
+      data-testid="COMPRESSOR_RATIO"
+      tabindex="0"
+    >
+      <label
+        class="label"
+        for="COMPRESSOR_RATIO"
+      >
+        Ratio
+      </label>
+      <div
+        class="p-knob p-component"
+        data-pc-name="knob"
+        data-pc-section="root"
+        id="COMPRESSOR_RATIO"
+      >
+        <svg
+          data-pc-section="svg"
+          height="50"
+          viewBox="0 0 100 100"
+          width="50"
+        >
+          <path
+            class="p-knob-range"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+            data-pc-section="range"
+            stroke="var(--surface-border, LightGray)"
+            stroke-width="5"
+          />
+          <path
+            class="p-knob-value"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 66.06781698611877 13.369066933797697"
+            data-pc-section="value"
+            stroke="var(--primary-color, Black)"
+            stroke-width="5"
+          />
+          <text
+            class="p-knob-text"
+            data-pc-section="label"
+            fill="var(--text-color-secondary, Black)"
+            name="COMPRESSOR_RATIO"
+            text-anchor="middle"
+            x="50"
+            y="57"
+          >
+            12
+          </text>
+        </svg>
+      </div>
+    </div>
+    <div
+      data-testid="COMPRESSOR_KNEE"
+      tabindex="0"
+    >
+      <label
+        class="label"
+        for="COMPRESSOR_KNEE"
+      >
+        Knee
+      </label>
+      <div
+        class="p-knob p-component"
+        data-pc-name="knob"
+        data-pc-section="root"
+        id="COMPRESSOR_KNEE"
+      >
+        <svg
+          data-pc-section="svg"
+          height="50"
+          viewBox="0 0 100 100"
+          width="50"
+        >
+          <path
+            class="p-knob-range"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+            data-pc-section="range"
+            stroke="var(--surface-border, LightGray)"
+            stroke-width="5"
+          />
+          <path
+            class="p-knob-value"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 88.63703305156272 39.64723819589916"
+            data-pc-section="value"
+            stroke="var(--primary-color, Black)"
+            stroke-width="5"
+          />
+          <text
+            class="p-knob-text"
+            data-pc-section="label"
+            fill="var(--text-color-secondary, Black)"
+            name="COMPRESSOR_KNEE"
+            text-anchor="middle"
+            x="50"
+            y="57"
+          >
+            30
+          </text>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="compressor_column"
+  >
+    <div
+      data-testid="COMPRESSOR_ATTACK"
+      tabindex="0"
+    >
+      <label
+        class="label"
+        for="COMPRESSOR_ATTACK"
+      >
+        Attack
+      </label>
+      <div
+        class="p-knob p-component"
+        data-pc-name="knob"
+        data-pc-section="root"
+        id="COMPRESSOR_ATTACK"
+      >
+        <svg
+          data-pc-section="svg"
+          height="50"
+          viewBox="0 0 100 100"
+          width="50"
+        >
+          <path
+            class="p-knob-range"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+            data-pc-section="range"
+            stroke="var(--surface-border, LightGray)"
+            stroke-width="5"
+          />
+          <path
+            class="p-knob-value"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 29.458349917673182 84.32259622894577"
+            data-pc-section="value"
+            stroke="var(--primary-color, Black)"
+            stroke-width="5"
+          />
+          <text
+            class="p-knob-text"
+            data-pc-section="label"
+            fill="var(--text-color-secondary, Black)"
+            name="COMPRESSOR_ATTACK"
+            text-anchor="middle"
+            x="50"
+            y="57"
+          >
+            0.003
+          </text>
+        </svg>
+      </div>
+    </div>
+    <div
+      data-testid="COMPRESSOR_RELEASE"
+      tabindex="0"
+    >
+      <label
+        class="label"
+        for="COMPRESSOR_RELEASE"
+      >
+        Release
+      </label>
+      <div
+        class="p-knob p-component"
+        data-pc-name="knob"
+        data-pc-section="root"
+        id="COMPRESSOR_RELEASE"
+      >
+        <svg
+          data-pc-section="svg"
+          height="50"
+          viewBox="0 0 100 100"
+          width="50"
+        >
+          <path
+            class="p-knob-range"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+            data-pc-section="range"
+            stroke="var(--surface-border, LightGray)"
+            stroke-width="5"
+          />
+          <path
+            class="p-knob-value"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 11.362966948437276 39.64723819589916"
+            data-pc-section="value"
+            stroke="var(--primary-color, Black)"
+            stroke-width="5"
+          />
+          <text
+            class="p-knob-text"
+            data-pc-section="label"
+            fill="var(--text-color-secondary, Black)"
+            name="COMPRESSOR_RELEASE"
+            text-anchor="middle"
+            x="50"
+            y="57"
+          >
+            0.25
+          </text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

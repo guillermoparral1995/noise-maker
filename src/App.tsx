@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import MIDIInputSelector from './components/Config/MIDIInputSelector';
+import CompressorControls from './components/Controls/CompressorControls';
 import EnvelopeFilterControls from './components/Controls/EnvelopeControls';
 import { EnvelopeStateProvider } from './components/Controls/EnvelopeControls/EnvelopeStateProvider';
 import FilterControls from './components/Controls/FilterControls';
@@ -7,9 +9,8 @@ import GeneralControls from './components/Controls/GeneralControls';
 import LFOControls from './components/Controls/LFOControls';
 import Keyboard from './components/Keyboard';
 import Oscilloscope from './components/Oscilloscope';
-import 'primereact/resources/themes/lara-dark-purple/theme.css';
-import MIDIInputSelector from './components/Config/MIDIInputSelector';
 import styles from './index.module.scss';
+import 'primereact/resources/themes/lara-dark-purple/theme.css';
 
 const App = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
@@ -42,6 +43,9 @@ const App = () => {
                 document.getElementById(styles.keyboard_section),
               )}
           </EnvelopeStateProvider>
+        </div>
+        <div className={styles.column} id={styles.compressor_controls_column}>
+          <CompressorControls></CompressorControls>
         </div>
         <div className={styles.column}>
           <Oscilloscope></Oscilloscope>

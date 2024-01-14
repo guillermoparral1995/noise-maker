@@ -6084,6 +6084,41 @@ ___CSS_LOADER_EXPORT___.push([module.id, `:root {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/Controls/CompressorControls/index.module.scss":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/Controls/CompressorControls/index.module.scss ***!
+  \*******************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.H9JZXbFLA9DtrXQumJ8a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-around;
+}`, "",{"version":3,"sources":["webpack://./src/components/Controls/CompressorControls/index.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,SAAA;EACA,6BAAA;AACJ","sourcesContent":[".compressor_column {\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n    justify-content: space-around;\n  }\n  "],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"compressor_column": `H9JZXbFLA9DtrXQumJ8a`
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/Controls/LFOControls/index.module.scss":
 /*!************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/Controls/LFOControls/index.module.scss ***!
@@ -6451,13 +6486,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `main {
 }
 .oHNRdwqdBmt0jjjJ5sqb#atXx3UD6LZEMlGprsFFe {
   flex-direction: row;
-}`, "",{"version":3,"sources":["webpack://./src/index.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,aAAA;EACA,8BAAA;EACA,sBAAA;EACA,aAAA;AACJ;;AAEA;EACI,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,kBAAA;AACJ;;AAEA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACA,SAAA;AACJ;;AAEA;EACI,aAAA;EACA,sBAAA;EACA,SAAA;AACJ;AACI;EACI,mBAAA;AACR","sourcesContent":["main {\n    height: 100vh;\n    display: flex;\n    justify-content: space-between;\n    flex-direction: column;\n    padding: 40px;\n}\n\n#controls_section {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    text-align: center;\n}\n\n#keyboard_section {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    text-align: center;\n    gap: 20px;\n}\n\n.column {\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n\n    &#lfo_controls_column {\n        flex-direction: row;\n    }\n}"],"sourceRoot":""}]);
+}
+.oHNRdwqdBmt0jjjJ5sqb#P4xd61KOHtV2n5V3uAuL {
+  flex-direction: row;
+}`, "",{"version":3,"sources":["webpack://./src/index.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,aAAA;EACA,8BAAA;EACA,sBAAA;EACA,aAAA;AACJ;;AAEA;EACI,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,kBAAA;AACJ;;AAEA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACA,SAAA;AACJ;;AAEA;EACI,aAAA;EACA,sBAAA;EACA,SAAA;AACJ;AACI;EACI,mBAAA;AACR;AAEI;EACI,mBAAA;AAAR","sourcesContent":["main {\n    height: 100vh;\n    display: flex;\n    justify-content: space-between;\n    flex-direction: column;\n    padding: 40px;\n}\n\n#controls_section {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    text-align: center;\n}\n\n#keyboard_section {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    text-align: center;\n    gap: 20px;\n}\n\n.column {\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n\n    &#lfo_controls_column {\n        flex-direction: row;\n    }\n\n    &#compressor_controls_column {\n        flex-direction: row;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"controls_section": `ix_udSWn_EGrIpUrYJpy`,
 	"keyboard_section": `R0BpAAwYhVhxCuNMuF92`,
 	"column": `oHNRdwqdBmt0jjjJ5sqb`,
-	"lfo_controls_column": `atXx3UD6LZEMlGprsFFe`
+	"lfo_controls_column": `atXx3UD6LZEMlGprsFFe`,
+	"compressor_controls_column": `P4xd61KOHtV2n5V3uAuL`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -70015,6 +70054,61 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
+/***/ "./src/components/Controls/CompressorControls/index.module.scss":
+/*!**********************************************************************!*\
+  !*** ./src/components/Controls/CompressorControls/index.module.scss ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_index_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./index.module.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/Controls/CompressorControls/index.module.scss");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./src/components/Controls/LFOControls/index.module.scss":
 /*!***************************************************************!*\
   !*** ./src/components/Controls/LFOControls/index.module.scss ***!
@@ -70741,6 +70835,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   AudioContextMock: () => (/* binding */ AudioContextMock),
 /* harmony export */   AudioNodeMock: () => (/* binding */ AudioNodeMock),
 /* harmony export */   BiquadFilterNodeMock: () => (/* binding */ BiquadFilterNodeMock),
+/* harmony export */   DynamicsCompressorNodeMock: () => (/* binding */ DynamicsCompressorNodeMock),
 /* harmony export */   GainNodeMock: () => (/* binding */ GainNodeMock),
 /* harmony export */   OscillatorNodeMock: () => (/* binding */ OscillatorNodeMock),
 /* harmony export */   StereoPannerNodeMock: () => (/* binding */ StereoPannerNodeMock),
@@ -70767,7 +70862,9 @@ class AudioParamMock {
     __mockCancelScheduledValues = jest.fn();
     __mockSetTargetAtTime = jest.fn();
     __mockSetValueCurveAtTime = jest.fn();
-    constructor() { }
+    constructor(value) {
+        this.value = value;
+    }
     exponentialRampToValueAtTime(value, time) {
         return this.__mockExponentialRampToValueAtTime(value, time);
     }
@@ -70842,6 +70939,21 @@ class BiquadFilterNodeMock extends AudioNodeMock {
         this.frequency = new AudioParamMock();
     }
 }
+class DynamicsCompressorNodeMock extends AudioNodeMock {
+    threshold;
+    ratio;
+    knee;
+    attack;
+    release;
+    constructor({ threshold, ratio, knee, attack, release, }) {
+        super();
+        this.threshold = new AudioParamMock(threshold);
+        this.ratio = new AudioParamMock(ratio);
+        this.knee = new AudioParamMock(knee);
+        this.attack = new AudioParamMock(attack);
+        this.release = new AudioParamMock(release);
+    }
+}
 class AnalyserNodeMock extends AudioNodeMock {
     fftSize;
     frequencyBinCount;
@@ -70902,16 +71014,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _components_Controls_EnvelopeControls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Controls/EnvelopeControls */ "./src/components/Controls/EnvelopeControls/index.tsx");
-/* harmony import */ var _components_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
-/* harmony import */ var _components_Controls_FilterControls__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Controls/FilterControls */ "./src/components/Controls/FilterControls/index.tsx");
-/* harmony import */ var _components_Controls_GeneralControls__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Controls/GeneralControls */ "./src/components/Controls/GeneralControls/index.tsx");
-/* harmony import */ var _components_Controls_LFOControls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Controls/LFOControls */ "./src/components/Controls/LFOControls/index.tsx");
-/* harmony import */ var _components_Keyboard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Keyboard */ "./src/components/Keyboard/index.tsx");
-/* harmony import */ var _components_Oscilloscope__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Oscilloscope */ "./src/components/Oscilloscope/index.tsx");
-/* harmony import */ var primereact_resources_themes_lara_dark_purple_theme_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! primereact/resources/themes/lara-dark-purple/theme.css */ "./node_modules/primereact/resources/themes/lara-dark-purple/theme.css");
-/* harmony import */ var _components_Config_MIDIInputSelector__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Config/MIDIInputSelector */ "./src/components/Config/MIDIInputSelector/index.tsx");
+/* harmony import */ var _components_Config_MIDIInputSelector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Config/MIDIInputSelector */ "./src/components/Config/MIDIInputSelector/index.tsx");
+/* harmony import */ var _components_Controls_CompressorControls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Controls/CompressorControls */ "./src/components/Controls/CompressorControls/index.tsx");
+/* harmony import */ var _components_Controls_EnvelopeControls__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Controls/EnvelopeControls */ "./src/components/Controls/EnvelopeControls/index.tsx");
+/* harmony import */ var _components_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Controls/EnvelopeControls/EnvelopeStateProvider */ "./src/components/Controls/EnvelopeControls/EnvelopeStateProvider.tsx");
+/* harmony import */ var _components_Controls_FilterControls__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Controls/FilterControls */ "./src/components/Controls/FilterControls/index.tsx");
+/* harmony import */ var _components_Controls_GeneralControls__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Controls/GeneralControls */ "./src/components/Controls/GeneralControls/index.tsx");
+/* harmony import */ var _components_Controls_LFOControls__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Controls/LFOControls */ "./src/components/Controls/LFOControls/index.tsx");
+/* harmony import */ var _components_Keyboard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Keyboard */ "./src/components/Keyboard/index.tsx");
+/* harmony import */ var _components_Oscilloscope__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Oscilloscope */ "./src/components/Oscilloscope/index.tsx");
 /* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./index.module.scss */ "./src/index.module.scss");
+/* harmony import */ var primereact_resources_themes_lara_dark_purple_theme_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! primereact/resources/themes/lara-dark-purple/theme.css */ "./node_modules/primereact/resources/themes/lara-dark-purple/theme.css");
+
 
 
 
@@ -70932,21 +71046,23 @@ const App = () => {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", { id: "config-section" },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Config_MIDIInputSelector__WEBPACK_IMPORTED_MODULE_10__["default"], null))),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Config_MIDIInputSelector__WEBPACK_IMPORTED_MODULE_2__["default"], null))),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", { id: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].controls_section },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_GeneralControls__WEBPACK_IMPORTED_MODULE_5__["default"], null)),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_GeneralControls__WEBPACK_IMPORTED_MODULE_7__["default"], null)),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_FilterControls__WEBPACK_IMPORTED_MODULE_4__["default"], null)),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_FilterControls__WEBPACK_IMPORTED_MODULE_6__["default"], null)),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column, id: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].lfo_controls_column },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_LFOControls__WEBPACK_IMPORTED_MODULE_6__["default"], null)),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_LFOControls__WEBPACK_IMPORTED_MODULE_8__["default"], null)),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_3__.EnvelopeStateProvider, null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_EnvelopeControls__WEBPACK_IMPORTED_MODULE_2__["default"], null),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_5__.EnvelopeStateProvider, null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_EnvelopeControls__WEBPACK_IMPORTED_MODULE_4__["default"], null),
                     isMounted &&
-                        (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Keyboard__WEBPACK_IMPORTED_MODULE_7__["default"], null), document.getElementById(_index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].keyboard_section)))),
+                        (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Keyboard__WEBPACK_IMPORTED_MODULE_9__["default"], null), document.getElementById(_index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].keyboard_section)))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column, id: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].compressor_controls_column },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_CompressorControls__WEBPACK_IMPORTED_MODULE_3__["default"], null)),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Oscilloscope__WEBPACK_IMPORTED_MODULE_8__["default"], null))),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Oscilloscope__WEBPACK_IMPORTED_MODULE_10__["default"], null))),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", { id: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].keyboard_section })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -70979,6 +71095,196 @@ const MIDIInputSelector = () => {
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Selectors.MIDI_INPUT, dispatch: dispatch, value: selectedInput?.name ?? '', options: inputs.map((i) => ({ value: i, label: i })) }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MIDIInputSelector);
+
+
+/***/ }),
+
+/***/ "./src/components/Controls/CompressorControls/CompressorStateProvider.tsx":
+/*!********************************************************************************!*\
+  !*** ./src/components/Controls/CompressorControls/CompressorStateProvider.tsx ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CompressorStateProvider: () => (/* binding */ CompressorStateProvider),
+/* harmony export */   compressorStateContext: () => (/* binding */ compressorStateContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _store_initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store/initialState */ "./src/components/Controls/CompressorControls/store/initialState.ts");
+/* harmony import */ var _store_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/reducer */ "./src/components/Controls/CompressorControls/store/reducer.ts");
+
+
+
+const compressorStateContext = react__WEBPACK_IMPORTED_MODULE_0___default().createContext(undefined);
+const CompressorStateProvider = ({ children, __mockDispatch, }) => {
+    const [state, dispatch] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_store_reducer__WEBPACK_IMPORTED_MODULE_2__["default"], _store_initialState__WEBPACK_IMPORTED_MODULE_1__["default"]);
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(compressorStateContext.Provider, { value: { state, dispatch: __mockDispatch ?? dispatch } }, children));
+};
+
+
+/***/ }),
+
+/***/ "./src/components/Controls/CompressorControls/index.tsx":
+/*!**************************************************************!*\
+  !*** ./src/components/Controls/CompressorControls/index.tsx ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CompressorControls_: () => (/* binding */ CompressorControls_),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob/index.tsx");
+/* harmony import */ var _CompressorStateProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CompressorStateProvider */ "./src/components/Controls/CompressorControls/CompressorStateProvider.tsx");
+/* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index.module.scss */ "./src/components/Controls/CompressorControls/index.module.scss");
+
+
+
+
+
+
+const CompressorControls_ = () => {
+    const { state, dispatch } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_CompressorStateProvider__WEBPACK_IMPORTED_MODULE_4__.compressorStateContext);
+    const { compressor } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_1__.audioContext);
+    compressor.threshold.value = state.threshold;
+    compressor.ratio.value = state.ratio;
+    compressor.knee.value = state.knee;
+    compressor.attack.value = state.attack;
+    compressor.release.value = state.release;
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].compressor_column },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_THRESHOLD, value: state.threshold, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_RATIO, value: state.ratio, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_KNEE, value: state.knee, dispatch: dispatch })),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].compressor_column },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_ATTACK, value: state.attack, dispatch: dispatch }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_RELEASE, value: state.release, dispatch: dispatch }))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_CompressorStateProvider__WEBPACK_IMPORTED_MODULE_4__.CompressorStateProvider, null,
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(CompressorControls_, null))));
+
+
+/***/ }),
+
+/***/ "./src/components/Controls/CompressorControls/store/actions.ts":
+/*!*********************************************************************!*\
+  !*** ./src/components/Controls/CompressorControls/store/actions.ts ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   updateCompressorAttack: () => (/* binding */ updateCompressorAttack),
+/* harmony export */   updateCompressorKnee: () => (/* binding */ updateCompressorKnee),
+/* harmony export */   updateCompressorRatio: () => (/* binding */ updateCompressorRatio),
+/* harmony export */   updateCompressorRelease: () => (/* binding */ updateCompressorRelease),
+/* harmony export */   updateCompressorThreshold: () => (/* binding */ updateCompressorThreshold)
+/* harmony export */ });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../types */ "./src/types.ts");
+
+const updateCompressorThreshold = (threshold) => ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_COMPRESSOR_THRESHOLD,
+    payload: threshold,
+});
+const updateCompressorRatio = (ratio) => ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_COMPRESSOR_RATIO,
+    payload: ratio,
+});
+const updateCompressorKnee = (knee) => ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_COMPRESSOR_KNEE,
+    payload: knee,
+});
+const updateCompressorAttack = (attack) => ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_COMPRESSOR_ATTACK,
+    payload: attack,
+});
+const updateCompressorRelease = (release) => ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_COMPRESSOR_RELEASE,
+    payload: release,
+});
+
+
+/***/ }),
+
+/***/ "./src/components/Controls/CompressorControls/store/initialState.ts":
+/*!**************************************************************************!*\
+  !*** ./src/components/Controls/CompressorControls/store/initialState.ts ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const initialState = {
+    threshold: -24,
+    ratio: 12,
+    knee: 30,
+    attack: 0.003,
+    release: 0.25,
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initialState);
+
+
+/***/ }),
+
+/***/ "./src/components/Controls/CompressorControls/store/reducer.ts":
+/*!*********************************************************************!*\
+  !*** ./src/components/Controls/CompressorControls/store/reducer.ts ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../types */ "./src/types.ts");
+
+const reducer = (state, action) => {
+    const { type, payload } = action;
+    switch (type) {
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_COMPRESSOR_THRESHOLD:
+            return {
+                ...state,
+                threshold: payload,
+            };
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_COMPRESSOR_RATIO:
+            return {
+                ...state,
+                ratio: payload,
+            };
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_COMPRESSOR_KNEE:
+            return {
+                ...state,
+                knee: payload,
+            };
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_COMPRESSOR_ATTACK:
+            return {
+                ...state,
+                attack: payload,
+            };
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_COMPRESSOR_RELEASE:
+            return {
+                ...state,
+                release: payload,
+            };
+        default:
+            return state;
+    }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (reducer);
 
 
 /***/ }),
@@ -72179,131 +72485,168 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   knobsValues: () => (/* binding */ knobsValues)
 /* harmony export */ });
-/* harmony import */ var _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Controls/EnvelopeControls/store/actions */ "./src/components/Controls/EnvelopeControls/store/actions.ts");
-/* harmony import */ var _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Controls/FilterControls/store/actions */ "./src/components/Controls/FilterControls/store/actions.ts");
-/* harmony import */ var _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Controls/GeneralControls/store/actions */ "./src/components/Controls/GeneralControls/store/actions.ts");
-/* harmony import */ var _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Controls/LFOControls/store/actions */ "./src/components/Controls/LFOControls/store/actions.ts");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../types */ "./src/types.ts");
+/* harmony import */ var _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Controls/CompressorControls/store/actions */ "./src/components/Controls/CompressorControls/store/actions.ts");
+/* harmony import */ var _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Controls/EnvelopeControls/store/actions */ "./src/components/Controls/EnvelopeControls/store/actions.ts");
+/* harmony import */ var _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Controls/FilterControls/store/actions */ "./src/components/Controls/FilterControls/store/actions.ts");
+/* harmony import */ var _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Controls/GeneralControls/store/actions */ "./src/components/Controls/GeneralControls/store/actions.ts");
+/* harmony import */ var _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Controls/LFOControls/store/actions */ "./src/components/Controls/LFOControls/store/actions.ts");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../types */ "./src/types.ts");
+
 
 
 
 
 
 const knobsValues = {
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.VOLUME]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.VOLUME]: {
         label: 'Volume',
         min: 0,
         max: 1,
         default: 0.5,
         midiControl: 74,
-        action: _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateVolume,
+        action: _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateVolume,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PAN]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.PAN]: {
         label: 'Pan',
         min: -1,
         max: 1,
         default: 0,
         midiControl: 18,
-        action: _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updatePan,
+        action: _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updatePan,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.DETUNE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DETUNE]: {
         label: 'Detune',
         min: -1200,
         max: 1200,
         default: 0,
         midiControl: 75,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateDetune,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateDetune,
         step: 1,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PITCHBEND]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.PITCHBEND]: {
         label: 'Pitchbend',
         min: -300,
         max: 300,
         default: 0,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updatePitchbend,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updatePitchbend,
         step: 1,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.ATTACK]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.ATTACK]: {
         label: 'Attack',
         min: 0,
         max: 5,
         default: 0,
         midiControl: 93,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateAttack,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateAttack,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.DECAY]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DECAY]: {
         label: 'Decay',
         min: 0,
         max: 5,
         default: 0,
         midiControl: 91,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateDecay,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateDecay,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.SUSTAIN]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.SUSTAIN]: {
         label: 'Sustain',
         min: 0,
         max: 1,
         default: 1,
         midiControl: 73,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateSustain,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateSustain,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.RELEASE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.RELEASE]: {
         label: 'Release',
         min: 0,
         max: 5,
         default: 0,
         midiControl: 79,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateRelease,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateRelease,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_CUTOFF]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.FILTER_CUTOFF]: {
         label: 'Cut-off',
         min: 10,
         max: 5000,
         default: 350,
         midiControl: 71,
-        action: _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateFilterCutoff,
+        action: _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateFilterCutoff,
         step: 1,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_RESONANCE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.FILTER_RESONANCE]: {
         label: 'Resonance',
         min: 0.0001,
         max: 50,
         default: 1,
         midiControl: 19,
-        action: _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateFilterResonance,
+        action: _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateFilterResonance,
         step: 0.1,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_FREQUENCY]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.LFO_1_FREQUENCY]: {
         label: 'Frequency',
         min: 0.2,
         max: 10,
         default: 1,
         midiControl: 76,
-        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO1Frequency,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateLFO1Frequency,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_1_AMPLITUDE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.LFO_1_AMPLITUDE]: {
         label: 'Amplitude',
         min: 0,
         max: 1,
         default: 0.5,
         midiControl: 16,
-        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO1Amplitude,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateLFO1Amplitude,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_2_FREQUENCY]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.LFO_2_FREQUENCY]: {
         label: 'Frequency',
         min: 0.2,
         max: 10,
         default: 1,
         midiControl: 77,
-        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO2Frequency,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateLFO2Frequency,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_4__.Knobs.LFO_2_AMPLITUDE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.LFO_2_AMPLITUDE]: {
         label: 'Amplitude',
         min: 0,
         max: 1,
         default: 0.5,
         midiControl: 17,
-        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateLFO2Amplitude,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateLFO2Amplitude,
+    },
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.COMPRESSOR_THRESHOLD]: {
+        label: 'Threshold',
+        min: -100,
+        max: 0,
+        default: -24,
+        action: _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateCompressorThreshold,
+    },
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.COMPRESSOR_RATIO]: {
+        label: 'Ratio',
+        min: 1,
+        max: 20,
+        default: 12,
+        action: _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateCompressorRatio,
+    },
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.COMPRESSOR_KNEE]: {
+        label: 'Knee',
+        min: 0,
+        max: 40,
+        default: 30,
+        action: _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateCompressorKnee,
+    },
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.COMPRESSOR_ATTACK]: {
+        label: 'Attack',
+        min: 0,
+        max: 1,
+        default: 0.003,
+        action: _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateCompressorAttack,
+    },
+    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.COMPRESSOR_RELEASE]: {
+        label: 'Release',
+        min: 0,
+        max: 1,
+        default: 0.25,
+        action: _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateCompressorRelease,
     },
 };
 
@@ -72691,6 +73034,7 @@ const AudioContextProvider = ({ children, __mocks, }) => {
                     output: __mocks.lfo2?.output,
                     target: __mocks.lfo2?.target ?? state.lfo2Target,
                 },
+                compressor: __mocks.compressor,
                 analyser: __mocks.analyser,
                 output: __mocks.output,
                 dispatch: __mocks.dispatch ?? dispatch,
@@ -72703,10 +73047,12 @@ const AudioContextProvider = ({ children, __mocks, }) => {
     const analyser = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new AnalyserNode(context, { fftSize: 512 }), []);
     const lfo1OutputNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new GainNode(context), []);
     const lfo2OutputNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new GainNode(context), []);
+    const compressor = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new DynamicsCompressorNode(context), []);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         filterNode.connect(volumeNode);
         volumeNode.connect(pannerNode);
-        pannerNode.connect(analyser);
+        pannerNode.connect(compressor);
+        compressor.connect(analyser);
         analyser.connect(context.destination);
     }, []);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(audioContext.Provider, { value: {
@@ -72723,6 +73069,7 @@ const AudioContextProvider = ({ children, __mocks, }) => {
                 output: lfo2OutputNode,
                 target: state.lfo2Target,
             },
+            compressor,
             analyser,
             output: filterNode,
             dispatch,
@@ -73015,6 +73362,11 @@ var Knobs;
     Knobs["LFO_1_AMPLITUDE"] = "LFO_1_AMPLITUDE";
     Knobs["LFO_2_FREQUENCY"] = "LFO_2_FREQUENCY";
     Knobs["LFO_2_AMPLITUDE"] = "LFO_2_AMPLITUDE";
+    Knobs["COMPRESSOR_THRESHOLD"] = "COMPRESSOR_THRESHOLD";
+    Knobs["COMPRESSOR_KNEE"] = "COMPRESSOR_KNEE";
+    Knobs["COMPRESSOR_RATIO"] = "COMPRESSOR_RATIO";
+    Knobs["COMPRESSOR_ATTACK"] = "COMPRESSOR_ATTACK";
+    Knobs["COMPRESSOR_RELEASE"] = "COMPRESSOR_RELEASE";
 })(Knobs || (Knobs = {}));
 var Actions;
 (function (Actions) {
@@ -73041,6 +73393,11 @@ var Actions;
     Actions[Actions["UPDATE_MIDI_LOADING"] = 20] = "UPDATE_MIDI_LOADING";
     Actions[Actions["UPDATE_MIDI_ERROR"] = 21] = "UPDATE_MIDI_ERROR";
     Actions[Actions["UPDATE_MIDI_INPUT"] = 22] = "UPDATE_MIDI_INPUT";
+    Actions[Actions["UPDATE_COMPRESSOR_THRESHOLD"] = 23] = "UPDATE_COMPRESSOR_THRESHOLD";
+    Actions[Actions["UPDATE_COMPRESSOR_RATIO"] = 24] = "UPDATE_COMPRESSOR_RATIO";
+    Actions[Actions["UPDATE_COMPRESSOR_KNEE"] = 25] = "UPDATE_COMPRESSOR_KNEE";
+    Actions[Actions["UPDATE_COMPRESSOR_ATTACK"] = 26] = "UPDATE_COMPRESSOR_ATTACK";
+    Actions[Actions["UPDATE_COMPRESSOR_RELEASE"] = 27] = "UPDATE_COMPRESSOR_RELEASE";
 })(Actions || (Actions = {}));
 
 

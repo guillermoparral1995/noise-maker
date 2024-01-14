@@ -1,3 +1,4 @@
+import type { ActionTypes as CompressorActionTypes } from './components/Controls/CompressorControls/store/actions';
 import type { ActionTypes as EnvelopeActionTypes } from './components/Controls/EnvelopeControls/store/actions';
 import type { ActionTypes as FilterActionTypes } from './components/Controls/FilterControls/store/actions';
 import type { ActionTypes as GeneralControlsActionTypes } from './components/Controls/GeneralControls/store/actions';
@@ -11,7 +12,8 @@ export type ActionTypes =
   | FilterActionTypes
   | LFOTargetActionTypes
   | LFOActionTypes
-  | MIDIActionTypes;
+  | MIDIActionTypes
+  | CompressorActionTypes;
 
 export enum Waveform {
   SINE = 'sine',
@@ -50,6 +52,11 @@ export enum Knobs {
   LFO_1_AMPLITUDE = 'LFO_1_AMPLITUDE',
   LFO_2_FREQUENCY = 'LFO_2_FREQUENCY',
   LFO_2_AMPLITUDE = 'LFO_2_AMPLITUDE',
+  COMPRESSOR_THRESHOLD = 'COMPRESSOR_THRESHOLD',
+  COMPRESSOR_KNEE = 'COMPRESSOR_KNEE',
+  COMPRESSOR_RATIO = 'COMPRESSOR_RATIO',
+  COMPRESSOR_ATTACK = 'COMPRESSOR_ATTACK',
+  COMPRESSOR_RELEASE = 'COMPRESSOR_RELEASE',
 }
 
 export type LFO1Target =
@@ -102,5 +109,10 @@ export enum Actions {
   UPDATE_MIDI_LOADING,
   UPDATE_MIDI_ERROR,
   UPDATE_MIDI_INPUT,
+  UPDATE_COMPRESSOR_THRESHOLD,
+  UPDATE_COMPRESSOR_RATIO,
+  UPDATE_COMPRESSOR_KNEE,
+  UPDATE_COMPRESSOR_ATTACK,
+  UPDATE_COMPRESSOR_RELEASE,
 }
 export type ActionBuilder<T> = (payload: T) => ActionTypes;

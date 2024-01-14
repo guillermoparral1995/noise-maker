@@ -1,4 +1,11 @@
 import {
+  updateCompressorAttack,
+  updateCompressorKnee,
+  updateCompressorRatio,
+  updateCompressorRelease,
+  updateCompressorThreshold,
+} from '../components/Controls/CompressorControls/store/actions';
+import {
   updateAttack,
   updateDecay,
   updateDetune,
@@ -147,5 +154,40 @@ export const knobsValues: Record<Knobs, KnobValue> = {
     default: 0.5,
     midiControl: 17,
     action: updateLFO2Amplitude,
+  },
+  [Knobs.COMPRESSOR_THRESHOLD]: {
+    label: 'Threshold',
+    min: -100,
+    max: 0,
+    default: -24,
+    action: updateCompressorThreshold,
+  },
+  [Knobs.COMPRESSOR_RATIO]: {
+    label: 'Ratio',
+    min: 1,
+    max: 20,
+    default: 12,
+    action: updateCompressorRatio,
+  },
+  [Knobs.COMPRESSOR_KNEE]: {
+    label: 'Knee',
+    min: 0,
+    max: 40,
+    default: 30,
+    action: updateCompressorKnee,
+  },
+  [Knobs.COMPRESSOR_ATTACK]: {
+    label: 'Attack',
+    min: 0,
+    max: 1,
+    default: 0.003,
+    action: updateCompressorAttack,
+  },
+  [Knobs.COMPRESSOR_RELEASE]: {
+    label: 'Release',
+    min: 0,
+    max: 1,
+    default: 0.25,
+    action: updateCompressorRelease,
   },
 };

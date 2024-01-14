@@ -16,7 +16,9 @@ class AudioParamMock {
   __mockCancelScheduledValues = jest.fn();
   __mockSetTargetAtTime = jest.fn();
   __mockSetValueCurveAtTime = jest.fn();
-  constructor() {}
+  constructor(value?: number) {
+    this.value = value;
+  }
 
   exponentialRampToValueAtTime(value: number, time: number) {
     return this.__mockExponentialRampToValueAtTime(value, time);
@@ -108,6 +110,36 @@ export class BiquadFilterNodeMock extends AudioNodeMock {
     this.type = FilterType.HIGHPASS;
     this.Q = new AudioParamMock();
     this.frequency = new AudioParamMock();
+  }
+}
+
+export class DynamicsCompressorNodeMock extends AudioNodeMock {
+  threshold: AudioParamMock;
+  ratio: AudioParamMock;
+  knee: AudioParamMock;
+  attack: AudioParamMock;
+  release: AudioParamMock;
+
+  constructor({
+    threshold,
+    ratio,
+    knee,
+    attack,
+    release,
+  }: {
+    threshold?: number;
+    ratio?: number;
+    knee?: number;
+    attack?: number;
+    release?: number;
+  }) {
+    super();
+
+    this.threshold = new AudioParamMock(threshold);
+    this.ratio = new AudioParamMock(ratio);
+    this.knee = new AudioParamMock(knee);
+    this.attack = new AudioParamMock(attack);
+    this.release = new AudioParamMock(release);
   }
 }
 

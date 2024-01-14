@@ -9,6 +9,7 @@ import {
   AudioContextMock,
   AudioNodeMock,
   BiquadFilterNodeMock,
+  DynamicsCompressorNodeMock,
   GainNodeMock,
   StereoPannerNodeMock,
 } from '../../../__mocks__';
@@ -34,6 +35,7 @@ interface AudioContextProviderMocks {
   lfo1?: LFOMock<LFO1Target>;
   lfo2?: LFOMock<LFO2Target>;
   analyser?: AnalyserNodeMock;
+  compressor?: DynamicsCompressorNodeMock;
   dispatch?: React.Dispatch<ActionTypes>;
   output?: AudioNodeMock;
 }
@@ -45,6 +47,7 @@ interface AudioContextProviderParams {
   filter: BiquadFilterNode;
   lfo1: LFO<LFO1Target>;
   lfo2: LFO<LFO2Target>;
+  compressor: DynamicsCompressorNode;
   analyser: AnalyserNode;
   dispatch: React.Dispatch<ActionTypes>;
   output: AudioNode;
@@ -80,6 +83,7 @@ export const AudioContextProvider = ({
             output: __mocks.lfo2?.output,
             target: __mocks.lfo2?.target ?? state.lfo2Target,
           },
+          compressor: __mocks.compressor,
           analyser: __mocks.analyser,
           output: __mocks.output,
           dispatch: __mocks.dispatch ?? dispatch,
@@ -105,11 +109,16 @@ export const AudioContextProvider = ({
   );
   const lfo1OutputNode: GainNode = useMemo(() => new GainNode(context), []);
   const lfo2OutputNode: GainNode = useMemo(() => new GainNode(context), []);
+  const compressor: DynamicsCompressorNode = useMemo(
+    () => new DynamicsCompressorNode(context),
+    [],
+  );
 
   useEffect(() => {
     filterNode.connect(volumeNode);
     volumeNode.connect(pannerNode);
-    pannerNode.connect(analyser);
+    pannerNode.connect(compressor);
+    compressor.connect(analyser);
     analyser.connect(context.destination);
   }, []);
 
@@ -129,6 +138,7 @@ export const AudioContextProvider = ({
           output: lfo2OutputNode,
           target: state.lfo2Target,
         },
+        compressor,
         analyser,
         output: filterNode,
         dispatch,
