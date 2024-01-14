@@ -1,3 +1,5 @@
+import React, { ReactNode } from 'react';
+import { MIDIProvider } from '../src/providers/MIDIProvider';
 import { FilterType } from '../src/types';
 
 class AudioParamMock {
@@ -148,3 +150,27 @@ export class OscillatorNodeMock extends AudioNodeMock {
     return this.__mockStop(currentTime);
   }
 }
+
+export const withMockedMIDIInput = (Component: ReactNode) => {
+  return (
+    <MIDIProvider
+      __mocks={{
+        state: { loading: false, error: false, input: 'midi input' },
+      }}
+    >
+      {Component}
+    </MIDIProvider>
+  );
+};
+
+export const withMockedMIDINoInput = (Component: ReactNode) => {
+  return (
+    <MIDIProvider
+      __mocks={{
+        state: { loading: false, error: false },
+      }}
+    >
+      {Component}
+    </MIDIProvider>
+  );
+};

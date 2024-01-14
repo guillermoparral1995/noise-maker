@@ -1,9 +1,4 @@
-import React, {
-  PropsWithChildren,
-  ReactNode,
-  useEffect,
-  useReducer,
-} from 'react';
+import React, { PropsWithChildren, useEffect, useReducer } from 'react';
 import { Input, WebMidi } from 'webmidi';
 import {
   ActionTypes,
@@ -70,28 +65,4 @@ export const MIDIProvider = ({
       </midiContext.Provider>
     );
   }
-};
-
-export const withMockedMIDIInput = (Component: ReactNode) => {
-  return (
-    <MIDIProvider
-      __mocks={{
-        state: { loading: false, error: false, input: 'midi input' },
-      }}
-    >
-      {Component}
-    </MIDIProvider>
-  );
-};
-
-export const withMockedMIDINoInput = (Component: ReactNode) => {
-  return (
-    <MIDIProvider
-      __mocks={{
-        state: { loading: false, error: false },
-      }}
-    >
-      {Component}
-    </MIDIProvider>
-  );
 };

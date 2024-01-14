@@ -5,16 +5,14 @@ import {
   AudioContextMock,
   BiquadFilterNodeMock,
   GainNodeMock,
+  withMockedMIDIInput,
+  withMockedMIDINoInput,
 } from '../../../../__mocks__';
 import { knobsValues } from '../../../constants/knobsValues';
 import {
   AudioContextProvider,
   LFOMock,
 } from '../../../providers/AudioContextProvider';
-import {
-  withMockedMIDIInput,
-  withMockedMIDINoInput,
-} from '../../../providers/MIDIProvider';
 import { Actions, Knobs, LFO1Target, LFO2Target } from '../../../types';
 import { FilterStateProvider } from './FilterStateProvider';
 

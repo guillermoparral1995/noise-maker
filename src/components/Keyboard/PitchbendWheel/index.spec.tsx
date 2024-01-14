@@ -4,7 +4,7 @@ import PitchbendWheel from '.';
 import {
   withMockedMIDIInput,
   withMockedMIDINoInput,
-} from '../../../providers/MIDIProvider';
+} from '../../../../__mocks__';
 import { Actions } from '../../../types';
 import { EnvelopeStateProvider } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
 

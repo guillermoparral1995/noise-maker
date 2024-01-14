@@ -70743,9 +70743,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   BiquadFilterNodeMock: () => (/* binding */ BiquadFilterNodeMock),
 /* harmony export */   GainNodeMock: () => (/* binding */ GainNodeMock),
 /* harmony export */   OscillatorNodeMock: () => (/* binding */ OscillatorNodeMock),
-/* harmony export */   StereoPannerNodeMock: () => (/* binding */ StereoPannerNodeMock)
+/* harmony export */   StereoPannerNodeMock: () => (/* binding */ StereoPannerNodeMock),
+/* harmony export */   withMockedMIDIInput: () => (/* binding */ withMockedMIDIInput),
+/* harmony export */   withMockedMIDINoInput: () => (/* binding */ withMockedMIDINoInput)
 /* harmony export */ });
-/* harmony import */ var _src_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../src/types */ "./src/types.ts");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _src_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../src/providers/MIDIProvider */ "./src/providers/MIDIProvider/index.tsx");
+/* harmony import */ var _src_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/types */ "./src/types.ts");
+
+
 
 class AudioParamMock {
     value;
@@ -70830,7 +70837,7 @@ class BiquadFilterNodeMock extends AudioNodeMock {
     frequency;
     constructor() {
         super();
-        this.type = _src_types__WEBPACK_IMPORTED_MODULE_0__.FilterType.HIGHPASS;
+        this.type = _src_types__WEBPACK_IMPORTED_MODULE_2__.FilterType.HIGHPASS;
         this.Q = new AudioParamMock();
         this.frequency = new AudioParamMock();
     }
@@ -70867,6 +70874,16 @@ class OscillatorNodeMock extends AudioNodeMock {
         return this.__mockStop(currentTime);
     }
 }
+const withMockedMIDIInput = (Component) => {
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_src_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_1__.MIDIProvider, { __mocks: {
+            state: { loading: false, error: false, input: 'midi input' },
+        } }, Component));
+};
+const withMockedMIDINoInput = (Component) => {
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_src_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_1__.MIDIProvider, { __mocks: {
+            state: { loading: false, error: false },
+        } }, Component));
+};
 
 
 /***/ }),
@@ -72804,9 +72821,7 @@ const reducer = (state, action) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   MIDIProvider: () => (/* binding */ MIDIProvider),
-/* harmony export */   midiContext: () => (/* binding */ midiContext),
-/* harmony export */   withMockedMIDIInput: () => (/* binding */ withMockedMIDIInput),
-/* harmony export */   withMockedMIDINoInput: () => (/* binding */ withMockedMIDINoInput)
+/* harmony export */   midiContext: () => (/* binding */ midiContext)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -72853,16 +72868,6 @@ const MIDIProvider = ({ children, __mocks, }) => {
                 selectedInput,
             } }, children));
     }
-};
-const withMockedMIDIInput = (Component) => {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MIDIProvider, { __mocks: {
-            state: { loading: false, error: false, input: 'midi input' },
-        } }, Component));
-};
-const withMockedMIDINoInput = (Component) => {
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(MIDIProvider, { __mocks: {
-            state: { loading: false, error: false },
-        } }, Component));
 };
 
 

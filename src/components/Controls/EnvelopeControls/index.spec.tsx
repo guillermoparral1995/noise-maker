@@ -1,11 +1,11 @@
 import { cleanup, render } from '@testing-library/react';
 import React from 'react';
 import EnvelopeControls from '.';
-import { knobsValues } from '../../../constants/knobsValues';
 import {
   withMockedMIDIInput,
   withMockedMIDINoInput,
-} from '../../../providers/MIDIProvider';
+} from '../../../../__mocks__';
+import { knobsValues } from '../../../constants/knobsValues';
 import { Actions, Knobs } from '../../../types';
 import { EnvelopeStateProvider } from './EnvelopeStateProvider';
 

@@ -6,16 +6,14 @@ import {
   AudioNodeMock,
   GainNodeMock,
   OscillatorNodeMock,
+  withMockedMIDIInput,
+  withMockedMIDINoInput,
 } from '../../../../__mocks__';
 import noteTable, { Notes } from '../../../constants/noteTable';
 import {
   AudioContextProvider,
   LFOMock,
 } from '../../../providers/AudioContextProvider';
-import {
-  withMockedMIDIInput,
-  withMockedMIDINoInput,
-} from '../../../providers/MIDIProvider';
 import { Knobs, LFO1Target, LFO2Target } from '../../../types';
 import { EnvelopeStateProvider } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
 
