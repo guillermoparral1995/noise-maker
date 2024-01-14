@@ -23,7 +23,7 @@ export interface LFO<T> {
 
 export interface LFOMock<T> {
   output: GainNodeMock;
-  target: T;
+  target?: T;
 }
 
 interface AudioContextProviderMocks {
@@ -74,15 +74,15 @@ export const AudioContextProvider = ({
           filter: __mocks.filter,
           lfo1: {
             output: __mocks.lfo1?.output,
-            target: __mocks.lfo1?.target,
+            target: __mocks.lfo1?.target ?? state.lfo1Target,
           },
           lfo2: {
             output: __mocks.lfo2?.output,
-            target: __mocks.lfo2?.target,
+            target: __mocks.lfo2?.target ?? state.lfo2Target,
           },
           analyser: __mocks.analyser,
           output: __mocks.output,
-          dispatch: __mocks.dispatch,
+          dispatch: __mocks.dispatch ?? dispatch,
         }}
       >
         {children}

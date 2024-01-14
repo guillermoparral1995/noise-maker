@@ -144,7 +144,7 @@ describe('General controls', () => {
     expect(mockLfo2.output.__mockConnect).not.toHaveBeenCalled();
   });
 
-  it('should connect lfo1 with param', async () => {
+  it('should connect lfo2 with param', async () => {
     const mockLfo2: LFOMock<LFO2Target> = {
       target: Knobs.PAN,
       output: new GainNodeMock(),

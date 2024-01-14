@@ -11,11 +11,16 @@ interface LFOStateProviderValue {
 export const lfoStateContext =
   React.createContext<LFOStateProviderValue>(undefined);
 
-export const LFOStateProvider = ({ children }: PropsWithChildren) => {
+export const LFOStateProvider = ({
+  children,
+  __mockDispatch,
+}: { __mockDispatch?: React.Dispatch<ActionTypes> } & PropsWithChildren) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <lfoStateContext.Provider value={{ state, dispatch }}>
+    <lfoStateContext.Provider
+      value={{ state, dispatch: __mockDispatch ?? dispatch }}
+    >
       {children}
     </lfoStateContext.Provider>
   );

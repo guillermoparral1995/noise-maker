@@ -1,20 +1,23 @@
 import React, { useContext, useEffect } from 'react';
+import { OscillatorNodeMock } from '../../../../__mocks__';
 import { knobsValues } from '../../../constants/knobsValues';
 import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
 import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import { useInstantiateOscillatorNode } from '../../../hooks/useInstantiateAudioNode';
 import { audioContext } from '../../../providers/AudioContextProvider';
-import {
-  updateLFO1Target,
-  updateLFO2Target,
-} from '../../../providers/AudioContextProvider/store/actions';
 import { Knobs, Selectors } from '../../../types';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
 import styles from './index.module.scss';
 import { lfoStateContext, LFOStateProvider } from './LFOStateProvider';
 
-const LFOControls_ = () => {
+export const LFOControls_ = ({
+  __mockLFO1,
+  __mockLFO2,
+}: {
+  __mockLFO1?: OscillatorNodeMock;
+  __mockLFO2?: OscillatorNodeMock;
+}) => {
   const { state, dispatch } = useContext(lfoStateContext);
   const { lfo1, lfo2, dispatch: audioDispatch } = useContext(audioContext);
   useAddMidiListeners(
@@ -30,10 +33,12 @@ const LFOControls_ = () => {
   const lfo1Node = useInstantiateOscillatorNode(
     state.lfo1.waveform,
     state.lfo1.frequency,
+    __mockLFO1,
   );
   const lfo2Node = useInstantiateOscillatorNode(
     state.lfo2.waveform,
     state.lfo2.frequency,
+    __mockLFO2,
   );
 
   lfo1Node.type = state.lfo1.waveform;
@@ -65,7 +70,6 @@ const LFOControls_ = () => {
         ((knobsValues[knob].max - knobsValues[knob].min) / 2) *
         state.lfo1.amplitude;
       lfo1.output.gain.value = range;
-      audioDispatch(updateLFO1Target(knob));
     }
   }, [state.lfo1.amplitude, lfo1.target]);
 
@@ -76,7 +80,6 @@ const LFOControls_ = () => {
         ((knobsValues[knob].max - knobsValues[knob].min) / 2) *
         state.lfo2.amplitude;
       lfo2.output.gain.value = range;
-      audioDispatch(updateLFO2Target(knob));
     }
   }, [state.lfo2.amplitude, lfo2.target]);
 
