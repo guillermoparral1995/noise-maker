@@ -1,4 +1,5 @@
 import type { ActionTypes as CompressorActionTypes } from './components/Controls/CompressorControls/store/actions';
+import type { ActionTypes as DelayActionTypes } from './components/Controls/DelayControls/store/actions';
 import type { ActionTypes as EnvelopeActionTypes } from './components/Controls/EnvelopeControls/store/actions';
 import type { ActionTypes as FilterActionTypes } from './components/Controls/FilterControls/store/actions';
 import type { ActionTypes as GeneralControlsActionTypes } from './components/Controls/GeneralControls/store/actions';
@@ -13,7 +14,8 @@ export type ActionTypes =
   | LFOTargetActionTypes
   | LFOActionTypes
   | MIDIActionTypes
-  | CompressorActionTypes;
+  | CompressorActionTypes
+  | DelayActionTypes;
 
 export enum Waveform {
   SINE = 'sine',
@@ -25,6 +27,10 @@ export enum Waveform {
 export enum FilterType {
   LOWPASS = 'lowpass',
   HIGHPASS = 'highpass',
+}
+
+export enum Switchs {
+  DELAY = 'DELAY',
 }
 
 export enum Selectors {
@@ -57,6 +63,8 @@ export enum Knobs {
   COMPRESSOR_RATIO = 'COMPRESSOR_RATIO',
   COMPRESSOR_ATTACK = 'COMPRESSOR_ATTACK',
   COMPRESSOR_RELEASE = 'COMPRESSOR_RELEASE',
+  DELAY_FEEDBACK = 'DELAY_FEEDBACK',
+  DELAY_TIME = 'DELAY_TIME',
 }
 
 export type LFO1Target =
@@ -114,5 +122,8 @@ export enum Actions {
   UPDATE_COMPRESSOR_KNEE,
   UPDATE_COMPRESSOR_ATTACK,
   UPDATE_COMPRESSOR_RELEASE,
+  SWITCH_DELAY,
+  UPDATE_DELAY_FEEDBACK,
+  UPDATE_DELAY_TIME,
 }
 export type ActionBuilder<T> = (payload: T) => ActionTypes;

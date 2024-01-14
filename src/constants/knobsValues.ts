@@ -6,6 +6,10 @@ import {
   updateCompressorThreshold,
 } from '../components/Controls/CompressorControls/store/actions';
 import {
+  updateDelayFeedback,
+  updateDelayTime,
+} from '../components/Controls/DelayControls/store/actions';
+import {
   updateAttack,
   updateDecay,
   updateDetune,
@@ -189,5 +193,19 @@ export const knobsValues: Record<Knobs, KnobValue> = {
     max: 1,
     default: 0.25,
     action: updateCompressorRelease,
+  },
+  [Knobs.DELAY_FEEDBACK]: {
+    label: 'Feedback',
+    min: 0,
+    max: 1,
+    default: 0.3,
+    action: updateDelayFeedback,
+  },
+  [Knobs.DELAY_TIME]: {
+    label: 'Time',
+    min: 0,
+    max: 5,
+    default: 0.5,
+    action: updateDelayTime,
   },
 };

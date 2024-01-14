@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Delay should render correctly 1`] = `
+<div
+  data-testid="delay-controls"
+>
+  <div
+    data-testid="DELAY"
+  >
+    <label
+      class="label"
+      for="DELAY"
+    >
+      Delay
+    </label>
+    <div
+      aria-checked="false"
+      class="p-inputswitch p-component"
+      data-pc-name="inputswitch"
+      data-pc-section="root"
+      role="checkbox"
+    >
+      <div
+        class="p-hidden-accessible"
+        data-pc-section="hiddeninputwrapper"
+      >
+        <input
+          aria-checked="false"
+          data-pc-section="hiddeninput"
+          role="switch"
+          type="checkbox"
+        />
+      </div>
+      <span
+        class="p-inputswitch-slider"
+        data-pc-section="slider"
+      />
+    </div>
+  </div>
+  <div
+    data-testid="DELAY_FEEDBACK"
+    tabindex="0"
+  >
+    <label
+      class="label"
+      for="DELAY_FEEDBACK"
+    >
+      Feedback
+    </label>
+    <div
+      class="p-knob p-component"
+      data-pc-name="knob"
+      data-pc-section="root"
+      id="DELAY_FEEDBACK"
+    >
+      <svg
+        data-pc-section="svg"
+        height="50"
+        viewBox="0 0 100 100"
+        width="50"
+      >
+        <path
+          class="p-knob-range"
+          d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+          data-pc-section="range"
+          stroke="var(--surface-border, LightGray)"
+          stroke-width="5"
+        />
+        <path
+          class="p-knob-value"
+          d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 15.358983848622458 29.999999999999986"
+          data-pc-section="value"
+          stroke="var(--primary-color, Black)"
+          stroke-width="5"
+        />
+        <text
+          class="p-knob-text"
+          data-pc-section="label"
+          fill="var(--text-color-secondary, Black)"
+          name="DELAY_FEEDBACK"
+          text-anchor="middle"
+          x="50"
+          y="57"
+        >
+          0.3
+        </text>
+      </svg>
+    </div>
+  </div>
+  <div
+    data-testid="DELAY_TIME"
+    tabindex="0"
+  >
+    <label
+      class="label"
+      for="DELAY_TIME"
+    >
+      Time
+    </label>
+    <div
+      class="p-knob p-component"
+      data-pc-name="knob"
+      data-pc-section="root"
+      id="DELAY_TIME"
+    >
+      <svg
+        data-pc-section="svg"
+        height="50"
+        viewBox="0 0 100 100"
+        width="50"
+      >
+        <path
+          class="p-knob-range"
+          d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+          data-pc-section="range"
+          stroke="var(--surface-border, LightGray)"
+          stroke-width="5"
+        />
+        <path
+          class="p-knob-value"
+          d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 15.358983848622444 69.99999999999999"
+          data-pc-section="value"
+          stroke="var(--primary-color, Black)"
+          stroke-width="5"
+        />
+        <text
+          class="p-knob-text"
+          data-pc-section="label"
+          fill="var(--text-color-secondary, Black)"
+          name="DELAY_TIME"
+          text-anchor="middle"
+          x="50"
+          y="57"
+        >
+          0.5
+        </text>
+      </svg>
+    </div>
+  </div>
+</div>
+`;

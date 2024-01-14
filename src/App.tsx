@@ -11,6 +11,7 @@ import Keyboard from './components/Keyboard';
 import Oscilloscope from './components/Oscilloscope';
 import styles from './index.module.scss';
 import 'primereact/resources/themes/lara-dark-purple/theme.css';
+import DelayControls from './components/Controls/DelayControls';
 
 const App = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
@@ -46,6 +47,9 @@ const App = () => {
         </div>
         <div className={styles.column} id={styles.compressor_controls_column}>
           <CompressorControls></CompressorControls>
+        </div>
+        <div className={styles.column}>
+          <DelayControls></DelayControls>
         </div>
         <div className={styles.column}>
           <Oscilloscope></Oscilloscope>

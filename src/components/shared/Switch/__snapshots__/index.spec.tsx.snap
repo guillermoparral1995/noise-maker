@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch should render with switch label 1`] = `
+<div
+  aria-checked="false"
+  class="p-inputswitch p-component"
+  data-pc-name="inputswitch"
+  data-pc-section="root"
+  role="checkbox"
+>
+  <div
+    class="p-hidden-accessible"
+    data-pc-section="hiddeninputwrapper"
+  >
+    <input
+      aria-checked="false"
+      data-pc-section="hiddeninput"
+      role="switch"
+      type="checkbox"
+    />
+  </div>
+  <span
+    class="p-inputswitch-slider"
+    data-pc-section="slider"
+  />
+</div>
+`;

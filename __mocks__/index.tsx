@@ -132,6 +132,16 @@ export class DynamicsCompressorNodeMock extends AudioNodeMock {
   }
 }
 
+export class DelayNodeMock extends AudioNodeMock {
+  delayTime: AudioParamMock;
+
+  constructor() {
+    super();
+
+    this.delayTime = new AudioParamMock();
+  }
+}
+
 export class AnalyserNodeMock extends AudioNodeMock {
   fftSize: number;
   frequencyBinCount: number;

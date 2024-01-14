@@ -27,7 +27,7 @@ const Key = ({
   __mockEnvelope,
 }: KeyProps) => {
   const keyRef = useRef<HTMLButtonElement>(null);
-  const { context, output, lfo1, lfo2 } = useContext(audioContext);
+  const { context, output, lfo1, lfo2, delay } = useContext(audioContext);
   const {
     state: { attack, decay, sustain, release, detune, pitchbend, waveform },
   } = useContext(envelopeStateContext);
@@ -46,6 +46,7 @@ const Key = ({
   useEffect(() => {
     oscillator.start(context.currentTime);
     envelope.connect(output);
+    envelope.connect(delay);
     return () => oscillator.disconnect();
   }, []);
 

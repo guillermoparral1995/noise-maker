@@ -6437,6 +6437,39 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/shared/Switch/index.module.scss":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/shared/Switch/index.module.scss ***!
+  \*****************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `._94k8gzl9wcCLKh0Cl5y {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}`, "",{"version":3,"sources":["webpack://./src/components/shared/Switch/index.module.scss"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,+BAAA;AACJ","sourcesContent":[".label {\n    font-size: 12px;\n    color: rgba(255, 255, 255, 0.6);\n}"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"label": `_94k8gzl9wcCLKh0Cl5y`
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.module.scss":
 /*!****************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.module.scss ***!
@@ -29577,6 +29610,318 @@ var TimesIcon = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.memo( /*#__PURE_
   }));
 }));
 TimesIcon.displayName = 'TimesIcon';
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/primereact/inputswitch/inputswitch.esm.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/primereact/inputswitch/inputswitch.esm.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   InputSwitch: () => (/* binding */ InputSwitch)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var primereact_hooks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! primereact/hooks */ "./node_modules/primereact/hooks/hooks.esm.js");
+/* harmony import */ var primereact_tooltip__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! primereact/tooltip */ "./node_modules/primereact/tooltip/tooltip.esm.js");
+/* harmony import */ var primereact_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! primereact/utils */ "./node_modules/primereact/utils/utils.esm.js");
+/* harmony import */ var primereact_componentbase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! primereact/componentbase */ "./node_modules/primereact/componentbase/componentbase.esm.js");
+/* harmony import */ var primereact_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! primereact/api */ "./node_modules/primereact/api/api.esm.js");
+'use client';
+
+
+
+
+
+
+
+function _extends() {
+  _extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
+
+function _toPrimitive(input, hint) {
+  if (_typeof(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if (_typeof(res) !== "object") return res;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return (hint === "string" ? String : Number)(input);
+}
+
+function _toPropertyKey(arg) {
+  var key = _toPrimitive(arg, "string");
+  return _typeof(key) === "symbol" ? key : String(key);
+}
+
+function _defineProperty(obj, key, value) {
+  key = _toPropertyKey(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArrayLimit(r, l) {
+  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = !0,
+      o = !1;
+    try {
+      if (i = (t = t.call(r)).next, 0 === l) {
+        if (Object(t) !== t) return;
+        f = !1;
+      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+    } catch (r) {
+      o = !0, n = r;
+    } finally {
+      try {
+        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+      } finally {
+        if (o) throw n;
+      }
+    }
+    return a;
+  }
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+
+var classes = {
+  root: function root(_ref) {
+    var props = _ref.props,
+      focusedState = _ref.focusedState,
+      checked = _ref.checked;
+    return (0,primereact_utils__WEBPACK_IMPORTED_MODULE_1__.classNames)('p-inputswitch p-component', {
+      'p-inputswitch-checked': checked,
+      'p-disabled': props.disabled,
+      'p-focus': focusedState
+    });
+  },
+  slider: 'p-inputswitch-slider'
+};
+var styles = "\n@layer primereact {\n    .p-inputswitch {\n        position: relative;\n        display: inline-block;\n    }\n    \n    .p-inputswitch-slider {\n        position: absolute;\n        cursor: pointer;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        border: 1px solid transparent;\n    }\n    \n    .p-inputswitch-slider:before {\n        position: absolute;\n        content: \"\";\n        top: 50%;\n    }\n}\n";
+var InputSwitchBase = primereact_componentbase__WEBPACK_IMPORTED_MODULE_2__.ComponentBase.extend({
+  defaultProps: {
+    __TYPE: 'InputSwitch',
+    autoFocus: false,
+    checked: false,
+    className: null,
+    disabled: false,
+    falseValue: false,
+    id: null,
+    inputId: null,
+    inputRef: null,
+    name: null,
+    onBlur: null,
+    onChange: null,
+    onFocus: null,
+    style: null,
+    tabIndex: null,
+    tooltip: null,
+    tooltipOptions: null,
+    trueValue: true,
+    children: undefined
+  },
+  css: {
+    classes: classes,
+    styles: styles
+  }
+});
+
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+var InputSwitch = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.memo( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (inProps, ref) {
+  var context = react__WEBPACK_IMPORTED_MODULE_0__.useContext(primereact_api__WEBPACK_IMPORTED_MODULE_3__.PrimeReactContext);
+  var props = InputSwitchBase.getProps(inProps, context);
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0__.useState(false),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    focusedState = _React$useState2[0],
+    setFocusedState = _React$useState2[1];
+  var _InputSwitchBase$setM = InputSwitchBase.setMetaData({
+      props: props,
+      state: {
+        focused: focusedState
+      }
+    }),
+    ptm = _InputSwitchBase$setM.ptm,
+    cx = _InputSwitchBase$setM.cx,
+    isUnstyled = _InputSwitchBase$setM.isUnstyled;
+  (0,primereact_componentbase__WEBPACK_IMPORTED_MODULE_2__.useHandleStyle)(InputSwitchBase.css.styles, isUnstyled, {
+    name: 'inputswitch'
+  });
+  var elementRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(null);
+  var inputRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(props.inputRef);
+  var checked = props.checked === props.trueValue;
+  var onClick = function onClick(event) {
+    if (props.disabled) {
+      return;
+    }
+    toggle(event);
+    primereact_utils__WEBPACK_IMPORTED_MODULE_1__.DomHandler.focus(inputRef.current);
+    event.preventDefault();
+  };
+  var toggle = function toggle(event) {
+    if (props.onChange) {
+      var value = checked ? props.falseValue : props.trueValue;
+      props.onChange({
+        originalEvent: event,
+        value: value,
+        stopPropagation: function stopPropagation() {
+          event.stopPropagation();
+        },
+        preventDefault: function preventDefault() {
+          event.preventDefault();
+        },
+        target: {
+          name: props.name,
+          id: props.id,
+          value: value
+        }
+      });
+    }
+  };
+  var onFocus = function onFocus(event) {
+    setFocusedState(true);
+    props.onFocus && props.onFocus(event);
+  };
+  var onBlur = function onBlur(event) {
+    setFocusedState(false);
+    props.onBlur && props.onBlur(event);
+  };
+  react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle(ref, function () {
+    return {
+      props: props,
+      focus: function focus() {
+        return primereact_utils__WEBPACK_IMPORTED_MODULE_1__.DomHandler.focus(inputRef.current);
+      },
+      getElement: function getElement() {
+        return elementRef.current;
+      },
+      getInput: function getInput() {
+        return inputRef.current;
+      }
+    };
+  });
+  react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+    primereact_utils__WEBPACK_IMPORTED_MODULE_1__.ObjectUtils.combinedRefs(inputRef, props.inputRef);
+  }, [inputRef, props.inputRef]);
+  (0,primereact_hooks__WEBPACK_IMPORTED_MODULE_4__.useMountEffect)(function () {
+    if (props.autoFocus) {
+      primereact_utils__WEBPACK_IMPORTED_MODULE_1__.DomHandler.focus(inputRef.current, props.autoFocus);
+    }
+  });
+  var hasTooltip = primereact_utils__WEBPACK_IMPORTED_MODULE_1__.ObjectUtils.isNotEmpty(props.tooltip);
+  var otherProps = InputSwitchBase.getOtherProps(props);
+  var ariaProps = primereact_utils__WEBPACK_IMPORTED_MODULE_1__.ObjectUtils.reduceKeys(otherProps, primereact_utils__WEBPACK_IMPORTED_MODULE_1__.DomHandler.ARIA_PROPS);
+  var rootProps = (0,primereact_utils__WEBPACK_IMPORTED_MODULE_1__.mergeProps)({
+    className: (0,primereact_utils__WEBPACK_IMPORTED_MODULE_1__.classNames)(props.className, cx('root', {
+      focusedState: focusedState,
+      checked: checked
+    })),
+    style: props.style,
+    onClick: onClick,
+    role: 'checkbox',
+    'aria-checked': checked
+  }, ptm('root'));
+  var hiddenInputWrapperProps = (0,primereact_utils__WEBPACK_IMPORTED_MODULE_1__.mergeProps)({
+    className: 'p-hidden-accessible'
+  }, ptm('hiddenInputWrapper'));
+  var hiddenInputProps = (0,primereact_utils__WEBPACK_IMPORTED_MODULE_1__.mergeProps)(_objectSpread({
+    type: 'checkbox',
+    id: props.inputId,
+    name: props.name,
+    checked: checked,
+    onChange: toggle,
+    onFocus: onFocus,
+    onBlur: onBlur,
+    disabled: props.disabled,
+    role: 'switch',
+    tabIndex: props.tabIndex,
+    'aria-checked': checked
+  }, ariaProps), ptm('hiddenInput'));
+  var sliderProps = (0,primereact_utils__WEBPACK_IMPORTED_MODULE_1__.mergeProps)({
+    className: cx('slider')
+  }, ptm('slider'));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", _extends({
+    id: props.id,
+    ref: elementRef
+  }, rootProps), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", hiddenInputWrapperProps, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", _extends({
+    ref: inputRef
+  }, hiddenInputProps))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", sliderProps)), hasTooltip && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(primereact_tooltip__WEBPACK_IMPORTED_MODULE_5__.Tooltip, _extends({
+    target: elementRef,
+    content: props.tooltip
+  }, props.tooltipOptions, {
+    pt: ptm('tooltip')
+  })));
+}));
+InputSwitch.displayName = 'InputSwitch';
 
 
 
@@ -70495,6 +70840,61 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./src/components/shared/Switch/index.module.scss":
+/*!********************************************************!*\
+  !*** ./src/components/shared/Switch/index.module.scss ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_index_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./index.module.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/shared/Switch/index.module.scss");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_index_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./src/index.module.scss":
 /*!*******************************!*\
   !*** ./src/index.module.scss ***!
@@ -70836,6 +71236,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   AudioContextMock: () => (/* binding */ AudioContextMock),
 /* harmony export */   AudioNodeMock: () => (/* binding */ AudioNodeMock),
 /* harmony export */   BiquadFilterNodeMock: () => (/* binding */ BiquadFilterNodeMock),
+/* harmony export */   DelayNodeMock: () => (/* binding */ DelayNodeMock),
 /* harmony export */   DynamicsCompressorNodeMock: () => (/* binding */ DynamicsCompressorNodeMock),
 /* harmony export */   GainNodeMock: () => (/* binding */ GainNodeMock),
 /* harmony export */   OscillatorNodeMock: () => (/* binding */ OscillatorNodeMock),
@@ -70955,6 +71356,13 @@ class DynamicsCompressorNodeMock extends AudioNodeMock {
         this.release = new AudioParamMock();
     }
 }
+class DelayNodeMock extends AudioNodeMock {
+    delayTime;
+    constructor() {
+        super();
+        this.delayTime = new AudioParamMock();
+    }
+}
 class AnalyserNodeMock extends AudioNodeMock {
     fftSize;
     frequencyBinCount;
@@ -71026,6 +71434,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Oscilloscope__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Oscilloscope */ "./src/components/Oscilloscope/index.tsx");
 /* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./index.module.scss */ "./src/index.module.scss");
 /* harmony import */ var primereact_resources_themes_lara_dark_purple_theme_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! primereact/resources/themes/lara-dark-purple/theme.css */ "./node_modules/primereact/resources/themes/lara-dark-purple/theme.css");
+/* harmony import */ var _components_Controls_DelayControls__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/Controls/DelayControls */ "./src/components/Controls/DelayControls/index.tsx");
+
 
 
 
@@ -71062,6 +71472,8 @@ const App = () => {
                         (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Keyboard__WEBPACK_IMPORTED_MODULE_9__["default"], null), document.getElementById(_index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].keyboard_section)))),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column, id: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].compressor_controls_column },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_CompressorControls__WEBPACK_IMPORTED_MODULE_3__["default"], null)),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_DelayControls__WEBPACK_IMPORTED_MODULE_13__["default"], null)),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Oscilloscope__WEBPACK_IMPORTED_MODULE_10__["default"], null))),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", { id: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].keyboard_section })));
@@ -71280,6 +71692,181 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 release: payload,
+            };
+        default:
+            return state;
+    }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (reducer);
+
+
+/***/ }),
+
+/***/ "./src/components/Controls/DelayControls/DelayStateProvider.tsx":
+/*!**********************************************************************!*\
+  !*** ./src/components/Controls/DelayControls/DelayStateProvider.tsx ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DelayStateProvider: () => (/* binding */ DelayStateProvider),
+/* harmony export */   delayStateContext: () => (/* binding */ delayStateContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _store_initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store/initialState */ "./src/components/Controls/DelayControls/store/initialState.ts");
+/* harmony import */ var _store_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/reducer */ "./src/components/Controls/DelayControls/store/reducer.ts");
+
+
+
+const delayStateContext = react__WEBPACK_IMPORTED_MODULE_0___default().createContext(undefined);
+const DelayStateProvider = ({ children, __mockDispatch, }) => {
+    const [state, dispatch] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(_store_reducer__WEBPACK_IMPORTED_MODULE_2__["default"], _store_initialState__WEBPACK_IMPORTED_MODULE_1__["default"]);
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(delayStateContext.Provider, { value: { state, dispatch: __mockDispatch ?? dispatch } }, children));
+};
+
+
+/***/ }),
+
+/***/ "./src/components/Controls/DelayControls/index.tsx":
+/*!*********************************************************!*\
+  !*** ./src/components/Controls/DelayControls/index.tsx ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DelayControls_: () => (/* binding */ DelayControls_),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../hooks/useInstantiateAudioNode */ "./src/hooks/useInstantiateAudioNode.ts");
+/* harmony import */ var _providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../providers/AudioContextProvider */ "./src/providers/AudioContextProvider/index.tsx");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../types */ "./src/types.ts");
+/* harmony import */ var _shared_Knob__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../shared/Knob */ "./src/components/shared/Knob/index.tsx");
+/* harmony import */ var _shared_Switch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/Switch */ "./src/components/shared/Switch/index.tsx");
+/* harmony import */ var _DelayStateProvider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./DelayStateProvider */ "./src/components/Controls/DelayControls/DelayStateProvider.tsx");
+
+
+
+
+
+
+
+const DelayControls_ = ({ __mockFeedback, }) => {
+    const { state, dispatch } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_DelayStateProvider__WEBPACK_IMPORTED_MODULE_6__.delayStateContext);
+    const { delay, output } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__.audioContext);
+    const feedback = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_1__.useInstantiateGainNode)(__mockFeedback);
+    delay.delayTime.value = state.delayTime;
+    feedback.gain.value = state.feedback;
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        if (state.active) {
+            delay.connect(feedback);
+            feedback.connect(delay);
+            delay.connect(output);
+        }
+        else {
+            feedback.disconnect();
+            delay.disconnect();
+        }
+    }, [state.active]);
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Switch__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Switchs.DELAY, value: state.active, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_4__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.DELAY_FEEDBACK, value: state.feedback, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_4__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.DELAY_TIME, value: state.delayTime, dispatch: dispatch })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_DelayStateProvider__WEBPACK_IMPORTED_MODULE_6__.DelayStateProvider, null,
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(DelayControls_, null))));
+
+
+/***/ }),
+
+/***/ "./src/components/Controls/DelayControls/store/actions.ts":
+/*!****************************************************************!*\
+  !*** ./src/components/Controls/DelayControls/store/actions.ts ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   switchDelay: () => (/* binding */ switchDelay),
+/* harmony export */   updateDelayFeedback: () => (/* binding */ updateDelayFeedback),
+/* harmony export */   updateDelayTime: () => (/* binding */ updateDelayTime)
+/* harmony export */ });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../types */ "./src/types.ts");
+
+const switchDelay = (active) => ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.SWITCH_DELAY,
+    payload: active,
+});
+const updateDelayFeedback = (feedback) => ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_DELAY_FEEDBACK,
+    payload: feedback,
+});
+const updateDelayTime = (delayTime) => ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_DELAY_TIME,
+    payload: delayTime,
+});
+
+
+/***/ }),
+
+/***/ "./src/components/Controls/DelayControls/store/initialState.ts":
+/*!*********************************************************************!*\
+  !*** ./src/components/Controls/DelayControls/store/initialState.ts ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const initialState = {
+    active: false,
+    feedback: 0.3,
+    delayTime: 0.5,
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initialState);
+
+
+/***/ }),
+
+/***/ "./src/components/Controls/DelayControls/store/reducer.ts":
+/*!****************************************************************!*\
+  !*** ./src/components/Controls/DelayControls/store/reducer.ts ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../types */ "./src/types.ts");
+
+const reducer = (state, action) => {
+    const { type, payload } = action;
+    switch (type) {
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.SWITCH_DELAY:
+            return {
+                ...state,
+                active: payload,
+            };
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_DELAY_FEEDBACK:
+            return {
+                ...state,
+                feedback: payload,
+            };
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_DELAY_TIME:
+            return {
+                ...state,
+                delayTime: payload,
             };
         default:
             return state;
@@ -72134,7 +72721,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const Key = ({ identifier, frequency, __mockOscillator, __mockEnvelope, }) => {
     const keyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-    const { context, output, lfo1, lfo2 } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__.audioContext);
+    const { context, output, lfo1, lfo2, delay } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__.audioContext);
     const { state: { attack, decay, sustain, release, detune, pitchbend, waveform }, } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_6__.envelopeStateContext);
     const { selectedInput: midiInput } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_4__.midiContext);
     let releaseTimeout;
@@ -72145,6 +72732,7 @@ const Key = ({ identifier, frequency, __mockOscillator, __mockEnvelope, }) => {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         oscillator.start(context.currentTime);
         envelope.connect(output);
+        envelope.connect(delay);
         return () => oscillator.disconnect();
     }, []);
     (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_1__["default"])(lfo1, [
@@ -72475,6 +73063,39 @@ const Selector = ({ id, value, dispatch, options, }) => {
 
 /***/ }),
 
+/***/ "./src/components/shared/Switch/index.tsx":
+/*!************************************************!*\
+  !*** ./src/components/shared/Switch/index.tsx ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var primereact_inputswitch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! primereact/inputswitch */ "./node_modules/primereact/inputswitch/inputswitch.esm.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _constants_switchValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../constants/switchValues */ "./src/constants/switchValues.ts");
+/* harmony import */ var _index_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.module.scss */ "./src/components/shared/Switch/index.module.scss");
+
+
+
+
+const Switch = ({ id, value, dispatch, }) => {
+    const handleToggle = (e) => {
+        dispatch(_constants_switchValues__WEBPACK_IMPORTED_MODULE_1__.switchValues[id].action(e.value));
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { "data-testid": id },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].label, htmlFor: id }, _constants_switchValues__WEBPACK_IMPORTED_MODULE_1__.switchValues[id].label),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(primereact_inputswitch__WEBPACK_IMPORTED_MODULE_3__.InputSwitch, { checked: value, onChange: handleToggle })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Switch);
+
+
+/***/ }),
+
 /***/ "./src/constants/knobsValues.ts":
 /*!**************************************!*\
   !*** ./src/constants/knobsValues.ts ***!
@@ -72487,11 +73108,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   knobsValues: () => (/* binding */ knobsValues)
 /* harmony export */ });
 /* harmony import */ var _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Controls/CompressorControls/store/actions */ "./src/components/Controls/CompressorControls/store/actions.ts");
-/* harmony import */ var _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Controls/EnvelopeControls/store/actions */ "./src/components/Controls/EnvelopeControls/store/actions.ts");
-/* harmony import */ var _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Controls/FilterControls/store/actions */ "./src/components/Controls/FilterControls/store/actions.ts");
-/* harmony import */ var _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Controls/GeneralControls/store/actions */ "./src/components/Controls/GeneralControls/store/actions.ts");
-/* harmony import */ var _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Controls/LFOControls/store/actions */ "./src/components/Controls/LFOControls/store/actions.ts");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../types */ "./src/types.ts");
+/* harmony import */ var _components_Controls_DelayControls_store_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Controls/DelayControls/store/actions */ "./src/components/Controls/DelayControls/store/actions.ts");
+/* harmony import */ var _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Controls/EnvelopeControls/store/actions */ "./src/components/Controls/EnvelopeControls/store/actions.ts");
+/* harmony import */ var _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Controls/FilterControls/store/actions */ "./src/components/Controls/FilterControls/store/actions.ts");
+/* harmony import */ var _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Controls/GeneralControls/store/actions */ "./src/components/Controls/GeneralControls/store/actions.ts");
+/* harmony import */ var _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Controls/LFOControls/store/actions */ "./src/components/Controls/LFOControls/store/actions.ts");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../types */ "./src/types.ts");
+
 
 
 
@@ -72499,155 +73122,169 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const knobsValues = {
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.VOLUME]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.VOLUME]: {
         label: 'Volume',
         min: 0,
         max: 1,
         default: 0.5,
         midiControl: 74,
-        action: _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateVolume,
+        action: _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateVolume,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.PAN]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.PAN]: {
         label: 'Pan',
         min: -1,
         max: 1,
         default: 0,
         midiControl: 18,
-        action: _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updatePan,
+        action: _components_Controls_GeneralControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updatePan,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DETUNE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.DETUNE]: {
         label: 'Detune',
         min: -1200,
         max: 1200,
         default: 0,
         midiControl: 75,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateDetune,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateDetune,
         step: 1,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.PITCHBEND]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.PITCHBEND]: {
         label: 'Pitchbend',
         min: -300,
         max: 300,
         default: 0,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updatePitchbend,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updatePitchbend,
         step: 1,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.ATTACK]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.ATTACK]: {
         label: 'Attack',
         min: 0,
         max: 5,
         default: 0,
         midiControl: 93,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateAttack,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateAttack,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DECAY]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.DECAY]: {
         label: 'Decay',
         min: 0,
         max: 5,
         default: 0,
         midiControl: 91,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateDecay,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateDecay,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.SUSTAIN]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.SUSTAIN]: {
         label: 'Sustain',
         min: 0,
         max: 1,
         default: 1,
         midiControl: 73,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateSustain,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateSustain,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.RELEASE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.RELEASE]: {
         label: 'Release',
         min: 0,
         max: 5,
         default: 0,
         midiControl: 79,
-        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateRelease,
+        action: _components_Controls_EnvelopeControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateRelease,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.FILTER_CUTOFF]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.FILTER_CUTOFF]: {
         label: 'Cut-off',
         min: 10,
         max: 5000,
         default: 350,
         midiControl: 71,
-        action: _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateFilterCutoff,
+        action: _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateFilterCutoff,
         step: 1,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.FILTER_RESONANCE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.FILTER_RESONANCE]: {
         label: 'Resonance',
         min: 0.0001,
         max: 50,
         default: 1,
         midiControl: 19,
-        action: _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_2__.updateFilterResonance,
+        action: _components_Controls_FilterControls_store_actions__WEBPACK_IMPORTED_MODULE_3__.updateFilterResonance,
         step: 0.1,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.LFO_1_FREQUENCY]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_FREQUENCY]: {
         label: 'Frequency',
         min: 0.2,
         max: 10,
         default: 1,
         midiControl: 76,
-        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateLFO1Frequency,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_5__.updateLFO1Frequency,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.LFO_1_AMPLITUDE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_AMPLITUDE]: {
         label: 'Amplitude',
         min: 0,
         max: 1,
         default: 0.5,
         midiControl: 16,
-        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateLFO1Amplitude,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_5__.updateLFO1Amplitude,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.LFO_2_FREQUENCY]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_2_FREQUENCY]: {
         label: 'Frequency',
         min: 0.2,
         max: 10,
         default: 1,
         midiControl: 77,
-        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateLFO2Frequency,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_5__.updateLFO2Frequency,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.LFO_2_AMPLITUDE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_2_AMPLITUDE]: {
         label: 'Amplitude',
         min: 0,
         max: 1,
         default: 0.5,
         midiControl: 17,
-        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_4__.updateLFO2Amplitude,
+        action: _components_Controls_LFOControls_store_actions__WEBPACK_IMPORTED_MODULE_5__.updateLFO2Amplitude,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.COMPRESSOR_THRESHOLD]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.COMPRESSOR_THRESHOLD]: {
         label: 'Threshold',
         min: -100,
         max: 0,
         default: -24,
         action: _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateCompressorThreshold,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.COMPRESSOR_RATIO]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.COMPRESSOR_RATIO]: {
         label: 'Ratio',
         min: 1,
         max: 20,
         default: 12,
         action: _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateCompressorRatio,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.COMPRESSOR_KNEE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.COMPRESSOR_KNEE]: {
         label: 'Knee',
         min: 0,
         max: 40,
         default: 30,
         action: _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateCompressorKnee,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.COMPRESSOR_ATTACK]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.COMPRESSOR_ATTACK]: {
         label: 'Attack',
         min: 0,
         max: 1,
         default: 0.003,
         action: _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateCompressorAttack,
     },
-    [_types__WEBPACK_IMPORTED_MODULE_5__.Knobs.COMPRESSOR_RELEASE]: {
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.COMPRESSOR_RELEASE]: {
         label: 'Release',
         min: 0,
         max: 1,
         default: 0.25,
         action: _components_Controls_CompressorControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.updateCompressorRelease,
+    },
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.DELAY_FEEDBACK]: {
+        label: 'Feedback',
+        min: 0,
+        max: 1,
+        default: 0.3,
+        action: _components_Controls_DelayControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateDelayFeedback,
+    },
+    [_types__WEBPACK_IMPORTED_MODULE_6__.Knobs.DELAY_TIME]: {
+        label: 'Time',
+        min: 0,
+        max: 5,
+        default: 0.5,
+        action: _components_Controls_DelayControls_store_actions__WEBPACK_IMPORTED_MODULE_1__.updateDelayTime,
     },
 };
 
@@ -72854,6 +73491,31 @@ const selectorValues = {
 
 /***/ }),
 
+/***/ "./src/constants/switchValues.ts":
+/*!***************************************!*\
+  !*** ./src/constants/switchValues.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   switchValues: () => (/* binding */ switchValues)
+/* harmony export */ });
+/* harmony import */ var _components_Controls_DelayControls_store_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Controls/DelayControls/store/actions */ "./src/components/Controls/DelayControls/store/actions.ts");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../types */ "./src/types.ts");
+
+
+const switchValues = {
+    [_types__WEBPACK_IMPORTED_MODULE_1__.Switchs.DELAY]: {
+        label: 'Delay',
+        action: _components_Controls_DelayControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.switchDelay,
+    },
+};
+
+
+/***/ }),
+
 /***/ "./src/hooks/useAddMidiListeners.ts":
 /*!******************************************!*\
   !*** ./src/hooks/useAddMidiListeners.ts ***!
@@ -73035,6 +73697,7 @@ const AudioContextProvider = ({ children, __mocks, }) => {
                     output: __mocks.lfo2?.output,
                     target: __mocks.lfo2?.target ?? state.lfo2Target,
                 },
+                delay: __mocks.delay,
                 compressor: __mocks.compressor,
                 analyser: __mocks.analyser,
                 output: __mocks.output,
@@ -73049,6 +73712,7 @@ const AudioContextProvider = ({ children, __mocks, }) => {
     const lfo1OutputNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new GainNode(context), []);
     const lfo2OutputNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new GainNode(context), []);
     const compressor = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new DynamicsCompressorNode(context), []);
+    const delayNode = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => new DelayNode(context, { maxDelayTime: 5 }), []);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         filterNode.connect(volumeNode);
         volumeNode.connect(pannerNode);
@@ -73071,6 +73735,7 @@ const AudioContextProvider = ({ children, __mocks, }) => {
                 target: state.lfo2Target,
             },
             compressor,
+            delay: delayNode,
             analyser,
             output: filterNode,
             dispatch,
@@ -73323,6 +73988,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   FilterType: () => (/* binding */ FilterType),
 /* harmony export */   Knobs: () => (/* binding */ Knobs),
 /* harmony export */   Selectors: () => (/* binding */ Selectors),
+/* harmony export */   Switchs: () => (/* binding */ Switchs),
 /* harmony export */   Waveform: () => (/* binding */ Waveform)
 /* harmony export */ });
 var Waveform;
@@ -73337,6 +74003,10 @@ var FilterType;
     FilterType["LOWPASS"] = "lowpass";
     FilterType["HIGHPASS"] = "highpass";
 })(FilterType || (FilterType = {}));
+var Switchs;
+(function (Switchs) {
+    Switchs["DELAY"] = "DELAY";
+})(Switchs || (Switchs = {}));
 var Selectors;
 (function (Selectors) {
     Selectors["WAVEFORM"] = "WAVEFORM";
@@ -73368,6 +74038,8 @@ var Knobs;
     Knobs["COMPRESSOR_RATIO"] = "COMPRESSOR_RATIO";
     Knobs["COMPRESSOR_ATTACK"] = "COMPRESSOR_ATTACK";
     Knobs["COMPRESSOR_RELEASE"] = "COMPRESSOR_RELEASE";
+    Knobs["DELAY_FEEDBACK"] = "DELAY_FEEDBACK";
+    Knobs["DELAY_TIME"] = "DELAY_TIME";
 })(Knobs || (Knobs = {}));
 var Actions;
 (function (Actions) {
@@ -73399,6 +74071,9 @@ var Actions;
     Actions[Actions["UPDATE_COMPRESSOR_KNEE"] = 25] = "UPDATE_COMPRESSOR_KNEE";
     Actions[Actions["UPDATE_COMPRESSOR_ATTACK"] = 26] = "UPDATE_COMPRESSOR_ATTACK";
     Actions[Actions["UPDATE_COMPRESSOR_RELEASE"] = 27] = "UPDATE_COMPRESSOR_RELEASE";
+    Actions[Actions["SWITCH_DELAY"] = 28] = "SWITCH_DELAY";
+    Actions[Actions["UPDATE_DELAY_FEEDBACK"] = 29] = "UPDATE_DELAY_FEEDBACK";
+    Actions[Actions["UPDATE_DELAY_TIME"] = 30] = "UPDATE_DELAY_TIME";
 })(Actions || (Actions = {}));
 
 
