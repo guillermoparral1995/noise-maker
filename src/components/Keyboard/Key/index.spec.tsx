@@ -108,11 +108,10 @@ describe('Key', () => {
           <EnvelopeStateProvider>
             <Key
               identifier={Notes.C3}
-              frequency={noteTable[Notes.C3]}
+              value={noteTable[Notes.C3]}
               __mockOscillator={mockOscillator}
               __mockEnvelope={mockEnvelope}
             ></Key>
-            ,
           </EnvelopeStateProvider>
         </AudioContextProvider>,
       ),
@@ -138,11 +137,10 @@ describe('Key', () => {
           <EnvelopeStateProvider>
             <Key
               identifier={Notes.C3}
-              frequency={noteTable[Notes.C3]}
+              value={noteTable[Notes.C3]}
               __mockOscillator={mockOscillator}
               __mockEnvelope={mockEnvelope}
             ></Key>
-            ,
           </EnvelopeStateProvider>
         </AudioContextProvider>,
       ),
@@ -151,7 +149,34 @@ describe('Key', () => {
     const key = await findByTestId(Notes.C3);
     fireEvent.mouseDown(key);
     checkSoundIsPlayed(mockOscillator, mockEnvelope);
-    expect(key).toMatchSnapshot();
+  });
+
+  it('should play sound on key down', async () => {
+    const { findByTestId } = render(
+      withMockedMIDINoInput(
+        <AudioContextProvider
+          __mocks={{
+            context: mockContext,
+            lfo1: mockLfo1,
+            lfo2: mockLfo2,
+            delay: mockDelay,
+          }}
+        >
+          <EnvelopeStateProvider>
+            <Key
+              identifier={Notes.C3}
+              value={noteTable[Notes.C3]}
+              __mockOscillator={mockOscillator}
+              __mockEnvelope={mockEnvelope}
+            ></Key>
+          </EnvelopeStateProvider>
+        </AudioContextProvider>,
+      ),
+    );
+
+    await findByTestId(Notes.C3);
+    fireEvent.keyDown(document, { key: 'q' });
+    checkSoundIsPlayed(mockOscillator, mockEnvelope);
   });
 
   it('should play sound on MIDI press', async () => {
@@ -181,17 +206,16 @@ describe('Key', () => {
           <EnvelopeStateProvider>
             <Key
               identifier={Notes.C3}
-              frequency={noteTable[Notes.C3]}
+              value={noteTable[Notes.C3]}
               __mockOscillator={mockOscillator}
               __mockEnvelope={mockEnvelope}
             ></Key>
-            ,
           </EnvelopeStateProvider>
         </AudioContextProvider>,
       ),
     );
 
-    const key = await findByTestId(Notes.C3);
+    await findByTestId(Notes.C3);
 
     expect(mockAddListener).toHaveBeenCalledTimes(2);
     expect(mockAddListener).toHaveBeenLastCalledWith(
@@ -205,7 +229,6 @@ describe('Key', () => {
     );
 
     checkSoundIsPlayed(mockOscillator, mockEnvelope);
-    expect(key).toMatchSnapshot();
   });
 
   it('should stop sound on mouse up', async () => {
@@ -222,11 +245,10 @@ describe('Key', () => {
           <EnvelopeStateProvider>
             <Key
               identifier={Notes.C3}
-              frequency={noteTable[Notes.C3]}
+              value={noteTable[Notes.C3]}
               __mockOscillator={mockOscillator}
               __mockEnvelope={mockEnvelope}
             ></Key>
-            ,
           </EnvelopeStateProvider>
         </AudioContextProvider>,
       ),
@@ -237,7 +259,36 @@ describe('Key', () => {
     fireEvent.mouseUp(key);
 
     checkSoundIsStopped(mockOscillator, mockEnvelope);
-    expect(key).toMatchSnapshot();
+  });
+
+  it('should stop sound on key up', async () => {
+    const { findByTestId } = render(
+      withMockedMIDINoInput(
+        <AudioContextProvider
+          __mocks={{
+            context: mockContext,
+            lfo1: mockLfo1,
+            lfo2: mockLfo2,
+            delay: mockDelay,
+          }}
+        >
+          <EnvelopeStateProvider>
+            <Key
+              identifier={Notes.C3}
+              value={noteTable[Notes.C3]}
+              __mockOscillator={mockOscillator}
+              __mockEnvelope={mockEnvelope}
+            ></Key>
+          </EnvelopeStateProvider>
+        </AudioContextProvider>,
+      ),
+    );
+
+    await findByTestId(Notes.C3);
+    fireEvent.keyDown(document, { key: 'q' });
+    fireEvent.keyUp(document, { key: 'q' });
+
+    checkSoundIsStopped(mockOscillator, mockEnvelope);
   });
 
   it('should stop sound on MIDI unpress', async () => {
@@ -267,19 +318,17 @@ describe('Key', () => {
           <EnvelopeStateProvider>
             <Key
               identifier={Notes.C3}
-              frequency={noteTable[Notes.C3]}
+              value={noteTable[Notes.C3]}
               __mockOscillator={mockOscillator}
               __mockEnvelope={mockEnvelope}
             ></Key>
-            ,
           </EnvelopeStateProvider>
         </AudioContextProvider>,
       ),
     );
 
-    const key = await findByTestId(Notes.C3);
+    await findByTestId(Notes.C3);
     checkSoundIsStopped(mockOscillator, mockEnvelope);
-    expect(key).toMatchSnapshot();
   });
 
   it('should connect lfo1 with oscillator detune', async () => {
@@ -300,10 +349,9 @@ describe('Key', () => {
           <EnvelopeStateProvider>
             <Key
               identifier={Notes.C3}
-              frequency={noteTable[Notes.C3]}
+              value={noteTable[Notes.C3]}
               __mockOscillator={mockOscillator}
             ></Key>
-            ,
           </EnvelopeStateProvider>
         </AudioContextProvider>,
       ),
@@ -334,10 +382,9 @@ describe('Key', () => {
           <EnvelopeStateProvider>
             <Key
               identifier={Notes.C3}
-              frequency={noteTable[Notes.C3]}
+              value={noteTable[Notes.C3]}
               __mockOscillator={mockOscillator}
             ></Key>
-            ,
           </EnvelopeStateProvider>
         </AudioContextProvider>,
       ),

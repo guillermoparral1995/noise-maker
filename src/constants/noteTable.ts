@@ -1,4 +1,9 @@
-type NoteTable = Record<Notes, number>;
+export interface NoteValue {
+  frequency: number;
+  mapping: string;
+}
+
+type NoteTable = Record<Notes, NoteValue>;
 
 export enum Notes {
   C3 = 'C3',
@@ -29,31 +34,106 @@ export enum Notes {
 }
 
 const noteTable: NoteTable = {
-  [Notes.C3]: 130.81,
-  [Notes.CSharp3]: 138.59,
-  [Notes.D3]: 146.83,
-  [Notes.DSharp3]: 155.56,
-  [Notes.E3]: 164.81,
-  [Notes.F3]: 174.61,
-  [Notes.FSharp3]: 185,
-  [Notes.G3]: 196,
-  [Notes.GSharp3]: 207.65,
-  [Notes.A3]: 220,
-  [Notes.ASharp3]: 233.08,
-  [Notes.B3]: 246.94,
-  [Notes.C4]: 261.63,
-  [Notes.CSharp4]: 277.18,
-  [Notes.D4]: 293.66,
-  [Notes.DSharp4]: 311.13,
-  [Notes.E4]: 329.63,
-  [Notes.F4]: 349.23,
-  [Notes.FSharp4]: 369.99,
-  [Notes.G4]: 392,
-  [Notes.GSharp4]: 415.3,
-  [Notes.A4]: 440,
-  [Notes.ASharp4]: 466.16,
-  [Notes.B4]: 493.88,
-  [Notes.C5]: 523.25,
+  [Notes.C3]: {
+    frequency: 130.81,
+    mapping: 'q',
+  },
+  [Notes.CSharp3]: {
+    frequency: 138.59,
+    mapping: '2',
+  },
+  [Notes.D3]: {
+    frequency: 146.83,
+    mapping: 'w',
+  },
+  [Notes.DSharp3]: {
+    frequency: 155.56,
+    mapping: '3',
+  },
+  [Notes.E3]: {
+    frequency: 164.81,
+    mapping: 'e',
+  },
+  [Notes.F3]: {
+    frequency: 174.61,
+    mapping: 'r',
+  },
+  [Notes.FSharp3]: {
+    frequency: 185,
+    mapping: '5',
+  },
+  [Notes.G3]: {
+    frequency: 196,
+    mapping: 't',
+  },
+  [Notes.GSharp3]: {
+    frequency: 207.65,
+    mapping: '6',
+  },
+  [Notes.A3]: {
+    frequency: 220,
+    mapping: 'y',
+  },
+  [Notes.ASharp3]: {
+    frequency: 233.08,
+    mapping: '7',
+  },
+  [Notes.B3]: {
+    frequency: 246.94,
+    mapping: 'u',
+  },
+  [Notes.C4]: {
+    frequency: 261.63,
+    mapping: 'z',
+  },
+  [Notes.CSharp4]: {
+    frequency: 277.18,
+    mapping: 's',
+  },
+  [Notes.D4]: {
+    frequency: 293.66,
+    mapping: 'x',
+  },
+  [Notes.DSharp4]: {
+    frequency: 311.13,
+    mapping: 'd',
+  },
+  [Notes.E4]: {
+    frequency: 329.63,
+    mapping: 'c',
+  },
+  [Notes.F4]: {
+    frequency: 349.23,
+    mapping: 'v',
+  },
+  [Notes.FSharp4]: {
+    frequency: 369.99,
+    mapping: 'g',
+  },
+  [Notes.G4]: {
+    frequency: 392,
+    mapping: 'b',
+  },
+  [Notes.GSharp4]: {
+    frequency: 415.3,
+    mapping: 'h',
+  },
+  [Notes.A4]: {
+    frequency: 440,
+    mapping: 'n',
+  },
+  [Notes.ASharp4]: {
+    frequency: 466.16,
+    mapping: 'j',
+  },
+  [Notes.B4]: {
+    frequency: 493.88,
+    mapping: 'm',
+  },
+  [Notes.C5]: {
+    frequency: 523.25,
+    mapping: ',',
+  },
 };
 
 export default noteTable;

@@ -72739,14 +72739,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const Key = ({ identifier, frequency, __mockOscillator, __mockEnvelope, }) => {
+const Key = ({ identifier, value, __mockOscillator, __mockEnvelope, }) => {
     const keyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
     const delayWasTurnedOn = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
     const releaseTimeout = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
     const { context, output, lfo1, lfo2, delay } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__.audioContext);
     const { state: { attack, decay, sustain, release, detune, pitchbend, waveform }, } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_6__.envelopeStateContext);
     const { selectedInput: midiInput } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_4__.midiContext);
-    const oscillator = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__.useInstantiateOscillatorNode)(waveform, frequency, __mockOscillator);
+    const oscillator = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__.useInstantiateOscillatorNode)(waveform, value.frequency, __mockOscillator);
     const envelope = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__.useInstantiateGainNode)(__mockEnvelope);
     oscillator.type = waveform;
     oscillator.detune.value = detune + pitchbend;
@@ -72772,7 +72772,19 @@ const Key = ({ identifier, frequency, __mockOscillator, __mockEnvelope, }) => {
     (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_1__["default"])(lfo2, [
         { knob: _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DETUNE, param: oscillator.detune },
     ]);
+    const handleKeyboardKeyDown = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((e) => {
+        if (!e.repeat && e.key === value.mapping) {
+            play();
+        }
+    }, []);
+    const handleKeyboardKeyUp = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((e) => {
+        if (e.key === value.mapping) {
+            stop();
+        }
+    }, []);
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        document.addEventListener('keydown', handleKeyboardKeyDown);
+        document.addEventListener('keyup', handleKeyboardKeyUp);
         if (midiInput) {
             midiInput.addListener('noteon', (event) => {
                 if (event.note.identifier === identifier) {
@@ -72786,6 +72798,8 @@ const Key = ({ identifier, frequency, __mockOscillator, __mockEnvelope, }) => {
             });
         }
         return () => {
+            document.removeEventListener('keydown', handleKeyboardKeyDown);
+            document.removeEventListener('keyup', handleKeyboardKeyUp);
             if (midiInput) {
                 midiInput.removeListener('noteon');
                 midiInput.removeListener('noteoff');
@@ -72793,6 +72807,7 @@ const Key = ({ identifier, frequency, __mockOscillator, __mockEnvelope, }) => {
         };
     });
     const play = () => {
+        console.log('play!');
         if (keyRef.current) {
             keyRef.current.classList.add(_index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].pressed);
         }
@@ -72932,7 +72947,7 @@ const Keyboard = () => {
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.DETUNE, value: state.detune, dispatch: dispatch })),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].column },
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_PitchbendWheel__WEBPACK_IMPORTED_MODULE_10__["default"], null)),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: _index_module_scss__WEBPACK_IMPORTED_MODULE_8__["default"].keyboard_container }, Object.entries(_constants_noteTable__WEBPACK_IMPORTED_MODULE_1__["default"]).map(([note, frequency]) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Key__WEBPACK_IMPORTED_MODULE_9__["default"], { key: note, identifier: note, frequency: frequency }))))));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { id: _index_module_scss__WEBPACK_IMPORTED_MODULE_8__["default"].keyboard_container }, Object.entries(_constants_noteTable__WEBPACK_IMPORTED_MODULE_1__["default"]).map(([note, noteValue]) => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Key__WEBPACK_IMPORTED_MODULE_9__["default"], { key: note, identifier: note, value: noteValue }))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Keyboard);
 
@@ -73363,31 +73378,106 @@ var Notes;
     Notes["C5"] = "C5";
 })(Notes || (Notes = {}));
 const noteTable = {
-    [Notes.C3]: 130.81,
-    [Notes.CSharp3]: 138.59,
-    [Notes.D3]: 146.83,
-    [Notes.DSharp3]: 155.56,
-    [Notes.E3]: 164.81,
-    [Notes.F3]: 174.61,
-    [Notes.FSharp3]: 185,
-    [Notes.G3]: 196,
-    [Notes.GSharp3]: 207.65,
-    [Notes.A3]: 220,
-    [Notes.ASharp3]: 233.08,
-    [Notes.B3]: 246.94,
-    [Notes.C4]: 261.63,
-    [Notes.CSharp4]: 277.18,
-    [Notes.D4]: 293.66,
-    [Notes.DSharp4]: 311.13,
-    [Notes.E4]: 329.63,
-    [Notes.F4]: 349.23,
-    [Notes.FSharp4]: 369.99,
-    [Notes.G4]: 392,
-    [Notes.GSharp4]: 415.3,
-    [Notes.A4]: 440,
-    [Notes.ASharp4]: 466.16,
-    [Notes.B4]: 493.88,
-    [Notes.C5]: 523.25,
+    [Notes.C3]: {
+        frequency: 130.81,
+        mapping: 'q',
+    },
+    [Notes.CSharp3]: {
+        frequency: 138.59,
+        mapping: '2',
+    },
+    [Notes.D3]: {
+        frequency: 146.83,
+        mapping: 'w',
+    },
+    [Notes.DSharp3]: {
+        frequency: 155.56,
+        mapping: '3',
+    },
+    [Notes.E3]: {
+        frequency: 164.81,
+        mapping: 'e',
+    },
+    [Notes.F3]: {
+        frequency: 174.61,
+        mapping: 'r',
+    },
+    [Notes.FSharp3]: {
+        frequency: 185,
+        mapping: '5',
+    },
+    [Notes.G3]: {
+        frequency: 196,
+        mapping: 't',
+    },
+    [Notes.GSharp3]: {
+        frequency: 207.65,
+        mapping: '6',
+    },
+    [Notes.A3]: {
+        frequency: 220,
+        mapping: 'y',
+    },
+    [Notes.ASharp3]: {
+        frequency: 233.08,
+        mapping: '7',
+    },
+    [Notes.B3]: {
+        frequency: 246.94,
+        mapping: 'u',
+    },
+    [Notes.C4]: {
+        frequency: 261.63,
+        mapping: 'z',
+    },
+    [Notes.CSharp4]: {
+        frequency: 277.18,
+        mapping: 's',
+    },
+    [Notes.D4]: {
+        frequency: 293.66,
+        mapping: 'x',
+    },
+    [Notes.DSharp4]: {
+        frequency: 311.13,
+        mapping: 'd',
+    },
+    [Notes.E4]: {
+        frequency: 329.63,
+        mapping: 'c',
+    },
+    [Notes.F4]: {
+        frequency: 349.23,
+        mapping: 'v',
+    },
+    [Notes.FSharp4]: {
+        frequency: 369.99,
+        mapping: 'g',
+    },
+    [Notes.G4]: {
+        frequency: 392,
+        mapping: 'b',
+    },
+    [Notes.GSharp4]: {
+        frequency: 415.3,
+        mapping: 'h',
+    },
+    [Notes.A4]: {
+        frequency: 440,
+        mapping: 'n',
+    },
+    [Notes.ASharp4]: {
+        frequency: 466.16,
+        mapping: 'j',
+    },
+    [Notes.B4]: {
+        frequency: 493.88,
+        mapping: 'm',
+    },
+    [Notes.C5]: {
+        frequency: 523.25,
+        mapping: ',',
+    },
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (noteTable);
 

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import noteTable, { Notes } from '../../constants/noteTable';
+import noteTable, { Notes, NoteValue } from '../../constants/noteTable';
 import useAddMidiListeners from '../../hooks/useAddMidiListeners';
 import appStyles from '../../index.module.scss';
 import { Knobs, Selectors } from '../../types';
@@ -27,9 +27,11 @@ const Keyboard = () => {
         <PitchbendWheel></PitchbendWheel>
       </div>
       <div id={styles.keyboard_container}>
-        {Object.entries(noteTable).map(([note, frequency]: [Notes, number]) => (
-          <Key key={note} identifier={note} frequency={frequency}></Key>
-        ))}
+        {Object.entries(noteTable).map(
+          ([note, noteValue]: [Notes, NoteValue]) => (
+            <Key key={note} identifier={note} value={noteValue}></Key>
+          ),
+        )}
       </div>
     </>
   );

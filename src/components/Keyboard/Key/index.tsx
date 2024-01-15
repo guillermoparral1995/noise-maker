@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useCallback, useContext, useEffect, useRef } from 'react';
 import { NoteMessageEvent } from 'webmidi';
 import { GainNodeMock, OscillatorNodeMock } from '../../../../__mocks__';
-import { Notes } from '../../../constants/noteTable';
+import { Notes, NoteValue } from '../../../constants/noteTable';
 import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import {
   useInstantiateGainNode,
@@ -15,14 +15,14 @@ import styles from './index.module.scss';
 
 interface KeyProps {
   identifier: Notes;
-  frequency: number;
+  value: NoteValue;
   __mockOscillator?: OscillatorNodeMock;
   __mockEnvelope?: GainNodeMock;
 }
 
 const Key = ({
   identifier,
-  frequency,
+  value,
   __mockOscillator,
   __mockEnvelope,
 }: KeyProps) => {
@@ -37,7 +37,7 @@ const Key = ({
 
   const oscillator = useInstantiateOscillatorNode(
     waveform,
-    frequency,
+    value.frequency,
     __mockOscillator,
   );
   const envelope = useInstantiateGainNode(__mockEnvelope);
@@ -67,7 +67,22 @@ const Key = ({
     { knob: Knobs.DETUNE, param: oscillator.detune },
   ]);
 
+  const handleKeyboardKeyDown = useCallback((e: KeyboardEvent) => {
+    if (!e.repeat && e.key === value.mapping) {
+      play();
+    }
+  }, []);
+
+  const handleKeyboardKeyUp = useCallback((e: KeyboardEvent) => {
+    if (e.key === value.mapping) {
+      stop();
+    }
+  }, []);
+
   useEffect(() => {
+    document.addEventListener('keydown', handleKeyboardKeyDown);
+    document.addEventListener('keyup', handleKeyboardKeyUp);
+
     if (midiInput) {
       midiInput.addListener('noteon', (event: NoteMessageEvent) => {
         if (event.note.identifier === identifier) {
@@ -82,6 +97,8 @@ const Key = ({
       });
     }
     return () => {
+      document.removeEventListener('keydown', handleKeyboardKeyDown);
+      document.removeEventListener('keyup', handleKeyboardKeyUp);
       if (midiInput) {
         midiInput.removeListener('noteon');
         midiInput.removeListener('noteoff');
@@ -90,6 +107,7 @@ const Key = ({
   });
 
   const play = () => {
+    console.log('play!');
     if (keyRef.current) {
       keyRef.current.classList.add(styles.pressed);
     }
