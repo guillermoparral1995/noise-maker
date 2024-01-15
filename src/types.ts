@@ -31,6 +31,7 @@ export enum FilterType {
 
 export enum Switchs {
   DELAY = 'DELAY',
+  DELAY_TRAILS = 'DELAY_TRAILS',
 }
 
 export enum Selectors {
@@ -123,6 +124,7 @@ export enum Actions {
   UPDATE_COMPRESSOR_ATTACK,
   UPDATE_COMPRESSOR_RELEASE,
   SWITCH_DELAY,
+  SWITCH_DELAY_TRAILS,
   UPDATE_DELAY_FEEDBACK,
   UPDATE_DELAY_TIME,
 }

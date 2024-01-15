@@ -4,6 +4,7 @@ import Key from '.';
 import {
   AudioContextMock,
   AudioNodeMock,
+  DelayNodeMock,
   GainNodeMock,
   OscillatorNodeMock,
   withMockedMIDIInput,
@@ -76,19 +77,23 @@ describe('Key', () => {
     jest.clearAllTimers();
   });
 
+  const mockContext = new AudioContextMock();
+  const mockLfo1: LFOMock<LFO1Target> = {
+    target: 'off',
+    output: new GainNodeMock(),
+  };
+  const mockLfo2: LFOMock<LFO2Target> = {
+    target: 'off',
+    output: new GainNodeMock(),
+  };
+  const mockOutput = new AudioNodeMock();
+  const mockOscillator = new OscillatorNodeMock();
+  const mockEnvelope = new GainNodeMock();
+  const mockDelay = {
+    node: new DelayNodeMock(),
+  };
+
   it('should render correctly', async () => {
-    const mockContext = new AudioContextMock();
-    const mockLfo1: LFOMock<LFO1Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
-    const mockLfo2: LFOMock<LFO2Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
-    const mockOutput = new AudioNodeMock();
-    const mockOscillator = new OscillatorNodeMock();
-    const mockEnvelope = new GainNodeMock();
     const { findByTestId } = render(
       withMockedMIDINoInput(
         <AudioContextProvider
@@ -96,6 +101,7 @@ describe('Key', () => {
             context: mockContext,
             lfo1: mockLfo1,
             lfo2: mockLfo2,
+            delay: mockDelay,
             output: mockOutput,
           }}
         >
@@ -119,17 +125,6 @@ describe('Key', () => {
   });
 
   it('should play sound on mouse down', async () => {
-    const mockContext = new AudioContextMock();
-    const mockLfo1: LFOMock<LFO1Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
-    const mockLfo2: LFOMock<LFO2Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
-    const mockOscillator = new OscillatorNodeMock();
-    const mockEnvelope = new GainNodeMock();
     const { findByTestId } = render(
       withMockedMIDINoInput(
         <AudioContextProvider
@@ -137,6 +132,7 @@ describe('Key', () => {
             context: mockContext,
             lfo1: mockLfo1,
             lfo2: mockLfo2,
+            delay: mockDelay,
           }}
         >
           <EnvelopeStateProvider>
@@ -171,17 +167,7 @@ describe('Key', () => {
       addListener: mockAddListener,
       removeListener: jest.fn(),
     });
-    const mockContext = new AudioContextMock();
-    const mockLfo1: LFOMock<LFO1Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
-    const mockLfo2: LFOMock<LFO2Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
-    const mockOscillator = new OscillatorNodeMock();
-    const mockEnvelope = new GainNodeMock();
+
     const { findByTestId } = render(
       withMockedMIDIInput(
         <AudioContextProvider
@@ -189,6 +175,7 @@ describe('Key', () => {
             context: mockContext,
             lfo1: mockLfo1,
             lfo2: mockLfo2,
+            delay: mockDelay,
           }}
         >
           <EnvelopeStateProvider>
@@ -222,17 +209,6 @@ describe('Key', () => {
   });
 
   it('should stop sound on mouse up', async () => {
-    const mockContext = new AudioContextMock();
-    const mockLfo1: LFOMock<LFO1Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
-    const mockLfo2: LFOMock<LFO2Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
-    const mockOscillator = new OscillatorNodeMock();
-    const mockEnvelope = new GainNodeMock();
     const { findByTestId } = render(
       withMockedMIDINoInput(
         <AudioContextProvider
@@ -240,6 +216,7 @@ describe('Key', () => {
             context: mockContext,
             lfo1: mockLfo1,
             lfo2: mockLfo2,
+            delay: mockDelay,
           }}
         >
           <EnvelopeStateProvider>
@@ -276,17 +253,7 @@ describe('Key', () => {
       addListener: mockAddListener,
       removeListener: jest.fn(),
     });
-    const mockContext = new AudioContextMock();
-    const mockLfo1: LFOMock<LFO1Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
-    const mockLfo2: LFOMock<LFO2Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
-    const mockOscillator = new OscillatorNodeMock();
-    const mockEnvelope = new GainNodeMock();
+
     const { findByTestId } = render(
       withMockedMIDIInput(
         <AudioContextProvider
@@ -294,6 +261,7 @@ describe('Key', () => {
             context: mockContext,
             lfo1: mockLfo1,
             lfo2: mockLfo2,
+            delay: mockDelay,
           }}
         >
           <EnvelopeStateProvider>
@@ -315,16 +283,10 @@ describe('Key', () => {
   });
 
   it('should connect lfo1 with oscillator detune', async () => {
-    const mockContext = new AudioContextMock();
     const mockLfo1: LFOMock<LFO1Target> = {
       target: Knobs.DETUNE,
       output: new GainNodeMock(),
     };
-    const mockLfo2: LFOMock<LFO2Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
-    const mockOscillator = new OscillatorNodeMock();
     const { findByTestId } = render(
       withMockedMIDIInput(
         <AudioContextProvider
@@ -332,6 +294,7 @@ describe('Key', () => {
             context: mockContext,
             lfo1: mockLfo1,
             lfo2: mockLfo2,
+            delay: mockDelay,
           }}
         >
           <EnvelopeStateProvider>
@@ -354,16 +317,10 @@ describe('Key', () => {
   });
 
   it('should connect lfo2 with oscillator detune', async () => {
-    const mockContext = new AudioContextMock();
-    const mockLfo1: LFOMock<LFO1Target> = {
-      target: 'off',
-      output: new GainNodeMock(),
-    };
     const mockLfo2: LFOMock<LFO2Target> = {
       target: Knobs.DETUNE,
       output: new GainNodeMock(),
     };
-    const mockOscillator = new OscillatorNodeMock();
     const { findByTestId } = render(
       withMockedMIDIInput(
         <AudioContextProvider
@@ -371,6 +328,7 @@ describe('Key', () => {
             context: mockContext,
             lfo1: mockLfo1,
             lfo2: mockLfo2,
+            delay: mockDelay,
           }}
         >
           <EnvelopeStateProvider>

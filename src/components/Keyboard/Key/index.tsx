@@ -27,12 +27,13 @@ const Key = ({
   __mockEnvelope,
 }: KeyProps) => {
   const keyRef = useRef<HTMLButtonElement>(null);
+  const delayWasTurnedOn = useRef<boolean>(false);
+  const releaseTimeout = useRef<NodeJS.Timeout>(null);
   const { context, output, lfo1, lfo2, delay } = useContext(audioContext);
   const {
     state: { attack, decay, sustain, release, detune, pitchbend, waveform },
   } = useContext(envelopeStateContext);
   const { selectedInput: midiInput } = useContext(midiContext);
-  let releaseTimeout: NodeJS.Timeout;
 
   const oscillator = useInstantiateOscillatorNode(
     waveform,
@@ -46,9 +47,18 @@ const Key = ({
   useEffect(() => {
     oscillator.start(context.currentTime);
     envelope.connect(output);
-    envelope.connect(delay);
     return () => oscillator.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (delay.active) {
+      envelope.connect(delay.node);
+      delayWasTurnedOn.current = true;
+    } else {
+      // this check is necessary to avoid disconnecting when no connection was first made
+      if (delayWasTurnedOn.current) envelope.disconnect(delay.node);
+    }
+  }, [delay.active]);
 
   useConnectLFOTargets(lfo1, [
     { knob: Knobs.DETUNE, param: oscillator.detune },
@@ -85,7 +95,7 @@ const Key = ({
     }
     // clear all pending scheduled events for envelope
     envelope.gain.cancelAndHoldAtTime(context.currentTime);
-    clearTimeout(releaseTimeout);
+    clearTimeout(releaseTimeout.current);
 
     // reset envelope and connect oscillator
     envelope.gain.setValueAtTime(0, context.currentTime);
@@ -115,7 +125,7 @@ const Key = ({
     );
 
     // set timeout for disconnecting oscillator after release
-    releaseTimeout = setTimeout(
+    releaseTimeout.current = setTimeout(
       () => {
         oscillator.disconnect();
       },

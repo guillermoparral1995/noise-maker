@@ -37,7 +37,10 @@ interface AudioContextProviderMocks {
   lfo2?: LFOMock<LFO2Target>;
   analyser?: AnalyserNodeMock;
   compressor?: DynamicsCompressorNodeMock;
-  delay?: DelayNodeMock;
+  delay?: {
+    active?: boolean;
+    node: DelayNodeMock;
+  };
   dispatch?: React.Dispatch<ActionTypes>;
   output?: AudioNodeMock;
 }
@@ -50,7 +53,10 @@ interface AudioContextProviderParams {
   lfo1: LFO<LFO1Target>;
   lfo2: LFO<LFO2Target>;
   compressor: DynamicsCompressorNode;
-  delay: DelayNode;
+  delay: {
+    active: boolean;
+    node: DelayNode;
+  };
   analyser: AnalyserNode;
   dispatch: React.Dispatch<ActionTypes>;
   output: AudioNode;
@@ -86,7 +92,10 @@ export const AudioContextProvider = ({
             output: __mocks.lfo2?.output,
             target: __mocks.lfo2?.target ?? state.lfo2Target,
           },
-          delay: __mocks.delay,
+          delay: {
+            active: __mocks.delay?.active ?? state.delayActive,
+            node: __mocks.delay?.node,
+          },
           compressor: __mocks.compressor,
           analyser: __mocks.analyser,
           output: __mocks.output,
@@ -147,7 +156,10 @@ export const AudioContextProvider = ({
           target: state.lfo2Target,
         },
         compressor,
-        delay: delayNode,
+        delay: {
+          active: state.delayActive,
+          node: delayNode,
+        },
         analyser,
         output: filterNode,
         dispatch,

@@ -20,10 +20,13 @@ import { DelayStateProvider } from './DelayStateProvider';
 describe('Delay', () => {
   afterEach(() => {
     cleanup();
+    jest.clearAllMocks();
   });
 
   const mockContext = new AudioContextMock();
-  const mockDelay = new DelayNodeMock();
+  const mockDelay = {
+    node: new DelayNodeMock(),
+  };
   const mockFeedback = new GainNodeMock();
   const mockOutput = new AudioNodeMock();
 
@@ -60,7 +63,7 @@ describe('Delay', () => {
       timeKnob.focus();
     });
     fireEvent.keyDown(timeKnob, { key: 'ArrowUp', code: 'ArrowUp' });
-    expect(mockDelay.delayTime.value).toEqual(0.51);
+    expect(mockDelay.node.delayTime.value).toEqual(0.51);
 
     const feedbackKnob = screen.getByTestId(Knobs.DELAY_FEEDBACK);
     act(() => {
@@ -81,14 +84,17 @@ describe('Delay', () => {
       </AudioContextProvider>,
     );
 
-    const delaySwitch = screen.getByRole('checkbox');
-    fireEvent.click(delaySwitch);
-    expect(mockDelay.__mockConnect).toHaveBeenNthCalledWith(1, mockFeedback);
-    expect(mockFeedback.__mockConnect).toHaveBeenCalledWith(mockDelay);
-    expect(mockDelay.__mockConnect).toHaveBeenLastCalledWith(mockOutput);
+    const delaySwitches = await screen.findAllByRole('checkbox');
+    fireEvent.click(delaySwitches[0]);
+    expect(mockDelay.node.__mockConnect).toHaveBeenNthCalledWith(
+      1,
+      mockFeedback,
+    );
+    expect(mockFeedback.__mockConnect).toHaveBeenCalledWith(mockDelay.node);
+    expect(mockDelay.node.__mockConnect).toHaveBeenLastCalledWith(mockOutput);
   });
 
-  it('should turn off delay when switch is pressed again', async () => {
+  it('should turn off delay when switch is pressed again without trails', async () => {
     render(
       <AudioContextProvider
         __mocks={{ context: mockContext, delay: mockDelay, output: mockOutput }}
@@ -99,11 +105,31 @@ describe('Delay', () => {
       </AudioContextProvider>,
     );
 
-    const delaySwitch = screen.getByRole('checkbox');
-    fireEvent.click(delaySwitch);
-    fireEvent.click(delaySwitch);
+    const delaySwitches = await screen.findAllByRole('checkbox');
+    fireEvent.click(delaySwitches[0]);
+    fireEvent.click(delaySwitches[0]);
 
-    expect(mockDelay.__mockDisconnect).toHaveBeenCalled();
+    expect(mockDelay.node.__mockDisconnect).toHaveBeenCalled();
     expect(mockFeedback.__mockDisconnect).toHaveBeenCalled();
+  });
+
+  it('should keep delay going if switch is pressed again with trails', async () => {
+    render(
+      <AudioContextProvider
+        __mocks={{ context: mockContext, delay: mockDelay, output: mockOutput }}
+      >
+        <DelayStateProvider>
+          <DelayControls __mockFeedback={mockFeedback}></DelayControls>
+        </DelayStateProvider>
+      </AudioContextProvider>,
+    );
+
+    const delaySwitches = await screen.findAllByRole('checkbox');
+    fireEvent.click(delaySwitches[1]);
+    fireEvent.click(delaySwitches[0]);
+    fireEvent.click(delaySwitches[0]);
+
+    expect(mockDelay.node.__mockDisconnect).not.toHaveBeenCalled();
+    expect(mockFeedback.__mockDisconnect).not.toHaveBeenCalled();
   });
 });

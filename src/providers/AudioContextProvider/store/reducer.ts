@@ -15,6 +15,11 @@ export const reducer = (state: AudioContextState, action: ActionTypes) => {
         ...state,
         lfo2Target: payload,
       };
+    case Actions.SWITCH_DELAY:
+      return {
+        ...state,
+        delayActive: payload,
+      };
     default:
       return state;
   }

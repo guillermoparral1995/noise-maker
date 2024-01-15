@@ -1,19 +1,9 @@
 import { Actions } from '../../../../types';
 
 export type ActionTypes =
-  | DelayStateAction
   | DelayFeedbackAction
-  | DelayTimeAction;
-
-interface DelayStateAction {
-  type: Actions.SWITCH_DELAY;
-  payload: boolean;
-}
-
-export const switchDelay: (active: boolean) => DelayStateAction = (active) => ({
-  type: Actions.SWITCH_DELAY,
-  payload: active,
-});
+  | DelayTimeAction
+  | DelayTrailsAction;
 
 interface DelayFeedbackAction {
   type: Actions.UPDATE_DELAY_FEEDBACK;
@@ -37,4 +27,16 @@ export const updateDelayTime: (delayTime: number) => DelayTimeAction = (
 ) => ({
   type: Actions.UPDATE_DELAY_TIME,
   payload: delayTime,
+});
+
+interface DelayTrailsAction {
+  type: Actions.SWITCH_DELAY_TRAILS;
+  payload: boolean;
+}
+
+export const switchDelayTrails: (trails: boolean) => DelayTrailsAction = (
+  trails,
+) => ({
+  type: Actions.SWITCH_DELAY_TRAILS,
+  payload: trails,
 });

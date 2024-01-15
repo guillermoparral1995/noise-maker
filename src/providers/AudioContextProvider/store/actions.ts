@@ -1,6 +1,9 @@
 import { Actions, LFO1Target, LFO2Target } from '../../../types';
 
-export type ActionTypes = LFO1TargetAction | LFO2TargetAction;
+export type ActionTypes =
+  | LFO1TargetAction
+  | LFO2TargetAction
+  | DelayStateAction;
 
 export type LFO1TargetAction = {
   type: Actions.UPDATE_LFO_1_TARGET;
@@ -24,4 +27,14 @@ export const updateLFO2Target: (target: LFO2Target) => LFO2TargetAction = (
 ) => ({
   type: Actions.UPDATE_LFO_2_TARGET,
   payload: target,
+});
+
+interface DelayStateAction {
+  type: Actions.SWITCH_DELAY;
+  payload: boolean;
+}
+
+export const switchDelay: (active: boolean) => DelayStateAction = (active) => ({
+  type: Actions.SWITCH_DELAY,
+  payload: active,
 });

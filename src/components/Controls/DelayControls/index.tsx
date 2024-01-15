@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { GainNodeMock } from '../../../../__mocks__';
 import { useInstantiateGainNode } from '../../../hooks/useInstantiateAudioNode';
 import { audioContext } from '../../../providers/AudioContextProvider';
@@ -12,30 +12,40 @@ export const DelayControls_ = ({
 }: {
   __mockFeedback?: GainNodeMock;
 }) => {
+  const delayWasTurnedOn = useRef<boolean>(null);
   const { state, dispatch } = useContext(delayStateContext);
-  const { delay, output } = useContext(audioContext);
+  const { delay, output, dispatch: audioDispatch } = useContext(audioContext);
 
   const feedback: GainNode = useInstantiateGainNode(__mockFeedback);
 
-  delay.delayTime.value = state.delayTime;
+  delay.node.delayTime.value = state.delayTime;
   feedback.gain.value = state.feedback;
 
   useEffect(() => {
-    if (state.active) {
-      delay.connect(feedback);
-      feedback.connect(delay);
-      delay.connect(output);
+    if (delay.active) {
+      delay.node.connect(feedback);
+      feedback.connect(delay.node);
+      delay.node.connect(output);
+      delayWasTurnedOn.current = true;
     } else {
-      feedback.disconnect();
-      delay.disconnect();
+      // checking if delay was turned on at some point to avoid disconnecting firsthand
+      if (delayWasTurnedOn.current && !state.trails) {
+        feedback.disconnect();
+        delay.node.disconnect();
+      }
     }
-  }, [state.active]);
+  }, [delay.active]);
 
   return (
     <>
       <Switch
         id={Switchs.DELAY}
-        value={state.active}
+        value={delay.active}
+        dispatch={audioDispatch}
+      ></Switch>
+      <Switch
+        id={Switchs.DELAY_TRAILS}
+        value={state.trails}
         dispatch={dispatch}
       ></Switch>
       <Knob

@@ -6458,9 +6458,12 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `._94k8gzl9wcCLKh0Cl5y {
+  bottom: 8px;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
-}`, "",{"version":3,"sources":["webpack://./src/components/shared/Switch/index.module.scss"],"names":[],"mappings":"AAAA;EACI,eAAA;EACA,+BAAA;AACJ","sourcesContent":[".label {\n    font-size: 12px;\n    color: rgba(255, 255, 255, 0.6);\n}"],"sourceRoot":""}]);
+  margin-right: 5px;
+  position: relative;
+}`, "",{"version":3,"sources":["webpack://./src/components/shared/Switch/index.module.scss"],"names":[],"mappings":"AAAA;EACI,WAAA;EACA,eAAA;EACA,+BAAA;EACA,iBAAA;EACA,kBAAA;AACJ","sourcesContent":[".label {\n    bottom: 8px;\n    font-size: 12px;\n    color: rgba(255, 255, 255, 0.6);\n    margin-right: 5px;\n    position: relative;\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"label": `_94k8gzl9wcCLKh0Cl5y`
@@ -71758,24 +71761,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const DelayControls_ = ({ __mockFeedback, }) => {
+    const delayWasTurnedOn = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
     const { state, dispatch } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_DelayStateProvider__WEBPACK_IMPORTED_MODULE_6__.delayStateContext);
-    const { delay, output } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__.audioContext);
+    const { delay, output, dispatch: audioDispatch } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_2__.audioContext);
     const feedback = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_1__.useInstantiateGainNode)(__mockFeedback);
-    delay.delayTime.value = state.delayTime;
+    delay.node.delayTime.value = state.delayTime;
     feedback.gain.value = state.feedback;
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-        if (state.active) {
-            delay.connect(feedback);
-            feedback.connect(delay);
-            delay.connect(output);
+        if (delay.active) {
+            delay.node.connect(feedback);
+            feedback.connect(delay.node);
+            delay.node.connect(output);
+            delayWasTurnedOn.current = true;
         }
         else {
-            feedback.disconnect();
-            delay.disconnect();
+            // checking if delay was turned on at some point to avoid disconnecting firsthand
+            if (delayWasTurnedOn.current && !state.trails) {
+                feedback.disconnect();
+                delay.node.disconnect();
+            }
         }
-    }, [state.active]);
+    }, [delay.active]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Switch__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Switchs.DELAY, value: state.active, dispatch: dispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Switch__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Switchs.DELAY, value: delay.active, dispatch: audioDispatch }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Switch__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Switchs.DELAY_TRAILS, value: state.trails, dispatch: dispatch }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_4__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.DELAY_FEEDBACK, value: state.feedback, dispatch: dispatch }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_4__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.DELAY_TIME, value: state.delayTime, dispatch: dispatch })));
 };
@@ -71794,16 +71803,12 @@ const DelayControls_ = ({ __mockFeedback, }) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   switchDelay: () => (/* binding */ switchDelay),
+/* harmony export */   switchDelayTrails: () => (/* binding */ switchDelayTrails),
 /* harmony export */   updateDelayFeedback: () => (/* binding */ updateDelayFeedback),
 /* harmony export */   updateDelayTime: () => (/* binding */ updateDelayTime)
 /* harmony export */ });
 /* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../types */ "./src/types.ts");
 
-const switchDelay = (active) => ({
-    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.SWITCH_DELAY,
-    payload: active,
-});
 const updateDelayFeedback = (feedback) => ({
     type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_DELAY_FEEDBACK,
     payload: feedback,
@@ -71811,6 +71816,10 @@ const updateDelayFeedback = (feedback) => ({
 const updateDelayTime = (delayTime) => ({
     type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_DELAY_TIME,
     payload: delayTime,
+});
+const switchDelayTrails = (trails) => ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.SWITCH_DELAY_TRAILS,
+    payload: trails,
 });
 
 
@@ -71828,9 +71837,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const initialState = {
-    active: false,
     feedback: 0.3,
     delayTime: 0.5,
+    trails: false,
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initialState);
 
@@ -71853,11 +71862,6 @@ __webpack_require__.r(__webpack_exports__);
 const reducer = (state, action) => {
     const { type, payload } = action;
     switch (type) {
-        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.SWITCH_DELAY:
-            return {
-                ...state,
-                active: payload,
-            };
         case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_DELAY_FEEDBACK:
             return {
                 ...state,
@@ -71867,6 +71871,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 delayTime: payload,
+            };
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.SWITCH_DELAY_TRAILS:
+            return {
+                ...state,
+                trails: payload,
             };
         default:
             return state;
@@ -72721,10 +72730,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const Key = ({ identifier, frequency, __mockOscillator, __mockEnvelope, }) => {
     const keyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+    const delayWasTurnedOn = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+    const releaseTimeout = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
     const { context, output, lfo1, lfo2, delay } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_AudioContextProvider__WEBPACK_IMPORTED_MODULE_3__.audioContext);
     const { state: { attack, decay, sustain, release, detune, pitchbend, waveform }, } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Controls_EnvelopeControls_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_6__.envelopeStateContext);
     const { selectedInput: midiInput } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_providers_MIDIProvider__WEBPACK_IMPORTED_MODULE_4__.midiContext);
-    let releaseTimeout;
     const oscillator = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__.useInstantiateOscillatorNode)(waveform, frequency, __mockOscillator);
     const envelope = (0,_hooks_useInstantiateAudioNode__WEBPACK_IMPORTED_MODULE_2__.useInstantiateGainNode)(__mockEnvelope);
     oscillator.type = waveform;
@@ -72732,9 +72742,19 @@ const Key = ({ identifier, frequency, __mockOscillator, __mockEnvelope, }) => {
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         oscillator.start(context.currentTime);
         envelope.connect(output);
-        envelope.connect(delay);
         return () => oscillator.disconnect();
     }, []);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+        if (delay.active) {
+            envelope.connect(delay.node);
+            delayWasTurnedOn.current = true;
+        }
+        else {
+            // this check is necessary to avoid disconnecting when no connection was first made
+            if (delayWasTurnedOn.current)
+                envelope.disconnect(delay.node);
+        }
+    }, [delay.active]);
     (0,_hooks_useConnectLFOTargets__WEBPACK_IMPORTED_MODULE_1__["default"])(lfo1, [
         { knob: _types__WEBPACK_IMPORTED_MODULE_5__.Knobs.DETUNE, param: oscillator.detune },
     ]);
@@ -72767,7 +72787,7 @@ const Key = ({ identifier, frequency, __mockOscillator, __mockEnvelope, }) => {
         }
         // clear all pending scheduled events for envelope
         envelope.gain.cancelAndHoldAtTime(context.currentTime);
-        clearTimeout(releaseTimeout);
+        clearTimeout(releaseTimeout.current);
         // reset envelope and connect oscillator
         envelope.gain.setValueAtTime(0, context.currentTime);
         oscillator.connect(envelope);
@@ -72785,7 +72805,7 @@ const Key = ({ identifier, frequency, __mockOscillator, __mockEnvelope, }) => {
         // ramp down to 0 in release time
         envelope.gain.exponentialRampToValueAtTime(0.001, context.currentTime + release);
         // set timeout for disconnecting oscillator after release
-        releaseTimeout = setTimeout(() => {
+        releaseTimeout.current = setTimeout(() => {
             oscillator.disconnect();
         }, (context.currentTime + release) * 1000 + 10);
     };
@@ -73503,13 +73523,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   switchValues: () => (/* binding */ switchValues)
 /* harmony export */ });
 /* harmony import */ var _components_Controls_DelayControls_store_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Controls/DelayControls/store/actions */ "./src/components/Controls/DelayControls/store/actions.ts");
-/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../types */ "./src/types.ts");
+/* harmony import */ var _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../providers/AudioContextProvider/store/actions */ "./src/providers/AudioContextProvider/store/actions.ts");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../types */ "./src/types.ts");
+
 
 
 const switchValues = {
-    [_types__WEBPACK_IMPORTED_MODULE_1__.Switchs.DELAY]: {
+    [_types__WEBPACK_IMPORTED_MODULE_2__.Switchs.DELAY]: {
         label: 'Delay',
-        action: _components_Controls_DelayControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.switchDelay,
+        action: _providers_AudioContextProvider_store_actions__WEBPACK_IMPORTED_MODULE_1__.switchDelay,
+    },
+    [_types__WEBPACK_IMPORTED_MODULE_2__.Switchs.DELAY_TRAILS]: {
+        label: 'Trails',
+        action: _components_Controls_DelayControls_store_actions__WEBPACK_IMPORTED_MODULE_0__.switchDelayTrails,
     },
 };
 
@@ -73697,7 +73723,10 @@ const AudioContextProvider = ({ children, __mocks, }) => {
                     output: __mocks.lfo2?.output,
                     target: __mocks.lfo2?.target ?? state.lfo2Target,
                 },
-                delay: __mocks.delay,
+                delay: {
+                    active: __mocks.delay?.active ?? state.delayActive,
+                    node: __mocks.delay?.node,
+                },
                 compressor: __mocks.compressor,
                 analyser: __mocks.analyser,
                 output: __mocks.output,
@@ -73735,7 +73764,10 @@ const AudioContextProvider = ({ children, __mocks, }) => {
                 target: state.lfo2Target,
             },
             compressor,
-            delay: delayNode,
+            delay: {
+                active: state.delayActive,
+                node: delayNode,
+            },
             analyser,
             output: filterNode,
             dispatch,
@@ -73754,6 +73786,7 @@ const AudioContextProvider = ({ children, __mocks, }) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   switchDelay: () => (/* binding */ switchDelay),
 /* harmony export */   updateLFO1Target: () => (/* binding */ updateLFO1Target),
 /* harmony export */   updateLFO2Target: () => (/* binding */ updateLFO2Target)
 /* harmony export */ });
@@ -73766,6 +73799,10 @@ const updateLFO1Target = (target) => ({
 const updateLFO2Target = (target) => ({
     type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.UPDATE_LFO_2_TARGET,
     payload: target,
+});
+const switchDelay = (active) => ({
+    type: _types__WEBPACK_IMPORTED_MODULE_0__.Actions.SWITCH_DELAY,
+    payload: active,
 });
 
 
@@ -73785,6 +73822,7 @@ __webpack_require__.r(__webpack_exports__);
 const initialState = {
     lfo1Target: 'off',
     lfo2Target: 'off',
+    delayActive: false,
 };
 
 
@@ -73815,6 +73853,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 lfo2Target: payload,
+            };
+        case _types__WEBPACK_IMPORTED_MODULE_0__.Actions.SWITCH_DELAY:
+            return {
+                ...state,
+                delayActive: payload,
             };
         default:
             return state;
@@ -74006,6 +74049,7 @@ var FilterType;
 var Switchs;
 (function (Switchs) {
     Switchs["DELAY"] = "DELAY";
+    Switchs["DELAY_TRAILS"] = "DELAY_TRAILS";
 })(Switchs || (Switchs = {}));
 var Selectors;
 (function (Selectors) {
@@ -74072,8 +74116,9 @@ var Actions;
     Actions[Actions["UPDATE_COMPRESSOR_ATTACK"] = 26] = "UPDATE_COMPRESSOR_ATTACK";
     Actions[Actions["UPDATE_COMPRESSOR_RELEASE"] = 27] = "UPDATE_COMPRESSOR_RELEASE";
     Actions[Actions["SWITCH_DELAY"] = 28] = "SWITCH_DELAY";
-    Actions[Actions["UPDATE_DELAY_FEEDBACK"] = 29] = "UPDATE_DELAY_FEEDBACK";
-    Actions[Actions["UPDATE_DELAY_TIME"] = 30] = "UPDATE_DELAY_TIME";
+    Actions[Actions["SWITCH_DELAY_TRAILS"] = 29] = "SWITCH_DELAY_TRAILS";
+    Actions[Actions["UPDATE_DELAY_FEEDBACK"] = 30] = "UPDATE_DELAY_FEEDBACK";
+    Actions[Actions["UPDATE_DELAY_TIME"] = 31] = "UPDATE_DELAY_TIME";
 })(Actions || (Actions = {}));
 
 
