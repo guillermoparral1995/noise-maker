@@ -4,6 +4,9 @@ exports[`Envelope controls should render correctly 1`] = `
 <div
   data-testid="envelope-controls"
 >
+  <h3>
+    ADSR Envelope
+  </h3>
   <div
     data-testid="ATTACK"
     tabindex="0"

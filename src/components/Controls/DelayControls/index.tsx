@@ -38,6 +38,7 @@ export const DelayControls_ = ({
 
   return (
     <>
+      <h3>Delay</h3>
       <Switch
         id={Switchs.DELAY}
         value={delay.active}

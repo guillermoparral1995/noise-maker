@@ -86,6 +86,7 @@ export const LFOControls_ = ({
   return (
     <>
       <div className={styles.lfo_column}>
+        <h3>LFO 1</h3>
         <Selector
           id={Selectors.LFO_1_TARGET}
           value={lfo1.target}
@@ -108,6 +109,7 @@ export const LFOControls_ = ({
         ></Knob>
       </div>
       <div className={styles.lfo_column}>
+        <h3>LFO 2</h3>
         <Selector
           id={Selectors.LFO_2_TARGET}
           value={lfo2.target}

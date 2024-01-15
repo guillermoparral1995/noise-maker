@@ -6104,14 +6104,21 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.H9JZXbFLA9DtrXQumJ8a {
+___CSS_LOADER_EXPORT___.push([module.id, `.OxOm1f6vGc8TBdu8McmA {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.H9JZXbFLA9DtrXQumJ8a {
   display: flex;
   flex-direction: column;
   gap: 10px;
   justify-content: space-around;
-}`, "",{"version":3,"sources":["webpack://./src/components/Controls/CompressorControls/index.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,SAAA;EACA,6BAAA;AACJ","sourcesContent":[".compressor_column {\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n    justify-content: space-around;\n  }\n  "],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/Controls/CompressorControls/index.module.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,mBAAA;EACA,SAAA;AACF;;AAEA;EACE,aAAA;EACA,sBAAA;EACA,SAAA;EACA,6BAAA;AACF","sourcesContent":[".column_container {\n  display: flex;\n  flex-direction: row;\n  gap: 10px;\n}\n\n.compressor_column { \n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  justify-content: space-around;\n}\n  "],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
+	"column_container": `OxOm1f6vGc8TBdu8McmA`,
 	"compressor_column": `H9JZXbFLA9DtrXQumJ8a`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -6523,17 +6530,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, `main {
 }
 .oHNRdwqdBmt0jjjJ5sqb#atXx3UD6LZEMlGprsFFe {
   flex-direction: row;
-}
-.oHNRdwqdBmt0jjjJ5sqb#P4xd61KOHtV2n5V3uAuL {
-  flex-direction: row;
-}`, "",{"version":3,"sources":["webpack://./src/index.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,aAAA;EACA,8BAAA;EACA,sBAAA;EACA,aAAA;AACJ;;AAEA;EACI,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,kBAAA;AACJ;;AAEA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACA,SAAA;AACJ;;AAEA;EACI,aAAA;EACA,sBAAA;EACA,SAAA;AACJ;AACI;EACI,mBAAA;AACR;AAEI;EACI,mBAAA;AAAR","sourcesContent":["main {\n    height: 100vh;\n    display: flex;\n    justify-content: space-between;\n    flex-direction: column;\n    padding: 40px;\n}\n\n#controls_section {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    text-align: center;\n}\n\n#keyboard_section {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    text-align: center;\n    gap: 20px;\n}\n\n.column {\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n\n    &#lfo_controls_column {\n        flex-direction: row;\n    }\n\n    &#compressor_controls_column {\n        flex-direction: row;\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/index.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,aAAA;EACA,8BAAA;EACA,sBAAA;EACA,aAAA;AACJ;;AAEA;EACI,aAAA;EACA,6BAAA;EACA,mBAAA;EACA,kBAAA;AACJ;;AAEA;EACI,aAAA;EACA,mBAAA;EACA,uBAAA;EACA,kBAAA;EACA,SAAA;AACJ;;AAEA;EACI,aAAA;EACA,sBAAA;EACA,SAAA;AACJ;AACI;EACI,mBAAA;AACR","sourcesContent":["main {\n    height: 100vh;\n    display: flex;\n    justify-content: space-between;\n    flex-direction: column;\n    padding: 40px;\n}\n\n#controls_section {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    text-align: center;\n}\n\n#keyboard_section {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    text-align: center;\n    gap: 20px;\n}\n\n.column {\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n\n    &#lfo_controls_column {\n        flex-direction: row;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"controls_section": `ix_udSWn_EGrIpUrYJpy`,
 	"keyboard_section": `R0BpAAwYhVhxCuNMuF92`,
 	"column": `oHNRdwqdBmt0jjjJ5sqb`,
-	"lfo_controls_column": `atXx3UD6LZEMlGprsFFe`,
-	"compressor_controls_column": `P4xd61KOHtV2n5V3uAuL`
+	"lfo_controls_column": `atXx3UD6LZEMlGprsFFe`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -71473,7 +71476,7 @@ const App = () => {
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_EnvelopeControls__WEBPACK_IMPORTED_MODULE_4__["default"], null),
                     isMounted &&
                         (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)(react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Keyboard__WEBPACK_IMPORTED_MODULE_9__["default"], null), document.getElementById(_index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].keyboard_section)))),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column, id: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].compressor_controls_column },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_CompressorControls__WEBPACK_IMPORTED_MODULE_3__["default"], null)),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_11__["default"].column },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Controls_DelayControls__WEBPACK_IMPORTED_MODULE_13__["default"], null)),
@@ -71577,13 +71580,15 @@ const CompressorControls_ = () => {
     compressor.attack.value = state.attack;
     compressor.release.value = state.release;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].compressor_column },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_THRESHOLD, value: state.threshold, dispatch: dispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_RATIO, value: state.ratio, dispatch: dispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_KNEE, value: state.knee, dispatch: dispatch })),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].compressor_column },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_ATTACK, value: state.attack, dispatch: dispatch }),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_RELEASE, value: state.release, dispatch: dispatch }))));
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Compressor"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].column_container },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].compressor_column },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_THRESHOLD, value: state.threshold, dispatch: dispatch }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_RATIO, value: state.ratio, dispatch: dispatch }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_KNEE, value: state.knee, dispatch: dispatch })),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_5__["default"].compressor_column },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_ATTACK, value: state.attack, dispatch: dispatch }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.COMPRESSOR_RELEASE, value: state.release, dispatch: dispatch })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_CompressorStateProvider__WEBPACK_IMPORTED_MODULE_4__.CompressorStateProvider, null,
     react__WEBPACK_IMPORTED_MODULE_0___default().createElement(CompressorControls_, null))));
@@ -71783,6 +71788,7 @@ const DelayControls_ = ({ __mockFeedback, }) => {
         }
     }, [delay.active]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Delay"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Switch__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Switchs.DELAY, value: delay.active, dispatch: audioDispatch }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Switch__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Switchs.DELAY_TRAILS, value: state.trails, dispatch: dispatch }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_4__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_3__.Knobs.DELAY_FEEDBACK, value: state.feedback, dispatch: dispatch }),
@@ -71940,6 +71946,7 @@ const EnvelopeControls = () => {
     const { state, dispatch } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_EnvelopeStateProvider__WEBPACK_IMPORTED_MODULE_4__.envelopeStateContext);
     (0,_hooks_useAddMidiListeners__WEBPACK_IMPORTED_MODULE_1__["default"])([_types__WEBPACK_IMPORTED_MODULE_2__.Knobs.ATTACK, _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.DECAY, _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.SUSTAIN, _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.RELEASE], dispatch);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "ADSR Envelope"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.ATTACK, value: state.attack, dispatch: dispatch }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.DECAY, value: state.decay, dispatch: dispatch }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_3__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_2__.Knobs.SUSTAIN, value: state.sustain, dispatch: dispatch }),
@@ -72161,6 +72168,7 @@ const FilterControls_ = () => {
     filter.frequency.value = cutoff;
     filter.Q.value = resonance;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Filter"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_6__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Selectors.FILTER, value: type, dispatch: dispatch }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_CUTOFF, value: cutoff, dispatch: dispatch }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.FILTER_RESONANCE, value: resonance, dispatch: dispatch })));
@@ -72335,6 +72343,7 @@ const GeneralControls_ = () => {
     volume.gain.value = state.volume;
     pan.pan.value = state.pan;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "Master"),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.VOLUME, value: state.volume, dispatch: dispatch }),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_5__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_4__.Knobs.PAN, value: state.pan, dispatch: dispatch })));
 };
@@ -72535,11 +72544,13 @@ const LFOControls_ = ({ __mockLFO1, __mockLFO2, }) => {
     }, [state.lfo2.amplitude, lfo2.target]);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_9__["default"].lfo_column },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "LFO 1"),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_1_TARGET, value: lfo1.target, dispatch: audioDispatch }),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_1_WAVEFORM, value: state.lfo1.waveform, dispatch: dispatch }),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_FREQUENCY, value: state.lfo1.frequency, dispatch: dispatch }),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_1_AMPLITUDE, value: state.lfo1.amplitude, dispatch: dispatch })),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: _index_module_scss__WEBPACK_IMPORTED_MODULE_9__["default"].lfo_column },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, "LFO 2"),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_2_TARGET, value: lfo2.target, dispatch: audioDispatch }),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Selector__WEBPACK_IMPORTED_MODULE_8__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Selectors.LFO_2_WAVEFORM, value: state.lfo2.waveform, dispatch: dispatch }),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_shared_Knob__WEBPACK_IMPORTED_MODULE_7__["default"], { id: _types__WEBPACK_IMPORTED_MODULE_6__.Knobs.LFO_2_FREQUENCY, value: state.lfo2.frequency, dispatch: dispatch }),

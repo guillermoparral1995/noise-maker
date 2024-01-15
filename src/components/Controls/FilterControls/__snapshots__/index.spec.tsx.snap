@@ -4,6 +4,9 @@ exports[`Filter controls should render correctly 1`] = `
 <div
   data-testid="filter-controls"
 >
+  <h3>
+    Filter
+  </h3>
   <span
     class="p-float-label selector"
     data-testid="FILTER"

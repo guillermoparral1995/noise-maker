@@ -7,6 +7,9 @@ exports[`LFO controls should render correctly 1`] = `
   <div
     class="lfo_column"
   >
+    <h3>
+      LFO 1
+    </h3>
     <span
       class="p-float-label selector"
       data-testid="LFO_1_TARGET"
@@ -269,6 +272,9 @@ exports[`LFO controls should render correctly 1`] = `
   <div
     class="lfo_column"
   >
+    <h3>
+      LFO 2
+    </h3>
     <span
       class="p-float-label selector"
       data-testid="LFO_2_TARGET"

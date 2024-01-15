@@ -4,6 +4,9 @@ exports[`General controls should render correctly 1`] = `
 <div
   data-testid="general-controls"
 >
+  <h3>
+    Master
+  </h3>
   <div
     data-testid="VOLUME"
     tabindex="0"

@@ -20,34 +20,37 @@ export const CompressorControls_ = () => {
 
   return (
     <>
-      <div className={styles.compressor_column}>
-        <Knob
-          id={Knobs.COMPRESSOR_THRESHOLD}
-          value={state.threshold}
-          dispatch={dispatch}
-        ></Knob>
-        <Knob
-          id={Knobs.COMPRESSOR_RATIO}
-          value={state.ratio}
-          dispatch={dispatch}
-        ></Knob>
-        <Knob
-          id={Knobs.COMPRESSOR_KNEE}
-          value={state.knee}
-          dispatch={dispatch}
-        ></Knob>
-      </div>
-      <div className={styles.compressor_column}>
-        <Knob
-          id={Knobs.COMPRESSOR_ATTACK}
-          value={state.attack}
-          dispatch={dispatch}
-        ></Knob>
-        <Knob
-          id={Knobs.COMPRESSOR_RELEASE}
-          value={state.release}
-          dispatch={dispatch}
-        ></Knob>
+      <h3>Compressor</h3>
+      <div className={styles.column_container}>
+        <div className={styles.compressor_column}>
+          <Knob
+            id={Knobs.COMPRESSOR_THRESHOLD}
+            value={state.threshold}
+            dispatch={dispatch}
+          ></Knob>
+          <Knob
+            id={Knobs.COMPRESSOR_RATIO}
+            value={state.ratio}
+            dispatch={dispatch}
+          ></Knob>
+          <Knob
+            id={Knobs.COMPRESSOR_KNEE}
+            value={state.knee}
+            dispatch={dispatch}
+          ></Knob>
+        </div>
+        <div className={styles.compressor_column}>
+          <Knob
+            id={Knobs.COMPRESSOR_ATTACK}
+            value={state.attack}
+            dispatch={dispatch}
+          ></Knob>
+          <Knob
+            id={Knobs.COMPRESSOR_RELEASE}
+            value={state.release}
+            dispatch={dispatch}
+          ></Knob>
+        </div>
       </div>
     </>
   );

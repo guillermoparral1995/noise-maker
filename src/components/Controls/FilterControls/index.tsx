@@ -29,6 +29,7 @@ export const FilterControls_ = () => {
 
   return (
     <>
+      <h3>Filter</h3>
       <Selector
         id={Selectors.FILTER}
         value={type}

@@ -26,6 +26,7 @@ export const GeneralControls_ = () => {
   pan.pan.value = state.pan;
   return (
     <>
+      <h3>Master</h3>
       <Knob id={Knobs.VOLUME} value={state.volume} dispatch={dispatch}></Knob>
       <Knob id={Knobs.PAN} value={state.pan} dispatch={dispatch}></Knob>
     </>

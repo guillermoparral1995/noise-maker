@@ -13,6 +13,7 @@ const EnvelopeControls = () => {
 
   return (
     <>
+      <h3>ADSR Envelope</h3>
       <Knob id={Knobs.ATTACK} value={state.attack} dispatch={dispatch}></Knob>
       <Knob id={Knobs.DECAY} value={state.decay} dispatch={dispatch}></Knob>
       <Knob id={Knobs.SUSTAIN} value={state.sustain} dispatch={dispatch}></Knob>

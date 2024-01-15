@@ -45,7 +45,7 @@ const App = () => {
               )}
           </EnvelopeStateProvider>
         </div>
-        <div className={styles.column} id={styles.compressor_controls_column}>
+        <div className={styles.column}>
           <CompressorControls></CompressorControls>
         </div>
         <div className={styles.column}>

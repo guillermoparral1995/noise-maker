@@ -4,6 +4,9 @@ exports[`Delay should render correctly 1`] = `
 <div
   data-testid="delay-controls"
 >
+  <h3>
+    Delay
+  </h3>
   <div
     data-testid="DELAY"
   >
