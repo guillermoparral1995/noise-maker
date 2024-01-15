@@ -72807,7 +72807,6 @@ const Key = ({ identifier, value, __mockOscillator, __mockEnvelope, }) => {
         };
     });
     const play = () => {
-        console.log('play!');
         if (keyRef.current) {
             keyRef.current.classList.add(_index_module_scss__WEBPACK_IMPORTED_MODULE_7__["default"].pressed);
         }

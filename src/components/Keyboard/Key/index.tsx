@@ -107,7 +107,6 @@ const Key = ({
   });
 
   const play = () => {
-    console.log('play!');
     if (keyRef.current) {
       keyRef.current.classList.add(styles.pressed);
     }
