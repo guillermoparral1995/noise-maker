@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import MIDIInputSelector from './components/Config/MIDIInputSelector';
+import ThemeSelector from './components/Config/ThemeSelector';
 import CompressorControls from './components/Controls/CompressorControls';
+import DelayControls from './components/Controls/DelayControls';
 import EnvelopeFilterControls from './components/Controls/EnvelopeControls';
 import { EnvelopeStateProvider } from './components/Controls/EnvelopeControls/EnvelopeStateProvider';
 import FilterControls from './components/Controls/FilterControls';
@@ -10,8 +12,6 @@ import LFOControls from './components/Controls/LFOControls';
 import Keyboard from './components/Keyboard';
 import Oscilloscope from './components/Oscilloscope';
 import styles from './index.module.scss';
-import 'primereact/resources/themes/lara-dark-purple/theme.css';
-import DelayControls from './components/Controls/DelayControls';
 
 const App = () => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
@@ -20,10 +20,10 @@ const App = () => {
   }, []);
   return (
     <main>
-      <section id="config-section">
-        <div className={styles.column}>
-          <MIDIInputSelector></MIDIInputSelector>
-        </div>
+      <section id={styles.config_section}>
+        <MIDIInputSelector></MIDIInputSelector>
+
+        <ThemeSelector></ThemeSelector>
       </section>
       <section id={styles.controls_section}>
         <div className={styles.column}>

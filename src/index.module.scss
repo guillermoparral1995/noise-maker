@@ -6,6 +6,14 @@ main {
     padding: 40px;
 }
 
+#config_section {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
 #controls_section {
     display: flex;
     justify-content: space-around;

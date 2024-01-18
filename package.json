@@ -5,7 +5,7 @@
   "main": "./src/index.tsx",
   "scripts": {
     "dev": "webpack serve",
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack",
     "test": "jest",
     "test:dev": "jest --watch",
     "prepare": "husky install"
@@ -25,11 +25,13 @@
     "@types/node": "^20.11.0",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
+    "@types/react-helmet": "^6.1.11",
     "@types/webpack": "^5.28.5",
     "@types/webpack-dev-server": "^4.7.2",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
     "babel-loader": "^9.1.3",
+    "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^6.8.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
@@ -50,7 +52,6 @@
     "stylelint-scss": "^6.0.0",
     "ts-jest": "^29.1.1",
     "ts-loader": "^9.5.1",
-    "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "typescript-plugin-css-modules": "^5.0.2",
     "webpack": "^5.89.0",
@@ -58,11 +59,11 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "express": "^4.18.2",
     "lodash": "^4.17.21",
     "primereact": "^10.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "webmidi": "^3.1.8"
   }
 }

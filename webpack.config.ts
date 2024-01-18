@@ -1,10 +1,15 @@
 import path from 'path';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 module.exports = {
-  mode: 'development',
+  mode: process.env.NODE_ENV ?? 'development',
   entry: './src/index.tsx',
-  output: { path: path.resolve(__dirname, 'docs') },
+  output: {
+    filename: 'index.bundle.js',
+    path: path.resolve(__dirname, 'docs'),
+    clean: true,
+  },
   devtool: 'source-map',
   module: {
     rules: [
@@ -49,9 +54,14 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [{ from: 'public/themes' }],
+    }),
     new HtmlWebpackPlugin({
       title: 'NoiseMaker!',
+      favicon: 'public/favicon.ico',
       meta: {
+        description: 'Noise Maker is a WebAudio API powered synthesizer',
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
       },
     }),

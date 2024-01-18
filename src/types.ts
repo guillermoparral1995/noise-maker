@@ -1,3 +1,4 @@
+import type { ActionTypes as ThemeActionTypes } from './components/Config/ThemeSelector/store/actions';
 import type { ActionTypes as CompressorActionTypes } from './components/Controls/CompressorControls/store/actions';
 import type { ActionTypes as DelayActionTypes } from './components/Controls/DelayControls/store/actions';
 import type { ActionTypes as EnvelopeActionTypes } from './components/Controls/EnvelopeControls/store/actions';
@@ -15,7 +16,8 @@ export type ActionTypes =
   | LFOActionTypes
   | MIDIActionTypes
   | CompressorActionTypes
-  | DelayActionTypes;
+  | DelayActionTypes
+  | ThemeActionTypes;
 
 export enum Waveform {
   SINE = 'sine',
@@ -32,6 +34,7 @@ export enum FilterType {
 export enum Switchs {
   DELAY = 'DELAY',
   DELAY_TRAILS = 'DELAY_TRAILS',
+  THEME = 'THEME',
 }
 
 export enum Selectors {
@@ -127,5 +130,6 @@ export enum Actions {
   SWITCH_DELAY_TRAILS,
   UPDATE_DELAY_FEEDBACK,
   UPDATE_DELAY_TIME,
+  SWITCH_DARK_MODE,
 }
 export type ActionBuilder<T> = (payload: T) => ActionTypes;
