@@ -30,11 +30,15 @@ export const MIDIProvider = ({
 
   const enableMidi = async () => {
     try {
-      await WebMidi.enable({ sysex: true });
-      if (WebMidi.inputs.length) {
-        dispatch(updateMIDIInput(WebMidi.inputs[0].name));
+      if (navigator?.requestMIDIAccess) {
+        await WebMidi.enable({ sysex: true });
+        if (WebMidi.inputs.length) {
+          dispatch(updateMIDIInput(WebMidi.inputs[0].name));
+        }
+        dispatch(updateMIDILoading(false));
+      } else {
+        dispatch(updateMIDILoading(false));
       }
-      dispatch(updateMIDILoading(false));
     } catch (e) {
       console.error('Could not start Web MIDI', e);
       dispatch(updateMIDILoading(false));
