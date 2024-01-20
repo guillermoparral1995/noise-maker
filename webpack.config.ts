@@ -58,7 +58,7 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin({
-      patterns: [{ from: 'public/themes' }],
+      patterns: [{ from: 'public' }],
     }),
     new HtmlWebpackPlugin({
       title: 'NoiseMaker!',
