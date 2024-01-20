@@ -21,7 +21,7 @@ navigator.mediaDevices.getUserMedia({ audio: true }).then(() => {
         <link
           id="theme-link"
           rel="stylesheet"
-          href={'/themes/lara-light-purple/theme.css'}
+          href={'/noise-maker/themes/lara-light-purple/theme.css'}
         />
       </Helmet>
       <PrimeReactProvider>
