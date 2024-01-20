@@ -7,10 +7,10 @@ export default defineConfig({
   build: {
     emptyOutDir: true,
     outDir: '../docs',
-    assetsDir: 'noise-maker/assets',
+    assetsDir: 'assets',
   },
   publicDir: '../public',
-
+  base: './',
   plugins: [
     react({
       include: '**/*.{tsx}',
