@@ -5,7 +5,6 @@ import {
   selectorValues,
 } from '../../../constants/selectorsValues';
 import { ActionTypes, Selectors } from '../../../types';
-import styles from './index.module.scss';
 
 interface SelectorProps<T> {
   id: Selectors;
@@ -25,7 +24,7 @@ const Selector = <T extends string>({
   };
 
   return (
-    <span className={`p-float-label ${styles.selector}`} data-testid={id}>
+    <span className="p-float-label" data-testid={id}>
       <Dropdown
         inputId={id}
         name={id}

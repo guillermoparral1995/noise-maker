@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { NoteMessageEvent } from 'webmidi';
 import { GainNodeMock, OscillatorNodeMock } from '../../../../__mocks__';
 import { Notes, NoteValue } from '../../../constants/noteTable';
@@ -164,6 +164,8 @@ const Key = ({
       }`}
       type="button"
       data-testid={identifier}
+      onTouchStart={play}
+      onTouchEnd={stop}
       onMouseDown={play}
       onMouseUp={stop}
     ></button>

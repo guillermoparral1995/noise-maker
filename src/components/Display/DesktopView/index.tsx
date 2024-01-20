@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import MIDIInputSelector from '../Config/MIDIInputSelector';
-import ThemeSelector from '../Config/ThemeSelector';
-import CompressorControls from '../Controls/CompressorControls';
-import DelayControls from '../Controls/DelayControls';
-import EnvelopeFilterControls from '../Controls/EnvelopeControls';
-import { EnvelopeStateProvider } from '../Controls/EnvelopeControls/EnvelopeStateProvider';
-import FilterControls from '../Controls/FilterControls';
-import GeneralControls from '../Controls/GeneralControls';
-import LFOControls from '../Controls/LFOControls';
-import Keyboard from '../Keyboard';
-import Oscilloscope from '../Oscilloscope';
+import MIDIInputSelector from '../../Config/MIDIInputSelector';
+import ThemeSelector from '../../Config/ThemeSelector';
+import CompressorControls from '../../Controls/CompressorControls';
+import DelayControls from '../../Controls/DelayControls';
+import EnvelopeFilterControls from '../../Controls/EnvelopeControls';
+import { EnvelopeStateProvider } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
+import FilterControls from '../../Controls/FilterControls';
+import GeneralControls from '../../Controls/GeneralControls';
+import LFOControls from '../../Controls/LFOControls';
+import Keyboard from '../../Keyboard';
+import Oscilloscope from '../../Oscilloscope';
+import Title from '../../shared/Title';
 import styles from './index.module.scss';
 
 const DesktopView = () => {
@@ -19,12 +20,12 @@ const DesktopView = () => {
     setIsMounted(true);
   }, []);
   return (
-    <main>
+    <main id={styles.desktop_view}>
       <section id={styles.config_section}>
         <MIDIInputSelector></MIDIInputSelector>
-
         <ThemeSelector></ThemeSelector>
       </section>
+      <Title></Title>
       <section id={styles.controls_section}>
         <div className={styles.column}>
           <GeneralControls></GeneralControls>

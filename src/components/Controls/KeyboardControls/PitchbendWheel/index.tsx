@@ -1,15 +1,17 @@
 import { round } from 'lodash';
 import React, { BaseSyntheticEvent, useContext, useEffect } from 'react';
-import { knobsValues } from '../../../constants/knobsValues';
-import { midiContext } from '../../../providers/MIDIProvider';
-import { Knobs } from '../../../types';
-import { envelopeStateContext } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
-import { updatePitchbend } from '../../Controls/EnvelopeControls/store/actions';
+import { knobsValues } from '../../../../constants/knobsValues';
+import { useBreakpoints } from '../../../../hooks/useBreakpoints';
+import { midiContext } from '../../../../providers/MIDIProvider';
+import { Knobs } from '../../../../types';
+import { envelopeStateContext } from '../../EnvelopeControls/EnvelopeStateProvider';
+import { updatePitchbend } from '../../EnvelopeControls/store/actions';
 import styles from './index.module.scss';
 
 export const PitchbendWheel = () => {
   const { selectedInput: midiInput } = useContext(midiContext);
   const { state, dispatch } = useContext(envelopeStateContext);
+  const { isDesktop } = useBreakpoints();
 
   useEffect(() => {
     if (midiInput) {
@@ -34,17 +36,20 @@ export const PitchbendWheel = () => {
   };
 
   return (
-    <input
-      id={styles.pitchbend_wheel}
-      data-testid="pitchbend_wheel"
-      type="range"
-      min={knobsValues[Knobs.PITCHBEND].min}
-      max={knobsValues[Knobs.PITCHBEND].max}
-      step={knobsValues[Knobs.PITCHBEND].step}
-      value={state.pitchbend}
-      onChange={handleChange}
-      onMouseUp={handleDragEnd}
-    ></input>
+    <div id={styles.pitchbend_wheel_container}>
+      <input
+        id={styles.pitchbend_wheel}
+        className={isDesktop ? styles.desktop : ''}
+        data-testid="pitchbend_wheel"
+        type="range"
+        min={knobsValues[Knobs.PITCHBEND].min}
+        max={knobsValues[Knobs.PITCHBEND].max}
+        step={knobsValues[Knobs.PITCHBEND].step}
+        value={state.pitchbend}
+        onChange={handleChange}
+        onMouseUp={handleDragEnd}
+      ></input>
+    </div>
   );
 };
 

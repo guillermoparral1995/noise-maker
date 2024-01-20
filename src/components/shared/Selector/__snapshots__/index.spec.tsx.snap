@@ -2,7 +2,7 @@
 
 exports[`Selector should render disabled if no options 1`] = `
 <span
-  class="p-float-label selector"
+  class="p-float-label"
   data-testid="WAVEFORM"
 >
   <div
@@ -83,7 +83,7 @@ exports[`Selector should render disabled if no options 1`] = `
 
 exports[`Selector should render with options based on selector id 1`] = `
 <span
-  class="p-float-label selector"
+  class="p-float-label"
   data-testid="WAVEFORM"
 >
   <div
@@ -165,7 +165,7 @@ exports[`Selector should render with options based on selector id 1`] = `
 
 exports[`Selector should render with options passed as props 1`] = `
 <span
-  class="p-float-label selector"
+  class="p-float-label"
   data-testid="WAVEFORM"
 >
   <div

@@ -3,6 +3,7 @@ import { GainNodeMock } from '../../../../__mocks__';
 import { useInstantiateGainNode } from '../../../hooks/useInstantiateAudioNode';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { Knobs, Switchs } from '../../../types';
+import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import Switch from '../../shared/Switch';
 import { delayStateContext, DelayStateProvider } from './DelayStateProvider';
@@ -39,26 +40,31 @@ export const DelayControls_ = ({
   return (
     <>
       <h3>Delay</h3>
-      <Switch
-        id={Switchs.DELAY}
-        value={delay.active}
-        dispatch={audioDispatch}
-      ></Switch>
-      <Switch
-        id={Switchs.DELAY_TRAILS}
-        value={state.trails}
-        dispatch={dispatch}
-      ></Switch>
-      <Knob
-        id={Knobs.DELAY_FEEDBACK}
-        value={state.feedback}
-        dispatch={dispatch}
-      ></Knob>
-      <Knob
-        id={Knobs.DELAY_TIME}
-        value={state.delayTime}
-        dispatch={dispatch}
-      ></Knob>
+      <ControlsRow>
+        <Switch
+          id={Switchs.DELAY}
+          value={delay.active}
+          dispatch={audioDispatch}
+        ></Switch>
+        <Switch
+          id={Switchs.DELAY_TRAILS}
+          value={state.trails}
+          dispatch={dispatch}
+        ></Switch>
+      </ControlsRow>
+
+      <ControlsRow>
+        <Knob
+          id={Knobs.DELAY_FEEDBACK}
+          value={state.feedback}
+          dispatch={dispatch}
+        ></Knob>
+        <Knob
+          id={Knobs.DELAY_TIME}
+          value={state.delayTime}
+          dispatch={dispatch}
+        ></Knob>
+      </ControlsRow>
     </>
   );
 };

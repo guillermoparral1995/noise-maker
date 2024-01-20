@@ -6,6 +6,7 @@ import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import { useInstantiateOscillatorNode } from '../../../hooks/useInstantiateAudioNode';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { Knobs, Selectors } from '../../../types';
+import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
 import styles from './index.module.scss';
@@ -87,49 +88,59 @@ export const LFOControls_ = ({
     <>
       <div className={styles.lfo_column}>
         <h3>LFO 1</h3>
-        <Selector
-          id={Selectors.LFO_1_TARGET}
-          value={lfo1.target}
-          dispatch={audioDispatch}
-        ></Selector>
-        <Selector
-          id={Selectors.LFO_1_WAVEFORM}
-          value={state.lfo1.waveform}
-          dispatch={dispatch}
-        ></Selector>
-        <Knob
-          id={Knobs.LFO_1_FREQUENCY}
-          value={state.lfo1.frequency}
-          dispatch={dispatch}
-        ></Knob>
-        <Knob
-          id={Knobs.LFO_1_AMPLITUDE}
-          value={state.lfo1.amplitude}
-          dispatch={dispatch}
-        ></Knob>
+        <ControlsRow>
+          <Selector
+            id={Selectors.LFO_1_TARGET}
+            value={lfo1.target}
+            dispatch={audioDispatch}
+          ></Selector>
+          <Selector
+            id={Selectors.LFO_1_WAVEFORM}
+            value={state.lfo1.waveform}
+            dispatch={dispatch}
+          ></Selector>
+        </ControlsRow>
+
+        <ControlsRow>
+          <Knob
+            id={Knobs.LFO_1_FREQUENCY}
+            value={state.lfo1.frequency}
+            dispatch={dispatch}
+          ></Knob>
+          <Knob
+            id={Knobs.LFO_1_AMPLITUDE}
+            value={state.lfo1.amplitude}
+            dispatch={dispatch}
+          ></Knob>
+        </ControlsRow>
       </div>
       <div className={styles.lfo_column}>
         <h3>LFO 2</h3>
-        <Selector
-          id={Selectors.LFO_2_TARGET}
-          value={lfo2.target}
-          dispatch={audioDispatch}
-        ></Selector>
-        <Selector
-          id={Selectors.LFO_2_WAVEFORM}
-          value={state.lfo2.waveform}
-          dispatch={dispatch}
-        ></Selector>
-        <Knob
-          id={Knobs.LFO_2_FREQUENCY}
-          value={state.lfo2.frequency}
-          dispatch={dispatch}
-        ></Knob>
-        <Knob
-          id={Knobs.LFO_2_AMPLITUDE}
-          value={state.lfo2.amplitude}
-          dispatch={dispatch}
-        ></Knob>
+        <ControlsRow>
+          <Selector
+            id={Selectors.LFO_2_TARGET}
+            value={lfo2.target}
+            dispatch={audioDispatch}
+          ></Selector>
+          <Selector
+            id={Selectors.LFO_2_WAVEFORM}
+            value={state.lfo2.waveform}
+            dispatch={dispatch}
+          ></Selector>
+        </ControlsRow>
+
+        <ControlsRow>
+          <Knob
+            id={Knobs.LFO_2_FREQUENCY}
+            value={state.lfo2.frequency}
+            dispatch={dispatch}
+          ></Knob>
+          <Knob
+            id={Knobs.LFO_2_AMPLITUDE}
+            value={state.lfo2.amplitude}
+            dispatch={dispatch}
+          ></Knob>
+        </ControlsRow>
       </div>
     </>
   );

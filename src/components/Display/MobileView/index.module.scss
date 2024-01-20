@@ -1,0 +1,17 @@
+@use '../../../styles/__mixin_column.module' as *;
+
+#mobile_view {    
+    @include column;
+    padding: 20px;
+    align-items: center;
+}
+
+#menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}

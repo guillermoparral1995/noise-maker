@@ -1,13 +1,14 @@
 import React from 'react';
 import DesktopView from './components/Display/DesktopView';
+import MobileView from './components/Display/MobileView';
 import { useBreakpoints } from './hooks/useBreakpoints';
 
 const App = () => {
-  const { isMobile, isTablet, isDesktop } = useBreakpoints();
+  const { isDesktop } = useBreakpoints();
   if (isDesktop) {
     return <DesktopView></DesktopView>;
   }
-  return <div>Hola!!!</div>;
+  return <MobileView></MobileView>;
 };
 
 export default App;

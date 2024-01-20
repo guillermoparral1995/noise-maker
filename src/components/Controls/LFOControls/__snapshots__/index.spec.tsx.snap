@@ -11,7 +11,7 @@ exports[`LFO controls should render correctly 1`] = `
       LFO 1
     </h3>
     <span
-      class="p-float-label selector"
+      class="p-float-label"
       data-testid="LFO_1_TARGET"
     >
       <div
@@ -90,7 +90,7 @@ exports[`LFO controls should render correctly 1`] = `
       </label>
     </span>
     <span
-      class="p-float-label selector"
+      class="p-float-label"
       data-testid="LFO_1_WAVEFORM"
     >
       <div
@@ -276,7 +276,7 @@ exports[`LFO controls should render correctly 1`] = `
       LFO 2
     </h3>
     <span
-      class="p-float-label selector"
+      class="p-float-label"
       data-testid="LFO_2_TARGET"
     >
       <div
@@ -355,7 +355,7 @@ exports[`LFO controls should render correctly 1`] = `
       </label>
     </span>
     <span
-      class="p-float-label selector"
+      class="p-float-label"
       data-testid="LFO_2_WAVEFORM"
     >
       <div

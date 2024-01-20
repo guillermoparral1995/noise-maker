@@ -1,36 +1,23 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import noteTable, { Notes, NoteValue } from '../../constants/noteTable';
-import useAddMidiListeners from '../../hooks/useAddMidiListeners';
-import { Knobs, Selectors } from '../../types';
-import { envelopeStateContext } from '../Controls/EnvelopeControls/EnvelopeStateProvider';
-import Knob from '../shared/Knob';
-import Selector from '../shared/Selector';
+import { useBreakpoints } from '../../hooks/useBreakpoints';
+import KeyboardControls from '../Controls/KeyboardControls';
 import styles from './index.module.scss';
 import Key from './Key';
-import PitchbendWheel from './PitchbendWheel';
 
 const Keyboard = () => {
-  const { state, dispatch } = useContext(envelopeStateContext);
-  useAddMidiListeners([Knobs.DETUNE], dispatch);
+  const { isDesktop } = useBreakpoints();
+
+  const notes = isDesktop
+    ? Object.entries(noteTable)
+    : Object.entries(noteTable).slice(0, 13);
   return (
     <>
-      <div className={styles.column}>
-        <Selector
-          id={Selectors.WAVEFORM}
-          dispatch={dispatch}
-          value={state.waveform}
-        ></Selector>
-        <Knob id={Knobs.DETUNE} value={state.detune} dispatch={dispatch}></Knob>
-      </div>
-      <div className={styles.column}>
-        <PitchbendWheel></PitchbendWheel>
-      </div>
+      <KeyboardControls></KeyboardControls>
       <div id={styles.keyboard_container}>
-        {Object.entries(noteTable).map(
-          ([note, noteValue]: [Notes, NoteValue]) => (
-            <Key key={note} identifier={note} value={noteValue}></Key>
-          ),
-        )}
+        {notes.map(([note, noteValue]: [Notes, NoteValue]) => (
+          <Key key={note} identifier={note} value={noteValue}></Key>
+        ))}
       </div>
     </>
   );

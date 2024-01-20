@@ -1,9 +1,3 @@
-@use '../../styles/_mixin_column.module' as *;
-
-.column {
-  @include column;
-}
-
 #keyboard_container {
   position: relative;
 }

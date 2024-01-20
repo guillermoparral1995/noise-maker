@@ -4,9 +4,9 @@ import PitchbendWheel from '.';
 import {
   withMockedMIDIInput,
   withMockedMIDINoInput,
-} from '../../../../__mocks__';
-import { Actions } from '../../../types';
-import { EnvelopeStateProvider } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
+} from '../../../../../__mocks__';
+import { Actions } from '../../../../types';
+import { EnvelopeStateProvider } from '../../EnvelopeControls/EnvelopeStateProvider';
 
 const __mockGetInputByName = jest.fn();
 jest.mock('webmidi', () => {

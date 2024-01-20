@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import App from './App';
 import { AudioContextProvider } from './providers/AudioContextProvider';
 import { MIDIProvider } from './providers/MIDIProvider';
+import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-dark-purple/theme.css';
 import 'primereact/resources/themes/lara-light-purple/theme.css';
 

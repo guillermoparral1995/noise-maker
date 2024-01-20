@@ -1,9 +1,15 @@
+#pitchbend_wheel_container {
+    margin: 20px;
+    text-align: center;
+}
+
 #pitchbend_wheel {
-    transform: rotate(270deg);
+    &.desktop {
+        transform: rotate(270deg);
+    }
     appearance: none;
     height: 3em;
     width: 12em;
-    margin: -10px;
     box-shadow: 1px 1px 5px mediumpurple;
 }
 

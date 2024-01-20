@@ -1,0 +1,5 @@
+@use '../../../styles/_mixin_column.module' as *;
+
+.column {
+  @include column;
+}

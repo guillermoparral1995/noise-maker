@@ -3,6 +3,7 @@ import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
 import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { Knobs, Selectors } from '../../../types';
+import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
 import { filterStateContext, FilterStateProvider } from './FilterStateProvider';
@@ -30,17 +31,25 @@ export const FilterControls_ = () => {
   return (
     <>
       <h3>Filter</h3>
-      <Selector
-        id={Selectors.FILTER}
-        value={type}
-        dispatch={dispatch}
-      ></Selector>
-      <Knob id={Knobs.FILTER_CUTOFF} value={cutoff} dispatch={dispatch}></Knob>
-      <Knob
-        id={Knobs.FILTER_RESONANCE}
-        value={resonance}
-        dispatch={dispatch}
-      ></Knob>
+      <ControlsRow>
+        <Selector
+          id={Selectors.FILTER}
+          value={type}
+          dispatch={dispatch}
+        ></Selector>
+      </ControlsRow>
+      <ControlsRow>
+        <Knob
+          id={Knobs.FILTER_CUTOFF}
+          value={cutoff}
+          dispatch={dispatch}
+        ></Knob>
+        <Knob
+          id={Knobs.FILTER_RESONANCE}
+          value={resonance}
+          dispatch={dispatch}
+        ></Knob>
+      </ControlsRow>
     </>
   );
 };

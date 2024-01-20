@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { Knobs } from '../../../types';
+import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import {
   compressorStateContext,
@@ -23,33 +24,37 @@ export const CompressorControls_ = () => {
       <h3>Compressor</h3>
       <div className={styles.column_container}>
         <div className={styles.compressor_column}>
-          <Knob
-            id={Knobs.COMPRESSOR_THRESHOLD}
-            value={state.threshold}
-            dispatch={dispatch}
-          ></Knob>
-          <Knob
-            id={Knobs.COMPRESSOR_RATIO}
-            value={state.ratio}
-            dispatch={dispatch}
-          ></Knob>
-          <Knob
-            id={Knobs.COMPRESSOR_KNEE}
-            value={state.knee}
-            dispatch={dispatch}
-          ></Knob>
+          <ControlsRow>
+            <Knob
+              id={Knobs.COMPRESSOR_THRESHOLD}
+              value={state.threshold}
+              dispatch={dispatch}
+            ></Knob>
+            <Knob
+              id={Knobs.COMPRESSOR_RATIO}
+              value={state.ratio}
+              dispatch={dispatch}
+            ></Knob>
+            <Knob
+              id={Knobs.COMPRESSOR_KNEE}
+              value={state.knee}
+              dispatch={dispatch}
+            ></Knob>
+          </ControlsRow>
         </div>
         <div className={styles.compressor_column}>
-          <Knob
-            id={Knobs.COMPRESSOR_ATTACK}
-            value={state.attack}
-            dispatch={dispatch}
-          ></Knob>
-          <Knob
-            id={Knobs.COMPRESSOR_RELEASE}
-            value={state.release}
-            dispatch={dispatch}
-          ></Knob>
+          <ControlsRow>
+            <Knob
+              id={Knobs.COMPRESSOR_ATTACK}
+              value={state.attack}
+              dispatch={dispatch}
+            ></Knob>
+            <Knob
+              id={Knobs.COMPRESSOR_RELEASE}
+              value={state.release}
+              dispatch={dispatch}
+            ></Knob>
+          </ControlsRow>
         </div>
       </div>
     </>
