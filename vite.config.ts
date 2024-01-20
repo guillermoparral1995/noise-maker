@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   root: './src',
   build: {
-    outDir: '../docs',
+    outDir: '../docs/noise-maker/',
   },
   publicDir: '../public',
   plugins: [
