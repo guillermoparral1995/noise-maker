@@ -1,4 +1,5 @@
 @use '../../../styles/__mixin_column.module' as *;
+@use '../../../styles/__mixin_disable_user_select.module' as *;
 
 body {
     margin: 0;
@@ -7,10 +8,10 @@ body {
 
 #desktop_view {
     @include column;
+    @include disable-user-select;
     height: 100vh;
     justify-content: flex-start;
     padding: 40px;
-    user-select: none;
 }
 
 #config_section {

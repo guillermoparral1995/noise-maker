@@ -1,7 +1,9 @@
 @use '../../../styles/__mixin_column.module' as *;
+@use '../../../styles/__mixin_disable_user_select.module' as *;
 
 #mobile_view {    
     @include column;
+    @include disable-user-select;
     padding: 20px;
     align-items: center;
     user-select: none;
