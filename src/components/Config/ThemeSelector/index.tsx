@@ -5,8 +5,8 @@ import Switch from '../../shared/Switch';
 import initialState from './store/initialState';
 import reducer from './store/reducer';
 
-const LIGHT_THEME = '/themes/lara-light-purple/theme.css';
-const DARK_THEME = '/themes/lara-dark-purple/theme.css';
+const LIGHT_THEME = 'themes/lara-light-purple/theme.css';
+const DARK_THEME = 'themes/lara-dark-purple/theme.css';
 
 const ThemeSelector = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
