@@ -106,7 +106,8 @@ const Key = ({
     };
   });
 
-  const play = () => {
+  const play = (e?: React.TouchEvent | React.MouseEvent) => {
+    e?.preventDefault();
     if (keyRef.current) {
       keyRef.current.classList.add(styles.pressed);
     }
@@ -128,7 +129,8 @@ const Key = ({
     );
   };
 
-  const stop = () => {
+  const stop = (e?: React.TouchEvent | React.MouseEvent) => {
+    e?.preventDefault();
     if (keyRef.current) {
       keyRef.current.classList.remove(styles.pressed);
     }

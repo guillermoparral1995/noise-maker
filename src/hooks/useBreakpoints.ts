@@ -11,8 +11,7 @@ export const useBreakpoints = () => {
   }, []);
 
   return {
-    isMobile: width <= 480,
-    isTablet: width > 480 && width <= 768,
-    isDesktop: width > 768,
+    isMobile: width <= 1024,
+    isDesktop: width > 1024,
   };
 };

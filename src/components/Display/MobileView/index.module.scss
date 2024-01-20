@@ -4,6 +4,7 @@
     @include column;
     padding: 20px;
     align-items: center;
+    user-select: none;
 }
 
 #menu {

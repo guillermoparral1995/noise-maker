@@ -8,203 +8,207 @@ exports[`Envelope controls should render correctly 1`] = `
     ADSR Envelope
   </h3>
   <div
-    data-testid="ATTACK"
-    tabindex="0"
+    class="controls_row"
   >
-    <label
-      class="label"
-      for="ATTACK"
-    >
-      Attack
-    </label>
     <div
-      class="p-knob p-component"
-      data-pc-name="knob"
-      data-pc-section="root"
-      id="ATTACK"
+      data-testid="ATTACK"
+      tabindex="0"
     >
-      <svg
-        data-pc-section="svg"
-        height="50"
-        viewBox="0 0 100 100"
-        width="50"
+      <label
+        class="label"
+        for="ATTACK"
       >
-        <path
-          class="p-knob-range"
-          d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-          data-pc-section="range"
-          stroke="var(--surface-border, LightGray)"
-          stroke-width="5"
-        />
-        <path
-          class="p-knob-value"
-          d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 29.999999999999982 84.64101615137754"
-          data-pc-section="value"
-          stroke="var(--primary-color, Black)"
-          stroke-width="5"
-        />
-        <text
-          class="p-knob-text"
-          data-pc-section="label"
-          fill="var(--text-color-secondary, Black)"
-          name="ATTACK"
-          text-anchor="middle"
-          x="50"
-          y="57"
+        Attack
+      </label>
+      <div
+        class="p-knob p-component"
+        data-pc-name="knob"
+        data-pc-section="root"
+        id="ATTACK"
+      >
+        <svg
+          data-pc-section="svg"
+          height="50"
+          viewBox="0 0 100 100"
+          width="50"
         >
-          0
-        </text>
-      </svg>
+          <path
+            class="p-knob-range"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+            data-pc-section="range"
+            stroke="var(--surface-border, LightGray)"
+            stroke-width="5"
+          />
+          <path
+            class="p-knob-value"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 29.999999999999982 84.64101615137754"
+            data-pc-section="value"
+            stroke="var(--primary-color, Black)"
+            stroke-width="5"
+          />
+          <text
+            class="p-knob-text"
+            data-pc-section="label"
+            fill="var(--text-color-secondary, Black)"
+            name="ATTACK"
+            text-anchor="middle"
+            x="50"
+            y="57"
+          >
+            0
+          </text>
+        </svg>
+      </div>
     </div>
-  </div>
-  <div
-    data-testid="DECAY"
-    tabindex="0"
-  >
-    <label
-      class="label"
-      for="DECAY"
-    >
-      Decay
-    </label>
     <div
-      class="p-knob p-component"
-      data-pc-name="knob"
-      data-pc-section="root"
-      id="DECAY"
+      data-testid="DECAY"
+      tabindex="0"
     >
-      <svg
-        data-pc-section="svg"
-        height="50"
-        viewBox="0 0 100 100"
-        width="50"
+      <label
+        class="label"
+        for="DECAY"
       >
-        <path
-          class="p-knob-range"
-          d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-          data-pc-section="range"
-          stroke="var(--surface-border, LightGray)"
-          stroke-width="5"
-        />
-        <path
-          class="p-knob-value"
-          d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 29.999999999999982 84.64101615137754"
-          data-pc-section="value"
-          stroke="var(--primary-color, Black)"
-          stroke-width="5"
-        />
-        <text
-          class="p-knob-text"
-          data-pc-section="label"
-          fill="var(--text-color-secondary, Black)"
-          name="DECAY"
-          text-anchor="middle"
-          x="50"
-          y="57"
+        Decay
+      </label>
+      <div
+        class="p-knob p-component"
+        data-pc-name="knob"
+        data-pc-section="root"
+        id="DECAY"
+      >
+        <svg
+          data-pc-section="svg"
+          height="50"
+          viewBox="0 0 100 100"
+          width="50"
         >
-          0
-        </text>
-      </svg>
+          <path
+            class="p-knob-range"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+            data-pc-section="range"
+            stroke="var(--surface-border, LightGray)"
+            stroke-width="5"
+          />
+          <path
+            class="p-knob-value"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 29.999999999999982 84.64101615137754"
+            data-pc-section="value"
+            stroke="var(--primary-color, Black)"
+            stroke-width="5"
+          />
+          <text
+            class="p-knob-text"
+            data-pc-section="label"
+            fill="var(--text-color-secondary, Black)"
+            name="DECAY"
+            text-anchor="middle"
+            x="50"
+            y="57"
+          >
+            0
+          </text>
+        </svg>
+      </div>
     </div>
-  </div>
-  <div
-    data-testid="SUSTAIN"
-    tabindex="0"
-  >
-    <label
-      class="label"
-      for="SUSTAIN"
-    >
-      Sustain
-    </label>
     <div
-      class="p-knob p-component"
-      data-pc-name="knob"
-      data-pc-section="root"
-      id="SUSTAIN"
+      data-testid="SUSTAIN"
+      tabindex="0"
     >
-      <svg
-        data-pc-section="svg"
-        height="50"
-        viewBox="0 0 100 100"
-        width="50"
+      <label
+        class="label"
+        for="SUSTAIN"
       >
-        <path
-          class="p-knob-range"
-          d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-          data-pc-section="range"
-          stroke="var(--surface-border, LightGray)"
-          stroke-width="5"
-        />
-        <path
-          class="p-knob-value"
-          d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70.00000000000001 84.64101615137754"
-          data-pc-section="value"
-          stroke="var(--primary-color, Black)"
-          stroke-width="5"
-        />
-        <text
-          class="p-knob-text"
-          data-pc-section="label"
-          fill="var(--text-color-secondary, Black)"
-          name="SUSTAIN"
-          text-anchor="middle"
-          x="50"
-          y="57"
+        Sustain
+      </label>
+      <div
+        class="p-knob p-component"
+        data-pc-name="knob"
+        data-pc-section="root"
+        id="SUSTAIN"
+      >
+        <svg
+          data-pc-section="svg"
+          height="50"
+          viewBox="0 0 100 100"
+          width="50"
         >
-          1
-        </text>
-      </svg>
+          <path
+            class="p-knob-range"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+            data-pc-section="range"
+            stroke="var(--surface-border, LightGray)"
+            stroke-width="5"
+          />
+          <path
+            class="p-knob-value"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70.00000000000001 84.64101615137754"
+            data-pc-section="value"
+            stroke="var(--primary-color, Black)"
+            stroke-width="5"
+          />
+          <text
+            class="p-knob-text"
+            data-pc-section="label"
+            fill="var(--text-color-secondary, Black)"
+            name="SUSTAIN"
+            text-anchor="middle"
+            x="50"
+            y="57"
+          >
+            1
+          </text>
+        </svg>
+      </div>
     </div>
-  </div>
-  <div
-    data-testid="RELEASE"
-    tabindex="0"
-  >
-    <label
-      class="label"
-      for="RELEASE"
-    >
-      Release
-    </label>
     <div
-      class="p-knob p-component"
-      data-pc-name="knob"
-      data-pc-section="root"
-      id="RELEASE"
+      data-testid="RELEASE"
+      tabindex="0"
     >
-      <svg
-        data-pc-section="svg"
-        height="50"
-        viewBox="0 0 100 100"
-        width="50"
+      <label
+        class="label"
+        for="RELEASE"
       >
-        <path
-          class="p-knob-range"
-          d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-          data-pc-section="range"
-          stroke="var(--surface-border, LightGray)"
-          stroke-width="5"
-        />
-        <path
-          class="p-knob-value"
-          d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 29.999999999999982 84.64101615137754"
-          data-pc-section="value"
-          stroke="var(--primary-color, Black)"
-          stroke-width="5"
-        />
-        <text
-          class="p-knob-text"
-          data-pc-section="label"
-          fill="var(--text-color-secondary, Black)"
-          name="RELEASE"
-          text-anchor="middle"
-          x="50"
-          y="57"
+        Release
+      </label>
+      <div
+        class="p-knob p-component"
+        data-pc-name="knob"
+        data-pc-section="root"
+        id="RELEASE"
+      >
+        <svg
+          data-pc-section="svg"
+          height="50"
+          viewBox="0 0 100 100"
+          width="50"
         >
-          0
-        </text>
-      </svg>
+          <path
+            class="p-knob-range"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
+            data-pc-section="range"
+            stroke="var(--surface-border, LightGray)"
+            stroke-width="5"
+          />
+          <path
+            class="p-knob-value"
+            d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 29.999999999999982 84.64101615137754"
+            data-pc-section="value"
+            stroke="var(--primary-color, Black)"
+            stroke-width="5"
+          />
+          <text
+            class="p-knob-text"
+            data-pc-section="label"
+            fill="var(--text-color-secondary, Black)"
+            name="RELEASE"
+            text-anchor="middle"
+            x="50"
+            y="57"
+          >
+            0
+          </text>
+        </svg>
+      </div>
     </div>
   </div>
 </div>

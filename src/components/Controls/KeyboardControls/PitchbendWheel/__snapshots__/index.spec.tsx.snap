@@ -2,7 +2,7 @@
 
 exports[`Pitchbend wheel should render correctly 1`] = `
 <input
-  class="desktop"
+  class=""
   data-testid="pitchbend_wheel"
   id="pitchbend_wheel"
   max="300"
