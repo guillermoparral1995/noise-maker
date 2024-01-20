@@ -67,17 +67,17 @@ const Key = ({
     { knob: Knobs.DETUNE, param: oscillator.detune },
   ]);
 
-  const handleKeyboardKeyDown = useCallback((e: KeyboardEvent) => {
+  const handleKeyboardKeyDown = (e: KeyboardEvent) => {
     if (!e.repeat && e.key === value.mapping) {
       play();
     }
-  }, []);
+  };
 
-  const handleKeyboardKeyUp = useCallback((e: KeyboardEvent) => {
+  const handleKeyboardKeyUp = (e: KeyboardEvent) => {
     if (e.key === value.mapping) {
       stop();
     }
-  }, []);
+  };
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyboardKeyDown);
