@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import noteTable, { Notes, NoteValue } from '../../constants/noteTable';
 import useAddMidiListeners from '../../hooks/useAddMidiListeners';
-import appStyles from '../../index.module.scss';
 import { Knobs, Selectors } from '../../types';
 import { envelopeStateContext } from '../Controls/EnvelopeControls/EnvelopeStateProvider';
 import Knob from '../shared/Knob';
@@ -15,7 +14,7 @@ const Keyboard = () => {
   useAddMidiListeners([Knobs.DETUNE], dispatch);
   return (
     <>
-      <div className={appStyles.column}>
+      <div className={styles.column}>
         <Selector
           id={Selectors.WAVEFORM}
           dispatch={dispatch}
@@ -23,7 +22,7 @@ const Keyboard = () => {
         ></Selector>
         <Knob id={Knobs.DETUNE} value={state.detune} dispatch={dispatch}></Knob>
       </div>
-      <div className={appStyles.column}>
+      <div className={styles.column}>
         <PitchbendWheel></PitchbendWheel>
       </div>
       <div id={styles.keyboard_container}>

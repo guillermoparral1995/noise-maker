@@ -1,8 +1,15 @@
+@use '../../styles/__mixin_column.module' as *;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 main {
+    @include column;
     height: 100vh;
-    display: flex;
     justify-content: space-between;
-    flex-direction: column;
+    flex-wrap: wrap;
     padding: 40px;
 }
 
@@ -30,9 +37,7 @@ main {
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    @include column;
 
     &#lfo_controls_column {
         flex-direction: row;
