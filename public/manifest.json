@@ -13,8 +13,8 @@
         "sizes": "512x512"
       }
     ],
-    "id": "/?source=pwa",
-    "start_url": "/?source=pwa",
+    "id": "/noise-maker/?source=pwa",
+    "start_url": "/noise-maker/?source=pwa",
     "background_color": "#9370DB",
     "display": "standalone",
     "scope": "/",
