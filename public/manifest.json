@@ -14,7 +14,7 @@
       }
     ],
     "id": "/noise-maker/?source=pwa",
-    "start_url": "/noise-maker/?source=pwa",
+    "start_url": "https://guillermoparral1995.github.io/noise-maker/?source=pwa",
     "background_color": "#9370DB",
     "display": "standalone",
     "scope": "/",
