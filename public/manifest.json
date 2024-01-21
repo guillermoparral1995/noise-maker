@@ -13,11 +13,9 @@
         "sizes": "512x512"
       }
     ],
-    "id": "/noise-maker/?source=pwa",
     "start_url": "https://guillermoparral1995.github.io/noise-maker/",
     "background_color": "#9370DB",
     "display": "standalone",
-    "scope": "/",
     "theme_color": "#9370DB",
     "description": "WebAudio-powered pocket synthesizer",
     "screenshots": [
