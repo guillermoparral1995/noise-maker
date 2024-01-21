@@ -1,0 +1,37 @@
+{
+    "short_name": "Noise Maker",
+    "name": "Noise Maker - Pocket synthesizer",
+    "icons": [
+      {
+        "src": "./images/icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "./images/icon-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "id": "/?source=pwa",
+    "start_url": "/?source=pwa",
+    "background_color": "#9370DB",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#9370DB",
+    "description": "WebAudio-powered pocket synthesizer",
+    "screenshots": [
+      {
+        "src": "./images/screenshot-desktop.png",
+        "type": "image/png",
+        "sizes": "2560x1440",
+        "form_factor": "wide"
+      },
+      {
+        "src": "./images/screenshot-mobile.jpg",
+        "type": "image/jpg",
+        "sizes": "1284x2778",
+        "form_factor": "narrow"
+      }
+    ]
+  }
