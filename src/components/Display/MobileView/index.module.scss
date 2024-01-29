@@ -7,12 +7,17 @@
     padding: 20px;
     align-items: center;
     user-select: none;
+    overscroll-behavior: none;
 }
 
 #menu {
     display: flex;
     width: 100%;
     justify-content: space-between;
+}
+
+#keyboard_section {
+    text-align: center;
 }
 
 .hidden {

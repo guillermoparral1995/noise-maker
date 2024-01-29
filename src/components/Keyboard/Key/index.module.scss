@@ -2,7 +2,7 @@
   border: 1px solid black;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
-  width: 3em;
+  width: 4em;
 
   &.white {
     &.pressed {
@@ -10,7 +10,7 @@
     }
     background-color: white;
     box-shadow: 2px 2px 2px black;
-    height: 12em;
+    height: 13em;
   }
 
   &.black {
@@ -23,48 +23,48 @@
 
     box-shadow: 2px 2px 2px black;
     color: white;
-    height: 7.2em;
+    height: 7.6em;
     position: absolute;
     z-index: 1;
 
     &.Csharp3 {
-      left: 1.5em;
+      left: 2em;
     }
 
     &.Dsharp3 {
-      left: 4.5em;
+      left: 6em;
     }
 
     &.Fsharp3 {
-      left: 10.5em;
+      left: 14em;
     }
 
     &.Gsharp3 {
-      left: 13.5em;
+      left: 18em;
     }
 
     &.Asharp3 {
-      left: 16.5em;
+      left: 22em;
     }
 
     &.Csharp4 {
-      left: 22.5em;
+      left: 30em;
     }
 
     &.Dsharp4 {
-      left: 25.5em;
+      left: 34em;
     }
 
     &.Fsharp4 {
-      left: 31.5em;
+      left: 42em;
     }
 
     &.Gsharp4 {
-      left: 34.5em;
+      left: 46em;
     }
 
     &.Asharp4 {
-      left: 37.5em;
+      left: 50em;
     }
   }
 }

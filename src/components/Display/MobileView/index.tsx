@@ -54,7 +54,7 @@ const MobileView = () => {
             {isMounted &&
               createPortal(
                 <Keyboard />,
-                document.getElementById('keyboard_section'),
+                document.getElementById(styles.keyboard_section),
               )}
           </EnvelopeStateProvider>
         </div>
@@ -66,7 +66,7 @@ const MobileView = () => {
         </div>
       </section>
       <section
-        id="keyboard_section"
+        id={styles.keyboard_section}
         className={showConfig ? styles.hidden : ''}
       >
         <Oscilloscope></Oscilloscope>
