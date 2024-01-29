@@ -3,6 +3,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Helmet } from 'react-helmet';
 import App from './App';
+import styles from './index.module.scss';
 import { AudioContextProvider } from './providers/AudioContextProvider';
 import { MIDIProvider } from './providers/MIDIProvider';
 import 'primeicons/primeicons.css';
@@ -28,7 +29,7 @@ navigator.mediaDevices
   .getUserMedia({ audio: true })
   .then(() => {
     const appContainer = document.createElement('div');
-    appContainer.id = 'root';
+    appContainer.id = styles.root;
     document.querySelector('body').appendChild(appContainer);
     const root = createRoot(appContainer);
 
