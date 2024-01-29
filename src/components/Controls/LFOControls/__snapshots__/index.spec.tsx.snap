@@ -31,7 +31,7 @@ exports[`LFO controls should render correctly 1`] = `
             <input
               aria-haspopup="listbox"
               data-pc-section="input"
-              id="LFO_1_TARGET"
+              id="dropdown_input_LFO_1_TARGET"
               readonly=""
               type="text"
             />
@@ -43,7 +43,7 @@ exports[`LFO controls should render correctly 1`] = `
             <select
               aria-hidden="true"
               data-pc-section="select"
-              name="LFO_1_TARGET"
+              id="LFO_1_TARGET"
               tabindex="-1"
             >
               <option
@@ -110,7 +110,7 @@ exports[`LFO controls should render correctly 1`] = `
             <input
               aria-haspopup="listbox"
               data-pc-section="input"
-              id="LFO_1_WAVEFORM"
+              id="dropdown_input_LFO_1_WAVEFORM"
               readonly=""
               type="text"
             />
@@ -122,7 +122,7 @@ exports[`LFO controls should render correctly 1`] = `
             <select
               aria-hidden="true"
               data-pc-section="select"
-              name="LFO_1_WAVEFORM"
+              id="LFO_1_WAVEFORM"
               tabindex="-1"
             >
               <option
@@ -181,11 +181,12 @@ exports[`LFO controls should render correctly 1`] = `
       >
         <label
           class="label"
-          for="LFO_1_FREQUENCY"
+          id="knob_label_LFO_1_FREQUENCY"
         >
           Frequency
         </label>
         <div
+          aria-labelledby="knob_label_LFO_1_FREQUENCY"
           class="p-knob p-component"
           data-pc-name="knob"
           data-pc-section="root"
@@ -231,11 +232,12 @@ exports[`LFO controls should render correctly 1`] = `
       >
         <label
           class="label"
-          for="LFO_1_AMPLITUDE"
+          id="knob_label_LFO_1_AMPLITUDE"
         >
           Amplitude
         </label>
         <div
+          aria-labelledby="knob_label_LFO_1_AMPLITUDE"
           class="p-knob p-component"
           data-pc-name="knob"
           data-pc-section="root"
@@ -304,7 +306,7 @@ exports[`LFO controls should render correctly 1`] = `
             <input
               aria-haspopup="listbox"
               data-pc-section="input"
-              id="LFO_2_TARGET"
+              id="dropdown_input_LFO_2_TARGET"
               readonly=""
               type="text"
             />
@@ -316,7 +318,7 @@ exports[`LFO controls should render correctly 1`] = `
             <select
               aria-hidden="true"
               data-pc-section="select"
-              name="LFO_2_TARGET"
+              id="LFO_2_TARGET"
               tabindex="-1"
             >
               <option
@@ -383,7 +385,7 @@ exports[`LFO controls should render correctly 1`] = `
             <input
               aria-haspopup="listbox"
               data-pc-section="input"
-              id="LFO_2_WAVEFORM"
+              id="dropdown_input_LFO_2_WAVEFORM"
               readonly=""
               type="text"
             />
@@ -395,7 +397,7 @@ exports[`LFO controls should render correctly 1`] = `
             <select
               aria-hidden="true"
               data-pc-section="select"
-              name="LFO_2_WAVEFORM"
+              id="LFO_2_WAVEFORM"
               tabindex="-1"
             >
               <option
@@ -454,11 +456,12 @@ exports[`LFO controls should render correctly 1`] = `
       >
         <label
           class="label"
-          for="LFO_2_FREQUENCY"
+          id="knob_label_LFO_2_FREQUENCY"
         >
           Frequency
         </label>
         <div
+          aria-labelledby="knob_label_LFO_2_FREQUENCY"
           class="p-knob p-component"
           data-pc-name="knob"
           data-pc-section="root"
@@ -504,11 +507,12 @@ exports[`LFO controls should render correctly 1`] = `
       >
         <label
           class="label"
-          for="LFO_2_AMPLITUDE"
+          id="knob_label_LFO_2_AMPLITUDE"
         >
           Amplitude
         </label>
         <div
+          aria-labelledby="knob_label_LFO_2_AMPLITUDE"
           class="p-knob p-component"
           data-pc-name="knob"
           data-pc-section="root"

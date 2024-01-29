@@ -61,7 +61,7 @@ export const Knob = ({ id, value, dispatch }: KnobProps) => {
       onBlur={handleBlur}
       onKeyDown={handleKeyDown}
     >
-      <label className={styles.label} htmlFor={id}>
+      <label id={`knob_label_${id}`} className={styles.label}>
         {knobsValues[id].label}
       </label>
       <PrimeReactKnob
@@ -75,6 +75,11 @@ export const Knob = ({ id, value, dispatch }: KnobProps) => {
         step={knobsValues[id].step ?? 0.01}
         strokeWidth={5}
         size={50}
+        pt={{
+          root: {
+            'aria-labelledby': `knob_label_${id}`,
+          },
+        }}
       ></PrimeReactKnob>
     </div>
   );

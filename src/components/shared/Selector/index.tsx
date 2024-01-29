@@ -26,14 +26,18 @@ const Selector = <T extends string>({
   return (
     <span className="p-float-label" data-testid={id}>
       <Dropdown
-        inputId={id}
-        name={id}
+        inputId={`dropdown_input_${id}`}
         onChange={handleSelect}
         value={value}
         options={options ?? selectorValues[id].options}
         disabled={
           options ? !options.length : !selectorValues[id].options.length
         }
+        pt={{
+          select: {
+            id,
+          },
+        }}
       ></Dropdown>
       <label htmlFor={id}>{selectorValues[id].label}</label>
     </span>

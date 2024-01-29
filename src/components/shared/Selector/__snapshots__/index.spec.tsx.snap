@@ -20,7 +20,7 @@ exports[`Selector should render disabled if no options 1`] = `
         aria-haspopup="listbox"
         data-pc-section="input"
         disabled=""
-        id="WAVEFORM"
+        id="dropdown_input_WAVEFORM"
         readonly=""
         type="text"
       />
@@ -32,7 +32,7 @@ exports[`Selector should render disabled if no options 1`] = `
       <select
         aria-hidden="true"
         data-pc-section="select"
-        name="WAVEFORM"
+        id="WAVEFORM"
         tabindex="-1"
       >
         <option
@@ -100,7 +100,7 @@ exports[`Selector should render with options based on selector id 1`] = `
       <input
         aria-haspopup="listbox"
         data-pc-section="input"
-        id="WAVEFORM"
+        id="dropdown_input_WAVEFORM"
         readonly=""
         type="text"
       />
@@ -112,7 +112,7 @@ exports[`Selector should render with options based on selector id 1`] = `
       <select
         aria-hidden="true"
         data-pc-section="select"
-        name="WAVEFORM"
+        id="WAVEFORM"
         tabindex="-1"
       >
         <option
@@ -182,7 +182,7 @@ exports[`Selector should render with options passed as props 1`] = `
       <input
         aria-haspopup="listbox"
         data-pc-section="input"
-        id="WAVEFORM"
+        id="dropdown_input_WAVEFORM"
         readonly=""
         type="text"
       />
@@ -194,7 +194,7 @@ exports[`Selector should render with options passed as props 1`] = `
       <select
         aria-hidden="true"
         data-pc-section="select"
-        name="WAVEFORM"
+        id="WAVEFORM"
         tabindex="-1"
       >
         <option

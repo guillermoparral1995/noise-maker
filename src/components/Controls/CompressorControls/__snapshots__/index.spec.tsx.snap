@@ -22,11 +22,12 @@ exports[`Compressor controls should render correctly 1`] = `
         >
           <label
             class="label"
-            for="COMPRESSOR_THRESHOLD"
+            id="knob_label_COMPRESSOR_THRESHOLD"
           >
             Threshold
           </label>
           <div
+            aria-labelledby="knob_label_COMPRESSOR_THRESHOLD"
             class="p-knob p-component"
             data-pc-name="knob"
             data-pc-section="root"
@@ -72,11 +73,12 @@ exports[`Compressor controls should render correctly 1`] = `
         >
           <label
             class="label"
-            for="COMPRESSOR_RATIO"
+            id="knob_label_COMPRESSOR_RATIO"
           >
             Ratio
           </label>
           <div
+            aria-labelledby="knob_label_COMPRESSOR_RATIO"
             class="p-knob p-component"
             data-pc-name="knob"
             data-pc-section="root"
@@ -122,11 +124,12 @@ exports[`Compressor controls should render correctly 1`] = `
         >
           <label
             class="label"
-            for="COMPRESSOR_KNEE"
+            id="knob_label_COMPRESSOR_KNEE"
           >
             Knee
           </label>
           <div
+            aria-labelledby="knob_label_COMPRESSOR_KNEE"
             class="p-knob p-component"
             data-pc-name="knob"
             data-pc-section="root"
@@ -180,11 +183,12 @@ exports[`Compressor controls should render correctly 1`] = `
         >
           <label
             class="label"
-            for="COMPRESSOR_ATTACK"
+            id="knob_label_COMPRESSOR_ATTACK"
           >
             Attack
           </label>
           <div
+            aria-labelledby="knob_label_COMPRESSOR_ATTACK"
             class="p-knob p-component"
             data-pc-name="knob"
             data-pc-section="root"
@@ -230,11 +234,12 @@ exports[`Compressor controls should render correctly 1`] = `
         >
           <label
             class="label"
-            for="COMPRESSOR_RELEASE"
+            id="knob_label_COMPRESSOR_RELEASE"
           >
             Release
           </label>
           <div
+            aria-labelledby="knob_label_COMPRESSOR_RELEASE"
             class="p-knob p-component"
             data-pc-name="knob"
             data-pc-section="root"

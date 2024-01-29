@@ -28,7 +28,7 @@ exports[`Filter controls should render correctly 1`] = `
           <input
             aria-haspopup="listbox"
             data-pc-section="input"
-            id="FILTER"
+            id="dropdown_input_FILTER"
             readonly=""
             type="text"
           />
@@ -40,7 +40,7 @@ exports[`Filter controls should render correctly 1`] = `
           <select
             aria-hidden="true"
             data-pc-section="select"
-            name="FILTER"
+            id="FILTER"
             tabindex="-1"
           >
             <option
@@ -99,11 +99,12 @@ exports[`Filter controls should render correctly 1`] = `
     >
       <label
         class="label"
-        for="FILTER_CUTOFF"
+        id="knob_label_FILTER_CUTOFF"
       >
         Cut-off
       </label>
       <div
+        aria-labelledby="knob_label_FILTER_CUTOFF"
         class="p-knob p-component"
         data-pc-name="knob"
         data-pc-section="root"
@@ -149,11 +150,12 @@ exports[`Filter controls should render correctly 1`] = `
     >
       <label
         class="label"
-        for="FILTER_RESONANCE"
+        id="knob_label_FILTER_RESONANCE"
       >
         Resonance
       </label>
       <div
+        aria-labelledby="knob_label_FILTER_RESONANCE"
         class="p-knob p-component"
         data-pc-name="knob"
         data-pc-section="root"

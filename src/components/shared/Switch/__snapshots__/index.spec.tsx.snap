@@ -15,6 +15,7 @@ exports[`Switch should render with switch label 1`] = `
     <input
       aria-checked="false"
       data-pc-section="hiddeninput"
+      id="DELAY"
       role="switch"
       type="checkbox"
     />

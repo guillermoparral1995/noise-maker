@@ -16,11 +16,12 @@ exports[`Envelope controls should render correctly 1`] = `
     >
       <label
         class="label"
-        for="ATTACK"
+        id="knob_label_ATTACK"
       >
         Attack
       </label>
       <div
+        aria-labelledby="knob_label_ATTACK"
         class="p-knob p-component"
         data-pc-name="knob"
         data-pc-section="root"
@@ -66,11 +67,12 @@ exports[`Envelope controls should render correctly 1`] = `
     >
       <label
         class="label"
-        for="DECAY"
+        id="knob_label_DECAY"
       >
         Decay
       </label>
       <div
+        aria-labelledby="knob_label_DECAY"
         class="p-knob p-component"
         data-pc-name="knob"
         data-pc-section="root"
@@ -116,11 +118,12 @@ exports[`Envelope controls should render correctly 1`] = `
     >
       <label
         class="label"
-        for="SUSTAIN"
+        id="knob_label_SUSTAIN"
       >
         Sustain
       </label>
       <div
+        aria-labelledby="knob_label_SUSTAIN"
         class="p-knob p-component"
         data-pc-name="knob"
         data-pc-section="root"
@@ -166,11 +169,12 @@ exports[`Envelope controls should render correctly 1`] = `
     >
       <label
         class="label"
-        for="RELEASE"
+        id="knob_label_RELEASE"
       >
         Release
       </label>
       <div
+        aria-labelledby="knob_label_RELEASE"
         class="p-knob p-component"
         data-pc-name="knob"
         data-pc-section="root"

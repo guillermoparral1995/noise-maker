@@ -22,7 +22,15 @@ const Switch = ({
       <label className={styles.label} htmlFor={id}>
         {switchValues[id].label}
       </label>
-      <InputSwitch checked={value} onChange={handleToggle} />
+      <InputSwitch
+        pt={{
+          hiddenInput: {
+            id,
+          },
+        }}
+        checked={value}
+        onChange={handleToggle}
+      />
     </div>
   );
 };

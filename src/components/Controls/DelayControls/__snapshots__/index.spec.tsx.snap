@@ -33,6 +33,7 @@ exports[`Delay should render correctly 1`] = `
           <input
             aria-checked="false"
             data-pc-section="hiddeninput"
+            id="DELAY"
             role="switch"
             type="checkbox"
           />
@@ -66,6 +67,7 @@ exports[`Delay should render correctly 1`] = `
           <input
             aria-checked="false"
             data-pc-section="hiddeninput"
+            id="DELAY_TRAILS"
             role="switch"
             type="checkbox"
           />
@@ -86,11 +88,12 @@ exports[`Delay should render correctly 1`] = `
     >
       <label
         class="label"
-        for="DELAY_FEEDBACK"
+        id="knob_label_DELAY_FEEDBACK"
       >
         Feedback
       </label>
       <div
+        aria-labelledby="knob_label_DELAY_FEEDBACK"
         class="p-knob p-component"
         data-pc-name="knob"
         data-pc-section="root"
@@ -136,11 +139,12 @@ exports[`Delay should render correctly 1`] = `
     >
       <label
         class="label"
-        for="DELAY_TIME"
+        id="knob_label_DELAY_TIME"
       >
         Time
       </label>
       <div
+        aria-labelledby="knob_label_DELAY_TIME"
         class="p-knob p-component"
         data-pc-name="knob"
         data-pc-section="root"

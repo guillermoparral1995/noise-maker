@@ -16,11 +16,12 @@ exports[`General controls should render correctly 1`] = `
     >
       <label
         class="label"
-        for="VOLUME"
+        id="knob_label_VOLUME"
       >
         Volume
       </label>
       <div
+        aria-labelledby="knob_label_VOLUME"
         class="p-knob p-component"
         data-pc-name="knob"
         data-pc-section="root"
@@ -66,11 +67,12 @@ exports[`General controls should render correctly 1`] = `
     >
       <label
         class="label"
-        for="PAN"
+        id="knob_label_PAN"
       >
         Pan
       </label>
       <div
+        aria-labelledby="knob_label_PAN"
         class="p-knob p-component"
         data-pc-name="knob"
         data-pc-section="root"

@@ -7,11 +7,12 @@ exports[`Knob should render with knob value 1`] = `
 >
   <label
     class="label"
-    for="VOLUME"
+    id="knob_label_VOLUME"
   >
     Volume
   </label>
   <div
+    aria-labelledby="knob_label_VOLUME"
     class="p-knob p-component"
     data-pc-name="knob"
     data-pc-section="root"

@@ -9,20 +9,19 @@ import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-dark-purple/theme.css';
 import 'primereact/resources/themes/lara-light-purple/theme.css';
 
-if (
-  'serviceWorker' in navigator &&
-  !window.location.href.includes('localhost')
-) {
-  navigator.serviceWorker.register('./service-worker.js').then(
-    (registration) => {
-      console.log('Service worker registration succeeded:', registration);
-    },
-    (error) => {
-      console.error(`Service worker registration failed: ${error}`);
-    },
-  );
-} else {
-  console.error('Service workers are not supported.');
+if (!window.location.href.includes('localhost')) {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js').then(
+      (registration) => {
+        console.log('Service worker registration succeeded:', registration);
+      },
+      (error) => {
+        console.error(`Service worker registration failed: ${error}`);
+      },
+    );
+  } else {
+    console.error('Service workers are not supported.');
+  }
 }
 
 navigator.mediaDevices
