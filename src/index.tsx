@@ -9,7 +9,10 @@ import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-dark-purple/theme.css';
 import 'primereact/resources/themes/lara-light-purple/theme.css';
 
-if ('serviceWorker' in navigator) {
+if (
+  'serviceWorker' in navigator &&
+  !window.location.href.includes('localhost')
+) {
   navigator.serviceWorker.register('./service-worker.js').then(
     (registration) => {
       console.log('Service worker registration succeeded:', registration);
