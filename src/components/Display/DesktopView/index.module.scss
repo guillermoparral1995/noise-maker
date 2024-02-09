@@ -11,10 +11,14 @@
 
 #config_section {
     display: flex;
-    gap: 20px;
-    justify-content: flex-start;
     align-items: center;
-    text-align: center;
+    justify-content: space-between;
+
+    .config_section_column {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 }
 
 #controls_section {

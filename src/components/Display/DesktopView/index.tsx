@@ -22,10 +22,15 @@ const DesktopView = () => {
   return (
     <main id={styles.desktop_view}>
       <section id={styles.config_section}>
-        <MIDIInputSelector></MIDIInputSelector>
-        <ThemeSelector></ThemeSelector>
+        <div className={styles.config_section_column}>
+          <MIDIInputSelector></MIDIInputSelector>
+          <ThemeSelector></ThemeSelector>
+        </div>
+        <div className={styles.config_section_column}>
+          <Title></Title>
+        </div>
+        <div className={styles.config_section_column}></div>
       </section>
-      <Title></Title>
       <section id={styles.controls_section}>
         <div className={styles.column}>
           <GeneralControls></GeneralControls>
