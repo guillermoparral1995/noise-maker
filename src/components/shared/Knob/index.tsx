@@ -1,7 +1,9 @@
 import { round, throttle } from 'lodash';
 import { KnobChangeEvent, Knob as PrimeReactKnob } from 'primereact/knob';
+import { Slider, SliderChangeEvent } from 'primereact/slider';
 import React, { KeyboardEvent, useCallback, useEffect, useState } from 'react';
 import { knobsValues } from '../../../constants/knobsValues';
+import { useBreakpoints } from '../../../hooks/useBreakpoints';
 import type { ActionTypes, Knobs } from '../../../types';
 import styles from './index.module.scss';
 
@@ -13,12 +15,13 @@ interface KnobProps {
 
 export const Knob = ({ id, value, dispatch }: KnobProps) => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
+  const { isMobile } = useBreakpoints();
   useEffect(() => {
     return () => throttledHandleChange.cancel();
   }, []);
 
-  const handleChange = (e: KnobChangeEvent) => {
-    dispatch(knobsValues[id].action(round(e.value, 2)));
+  const handleChange = (e: KnobChangeEvent | SliderChangeEvent) => {
+    dispatch(knobsValues[id].action(round(e.value as number, 2)));
   };
 
   const throttledHandleChange = useCallback(throttle(handleChange, 50), [
@@ -64,23 +67,38 @@ export const Knob = ({ id, value, dispatch }: KnobProps) => {
       <label id={`knob_label_${id}`} className={styles.label}>
         {knobsValues[id].label}
       </label>
-      <PrimeReactKnob
-        defaultValue={knobsValues[id].default}
-        value={value}
-        id={id}
-        name={id}
-        onChange={throttledHandleChange}
-        min={knobsValues[id].min}
-        max={knobsValues[id].max}
-        step={knobsValues[id].step ?? 0.01}
-        strokeWidth={5}
-        size={50}
-        pt={{
-          root: {
-            'aria-labelledby': `knob_label_${id}`,
-          },
-        }}
-      ></PrimeReactKnob>
+      {isMobile ? (
+        <div className={styles.slider}>
+          <Slider
+            defaultValue={knobsValues[id].default}
+            value={value}
+            id={id}
+            name={id}
+            onChange={throttledHandleChange}
+            min={knobsValues[id].min}
+            max={knobsValues[id].max}
+            step={knobsValues[id].step ?? 0.01}
+          ></Slider>
+        </div>
+      ) : (
+        <PrimeReactKnob
+          defaultValue={knobsValues[id].default}
+          value={value}
+          id={id}
+          name={id}
+          onChange={throttledHandleChange}
+          min={knobsValues[id].min}
+          max={knobsValues[id].max}
+          step={knobsValues[id].step ?? 0.01}
+          strokeWidth={5}
+          size={50}
+          pt={{
+            root: {
+              'aria-labelledby': `knob_label_${id}`,
+            },
+          }}
+        ></PrimeReactKnob>
+      )}
     </div>
   );
 };

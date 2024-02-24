@@ -10,6 +10,12 @@ import Knob from '.';
 import '@testing-library/jest-dom';
 import { Actions, Knobs } from '../../../types';
 
+jest.mock('../../../hooks/useBreakpoints', () => ({
+  useBreakpoints: () => ({
+    isMobile: false,
+  }),
+}));
+
 describe('Knob', () => {
   afterEach(() => {
     cleanup();

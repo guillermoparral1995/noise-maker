@@ -8,277 +8,197 @@ exports[`Compressor controls should render correctly 1`] = `
     Compressor
   </h3>
   <div
-    class="column_container"
+    data-testid="COMPRESSOR_THRESHOLD"
+    tabindex="0"
   >
+    <label
+      class="label"
+      id="knob_label_COMPRESSOR_THRESHOLD"
+    >
+      Threshold
+    </label>
     <div
-      class="compressor_column"
+      class="slider"
     >
       <div
-        class="controls_row"
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
+        data-pc-section="root"
+        id="COMPRESSOR_THRESHOLD"
+        name="COMPRESSOR_THRESHOLD"
       >
-        <div
-          data-testid="COMPRESSOR_THRESHOLD"
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 76%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="0"
+          aria-valuemin="-100"
+          aria-valuenow="76"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 76%;"
           tabindex="0"
-        >
-          <label
-            class="label"
-            id="knob_label_COMPRESSOR_THRESHOLD"
-          >
-            Threshold
-          </label>
-          <div
-            aria-labelledby="knob_label_COMPRESSOR_THRESHOLD"
-            class="p-knob p-component"
-            data-pc-name="knob"
-            data-pc-section="root"
-            id="COMPRESSOR_THRESHOLD"
-          >
-            <svg
-              data-pc-section="svg"
-              height="50"
-              viewBox="0 0 100 100"
-              width="50"
-            >
-              <path
-                class="p-knob-range"
-                d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-                data-pc-section="range"
-                stroke="var(--surface-border, LightGray)"
-                stroke-width="5"
-              />
-              <path
-                class="p-knob-value"
-                d="M 70.00000000000004 84.64101615137753 A 40 40 0 0 0 89.12590402935223 41.68353236728963"
-                data-pc-section="value"
-                stroke="var(--primary-color, Black)"
-                stroke-width="5"
-              />
-              <text
-                class="p-knob-text"
-                data-pc-section="label"
-                fill="var(--text-color-secondary, Black)"
-                name="COMPRESSOR_THRESHOLD"
-                text-anchor="middle"
-                x="50"
-                y="57"
-              >
-                -24
-              </text>
-            </svg>
-          </div>
-        </div>
-        <div
-          data-testid="COMPRESSOR_RATIO"
-          tabindex="0"
-        >
-          <label
-            class="label"
-            id="knob_label_COMPRESSOR_RATIO"
-          >
-            Ratio
-          </label>
-          <div
-            aria-labelledby="knob_label_COMPRESSOR_RATIO"
-            class="p-knob p-component"
-            data-pc-name="knob"
-            data-pc-section="root"
-            id="COMPRESSOR_RATIO"
-          >
-            <svg
-              data-pc-section="svg"
-              height="50"
-              viewBox="0 0 100 100"
-              width="50"
-            >
-              <path
-                class="p-knob-range"
-                d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-                data-pc-section="range"
-                stroke="var(--surface-border, LightGray)"
-                stroke-width="5"
-              />
-              <path
-                class="p-knob-value"
-                d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 66.06781698611877 13.369066933797697"
-                data-pc-section="value"
-                stroke="var(--primary-color, Black)"
-                stroke-width="5"
-              />
-              <text
-                class="p-knob-text"
-                data-pc-section="label"
-                fill="var(--text-color-secondary, Black)"
-                name="COMPRESSOR_RATIO"
-                text-anchor="middle"
-                x="50"
-                y="57"
-              >
-                12
-              </text>
-            </svg>
-          </div>
-        </div>
-        <div
-          data-testid="COMPRESSOR_KNEE"
-          tabindex="0"
-        >
-          <label
-            class="label"
-            id="knob_label_COMPRESSOR_KNEE"
-          >
-            Knee
-          </label>
-          <div
-            aria-labelledby="knob_label_COMPRESSOR_KNEE"
-            class="p-knob p-component"
-            data-pc-name="knob"
-            data-pc-section="root"
-            id="COMPRESSOR_KNEE"
-          >
-            <svg
-              data-pc-section="svg"
-              height="50"
-              viewBox="0 0 100 100"
-              width="50"
-            >
-              <path
-                class="p-knob-range"
-                d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-                data-pc-section="range"
-                stroke="var(--surface-border, LightGray)"
-                stroke-width="5"
-              />
-              <path
-                class="p-knob-value"
-                d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 88.63703305156272 39.64723819589916"
-                data-pc-section="value"
-                stroke="var(--primary-color, Black)"
-                stroke-width="5"
-              />
-              <text
-                class="p-knob-text"
-                data-pc-section="label"
-                fill="var(--text-color-secondary, Black)"
-                name="COMPRESSOR_KNEE"
-                text-anchor="middle"
-                x="50"
-                y="57"
-              >
-                30
-              </text>
-            </svg>
-          </div>
-        </div>
+        />
       </div>
     </div>
+  </div>
+  <div
+    data-testid="COMPRESSOR_RATIO"
+    tabindex="0"
+  >
+    <label
+      class="label"
+      id="knob_label_COMPRESSOR_RATIO"
+    >
+      Ratio
+    </label>
     <div
-      class="compressor_column"
+      class="slider"
     >
       <div
-        class="controls_row"
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
+        data-pc-section="root"
+        id="COMPRESSOR_RATIO"
+        name="COMPRESSOR_RATIO"
       >
-        <div
-          data-testid="COMPRESSOR_ATTACK"
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 57.89473684210526%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="20"
+          aria-valuemin="1"
+          aria-valuenow="57.89473684210526"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 57.89473684210526%;"
           tabindex="0"
-        >
-          <label
-            class="label"
-            id="knob_label_COMPRESSOR_ATTACK"
-          >
-            Attack
-          </label>
-          <div
-            aria-labelledby="knob_label_COMPRESSOR_ATTACK"
-            class="p-knob p-component"
-            data-pc-name="knob"
-            data-pc-section="root"
-            id="COMPRESSOR_ATTACK"
-          >
-            <svg
-              data-pc-section="svg"
-              height="50"
-              viewBox="0 0 100 100"
-              width="50"
-            >
-              <path
-                class="p-knob-range"
-                d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-                data-pc-section="range"
-                stroke="var(--surface-border, LightGray)"
-                stroke-width="5"
-              />
-              <path
-                class="p-knob-value"
-                d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 29.458349917673182 84.32259622894577"
-                data-pc-section="value"
-                stroke="var(--primary-color, Black)"
-                stroke-width="5"
-              />
-              <text
-                class="p-knob-text"
-                data-pc-section="label"
-                fill="var(--text-color-secondary, Black)"
-                name="COMPRESSOR_ATTACK"
-                text-anchor="middle"
-                x="50"
-                y="57"
-              >
-                0.003
-              </text>
-            </svg>
-          </div>
-        </div>
-        <div
-          data-testid="COMPRESSOR_RELEASE"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    data-testid="COMPRESSOR_KNEE"
+    tabindex="0"
+  >
+    <label
+      class="label"
+      id="knob_label_COMPRESSOR_KNEE"
+    >
+      Knee
+    </label>
+    <div
+      class="slider"
+    >
+      <div
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
+        data-pc-section="root"
+        id="COMPRESSOR_KNEE"
+        name="COMPRESSOR_KNEE"
+      >
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 75%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="40"
+          aria-valuemin="0"
+          aria-valuenow="75"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 75%;"
           tabindex="0"
-        >
-          <label
-            class="label"
-            id="knob_label_COMPRESSOR_RELEASE"
-          >
-            Release
-          </label>
-          <div
-            aria-labelledby="knob_label_COMPRESSOR_RELEASE"
-            class="p-knob p-component"
-            data-pc-name="knob"
-            data-pc-section="root"
-            id="COMPRESSOR_RELEASE"
-          >
-            <svg
-              data-pc-section="svg"
-              height="50"
-              viewBox="0 0 100 100"
-              width="50"
-            >
-              <path
-                class="p-knob-range"
-                d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-                data-pc-section="range"
-                stroke="var(--surface-border, LightGray)"
-                stroke-width="5"
-              />
-              <path
-                class="p-knob-value"
-                d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 11.362966948437276 39.64723819589916"
-                data-pc-section="value"
-                stroke="var(--primary-color, Black)"
-                stroke-width="5"
-              />
-              <text
-                class="p-knob-text"
-                data-pc-section="label"
-                fill="var(--text-color-secondary, Black)"
-                name="COMPRESSOR_RELEASE"
-                text-anchor="middle"
-                x="50"
-                y="57"
-              >
-                0.25
-              </text>
-            </svg>
-          </div>
-        </div>
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    data-testid="COMPRESSOR_ATTACK"
+    tabindex="0"
+  >
+    <label
+      class="label"
+      id="knob_label_COMPRESSOR_ATTACK"
+    >
+      Attack
+    </label>
+    <div
+      class="slider"
+    >
+      <div
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
+        data-pc-section="root"
+        id="COMPRESSOR_ATTACK"
+        name="COMPRESSOR_ATTACK"
+      >
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 0.3%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="1"
+          aria-valuemin="0"
+          aria-valuenow="0.3"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 0.3%;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    data-testid="COMPRESSOR_RELEASE"
+    tabindex="0"
+  >
+    <label
+      class="label"
+      id="knob_label_COMPRESSOR_RELEASE"
+    >
+      Release
+    </label>
+    <div
+      class="slider"
+    >
+      <div
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
+        data-pc-section="root"
+        id="COMPRESSOR_RELEASE"
+        name="COMPRESSOR_RELEASE"
+      >
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 25%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="1"
+          aria-valuemin="0"
+          aria-valuenow="25"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 25%;"
+          tabindex="0"
+        />
       </div>
     </div>
   </div>

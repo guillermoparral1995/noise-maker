@@ -3,3 +3,8 @@
 .column {
   @include column;
 }
+
+.detune {
+  width: 300px;
+  margin: 0 auto 15px;
+}

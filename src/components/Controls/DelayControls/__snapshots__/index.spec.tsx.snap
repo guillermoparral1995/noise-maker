@@ -80,108 +80,80 @@ exports[`Delay should render correctly 1`] = `
     </div>
   </div>
   <div
-    class="controls_row"
+    data-testid="DELAY_FEEDBACK"
+    tabindex="0"
   >
-    <div
-      data-testid="DELAY_FEEDBACK"
-      tabindex="0"
+    <label
+      class="label"
+      id="knob_label_DELAY_FEEDBACK"
     >
-      <label
-        class="label"
-        id="knob_label_DELAY_FEEDBACK"
-      >
-        Feedback
-      </label>
+      Feedback
+    </label>
+    <div
+      class="slider"
+    >
       <div
-        aria-labelledby="knob_label_DELAY_FEEDBACK"
-        class="p-knob p-component"
-        data-pc-name="knob"
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
         data-pc-section="root"
         id="DELAY_FEEDBACK"
+        name="DELAY_FEEDBACK"
       >
-        <svg
-          data-pc-section="svg"
-          height="50"
-          viewBox="0 0 100 100"
-          width="50"
-        >
-          <path
-            class="p-knob-range"
-            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-            data-pc-section="range"
-            stroke="var(--surface-border, LightGray)"
-            stroke-width="5"
-          />
-          <path
-            class="p-knob-value"
-            d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 15.358983848622458 29.999999999999986"
-            data-pc-section="value"
-            stroke="var(--primary-color, Black)"
-            stroke-width="5"
-          />
-          <text
-            class="p-knob-text"
-            data-pc-section="label"
-            fill="var(--text-color-secondary, Black)"
-            name="DELAY_FEEDBACK"
-            text-anchor="middle"
-            x="50"
-            y="57"
-          >
-            0.3
-          </text>
-        </svg>
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 30%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="1"
+          aria-valuemin="0"
+          aria-valuenow="30"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 30%;"
+          tabindex="0"
+        />
       </div>
     </div>
-    <div
-      data-testid="DELAY_TIME"
-      tabindex="0"
+  </div>
+  <div
+    data-testid="DELAY_TIME"
+    tabindex="0"
+  >
+    <label
+      class="label"
+      id="knob_label_DELAY_TIME"
     >
-      <label
-        class="label"
-        id="knob_label_DELAY_TIME"
-      >
-        Time
-      </label>
+      Time
+    </label>
+    <div
+      class="slider"
+    >
       <div
-        aria-labelledby="knob_label_DELAY_TIME"
-        class="p-knob p-component"
-        data-pc-name="knob"
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
         data-pc-section="root"
         id="DELAY_TIME"
+        name="DELAY_TIME"
       >
-        <svg
-          data-pc-section="svg"
-          height="50"
-          viewBox="0 0 100 100"
-          width="50"
-        >
-          <path
-            class="p-knob-range"
-            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-            data-pc-section="range"
-            stroke="var(--surface-border, LightGray)"
-            stroke-width="5"
-          />
-          <path
-            class="p-knob-value"
-            d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 15.358983848622444 69.99999999999999"
-            data-pc-section="value"
-            stroke="var(--primary-color, Black)"
-            stroke-width="5"
-          />
-          <text
-            class="p-knob-text"
-            data-pc-section="label"
-            fill="var(--text-color-secondary, Black)"
-            name="DELAY_TIME"
-            text-anchor="middle"
-            x="50"
-            y="57"
-          >
-            0.5
-          </text>
-        </svg>
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 10%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="5"
+          aria-valuemin="0"
+          aria-valuenow="10"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 10%;"
+          tabindex="0"
+        />
       </div>
     </div>
   </div>

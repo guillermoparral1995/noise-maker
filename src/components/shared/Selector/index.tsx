@@ -11,6 +11,7 @@ interface SelectorProps<T> {
   value: T;
   dispatch: React.Dispatch<ActionTypes>;
   options?: DropdownOption[];
+  hideLabel?: boolean;
 }
 
 const Selector = <T extends string>({
@@ -18,6 +19,7 @@ const Selector = <T extends string>({
   value,
   dispatch,
   options,
+  hideLabel,
 }: SelectorProps<T>) => {
   const handleSelect = (e: DropdownChangeEvent) => {
     dispatch(selectorValues[id].action(e.target.value));
@@ -39,7 +41,7 @@ const Selector = <T extends string>({
           },
         }}
       ></Dropdown>
-      <label htmlFor={id}>{selectorValues[id].label}</label>
+      {!hideLabel && <label htmlFor={id}>{selectorValues[id].label}</label>}
     </span>
   );
 };

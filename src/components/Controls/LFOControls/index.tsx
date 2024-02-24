@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { OscillatorNodeMock } from '../../../../__mocks__';
 import { knobsValues } from '../../../constants/knobsValues';
 import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
+import { useBreakpoints } from '../../../hooks/useBreakpoints';
 import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import { useInstantiateOscillatorNode } from '../../../hooks/useInstantiateAudioNode';
 import { audioContext } from '../../../providers/AudioContextProvider';
@@ -21,6 +22,7 @@ export const LFOControls_ = ({
 }) => {
   const { state, dispatch } = useContext(lfoStateContext);
   const { lfo1, lfo2, dispatch: audioDispatch } = useContext(audioContext);
+  const { isDesktop } = useBreakpoints();
   useAddMidiListeners(
     [
       Knobs.LFO_1_FREQUENCY,
@@ -84,7 +86,7 @@ export const LFOControls_ = ({
     }
   }, [state.lfo2.amplitude, lfo2.target]);
 
-  return (
+  return isDesktop ? (
     <>
       <div className={styles.lfo_column}>
         <h3>LFO 1</h3>
@@ -101,18 +103,16 @@ export const LFOControls_ = ({
           ></Selector>
         </ControlsRow>
 
-        <ControlsRow>
-          <Knob
-            id={Knobs.LFO_1_FREQUENCY}
-            value={state.lfo1.frequency}
-            dispatch={dispatch}
-          ></Knob>
-          <Knob
-            id={Knobs.LFO_1_AMPLITUDE}
-            value={state.lfo1.amplitude}
-            dispatch={dispatch}
-          ></Knob>
-        </ControlsRow>
+        <Knob
+          id={Knobs.LFO_1_FREQUENCY}
+          value={state.lfo1.frequency}
+          dispatch={dispatch}
+        ></Knob>
+        <Knob
+          id={Knobs.LFO_1_AMPLITUDE}
+          value={state.lfo1.amplitude}
+          dispatch={dispatch}
+        ></Knob>
       </div>
       <div className={styles.lfo_column}>
         <h3>LFO 2</h3>
@@ -129,19 +129,66 @@ export const LFOControls_ = ({
           ></Selector>
         </ControlsRow>
 
-        <ControlsRow>
-          <Knob
-            id={Knobs.LFO_2_FREQUENCY}
-            value={state.lfo2.frequency}
-            dispatch={dispatch}
-          ></Knob>
-          <Knob
-            id={Knobs.LFO_2_AMPLITUDE}
-            value={state.lfo2.amplitude}
-            dispatch={dispatch}
-          ></Knob>
-        </ControlsRow>
+        <Knob
+          id={Knobs.LFO_2_FREQUENCY}
+          value={state.lfo2.frequency}
+          dispatch={dispatch}
+        ></Knob>
+        <Knob
+          id={Knobs.LFO_2_AMPLITUDE}
+          value={state.lfo2.amplitude}
+          dispatch={dispatch}
+        ></Knob>
       </div>
+    </>
+  ) : (
+    <>
+      <h3 className={styles.section_title}>LFO 1</h3>
+      <ControlsRow>
+        <Selector
+          id={Selectors.LFO_1_TARGET}
+          value={lfo1.target}
+          dispatch={audioDispatch}
+        ></Selector>
+        <Selector
+          id={Selectors.LFO_1_WAVEFORM}
+          value={state.lfo1.waveform}
+          dispatch={dispatch}
+        ></Selector>
+      </ControlsRow>
+      <Knob
+        id={Knobs.LFO_1_FREQUENCY}
+        value={state.lfo1.frequency}
+        dispatch={dispatch}
+      ></Knob>
+      <Knob
+        id={Knobs.LFO_1_AMPLITUDE}
+        value={state.lfo1.amplitude}
+        dispatch={dispatch}
+      ></Knob>
+      <h3 className={styles.section_title}>LFO 2</h3>
+      <ControlsRow>
+        <Selector
+          id={Selectors.LFO_2_TARGET}
+          value={lfo2.target}
+          dispatch={audioDispatch}
+        ></Selector>
+        <Selector
+          id={Selectors.LFO_2_WAVEFORM}
+          value={state.lfo2.waveform}
+          dispatch={dispatch}
+        ></Selector>
+      </ControlsRow>
+      <Knob
+        id={Knobs.LFO_2_FREQUENCY}
+        value={state.lfo2.frequency}
+        dispatch={dispatch}
+      ></Knob>
+      <Knob
+        id={Knobs.LFO_2_AMPLITUDE}
+        value={state.lfo2.amplitude}
+        dispatch={dispatch}
+      ></Knob>
     </>
   );
 };

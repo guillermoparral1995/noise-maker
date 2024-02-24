@@ -3,7 +3,6 @@ import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
 import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { Knobs } from '../../../types';
-import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import {
   generalControlsStateContext,
@@ -28,10 +27,8 @@ export const GeneralControls_ = () => {
   return (
     <>
       <h3>Master</h3>
-      <ControlsRow>
-        <Knob id={Knobs.VOLUME} value={state.volume} dispatch={dispatch}></Knob>
-        <Knob id={Knobs.PAN} value={state.pan} dispatch={dispatch}></Knob>
-      </ControlsRow>
+      <Knob id={Knobs.VOLUME} value={state.volume} dispatch={dispatch}></Knob>
+      <Knob id={Knobs.PAN} value={state.pan} dispatch={dispatch}></Knob>
     </>
   );
 };

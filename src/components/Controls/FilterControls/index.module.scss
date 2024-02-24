@@ -1,0 +1,5 @@
+@use '../../../styles/__mixin_mobile_control_title.module.scss' as *;
+
+.section_title {
+    @include mobile-control-title;
+}

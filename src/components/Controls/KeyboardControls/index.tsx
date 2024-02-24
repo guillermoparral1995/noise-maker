@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
+import { useBreakpoints } from '../../../hooks/useBreakpoints';
 import { Knobs, Selectors } from '../../../types';
-import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
 import { envelopeStateContext } from '../EnvelopeControls/EnvelopeStateProvider';
@@ -10,26 +10,33 @@ import PitchbendWheel from './PitchbendWheel';
 
 const KeyboardControls = () => {
   const { state, dispatch } = useContext(envelopeStateContext);
+  const { isDesktop } = useBreakpoints();
   useAddMidiListeners([Knobs.DETUNE], dispatch);
 
-  return (
+  return isDesktop ? (
     <>
       <div className={styles.column}>
-        <ControlsRow>
-          <Selector
-            id={Selectors.WAVEFORM}
-            dispatch={dispatch}
-            value={state.waveform}
-          ></Selector>
-          <Knob
-            id={Knobs.DETUNE}
-            value={state.detune}
-            dispatch={dispatch}
-          ></Knob>
-        </ControlsRow>
+        <Selector
+          id={Selectors.WAVEFORM}
+          dispatch={dispatch}
+          value={state.waveform}
+        ></Selector>
+        <Knob id={Knobs.DETUNE} value={state.detune} dispatch={dispatch}></Knob>
       </div>
       <div className={styles.column}>
         <PitchbendWheel></PitchbendWheel>
+      </div>
+    </>
+  ) : (
+    <>
+      <Selector
+        id={Selectors.WAVEFORM}
+        dispatch={dispatch}
+        value={state.waveform}
+        hideLabel
+      ></Selector>
+      <div className={styles.detune}>
+        <Knob id={Knobs.DETUNE} value={state.detune} dispatch={dispatch}></Knob>
       </div>
     </>
   );

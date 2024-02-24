@@ -4,7 +4,9 @@ exports[`Filter controls should render correctly 1`] = `
 <div
   data-testid="filter-controls"
 >
-  <h3>
+  <h3
+    class="section_title"
+  >
     Filter
   </h3>
   <div
@@ -91,108 +93,80 @@ exports[`Filter controls should render correctly 1`] = `
     </span>
   </div>
   <div
-    class="controls_row"
+    data-testid="FILTER_CUTOFF"
+    tabindex="0"
   >
-    <div
-      data-testid="FILTER_CUTOFF"
-      tabindex="0"
+    <label
+      class="label"
+      id="knob_label_FILTER_CUTOFF"
     >
-      <label
-        class="label"
-        id="knob_label_FILTER_CUTOFF"
-      >
-        Cut-off
-      </label>
+      Cut-off
+    </label>
+    <div
+      class="slider"
+    >
       <div
-        aria-labelledby="knob_label_FILTER_CUTOFF"
-        class="p-knob p-component"
-        data-pc-name="knob"
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
         data-pc-section="root"
         id="FILTER_CUTOFF"
+        name="FILTER_CUTOFF"
       >
-        <svg
-          data-pc-section="svg"
-          height="50"
-          viewBox="0 0 100 100"
-          width="50"
-        >
-          <path
-            class="p-knob-range"
-            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-            data-pc-section="range"
-            stroke="var(--surface-border, LightGray)"
-            stroke-width="5"
-          />
-          <path
-            class="p-knob-value"
-            d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 19.161285510343745 75.47496199458334"
-            data-pc-section="value"
-            stroke="var(--primary-color, Black)"
-            stroke-width="5"
-          />
-          <text
-            class="p-knob-text"
-            data-pc-section="label"
-            fill="var(--text-color-secondary, Black)"
-            name="FILTER_CUTOFF"
-            text-anchor="middle"
-            x="50"
-            y="57"
-          >
-            350
-          </text>
-        </svg>
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 6.813627254509018%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="5000"
+          aria-valuemin="10"
+          aria-valuenow="6.813627254509018"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 6.813627254509018%;"
+          tabindex="0"
+        />
       </div>
     </div>
-    <div
-      data-testid="FILTER_RESONANCE"
-      tabindex="0"
+  </div>
+  <div
+    data-testid="FILTER_RESONANCE"
+    tabindex="0"
+  >
+    <label
+      class="label"
+      id="knob_label_FILTER_RESONANCE"
     >
-      <label
-        class="label"
-        id="knob_label_FILTER_RESONANCE"
-      >
-        Resonance
-      </label>
+      Resonance
+    </label>
+    <div
+      class="slider"
+    >
       <div
-        aria-labelledby="knob_label_FILTER_RESONANCE"
-        class="p-knob p-component"
-        data-pc-name="knob"
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
         data-pc-section="root"
         id="FILTER_RESONANCE"
+        name="FILTER_RESONANCE"
       >
-        <svg
-          data-pc-section="svg"
-          height="50"
-          viewBox="0 0 100 100"
-          width="50"
-        >
-          <path
-            class="p-knob-range"
-            d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-            data-pc-section="range"
-            stroke="var(--surface-border, LightGray)"
-            stroke-width="5"
-          />
-          <path
-            class="p-knob-value"
-            d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 26.488922012844597 82.36092106046885"
-            data-pc-section="value"
-            stroke="var(--primary-color, Black)"
-            stroke-width="5"
-          />
-          <text
-            class="p-knob-text"
-            data-pc-section="label"
-            fill="var(--text-color-secondary, Black)"
-            name="FILTER_RESONANCE"
-            text-anchor="middle"
-            x="50"
-            y="57"
-          >
-            1
-          </text>
-        </svg>
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 1.9998039996079993%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="50"
+          aria-valuemin="0.0001"
+          aria-valuenow="1.9998039996079993"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 1.9998039996079993%;"
+          tabindex="0"
+        />
       </div>
     </div>
   </div>

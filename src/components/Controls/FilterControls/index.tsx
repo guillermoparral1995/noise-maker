@@ -7,6 +7,7 @@ import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';
 import { filterStateContext, FilterStateProvider } from './FilterStateProvider';
+import styles from './index.module.scss';
 
 export const FilterControls_ = () => {
   const {
@@ -30,7 +31,7 @@ export const FilterControls_ = () => {
 
   return (
     <>
-      <h3>Filter</h3>
+      <h3 className={styles.section_title}>Filter</h3>
       <ControlsRow>
         <Selector
           id={Selectors.FILTER}
@@ -38,18 +39,12 @@ export const FilterControls_ = () => {
           dispatch={dispatch}
         ></Selector>
       </ControlsRow>
-      <ControlsRow>
-        <Knob
-          id={Knobs.FILTER_CUTOFF}
-          value={cutoff}
-          dispatch={dispatch}
-        ></Knob>
-        <Knob
-          id={Knobs.FILTER_RESONANCE}
-          value={resonance}
-          dispatch={dispatch}
-        ></Knob>
-      </ControlsRow>
+      <Knob id={Knobs.FILTER_CUTOFF} value={cutoff} dispatch={dispatch}></Knob>
+      <Knob
+        id={Knobs.FILTER_RESONANCE}
+        value={resonance}
+        dispatch={dispatch}
+      ></Knob>
     </>
   );
 };

@@ -4,553 +4,493 @@ exports[`LFO controls should render correctly 1`] = `
 <div
   data-testid="lfo-controls"
 >
-  <div
-    class="lfo_column"
+  <h3
+    class="section_title"
   >
-    <h3>
-      LFO 1
-    </h3>
-    <div
-      class="controls_row"
-    >
-      <span
-        class="p-float-label"
-        data-testid="LFO_1_TARGET"
-      >
-        <div
-          class="p-dropdown p-component p-inputwrapper p-inputwrapper-filled"
-          data-p-disabled="false"
-          data-p-focus="false"
-          data-pc-name="dropdown"
-          data-pc-section="root"
-        >
-          <div
-            class="p-hidden-accessible"
-            data-pc-section="hiddenselectedmessage"
-          >
-            <input
-              aria-haspopup="listbox"
-              data-pc-section="input"
-              id="dropdown_input_LFO_1_TARGET"
-              readonly=""
-              type="text"
-            />
-          </div>
-          <div
-            class="p-hidden-accessible p-dropdown-hidden-select"
-            data-pc-section="hiddenselectedmessage"
-          >
-            <select
-              aria-hidden="true"
-              data-pc-section="select"
-              id="LFO_1_TARGET"
-              tabindex="-1"
-            >
-              <option
-                data-pc-section="option"
-                selected=""
-                value="off"
-              >
-                Off
-              </option>
-            </select>
-          </div>
-          <span
-            class="p-dropdown-label p-inputtext"
-            data-pc-section="input"
-          >
-            Off
-          </span>
-          <div
-            aria-expanded="false"
-            aria-haspopup="listbox"
-            class="p-dropdown-trigger"
-            data-pc-section="trigger"
-            role="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="p-icon p-dropdown-trigger-icon p-clickable"
-              data-pc-section="dropdownicon"
-              data-pr-overlay-visible="false"
-              fill="none"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7.01744 10.398C6.91269 10.3985 6.8089 10.378 6.71215 10.3379C6.61541 10.2977 6.52766 10.2386 6.45405 10.1641L1.13907 4.84913C1.03306 4.69404 0.985221 4.5065 1.00399 4.31958C1.02276 4.13266 1.10693 3.95838 1.24166 3.82747C1.37639 3.69655 1.55301 3.61742 1.74039 3.60402C1.92777 3.59062 2.11386 3.64382 2.26584 3.75424L7.01744 8.47394L11.769 3.75424C11.9189 3.65709 12.097 3.61306 12.2748 3.62921C12.4527 3.64535 12.6199 3.72073 12.7498 3.84328C12.8797 3.96582 12.9647 4.12842 12.9912 4.30502C13.0177 4.48162 12.9841 4.662 12.8958 4.81724L7.58083 10.1322C7.50996 10.2125 7.42344 10.2775 7.32656 10.3232C7.22968 10.3689 7.12449 10.3944 7.01744 10.398Z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-        </div>
-        <label
-          for="LFO_1_TARGET"
-        >
-          Target
-        </label>
-      </span>
-      <span
-        class="p-float-label"
-        data-testid="LFO_1_WAVEFORM"
-      >
-        <div
-          class="p-dropdown p-component p-inputwrapper p-inputwrapper-filled"
-          data-p-disabled="false"
-          data-p-focus="false"
-          data-pc-name="dropdown"
-          data-pc-section="root"
-        >
-          <div
-            class="p-hidden-accessible"
-            data-pc-section="hiddenselectedmessage"
-          >
-            <input
-              aria-haspopup="listbox"
-              data-pc-section="input"
-              id="dropdown_input_LFO_1_WAVEFORM"
-              readonly=""
-              type="text"
-            />
-          </div>
-          <div
-            class="p-hidden-accessible p-dropdown-hidden-select"
-            data-pc-section="hiddenselectedmessage"
-          >
-            <select
-              aria-hidden="true"
-              data-pc-section="select"
-              id="LFO_1_WAVEFORM"
-              tabindex="-1"
-            >
-              <option
-                data-pc-section="option"
-                selected=""
-                value="sine"
-              >
-                Sine
-              </option>
-            </select>
-          </div>
-          <span
-            class="p-dropdown-label p-inputtext"
-            data-pc-section="input"
-          >
-            Sine
-          </span>
-          <div
-            aria-expanded="false"
-            aria-haspopup="listbox"
-            class="p-dropdown-trigger"
-            data-pc-section="trigger"
-            role="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="p-icon p-dropdown-trigger-icon p-clickable"
-              data-pc-section="dropdownicon"
-              data-pr-overlay-visible="false"
-              fill="none"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7.01744 10.398C6.91269 10.3985 6.8089 10.378 6.71215 10.3379C6.61541 10.2977 6.52766 10.2386 6.45405 10.1641L1.13907 4.84913C1.03306 4.69404 0.985221 4.5065 1.00399 4.31958C1.02276 4.13266 1.10693 3.95838 1.24166 3.82747C1.37639 3.69655 1.55301 3.61742 1.74039 3.60402C1.92777 3.59062 2.11386 3.64382 2.26584 3.75424L7.01744 8.47394L11.769 3.75424C11.9189 3.65709 12.097 3.61306 12.2748 3.62921C12.4527 3.64535 12.6199 3.72073 12.7498 3.84328C12.8797 3.96582 12.9647 4.12842 12.9912 4.30502C13.0177 4.48162 12.9841 4.662 12.8958 4.81724L7.58083 10.1322C7.50996 10.2125 7.42344 10.2775 7.32656 10.3232C7.22968 10.3689 7.12449 10.3944 7.01744 10.398Z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-        </div>
-        <label
-          for="LFO_1_WAVEFORM"
-        >
-          Waveform
-        </label>
-      </span>
-    </div>
-    <div
-      class="controls_row"
+    LFO 1
+  </h3>
+  <div
+    class="controls_row"
+  >
+    <span
+      class="p-float-label"
+      data-testid="LFO_1_TARGET"
     >
       <div
-        data-testid="LFO_1_FREQUENCY"
-        tabindex="0"
+        class="p-dropdown p-component p-inputwrapper p-inputwrapper-filled"
+        data-p-disabled="false"
+        data-p-focus="false"
+        data-pc-name="dropdown"
+        data-pc-section="root"
       >
-        <label
-          class="label"
-          id="knob_label_LFO_1_FREQUENCY"
-        >
-          Frequency
-        </label>
         <div
-          aria-labelledby="knob_label_LFO_1_FREQUENCY"
-          class="p-knob p-component"
-          data-pc-name="knob"
-          data-pc-section="root"
-          id="LFO_1_FREQUENCY"
+          class="p-hidden-accessible"
+          data-pc-section="hiddenselectedmessage"
+        >
+          <input
+            aria-haspopup="listbox"
+            data-pc-section="input"
+            id="dropdown_input_LFO_1_TARGET"
+            readonly=""
+            type="text"
+          />
+        </div>
+        <div
+          class="p-hidden-accessible p-dropdown-hidden-select"
+          data-pc-section="hiddenselectedmessage"
+        >
+          <select
+            aria-hidden="true"
+            data-pc-section="select"
+            id="LFO_1_TARGET"
+            tabindex="-1"
+          >
+            <option
+              data-pc-section="option"
+              selected=""
+              value="off"
+            >
+              Off
+            </option>
+          </select>
+        </div>
+        <span
+          class="p-dropdown-label p-inputtext"
+          data-pc-section="input"
+        >
+          Off
+        </span>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          class="p-dropdown-trigger"
+          data-pc-section="trigger"
+          role="button"
         >
           <svg
-            data-pc-section="svg"
-            height="50"
-            viewBox="0 0 100 100"
-            width="50"
+            aria-hidden="true"
+            class="p-icon p-dropdown-trigger-icon p-clickable"
+            data-pc-section="dropdownicon"
+            data-pr-overlay-visible="false"
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              class="p-knob-range"
-              d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-              data-pc-section="range"
-              stroke="var(--surface-border, LightGray)"
-              stroke-width="5"
+              d="M7.01744 10.398C6.91269 10.3985 6.8089 10.378 6.71215 10.3379C6.61541 10.2977 6.52766 10.2386 6.45405 10.1641L1.13907 4.84913C1.03306 4.69404 0.985221 4.5065 1.00399 4.31958C1.02276 4.13266 1.10693 3.95838 1.24166 3.82747C1.37639 3.69655 1.55301 3.61742 1.74039 3.60402C1.92777 3.59062 2.11386 3.64382 2.26584 3.75424L7.01744 8.47394L11.769 3.75424C11.9189 3.65709 12.097 3.61306 12.2748 3.62921C12.4527 3.64535 12.6199 3.72073 12.7498 3.84328C12.8797 3.96582 12.9647 4.12842 12.9912 4.30502C13.0177 4.48162 12.9841 4.662 12.8958 4.81724L7.58083 10.1322C7.50996 10.2125 7.42344 10.2775 7.32656 10.3232C7.22968 10.3689 7.12449 10.3944 7.01744 10.398Z"
+              fill="currentColor"
             />
-            <path
-              class="p-knob-value"
-              d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 17.4395165897366 73.2339174503561"
-              data-pc-section="value"
-              stroke="var(--primary-color, Black)"
-              stroke-width="5"
-            />
-            <text
-              class="p-knob-text"
-              data-pc-section="label"
-              fill="var(--text-color-secondary, Black)"
-              name="LFO_1_FREQUENCY"
-              text-anchor="middle"
-              x="50"
-              y="57"
-            >
-              1
-            </text>
           </svg>
         </div>
       </div>
-      <div
-        data-testid="LFO_1_AMPLITUDE"
-        tabindex="0"
+      <label
+        for="LFO_1_TARGET"
       >
-        <label
-          class="label"
-          id="knob_label_LFO_1_AMPLITUDE"
-        >
-          Amplitude
-        </label>
+        Target
+      </label>
+    </span>
+    <span
+      class="p-float-label"
+      data-testid="LFO_1_WAVEFORM"
+    >
+      <div
+        class="p-dropdown p-component p-inputwrapper p-inputwrapper-filled"
+        data-p-disabled="false"
+        data-p-focus="false"
+        data-pc-name="dropdown"
+        data-pc-section="root"
+      >
         <div
-          aria-labelledby="knob_label_LFO_1_AMPLITUDE"
-          class="p-knob p-component"
-          data-pc-name="knob"
-          data-pc-section="root"
-          id="LFO_1_AMPLITUDE"
+          class="p-hidden-accessible"
+          data-pc-section="hiddenselectedmessage"
+        >
+          <input
+            aria-haspopup="listbox"
+            data-pc-section="input"
+            id="dropdown_input_LFO_1_WAVEFORM"
+            readonly=""
+            type="text"
+          />
+        </div>
+        <div
+          class="p-hidden-accessible p-dropdown-hidden-select"
+          data-pc-section="hiddenselectedmessage"
+        >
+          <select
+            aria-hidden="true"
+            data-pc-section="select"
+            id="LFO_1_WAVEFORM"
+            tabindex="-1"
+          >
+            <option
+              data-pc-section="option"
+              selected=""
+              value="sine"
+            >
+              Sine
+            </option>
+          </select>
+        </div>
+        <span
+          class="p-dropdown-label p-inputtext"
+          data-pc-section="input"
+        >
+          Sine
+        </span>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          class="p-dropdown-trigger"
+          data-pc-section="trigger"
+          role="button"
         >
           <svg
-            data-pc-section="svg"
-            height="50"
-            viewBox="0 0 100 100"
-            width="50"
+            aria-hidden="true"
+            class="p-icon p-dropdown-trigger-icon p-clickable"
+            data-pc-section="dropdownicon"
+            data-pr-overlay-visible="false"
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              class="p-knob-range"
-              d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-              data-pc-section="range"
-              stroke="var(--surface-border, LightGray)"
-              stroke-width="5"
+              d="M7.01744 10.398C6.91269 10.3985 6.8089 10.378 6.71215 10.3379C6.61541 10.2977 6.52766 10.2386 6.45405 10.1641L1.13907 4.84913C1.03306 4.69404 0.985221 4.5065 1.00399 4.31958C1.02276 4.13266 1.10693 3.95838 1.24166 3.82747C1.37639 3.69655 1.55301 3.61742 1.74039 3.60402C1.92777 3.59062 2.11386 3.64382 2.26584 3.75424L7.01744 8.47394L11.769 3.75424C11.9189 3.65709 12.097 3.61306 12.2748 3.62921C12.4527 3.64535 12.6199 3.72073 12.7498 3.84328C12.8797 3.96582 12.9647 4.12842 12.9912 4.30502C13.0177 4.48162 12.9841 4.662 12.8958 4.81724L7.58083 10.1322C7.50996 10.2125 7.42344 10.2775 7.32656 10.3232C7.22968 10.3689 7.12449 10.3944 7.01744 10.398Z"
+              fill="currentColor"
             />
-            <path
-              class="p-knob-value"
-              d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 50 10"
-              data-pc-section="value"
-              stroke="var(--primary-color, Black)"
-              stroke-width="5"
-            />
-            <text
-              class="p-knob-text"
-              data-pc-section="label"
-              fill="var(--text-color-secondary, Black)"
-              name="LFO_1_AMPLITUDE"
-              text-anchor="middle"
-              x="50"
-              y="57"
-            >
-              0.5
-            </text>
           </svg>
         </div>
+      </div>
+      <label
+        for="LFO_1_WAVEFORM"
+      >
+        Waveform
+      </label>
+    </span>
+  </div>
+  <div
+    data-testid="LFO_1_FREQUENCY"
+    tabindex="0"
+  >
+    <label
+      class="label"
+      id="knob_label_LFO_1_FREQUENCY"
+    >
+      Frequency
+    </label>
+    <div
+      class="slider"
+    >
+      <div
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
+        data-pc-section="root"
+        id="LFO_1_FREQUENCY"
+        name="LFO_1_FREQUENCY"
+      >
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 8.16326530612245%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="10"
+          aria-valuemin="0.2"
+          aria-valuenow="8.16326530612245"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 8.16326530612245%;"
+          tabindex="0"
+        />
       </div>
     </div>
   </div>
   <div
-    class="lfo_column"
+    data-testid="LFO_1_AMPLITUDE"
+    tabindex="0"
   >
-    <h3>
-      LFO 2
-    </h3>
-    <div
-      class="controls_row"
+    <label
+      class="label"
+      id="knob_label_LFO_1_AMPLITUDE"
     >
-      <span
-        class="p-float-label"
-        data-testid="LFO_2_TARGET"
-      >
-        <div
-          class="p-dropdown p-component p-inputwrapper p-inputwrapper-filled"
-          data-p-disabled="false"
-          data-p-focus="false"
-          data-pc-name="dropdown"
-          data-pc-section="root"
-        >
-          <div
-            class="p-hidden-accessible"
-            data-pc-section="hiddenselectedmessage"
-          >
-            <input
-              aria-haspopup="listbox"
-              data-pc-section="input"
-              id="dropdown_input_LFO_2_TARGET"
-              readonly=""
-              type="text"
-            />
-          </div>
-          <div
-            class="p-hidden-accessible p-dropdown-hidden-select"
-            data-pc-section="hiddenselectedmessage"
-          >
-            <select
-              aria-hidden="true"
-              data-pc-section="select"
-              id="LFO_2_TARGET"
-              tabindex="-1"
-            >
-              <option
-                data-pc-section="option"
-                selected=""
-                value="off"
-              >
-                Off
-              </option>
-            </select>
-          </div>
-          <span
-            class="p-dropdown-label p-inputtext"
-            data-pc-section="input"
-          >
-            Off
-          </span>
-          <div
-            aria-expanded="false"
-            aria-haspopup="listbox"
-            class="p-dropdown-trigger"
-            data-pc-section="trigger"
-            role="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="p-icon p-dropdown-trigger-icon p-clickable"
-              data-pc-section="dropdownicon"
-              data-pr-overlay-visible="false"
-              fill="none"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7.01744 10.398C6.91269 10.3985 6.8089 10.378 6.71215 10.3379C6.61541 10.2977 6.52766 10.2386 6.45405 10.1641L1.13907 4.84913C1.03306 4.69404 0.985221 4.5065 1.00399 4.31958C1.02276 4.13266 1.10693 3.95838 1.24166 3.82747C1.37639 3.69655 1.55301 3.61742 1.74039 3.60402C1.92777 3.59062 2.11386 3.64382 2.26584 3.75424L7.01744 8.47394L11.769 3.75424C11.9189 3.65709 12.097 3.61306 12.2748 3.62921C12.4527 3.64535 12.6199 3.72073 12.7498 3.84328C12.8797 3.96582 12.9647 4.12842 12.9912 4.30502C13.0177 4.48162 12.9841 4.662 12.8958 4.81724L7.58083 10.1322C7.50996 10.2125 7.42344 10.2775 7.32656 10.3232C7.22968 10.3689 7.12449 10.3944 7.01744 10.398Z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-        </div>
-        <label
-          for="LFO_2_TARGET"
-        >
-          Target
-        </label>
-      </span>
-      <span
-        class="p-float-label"
-        data-testid="LFO_2_WAVEFORM"
-      >
-        <div
-          class="p-dropdown p-component p-inputwrapper p-inputwrapper-filled"
-          data-p-disabled="false"
-          data-p-focus="false"
-          data-pc-name="dropdown"
-          data-pc-section="root"
-        >
-          <div
-            class="p-hidden-accessible"
-            data-pc-section="hiddenselectedmessage"
-          >
-            <input
-              aria-haspopup="listbox"
-              data-pc-section="input"
-              id="dropdown_input_LFO_2_WAVEFORM"
-              readonly=""
-              type="text"
-            />
-          </div>
-          <div
-            class="p-hidden-accessible p-dropdown-hidden-select"
-            data-pc-section="hiddenselectedmessage"
-          >
-            <select
-              aria-hidden="true"
-              data-pc-section="select"
-              id="LFO_2_WAVEFORM"
-              tabindex="-1"
-            >
-              <option
-                data-pc-section="option"
-                selected=""
-                value="sine"
-              >
-                Sine
-              </option>
-            </select>
-          </div>
-          <span
-            class="p-dropdown-label p-inputtext"
-            data-pc-section="input"
-          >
-            Sine
-          </span>
-          <div
-            aria-expanded="false"
-            aria-haspopup="listbox"
-            class="p-dropdown-trigger"
-            data-pc-section="trigger"
-            role="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="p-icon p-dropdown-trigger-icon p-clickable"
-              data-pc-section="dropdownicon"
-              data-pr-overlay-visible="false"
-              fill="none"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7.01744 10.398C6.91269 10.3985 6.8089 10.378 6.71215 10.3379C6.61541 10.2977 6.52766 10.2386 6.45405 10.1641L1.13907 4.84913C1.03306 4.69404 0.985221 4.5065 1.00399 4.31958C1.02276 4.13266 1.10693 3.95838 1.24166 3.82747C1.37639 3.69655 1.55301 3.61742 1.74039 3.60402C1.92777 3.59062 2.11386 3.64382 2.26584 3.75424L7.01744 8.47394L11.769 3.75424C11.9189 3.65709 12.097 3.61306 12.2748 3.62921C12.4527 3.64535 12.6199 3.72073 12.7498 3.84328C12.8797 3.96582 12.9647 4.12842 12.9912 4.30502C13.0177 4.48162 12.9841 4.662 12.8958 4.81724L7.58083 10.1322C7.50996 10.2125 7.42344 10.2775 7.32656 10.3232C7.22968 10.3689 7.12449 10.3944 7.01744 10.398Z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-        </div>
-        <label
-          for="LFO_2_WAVEFORM"
-        >
-          Waveform
-        </label>
-      </span>
-    </div>
+      Amplitude
+    </label>
     <div
-      class="controls_row"
+      class="slider"
     >
       <div
-        data-testid="LFO_2_FREQUENCY"
-        tabindex="0"
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
+        data-pc-section="root"
+        id="LFO_1_AMPLITUDE"
+        name="LFO_1_AMPLITUDE"
       >
-        <label
-          class="label"
-          id="knob_label_LFO_2_FREQUENCY"
-        >
-          Frequency
-        </label>
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 50%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="1"
+          aria-valuemin="0"
+          aria-valuenow="50"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 50%;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+  <h3
+    class="section_title"
+  >
+    LFO 2
+  </h3>
+  <div
+    class="controls_row"
+  >
+    <span
+      class="p-float-label"
+      data-testid="LFO_2_TARGET"
+    >
+      <div
+        class="p-dropdown p-component p-inputwrapper p-inputwrapper-filled"
+        data-p-disabled="false"
+        data-p-focus="false"
+        data-pc-name="dropdown"
+        data-pc-section="root"
+      >
         <div
-          aria-labelledby="knob_label_LFO_2_FREQUENCY"
-          class="p-knob p-component"
-          data-pc-name="knob"
-          data-pc-section="root"
-          id="LFO_2_FREQUENCY"
+          class="p-hidden-accessible"
+          data-pc-section="hiddenselectedmessage"
+        >
+          <input
+            aria-haspopup="listbox"
+            data-pc-section="input"
+            id="dropdown_input_LFO_2_TARGET"
+            readonly=""
+            type="text"
+          />
+        </div>
+        <div
+          class="p-hidden-accessible p-dropdown-hidden-select"
+          data-pc-section="hiddenselectedmessage"
+        >
+          <select
+            aria-hidden="true"
+            data-pc-section="select"
+            id="LFO_2_TARGET"
+            tabindex="-1"
+          >
+            <option
+              data-pc-section="option"
+              selected=""
+              value="off"
+            >
+              Off
+            </option>
+          </select>
+        </div>
+        <span
+          class="p-dropdown-label p-inputtext"
+          data-pc-section="input"
+        >
+          Off
+        </span>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          class="p-dropdown-trigger"
+          data-pc-section="trigger"
+          role="button"
         >
           <svg
-            data-pc-section="svg"
-            height="50"
-            viewBox="0 0 100 100"
-            width="50"
+            aria-hidden="true"
+            class="p-icon p-dropdown-trigger-icon p-clickable"
+            data-pc-section="dropdownicon"
+            data-pr-overlay-visible="false"
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              class="p-knob-range"
-              d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-              data-pc-section="range"
-              stroke="var(--surface-border, LightGray)"
-              stroke-width="5"
+              d="M7.01744 10.398C6.91269 10.3985 6.8089 10.378 6.71215 10.3379C6.61541 10.2977 6.52766 10.2386 6.45405 10.1641L1.13907 4.84913C1.03306 4.69404 0.985221 4.5065 1.00399 4.31958C1.02276 4.13266 1.10693 3.95838 1.24166 3.82747C1.37639 3.69655 1.55301 3.61742 1.74039 3.60402C1.92777 3.59062 2.11386 3.64382 2.26584 3.75424L7.01744 8.47394L11.769 3.75424C11.9189 3.65709 12.097 3.61306 12.2748 3.62921C12.4527 3.64535 12.6199 3.72073 12.7498 3.84328C12.8797 3.96582 12.9647 4.12842 12.9912 4.30502C13.0177 4.48162 12.9841 4.662 12.8958 4.81724L7.58083 10.1322C7.50996 10.2125 7.42344 10.2775 7.32656 10.3232C7.22968 10.3689 7.12449 10.3944 7.01744 10.398Z"
+              fill="currentColor"
             />
-            <path
-              class="p-knob-value"
-              d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 17.4395165897366 73.2339174503561"
-              data-pc-section="value"
-              stroke="var(--primary-color, Black)"
-              stroke-width="5"
-            />
-            <text
-              class="p-knob-text"
-              data-pc-section="label"
-              fill="var(--text-color-secondary, Black)"
-              name="LFO_2_FREQUENCY"
-              text-anchor="middle"
-              x="50"
-              y="57"
-            >
-              1
-            </text>
           </svg>
         </div>
       </div>
-      <div
-        data-testid="LFO_2_AMPLITUDE"
-        tabindex="0"
+      <label
+        for="LFO_2_TARGET"
       >
-        <label
-          class="label"
-          id="knob_label_LFO_2_AMPLITUDE"
-        >
-          Amplitude
-        </label>
+        Target
+      </label>
+    </span>
+    <span
+      class="p-float-label"
+      data-testid="LFO_2_WAVEFORM"
+    >
+      <div
+        class="p-dropdown p-component p-inputwrapper p-inputwrapper-filled"
+        data-p-disabled="false"
+        data-p-focus="false"
+        data-pc-name="dropdown"
+        data-pc-section="root"
+      >
         <div
-          aria-labelledby="knob_label_LFO_2_AMPLITUDE"
-          class="p-knob p-component"
-          data-pc-name="knob"
-          data-pc-section="root"
-          id="LFO_2_AMPLITUDE"
+          class="p-hidden-accessible"
+          data-pc-section="hiddenselectedmessage"
+        >
+          <input
+            aria-haspopup="listbox"
+            data-pc-section="input"
+            id="dropdown_input_LFO_2_WAVEFORM"
+            readonly=""
+            type="text"
+          />
+        </div>
+        <div
+          class="p-hidden-accessible p-dropdown-hidden-select"
+          data-pc-section="hiddenselectedmessage"
+        >
+          <select
+            aria-hidden="true"
+            data-pc-section="select"
+            id="LFO_2_WAVEFORM"
+            tabindex="-1"
+          >
+            <option
+              data-pc-section="option"
+              selected=""
+              value="sine"
+            >
+              Sine
+            </option>
+          </select>
+        </div>
+        <span
+          class="p-dropdown-label p-inputtext"
+          data-pc-section="input"
+        >
+          Sine
+        </span>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          class="p-dropdown-trigger"
+          data-pc-section="trigger"
+          role="button"
         >
           <svg
-            data-pc-section="svg"
-            height="50"
-            viewBox="0 0 100 100"
-            width="50"
+            aria-hidden="true"
+            class="p-icon p-dropdown-trigger-icon p-clickable"
+            data-pc-section="dropdownicon"
+            data-pr-overlay-visible="false"
+            fill="none"
+            height="14"
+            viewBox="0 0 14 14"
+            width="14"
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              class="p-knob-range"
-              d="M 29.999999999999982 84.64101615137754 A 40 40 0 1 1 70 84.64101615137754"
-              data-pc-section="range"
-              stroke="var(--surface-border, LightGray)"
-              stroke-width="5"
+              d="M7.01744 10.398C6.91269 10.3985 6.8089 10.378 6.71215 10.3379C6.61541 10.2977 6.52766 10.2386 6.45405 10.1641L1.13907 4.84913C1.03306 4.69404 0.985221 4.5065 1.00399 4.31958C1.02276 4.13266 1.10693 3.95838 1.24166 3.82747C1.37639 3.69655 1.55301 3.61742 1.74039 3.60402C1.92777 3.59062 2.11386 3.64382 2.26584 3.75424L7.01744 8.47394L11.769 3.75424C11.9189 3.65709 12.097 3.61306 12.2748 3.62921C12.4527 3.64535 12.6199 3.72073 12.7498 3.84328C12.8797 3.96582 12.9647 4.12842 12.9912 4.30502C13.0177 4.48162 12.9841 4.662 12.8958 4.81724L7.58083 10.1322C7.50996 10.2125 7.42344 10.2775 7.32656 10.3232C7.22968 10.3689 7.12449 10.3944 7.01744 10.398Z"
+              fill="currentColor"
             />
-            <path
-              class="p-knob-value"
-              d="M 29.999999999999982 84.64101615137754 A 40 40 0 0 1 50 10"
-              data-pc-section="value"
-              stroke="var(--primary-color, Black)"
-              stroke-width="5"
-            />
-            <text
-              class="p-knob-text"
-              data-pc-section="label"
-              fill="var(--text-color-secondary, Black)"
-              name="LFO_2_AMPLITUDE"
-              text-anchor="middle"
-              x="50"
-              y="57"
-            >
-              0.5
-            </text>
           </svg>
         </div>
+      </div>
+      <label
+        for="LFO_2_WAVEFORM"
+      >
+        Waveform
+      </label>
+    </span>
+  </div>
+  <div
+    data-testid="LFO_2_FREQUENCY"
+    tabindex="0"
+  >
+    <label
+      class="label"
+      id="knob_label_LFO_2_FREQUENCY"
+    >
+      Frequency
+    </label>
+    <div
+      class="slider"
+    >
+      <div
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
+        data-pc-section="root"
+        id="LFO_2_FREQUENCY"
+        name="LFO_2_FREQUENCY"
+      >
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 8.16326530612245%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="10"
+          aria-valuemin="0.2"
+          aria-valuenow="8.16326530612245"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 8.16326530612245%;"
+          tabindex="0"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    data-testid="LFO_2_AMPLITUDE"
+    tabindex="0"
+  >
+    <label
+      class="label"
+      id="knob_label_LFO_2_AMPLITUDE"
+    >
+      Amplitude
+    </label>
+    <div
+      class="slider"
+    >
+      <div
+        class="p-slider p-component p-slider-horizontal"
+        data-pc-name="slider"
+        data-pc-section="root"
+        id="LFO_2_AMPLITUDE"
+        name="LFO_2_AMPLITUDE"
+      >
+        <span
+          class="p-slider-range"
+          data-pc-section="range"
+          style="position: absolute; width: 50%;"
+        />
+        <span
+          aria-orientation="horizontal"
+          aria-valuemax="1"
+          aria-valuemin="0"
+          aria-valuenow="50"
+          class="p-slider-handle"
+          data-pc-section="handle"
+          role="slider"
+          style="position: absolute; left: 50%;"
+          tabindex="0"
+        />
       </div>
     </div>
   </div>
