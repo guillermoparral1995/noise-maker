@@ -6,7 +6,7 @@
         "src/styles/*"
       ],
       "@components/*": [
-        "src/components/*"
+        "src/components/shared/*"
       ],
       "@hooks/*": [
         "src/hooks/*"

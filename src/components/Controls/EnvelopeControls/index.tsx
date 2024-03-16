@@ -1,8 +1,8 @@
+import ControlsRow from '@components/ControlsRow';
+import Knob from '@components/Knob';
 import useAddMidiListeners from '@hooks/useAddMidiListeners';
 import { Knobs } from '@types';
 import React, { useContext } from 'react';
-import ControlsRow from '../../shared/ControlsRow';
-import Knob from '../../shared/Knob';
 import { envelopeStateContext } from './EnvelopeStateProvider';
 
 const EnvelopeControls = () => {

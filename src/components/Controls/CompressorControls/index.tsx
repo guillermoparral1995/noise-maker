@@ -1,9 +1,9 @@
+import ControlsRow from '@components/ControlsRow';
+import Knob from '@components/Knob';
 import { useBreakpoints } from '@hooks/useBreakpoints';
 import { audioContext } from '@providers/AudioContextProvider';
 import { Knobs } from '@types';
 import React, { useContext } from 'react';
-import ControlsRow from '../../shared/ControlsRow';
-import Knob from '../../shared/Knob';
 import {
   compressorStateContext,
   CompressorStateProvider,

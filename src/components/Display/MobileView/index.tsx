@@ -1,3 +1,4 @@
+import Title from '@components/Title';
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import ThemeSelector from '../../Config/ThemeSelector';
@@ -10,7 +11,6 @@ import GeneralControls from '../../Controls/GeneralControls';
 import LFOControls from '../../Controls/LFOControls';
 import Keyboard from '../../Keyboard';
 import Oscilloscope from '../../Oscilloscope';
-import Title from '../../shared/Title';
 import styles from './index.module.scss';
 
 const MobileView = () => {

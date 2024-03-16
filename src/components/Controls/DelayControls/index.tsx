@@ -1,11 +1,11 @@
+import ControlsRow from '@components/ControlsRow';
+import Knob from '@components/Knob';
+import Switch from '@components/Switch';
 import { useInstantiateGainNode } from '@hooks/useInstantiateAudioNode';
 import { GainNodeMock } from '@mocks';
 import { audioContext } from '@providers/AudioContextProvider';
 import { Knobs, Switchs } from '@types';
 import React, { useContext, useEffect, useRef } from 'react';
-import ControlsRow from '../../shared/ControlsRow';
-import Knob from '../../shared/Knob';
-import Switch from '../../shared/Switch';
 import { delayStateContext, DelayStateProvider } from './DelayStateProvider';
 
 export const DelayControls_ = ({

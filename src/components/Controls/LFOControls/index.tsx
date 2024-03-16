@@ -1,3 +1,6 @@
+import ControlsRow from '@components/ControlsRow';
+import Knob from '@components/Knob';
+import Selector from '@components/Selector';
 import { knobsValues } from '@constants/knobsValues';
 import useAddMidiListeners from '@hooks/useAddMidiListeners';
 import { useBreakpoints } from '@hooks/useBreakpoints';
@@ -7,9 +10,6 @@ import { OscillatorNodeMock } from '@mocks';
 import { audioContext } from '@providers/AudioContextProvider';
 import { Knobs, Selectors } from '@types';
 import React, { useContext, useEffect } from 'react';
-import ControlsRow from '../../shared/ControlsRow';
-import Knob from '../../shared/Knob';
-import Selector from '../../shared/Selector';
 import styles from './index.module.scss';
 import { lfoStateContext, LFOStateProvider } from './LFOStateProvider';
 

@@ -1,10 +1,10 @@
+import ControlsRow from '@components/ControlsRow';
+import Knob from '@components/Knob';
+import Selector from '@components/Selector';
 import useAddMidiListeners from '@hooks/useAddMidiListeners';
 import { useBreakpoints } from '@hooks/useBreakpoints';
 import { Knobs, Selectors } from '@types';
 import React, { useContext } from 'react';
-import ControlsRow from '../../shared/ControlsRow';
-import Knob from '../../shared/Knob';
-import Selector from '../../shared/Selector';
 import { envelopeStateContext } from '../EnvelopeControls/EnvelopeStateProvider';
 import styles from './index.module.scss';
 import PitchbendWheel from './PitchbendWheel';
