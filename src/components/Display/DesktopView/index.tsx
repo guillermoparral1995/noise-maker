@@ -57,7 +57,7 @@ const DesktopView = () => {
         <div className={styles.column}>
           <DelayControls></DelayControls>
         </div>
-        <div className={styles.column}>
+        <div className={styles.column} id={styles.oscilloscope_column}>
           <Oscilloscope></Oscilloscope>
         </div>
       </section>

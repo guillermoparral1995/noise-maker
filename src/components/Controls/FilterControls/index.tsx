@@ -39,12 +39,18 @@ export const FilterControls_ = () => {
           dispatch={dispatch}
         ></Selector>
       </ControlsRow>
-      <Knob id={Knobs.FILTER_CUTOFF} value={cutoff} dispatch={dispatch}></Knob>
-      <Knob
-        id={Knobs.FILTER_RESONANCE}
-        value={resonance}
-        dispatch={dispatch}
-      ></Knob>
+      <ControlsRow>
+        <Knob
+          id={Knobs.FILTER_CUTOFF}
+          value={cutoff}
+          dispatch={dispatch}
+        ></Knob>
+        <Knob
+          id={Knobs.FILTER_RESONANCE}
+          value={resonance}
+          dispatch={dispatch}
+        ></Knob>
+      </ControlsRow>
     </>
   );
 };

@@ -52,17 +52,18 @@ export const DelayControls_ = ({
           dispatch={dispatch}
         ></Switch>
       </ControlsRow>
-
-      <Knob
-        id={Knobs.DELAY_FEEDBACK}
-        value={state.feedback}
-        dispatch={dispatch}
-      ></Knob>
-      <Knob
-        id={Knobs.DELAY_TIME}
-        value={state.delayTime}
-        dispatch={dispatch}
-      ></Knob>
+      <ControlsRow>
+        <Knob
+          id={Knobs.DELAY_FEEDBACK}
+          value={state.feedback}
+          dispatch={dispatch}
+        ></Knob>
+        <Knob
+          id={Knobs.DELAY_TIME}
+          value={state.delayTime}
+          dispatch={dispatch}
+        ></Knob>
+      </ControlsRow>
     </>
   );
 };

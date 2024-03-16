@@ -64,7 +64,7 @@ export const Knob = ({ id, value, dispatch }: KnobProps) => {
       <p className={styles.label}>{knobsValues[id].label}</p>
       <WebAudioKnob
         value={value}
-        diameter={50}
+        diameter={35}
         defvalue={knobsValues[id].default}
         min={knobsValues[id].min}
         max={knobsValues[id].max}

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useBreakpoints } from '../../../hooks/useBreakpoints';
 import { audioContext } from '../../../providers/AudioContextProvider';
 import { Knobs } from '../../../types';
+import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import {
   compressorStateContext,
@@ -24,7 +25,7 @@ export const CompressorControls_ = () => {
     <>
       <h3>Compressor</h3>
       {isMobile ? (
-        <>
+        <ControlsRow>
           <Knob
             id={Knobs.COMPRESSOR_THRESHOLD}
             value={state.threshold}
@@ -50,7 +51,7 @@ export const CompressorControls_ = () => {
             value={state.release}
             dispatch={dispatch}
           ></Knob>
-        </>
+        </ControlsRow>
       ) : (
         <div className={styles.column_container}>
           <div className={styles.compressor_column}>

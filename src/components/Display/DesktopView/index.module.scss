@@ -24,7 +24,6 @@
 #controls_section {
     display: flex;
     justify-content: space-around;
-    align-items: center;
     text-align: center;
 }
 
@@ -41,5 +40,9 @@
 
     &#lfo_controls_column {
         flex-direction: row;
+    }
+
+    &#oscilloscope_column {
+        justify-content: center;
     }
 }

@@ -156,16 +156,19 @@ export const LFOControls_ = ({
           dispatch={dispatch}
         ></Selector>
       </ControlsRow>
-      <Knob
-        id={Knobs.LFO_1_FREQUENCY}
-        value={state.lfo1.frequency}
-        dispatch={dispatch}
-      ></Knob>
-      <Knob
-        id={Knobs.LFO_1_AMPLITUDE}
-        value={state.lfo1.amplitude}
-        dispatch={dispatch}
-      ></Knob>
+      <ControlsRow>
+        <Knob
+          id={Knobs.LFO_1_FREQUENCY}
+          value={state.lfo1.frequency}
+          dispatch={dispatch}
+        ></Knob>
+        <Knob
+          id={Knobs.LFO_1_AMPLITUDE}
+          value={state.lfo1.amplitude}
+          dispatch={dispatch}
+        ></Knob>
+      </ControlsRow>
+
       <h3 className={styles.section_title}>LFO 2</h3>
       <ControlsRow>
         <Selector
@@ -179,16 +182,18 @@ export const LFOControls_ = ({
           dispatch={dispatch}
         ></Selector>
       </ControlsRow>
-      <Knob
-        id={Knobs.LFO_2_FREQUENCY}
-        value={state.lfo2.frequency}
-        dispatch={dispatch}
-      ></Knob>
-      <Knob
-        id={Knobs.LFO_2_AMPLITUDE}
-        value={state.lfo2.amplitude}
-        dispatch={dispatch}
-      ></Knob>
+      <ControlsRow>
+        <Knob
+          id={Knobs.LFO_2_FREQUENCY}
+          value={state.lfo2.frequency}
+          dispatch={dispatch}
+        ></Knob>
+        <Knob
+          id={Knobs.LFO_2_AMPLITUDE}
+          value={state.lfo2.amplitude}
+          dispatch={dispatch}
+        ></Knob>
+      </ControlsRow>
     </>
   );
 };
