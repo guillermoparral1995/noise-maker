@@ -81,81 +81,61 @@ exports[`Delay should render correctly 1`] = `
   </div>
   <div
     data-testid="DELAY_FEEDBACK"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_DELAY_FEEDBACK"
     >
       Feedback
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="0.3"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="DELAY_FEEDBACK"
+      indicatorcolor="mediumpurple"
+      max="1"
+      min="0"
+      step="0.01"
+      style="height: 50px;"
+      value="0.3"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="DELAY_FEEDBACK"
-        name="DELAY_FEEDBACK"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 30%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="1"
-          aria-valuemin="0"
-          aria-valuenow="30"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 30%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      0.3
+    </p>
   </div>
   <div
     data-testid="DELAY_TIME"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_DELAY_TIME"
     >
       Time
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="0.5"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="DELAY_TIME"
+      indicatorcolor="mediumpurple"
+      max="5"
+      min="0"
+      step="0.01"
+      style="height: 50px;"
+      value="0.5"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="DELAY_TIME"
-        name="DELAY_TIME"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 10%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="5"
-          aria-valuemin="0"
-          aria-valuenow="10"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 10%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      0.5
+    </p>
   </div>
 </div>
 `;

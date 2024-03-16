@@ -9,198 +9,148 @@ exports[`Compressor controls should render correctly 1`] = `
   </h3>
   <div
     data-testid="COMPRESSOR_THRESHOLD"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_COMPRESSOR_THRESHOLD"
     >
       Threshold
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="-24"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="COMPRESSOR_THRESHOLD"
+      indicatorcolor="mediumpurple"
+      max="0"
+      min="-100"
+      step="0.01"
+      style="height: 50px;"
+      value="-24"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="COMPRESSOR_THRESHOLD"
-        name="COMPRESSOR_THRESHOLD"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 76%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="0"
-          aria-valuemin="-100"
-          aria-valuenow="76"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 76%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      -24
+    </p>
   </div>
   <div
     data-testid="COMPRESSOR_RATIO"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_COMPRESSOR_RATIO"
     >
       Ratio
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="12"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="COMPRESSOR_RATIO"
+      indicatorcolor="mediumpurple"
+      max="20"
+      min="1"
+      step="0.01"
+      style="height: 50px;"
+      value="12"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="COMPRESSOR_RATIO"
-        name="COMPRESSOR_RATIO"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 57.89473684210526%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="20"
-          aria-valuemin="1"
-          aria-valuenow="57.89473684210526"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 57.89473684210526%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      12
+    </p>
   </div>
   <div
     data-testid="COMPRESSOR_KNEE"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_COMPRESSOR_KNEE"
     >
       Knee
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="30"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="COMPRESSOR_KNEE"
+      indicatorcolor="mediumpurple"
+      max="40"
+      min="0"
+      step="0.01"
+      style="height: 50px;"
+      value="30"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="COMPRESSOR_KNEE"
-        name="COMPRESSOR_KNEE"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 75%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="40"
-          aria-valuemin="0"
-          aria-valuenow="75"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 75%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      30
+    </p>
   </div>
   <div
     data-testid="COMPRESSOR_ATTACK"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_COMPRESSOR_ATTACK"
     >
       Attack
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="0.003"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="COMPRESSOR_ATTACK"
+      indicatorcolor="mediumpurple"
+      max="1"
+      min="0"
+      step="0.01"
+      style="height: 50px;"
+      value="0.003"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="COMPRESSOR_ATTACK"
-        name="COMPRESSOR_ATTACK"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 0.3%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="1"
-          aria-valuemin="0"
-          aria-valuenow="0.3"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 0.3%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      0.003
+    </p>
   </div>
   <div
     data-testid="COMPRESSOR_RELEASE"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_COMPRESSOR_RELEASE"
     >
       Release
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="0.25"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="COMPRESSOR_RELEASE"
+      indicatorcolor="mediumpurple"
+      max="1"
+      min="0"
+      step="0.01"
+      style="height: 50px;"
+      value="0.25"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="COMPRESSOR_RELEASE"
-        name="COMPRESSOR_RELEASE"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 25%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="1"
-          aria-valuemin="0"
-          aria-valuenow="25"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 25%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      0.25
+    </p>
   </div>
 </div>
 `;

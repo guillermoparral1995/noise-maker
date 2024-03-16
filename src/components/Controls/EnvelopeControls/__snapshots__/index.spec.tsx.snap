@@ -9,159 +9,119 @@ exports[`Envelope controls should render correctly 1`] = `
   </h3>
   <div
     data-testid="ATTACK"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_ATTACK"
     >
       Attack
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="0"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="ATTACK"
+      indicatorcolor="mediumpurple"
+      max="5"
+      min="0"
+      step="0.01"
+      style="height: 50px;"
+      value="0"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="ATTACK"
-        name="ATTACK"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 0%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="5"
-          aria-valuemin="0"
-          aria-valuenow="0"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 0%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      0
+    </p>
   </div>
   <div
     data-testid="DECAY"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_DECAY"
     >
       Decay
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="0"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="DECAY"
+      indicatorcolor="mediumpurple"
+      max="5"
+      min="0"
+      step="0.01"
+      style="height: 50px;"
+      value="0"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="DECAY"
-        name="DECAY"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 0%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="5"
-          aria-valuemin="0"
-          aria-valuenow="0"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 0%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      0
+    </p>
   </div>
   <div
     data-testid="SUSTAIN"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_SUSTAIN"
     >
       Sustain
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="1"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="SUSTAIN"
+      indicatorcolor="mediumpurple"
+      max="1"
+      min="0"
+      step="0.01"
+      style="height: 50px;"
+      value="1"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="SUSTAIN"
-        name="SUSTAIN"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 100%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="1"
-          aria-valuemin="0"
-          aria-valuenow="100"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 100%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      1
+    </p>
   </div>
   <div
     data-testid="RELEASE"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_RELEASE"
     >
       Release
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="0"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="RELEASE"
+      indicatorcolor="mediumpurple"
+      max="5"
+      min="0"
+      step="0.01"
+      style="height: 50px;"
+      value="0"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="RELEASE"
-        name="RELEASE"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 0%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="5"
-          aria-valuemin="0"
-          aria-valuenow="0"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 0%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      0
+    </p>
   </div>
 </div>
 `;

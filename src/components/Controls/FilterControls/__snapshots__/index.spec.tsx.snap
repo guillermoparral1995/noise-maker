@@ -94,81 +94,61 @@ exports[`Filter controls should render correctly 1`] = `
   </div>
   <div
     data-testid="FILTER_CUTOFF"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_FILTER_CUTOFF"
     >
       Cut-off
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="350"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="FILTER_CUTOFF"
+      indicatorcolor="mediumpurple"
+      max="5000"
+      min="10"
+      step="1"
+      style="height: 50px;"
+      value="350"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="FILTER_CUTOFF"
-        name="FILTER_CUTOFF"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 6.813627254509018%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="5000"
-          aria-valuemin="10"
-          aria-valuenow="6.813627254509018"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 6.813627254509018%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      350
+    </p>
   </div>
   <div
     data-testid="FILTER_RESONANCE"
-    tabindex="0"
+    tabindex="-1"
   >
-    <label
+    <p
       class="label"
-      id="knob_label_FILTER_RESONANCE"
     >
       Resonance
-    </label>
-    <div
-      class="slider"
+    </p>
+    <webaudio-knob
+      bodycolor="#f0f0f0"
+      colors="mediumpurple;#f0f0f0;#ffffff;"
+      defvalue="1"
+      diameter="50"
+      highlightcolor="#ffffff"
+      id="FILTER_RESONANCE"
+      indicatorcolor="mediumpurple"
+      max="50"
+      min="0.0001"
+      step="0.1"
+      style="height: 50px;"
+      value="1"
+    />
+    <p
+      class="label"
     >
-      <div
-        class="p-slider p-component p-slider-horizontal"
-        data-pc-name="slider"
-        data-pc-section="root"
-        id="FILTER_RESONANCE"
-        name="FILTER_RESONANCE"
-      >
-        <span
-          class="p-slider-range"
-          data-pc-section="range"
-          style="position: absolute; width: 1.9998039996079993%;"
-        />
-        <span
-          aria-orientation="horizontal"
-          aria-valuemax="50"
-          aria-valuemin="0.0001"
-          aria-valuenow="1.9998039996079993"
-          class="p-slider-handle"
-          data-pc-section="handle"
-          role="slider"
-          style="position: absolute; left: 1.9998039996079993%;"
-          tabindex="0"
-        />
-      </div>
-    </div>
+      1
+    </p>
   </div>
 </div>
 `;
