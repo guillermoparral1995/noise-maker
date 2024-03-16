@@ -1,6 +1,6 @@
+import useAddMidiListeners from '@hooks/useAddMidiListeners';
+import { Knobs } from '@types';
 import React, { useContext } from 'react';
-import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
-import { Knobs } from '../../../types';
 import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import { envelopeStateContext } from './EnvelopeStateProvider';

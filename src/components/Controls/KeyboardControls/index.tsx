@@ -1,7 +1,7 @@
+import useAddMidiListeners from '@hooks/useAddMidiListeners';
+import { useBreakpoints } from '@hooks/useBreakpoints';
+import { Knobs, Selectors } from '@types';
 import React, { useContext } from 'react';
-import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
-import { useBreakpoints } from '../../../hooks/useBreakpoints';
-import { Knobs, Selectors } from '../../../types';
 import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';

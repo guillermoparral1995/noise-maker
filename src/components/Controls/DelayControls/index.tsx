@@ -1,8 +1,8 @@
+import { useInstantiateGainNode } from '@hooks/useInstantiateAudioNode';
+import { GainNodeMock } from '@mocks';
+import { audioContext } from '@providers/AudioContextProvider';
+import { Knobs, Switchs } from '@types';
 import React, { useContext, useEffect, useRef } from 'react';
-import { GainNodeMock } from '../../../../__mocks__';
-import { useInstantiateGainNode } from '../../../hooks/useInstantiateAudioNode';
-import { audioContext } from '../../../providers/AudioContextProvider';
-import { Knobs, Switchs } from '../../../types';
 import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import Switch from '../../shared/Switch';

@@ -1,14 +1,8 @@
-import { updateWaveform } from '../components/Controls/EnvelopeControls/store/actions';
-import { updateFilterType } from '../components/Controls/FilterControls/store/actions';
-import {
-  updateLFO1Waveform,
-  updateLFO2Waveform,
-} from '../components/Controls/LFOControls/store/actions';
 import {
   updateLFO1Target,
   updateLFO2Target,
-} from '../providers/AudioContextProvider/store/actions';
-import { updateMIDIInput } from '../providers/MIDIProvider/store/actions';
+} from '@providers/AudioContextProvider/store/actions';
+import { updateMIDIInput } from '@providers/MIDIProvider/store/actions';
 import {
   ActionBuilder,
   FilterType,
@@ -17,7 +11,13 @@ import {
   LFO2Target,
   Selectors,
   Waveform,
-} from '../types';
+} from '@types';
+import { updateWaveform } from '../components/Controls/EnvelopeControls/store/actions';
+import { updateFilterType } from '../components/Controls/FilterControls/store/actions';
+import {
+  updateLFO1Waveform,
+  updateLFO2Waveform,
+} from '../components/Controls/LFOControls/store/actions';
 
 type DropdownValue = Waveform | FilterType | LFO1Target | LFO2Target | string;
 

@@ -1,8 +1,8 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Actions, Selectors, Waveform } from '@types';
 import React from 'react';
 import Selector from '.';
-import { Actions, Selectors, Waveform } from '../../../types';
 import '@testing-library/jest-dom';
 
 describe('Selector', () => {

@@ -1,5 +1,29 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
+      "@providers/*": [
+        "src/providers/*"
+      ],
+      "@types": [
+        "src/types.ts"
+      ],
+      "@mocks": [
+        "__mocks__"
+      ]
+    },
     "outDir": "./docs",
     "noImplicitAny": true,
     "module": "esnext",

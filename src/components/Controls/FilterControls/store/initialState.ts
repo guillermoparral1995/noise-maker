@@ -1,4 +1,4 @@
-import { FilterType } from '../../../../types';
+import { FilterType } from '@types';
 
 export interface FilterState {
   type: FilterType;

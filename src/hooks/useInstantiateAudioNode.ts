@@ -1,7 +1,7 @@
+import { GainNodeMock, OscillatorNodeMock } from '@mocks';
+import { audioContext } from '@providers/AudioContextProvider';
+import { Waveform } from '@types';
 import { useContext, useMemo } from 'react';
-import { GainNodeMock, OscillatorNodeMock } from '../../__mocks__';
-import { audioContext } from '../providers/AudioContextProvider';
-import { Waveform } from '../types';
 
 export const useInstantiateOscillatorNode = (
   waveform: Waveform,

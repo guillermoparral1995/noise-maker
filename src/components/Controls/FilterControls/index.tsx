@@ -1,8 +1,8 @@
+import useAddMidiListeners from '@hooks/useAddMidiListeners';
+import useConnectLFOTargets from '@hooks/useConnectLFOTargets';
+import { audioContext } from '@providers/AudioContextProvider';
+import { Knobs, Selectors } from '@types';
 import React, { useContext } from 'react';
-import useAddMidiListeners from '../../../hooks/useAddMidiListeners';
-import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
-import { audioContext } from '../../../providers/AudioContextProvider';
-import { Knobs, Selectors } from '../../../types';
 import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import Selector from '../../shared/Selector';

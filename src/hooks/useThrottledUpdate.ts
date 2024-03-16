@@ -1,6 +1,6 @@
+import { ActionBuilder, ActionTypes } from '@types';
 import { throttle } from 'lodash';
 import { useCallback, useEffect } from 'react';
-import { ActionBuilder, ActionTypes } from '../types';
 
 export default <T>(
   dispatch: React.Dispatch<ActionTypes>,

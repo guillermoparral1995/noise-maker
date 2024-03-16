@@ -1,9 +1,9 @@
+import { knobsValues } from '@constants/knobsValues';
+import { midiContext } from '@providers/MIDIProvider';
+import { ActionTypes, Knobs } from '@types';
 import { round } from 'lodash';
 import { useContext, useEffect } from 'react';
 import { ControlChangeMessageEvent } from 'webmidi';
-import { knobsValues } from '../constants/knobsValues';
-import { midiContext } from '../providers/MIDIProvider';
-import { ActionTypes, Knobs } from '../types';
 import useThrottledUpdate from './useThrottledUpdate';
 
 export default (knobs: Knobs[], dispatch: React.Dispatch<ActionTypes>) => {

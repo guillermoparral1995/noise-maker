@@ -1,11 +1,8 @@
+import { withMockedMIDIInput, withMockedMIDINoInput } from '@mocks';
 import { cleanup, fireEvent, render } from '@testing-library/react';
+import { Actions } from '@types';
 import React from 'react';
 import PitchbendWheel from '.';
-import {
-  withMockedMIDIInput,
-  withMockedMIDINoInput,
-} from '../../../../../__mocks__';
-import { Actions } from '../../../../types';
 import { EnvelopeStateProvider } from '../../EnvelopeControls/EnvelopeStateProvider';
 
 const __mockGetInputByName = jest.fn();

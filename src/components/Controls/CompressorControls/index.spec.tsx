@@ -1,3 +1,5 @@
+import { AudioContextMock, DynamicsCompressorNodeMock } from '@mocks';
+import { AudioContextProvider } from '@providers/AudioContextProvider';
 import {
   act,
   cleanup,
@@ -5,14 +7,9 @@ import {
   render,
   screen,
 } from '@testing-library/react';
+import { Knobs } from '@types';
 import React from 'react';
 import { CompressorControls_ as CompressorControls } from '.';
-import {
-  AudioContextMock,
-  DynamicsCompressorNodeMock,
-} from '../../../../__mocks__';
-import { AudioContextProvider } from '../../../providers/AudioContextProvider';
-import { Knobs } from '../../../types';
 import { CompressorStateProvider } from './CompressorStateProvider';
 
 const __mockGetInputByName = jest.fn();

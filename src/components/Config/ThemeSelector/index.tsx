@@ -1,6 +1,6 @@
+import { Switchs } from '@types';
 import { PrimeReactContext } from 'primereact/api';
 import React, { useContext, useEffect, useReducer } from 'react';
-import { Switchs } from '../../../types';
 import Switch from '../../shared/Switch';
 import initialState from './store/initialState';
 import reducer from './store/reducer';

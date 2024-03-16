@@ -1,7 +1,7 @@
+import { switchDelay } from '@providers/AudioContextProvider/store/actions';
+import { ActionBuilder, Switchs } from '@types';
 import { switchDarkMode } from '../components/Config/ThemeSelector/store/actions';
 import { switchDelayTrails } from '../components/Controls/DelayControls/store/actions';
-import { switchDelay } from '../providers/AudioContextProvider/store/actions';
-import { ActionBuilder, Switchs } from '../types';
 
 type SwitchValues = Record<
   Switchs,

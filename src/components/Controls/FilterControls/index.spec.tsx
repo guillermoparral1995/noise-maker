@@ -1,3 +1,12 @@
+import { knobsValues } from '@constants/knobsValues';
+import {
+  AudioContextMock,
+  BiquadFilterNodeMock,
+  GainNodeMock,
+  withMockedMIDIInput,
+  withMockedMIDINoInput,
+} from '@mocks';
+import { AudioContextProvider, LFOMock } from '@providers/AudioContextProvider';
 import {
   act,
   cleanup,
@@ -5,21 +14,9 @@ import {
   render,
   screen,
 } from '@testing-library/react';
+import { Actions, Knobs, LFO1Target, LFO2Target } from '@types';
 import React from 'react';
 import { FilterControls_ as FilterControls } from '.';
-import {
-  AudioContextMock,
-  BiquadFilterNodeMock,
-  GainNodeMock,
-  withMockedMIDIInput,
-  withMockedMIDINoInput,
-} from '../../../../__mocks__';
-import { knobsValues } from '../../../constants/knobsValues';
-import {
-  AudioContextProvider,
-  LFOMock,
-} from '../../../providers/AudioContextProvider';
-import { Actions, Knobs, LFO1Target, LFO2Target } from '../../../types';
 import { FilterStateProvider } from './FilterStateProvider';
 
 const __mockGetInputByName = jest.fn();

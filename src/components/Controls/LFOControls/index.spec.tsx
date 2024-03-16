@@ -1,20 +1,17 @@
-import { cleanup, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import React from 'react';
-import { LFOControls_ as LFOControls } from '.';
+import { knobsValues } from '@constants/knobsValues';
 import {
   AudioContextMock,
   GainNodeMock,
   OscillatorNodeMock,
   withMockedMIDIInput,
   withMockedMIDINoInput,
-} from '../../../../__mocks__';
-import { knobsValues } from '../../../constants/knobsValues';
-import {
-  AudioContextProvider,
-  LFOMock,
-} from '../../../providers/AudioContextProvider';
-import { Actions, Knobs, LFO1Target, LFO2Target } from '../../../types';
+} from '@mocks';
+import { AudioContextProvider, LFOMock } from '@providers/AudioContextProvider';
+import { cleanup, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Actions, Knobs, LFO1Target, LFO2Target } from '@types';
+import React from 'react';
+import { LFOControls_ as LFOControls } from '.';
 import { LFOStateProvider } from './LFOStateProvider';
 
 const __mockGetInputByName = jest.fn();

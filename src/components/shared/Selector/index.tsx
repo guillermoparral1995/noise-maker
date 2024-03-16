@@ -1,10 +1,7 @@
+import { DropdownOption, selectorValues } from '@constants/selectorsValues';
+import { ActionTypes, Selectors } from '@types';
 import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
 import React from 'react';
-import {
-  DropdownOption,
-  selectorValues,
-} from '../../../constants/selectorsValues';
-import { ActionTypes, Selectors } from '../../../types';
 
 interface SelectorProps<T> {
   id: Selectors;

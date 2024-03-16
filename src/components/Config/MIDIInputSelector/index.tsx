@@ -1,6 +1,6 @@
+import { midiContext } from '@providers/MIDIProvider';
+import { Selectors } from '@types';
 import React, { useContext } from 'react';
-import { midiContext } from '../../../providers/MIDIProvider';
-import { Selectors } from '../../../types';
 import Selector from '../../shared/Selector';
 
 const MIDIInputSelector = () => {

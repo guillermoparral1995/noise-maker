@@ -1,5 +1,5 @@
+import { audioContext } from '@providers/AudioContextProvider';
 import React, { useContext, useEffect, useRef } from 'react';
-import { audioContext } from '../../providers/AudioContextProvider';
 import styles from './index.module.scss';
 
 const Oscilloscope = () => {

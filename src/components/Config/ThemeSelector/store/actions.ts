@@ -1,4 +1,4 @@
-import { Actions } from '../../../../types';
+import { Actions } from '@types';
 
 export type ActionTypes = ThemeAction;
 

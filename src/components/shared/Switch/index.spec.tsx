@@ -1,8 +1,8 @@
 import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import '@testing-library/jest-dom';
+import { Actions, Switchs } from '@types';
 import Switch from '.';
-import { Actions, Switchs } from '../../../types';
 
 describe('Switch', () => {
   afterEach(() => {

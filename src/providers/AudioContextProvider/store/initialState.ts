@@ -1,4 +1,4 @@
-import { LFO1Target, LFO2Target } from '../../../types';
+import { LFO1Target, LFO2Target } from '@types';
 
 export interface AudioContextState {
   lfo1Target: LFO1Target;

@@ -1,15 +1,15 @@
-import React, { useContext, useEffect, useRef } from 'react';
-import { NoteMessageEvent } from 'webmidi';
-import { GainNodeMock, OscillatorNodeMock } from '../../../../__mocks__';
-import { Notes, NoteValue } from '../../../constants/noteTable';
-import useConnectLFOTargets from '../../../hooks/useConnectLFOTargets';
+import { Notes, NoteValue } from '@constants/noteTable';
+import useConnectLFOTargets from '@hooks/useConnectLFOTargets';
 import {
   useInstantiateGainNode,
   useInstantiateOscillatorNode,
-} from '../../../hooks/useInstantiateAudioNode';
-import { audioContext } from '../../../providers/AudioContextProvider';
-import { midiContext } from '../../../providers/MIDIProvider';
-import { Knobs } from '../../../types';
+} from '@hooks/useInstantiateAudioNode';
+import { GainNodeMock, OscillatorNodeMock } from '@mocks';
+import { audioContext } from '@providers/AudioContextProvider';
+import { midiContext } from '@providers/MIDIProvider';
+import { Knobs } from '@types';
+import React, { useContext, useEffect, useRef } from 'react';
+import { NoteMessageEvent } from 'webmidi';
 import { envelopeStateContext } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
 import styles from './index.module.scss';
 

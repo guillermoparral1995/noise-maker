@@ -8,9 +8,9 @@ import {
 import React from 'react';
 import Knob from '.';
 import '@testing-library/jest-dom';
-import { Actions, Knobs } from '../../../types';
+import { Actions, Knobs } from '@types';
 
-jest.mock('../../../hooks/useBreakpoints', () => ({
+jest.mock('@hooks/useBreakpoints', () => ({
   useBreakpoints: () => ({
     isMobile: false,
   }),

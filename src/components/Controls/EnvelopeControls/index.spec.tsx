@@ -1,12 +1,9 @@
+import { knobsValues } from '@constants/knobsValues';
+import { withMockedMIDIInput, withMockedMIDINoInput } from '@mocks';
 import { cleanup, render } from '@testing-library/react';
+import { Actions, Knobs } from '@types';
 import React from 'react';
 import EnvelopeControls from '.';
-import {
-  withMockedMIDIInput,
-  withMockedMIDINoInput,
-} from '../../../../__mocks__';
-import { knobsValues } from '../../../constants/knobsValues';
-import { Actions, Knobs } from '../../../types';
 import { EnvelopeStateProvider } from './EnvelopeStateProvider';
 
 const __mockGetInputByName = jest.fn();

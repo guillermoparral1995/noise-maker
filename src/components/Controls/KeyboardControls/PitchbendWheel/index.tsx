@@ -1,9 +1,9 @@
+import { knobsValues } from '@constants/knobsValues';
+import { useBreakpoints } from '@hooks/useBreakpoints';
+import { midiContext } from '@providers/MIDIProvider';
+import { Knobs } from '@types';
 import { round } from 'lodash';
 import React, { BaseSyntheticEvent, useContext, useEffect } from 'react';
-import { knobsValues } from '../../../../constants/knobsValues';
-import { useBreakpoints } from '../../../../hooks/useBreakpoints';
-import { midiContext } from '../../../../providers/MIDIProvider';
-import { Knobs } from '../../../../types';
 import { envelopeStateContext } from '../../EnvelopeControls/EnvelopeStateProvider';
 import { updatePitchbend } from '../../EnvelopeControls/store/actions';
 import styles from './index.module.scss';

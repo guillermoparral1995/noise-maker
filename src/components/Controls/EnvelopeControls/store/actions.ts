@@ -1,4 +1,4 @@
-import { Actions, Waveform } from '../../../../types';
+import { Actions, Waveform } from '@types';
 
 export type ActionTypes =
   | WaveformAction

@@ -1,3 +1,4 @@
+import { ActionBuilder, Knobs } from '@types';
 import {
   updateCompressorAttack,
   updateCompressorKnee,
@@ -31,7 +32,6 @@ import {
   updateLFO2Amplitude,
   updateLFO2Frequency,
 } from '../components/Controls/LFOControls/store/actions';
-import { ActionBuilder, Knobs } from '../types';
 
 interface KnobValue {
   label: string;

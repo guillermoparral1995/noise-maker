@@ -1,7 +1,7 @@
+import { useBreakpoints } from '@hooks/useBreakpoints';
+import { audioContext } from '@providers/AudioContextProvider';
+import { Knobs } from '@types';
 import React, { useContext } from 'react';
-import { useBreakpoints } from '../../../hooks/useBreakpoints';
-import { audioContext } from '../../../providers/AudioContextProvider';
-import { Knobs } from '../../../types';
 import ControlsRow from '../../shared/ControlsRow';
 import Knob from '../../shared/Knob';
 import {

@@ -1,5 +1,5 @@
+import { useBreakpoints } from '@hooks/useBreakpoints';
 import React, { PropsWithChildren } from 'react';
-import { useBreakpoints } from '../../../hooks/useBreakpoints';
 import styles from './index.module.scss';
 
 const ControlsRow = ({ children }: PropsWithChildren) => {

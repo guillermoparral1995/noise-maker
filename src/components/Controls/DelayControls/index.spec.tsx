@@ -1,20 +1,20 @@
 import {
+  AudioContextMock,
+  AudioNodeMock,
+  DelayNodeMock,
+  GainNodeMock,
+} from '@mocks';
+import { AudioContextProvider } from '@providers/AudioContextProvider';
+import {
   act,
   cleanup,
   fireEvent,
   render,
   screen,
 } from '@testing-library/react';
+import { Knobs } from '@types';
 import React from 'react';
 import { DelayControls_ as DelayControls } from '.';
-import {
-  AudioContextMock,
-  AudioNodeMock,
-  DelayNodeMock,
-  GainNodeMock,
-} from '../../../../__mocks__';
-import { AudioContextProvider } from '../../../providers/AudioContextProvider';
-import { Knobs } from '../../../types';
 import { DelayStateProvider } from './DelayStateProvider';
 
 describe('Delay', () => {

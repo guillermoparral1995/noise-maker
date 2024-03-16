@@ -1,6 +1,6 @@
+import { LFO, LFOMock } from '@providers/AudioContextProvider';
+import { Knobs, LFO1Target, LFO2Target } from '@types';
 import { useEffect } from 'react';
-import { LFO, LFOMock } from '../providers/AudioContextProvider';
-import { Knobs, LFO1Target, LFO2Target } from '../types';
 
 interface Connection {
   knob: Knobs;

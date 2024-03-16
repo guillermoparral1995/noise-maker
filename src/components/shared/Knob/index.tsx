@@ -1,8 +1,8 @@
+import { knobsValues } from '@constants/knobsValues';
+import type { ActionTypes, Knobs } from '@types';
 import { round, throttle } from 'lodash';
 import React, { KeyboardEvent, useCallback, useEffect, useState } from 'react';
 import { WebAudioKnob } from 'webaudio-controls-react-typescript';
-import { knobsValues } from '../../../constants/knobsValues';
-import type { ActionTypes, Knobs } from '../../../types';
 import styles from './index.module.scss';
 
 interface KnobProps {

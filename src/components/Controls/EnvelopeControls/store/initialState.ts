@@ -1,4 +1,4 @@
-import { Waveform } from '../../../../types';
+import { Waveform } from '@types';
 
 export interface EnvelopeState {
   waveform: Waveform;

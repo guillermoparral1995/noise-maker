@@ -1,11 +1,11 @@
+import { AudioContextProvider } from '@providers/AudioContextProvider';
+import { MIDIProvider } from '@providers/MIDIProvider';
 import { PrimeReactProvider } from 'primereact/api';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Helmet } from 'react-helmet';
 import App from './App';
 import styles from './index.module.scss';
-import { AudioContextProvider } from './providers/AudioContextProvider';
-import { MIDIProvider } from './providers/MIDIProvider';
 import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-dark-purple/theme.css';
 import 'primereact/resources/themes/lara-light-purple/theme.css';

@@ -1,7 +1,7 @@
+import { switchValues } from '@constants/switchValues';
+import { ActionTypes, Switchs } from '@types';
 import { InputSwitch, InputSwitchChangeEvent } from 'primereact/inputswitch';
 import React from 'react';
-import { switchValues } from '../../../constants/switchValues';
-import { ActionTypes, Switchs } from '../../../types';
 import styles from './index.module.scss';
 
 const Switch = ({

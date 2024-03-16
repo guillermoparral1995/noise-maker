@@ -1,4 +1,4 @@
-import { Actions, LFO1Target, LFO2Target } from '../../../types';
+import { Actions, LFO1Target, LFO2Target } from '@types';
 
 export type ActionTypes =
   | LFO1TargetAction

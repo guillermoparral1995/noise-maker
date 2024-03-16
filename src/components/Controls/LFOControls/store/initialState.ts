@@ -1,4 +1,4 @@
-import { Waveform } from '../../../../types';
+import { Waveform } from '@types';
 
 interface LFOParams {
   waveform: Waveform;

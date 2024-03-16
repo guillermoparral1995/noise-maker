@@ -1,9 +1,3 @@
-import React, {
-  PropsWithChildren,
-  useEffect,
-  useMemo,
-  useReducer,
-} from 'react';
 import {
   AnalyserNodeMock,
   AudioContextMock,
@@ -13,8 +7,14 @@ import {
   DynamicsCompressorNodeMock,
   GainNodeMock,
   StereoPannerNodeMock,
-} from '../../../__mocks__';
-import { ActionTypes, LFO1Target, LFO2Target } from '../../types';
+} from '@mocks';
+import { ActionTypes, LFO1Target, LFO2Target } from '@types';
+import React, {
+  PropsWithChildren,
+  useEffect,
+  useMemo,
+  useReducer,
+} from 'react';
 import { initialState } from './store/initialState';
 import { reducer } from './store/reducer';
 

@@ -1,6 +1,4 @@
-import { cleanup, fireEvent, render } from '@testing-library/react';
-import React from 'react';
-import Key from '.';
+import noteTable, { Notes } from '@constants/noteTable';
 import {
   AudioContextMock,
   AudioNodeMock,
@@ -9,13 +7,12 @@ import {
   OscillatorNodeMock,
   withMockedMIDIInput,
   withMockedMIDINoInput,
-} from '../../../../__mocks__';
-import noteTable, { Notes } from '../../../constants/noteTable';
-import {
-  AudioContextProvider,
-  LFOMock,
-} from '../../../providers/AudioContextProvider';
-import { Knobs, LFO1Target, LFO2Target } from '../../../types';
+} from '@mocks';
+import { AudioContextProvider, LFOMock } from '@providers/AudioContextProvider';
+import { cleanup, fireEvent, render } from '@testing-library/react';
+import { Knobs, LFO1Target, LFO2Target } from '@types';
+import React from 'react';
+import Key from '.';
 import { EnvelopeStateProvider } from '../../Controls/EnvelopeControls/EnvelopeStateProvider';
 
 const __mockGetInputByName = jest.fn();

@@ -1,4 +1,4 @@
-import { Actions, FilterType } from '../../../../types';
+import { Actions, FilterType } from '@types';
 
 export type ActionTypes =
   | FilterTypeAction

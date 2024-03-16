@@ -1,6 +1,6 @@
+import noteTable, { Notes, NoteValue } from '@constants/noteTable';
+import { useBreakpoints } from '@hooks/useBreakpoints';
 import React from 'react';
-import noteTable, { Notes, NoteValue } from '../../constants/noteTable';
-import { useBreakpoints } from '../../hooks/useBreakpoints';
 import KeyboardControls from '../Controls/KeyboardControls';
 import styles from './index.module.scss';
 import Key from './Key';
