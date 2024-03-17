@@ -1,6 +1,4 @@
-import ControlsRow from '@components/ControlsRow';
-import Knob from '@components/Knob';
-import Selector from '@components/Selector';
+import { ControlsRow, Knob, Selector } from '@components';
 import useAddMidiListeners from '@hooks/useAddMidiListeners';
 import { useBreakpoints } from '@hooks/useBreakpoints';
 import { Knobs, Selectors } from '@types';

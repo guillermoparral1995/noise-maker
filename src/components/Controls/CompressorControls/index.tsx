@@ -1,5 +1,4 @@
-import ControlsRow from '@components/ControlsRow';
-import Knob from '@components/Knob';
+import { ControlsRow, Knob } from '@components';
 import { useBreakpoints } from '@hooks/useBreakpoints';
 import { audioContext } from '@providers/AudioContextProvider';
 import { Knobs } from '@types';

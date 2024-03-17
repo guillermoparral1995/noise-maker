@@ -1,6 +1,4 @@
-import ControlsRow from '@components/ControlsRow';
-import Knob from '@components/Knob';
-import Switch from '@components/Switch';
+import { ControlsRow, Knob, Switch } from '@components';
 import { useInstantiateGainNode } from '@hooks/useInstantiateAudioNode';
 import { GainNodeMock } from '@mocks';
 import { audioContext } from '@providers/AudioContextProvider';

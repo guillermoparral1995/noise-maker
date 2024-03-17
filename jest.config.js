@@ -5,7 +5,7 @@ export default {
   testEnvironment: 'jsdom',
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy',
-    '^@components(.*)$': '<rootDir>/src/components/shared$1',
+    '^@components(.*)$': '<rootDir>/src/components/shared/index$1',
     '^@hooks(.*)$': '<rootDir>/src/hooks$1',
     '^@constants(.*)$': '<rootDir>/src/constants$1',
     '^@styles(.*)$': '<rootDir>/src/styles$1',

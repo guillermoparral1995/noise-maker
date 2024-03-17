@@ -1,4 +1,4 @@
-import Switch from '@components/Switch';
+import { Switch } from '@components';
 import { Switchs } from '@types';
 import { PrimeReactContext } from 'primereact/api';
 import React, { useContext, useEffect, useReducer } from 'react';

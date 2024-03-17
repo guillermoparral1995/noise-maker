@@ -1,14 +1,23 @@
 import { useBreakpoints } from '@hooks/useBreakpoints';
-import React from 'react';
-import DesktopView from './components/Display/DesktopView';
-import MobileView from './components/Display/MobileView';
+import React, { lazy, Suspense } from 'react';
+
+const DesktopView = lazy(() => import('./components/Display/DesktopView'));
+const MobileView = lazy(() => import('./components/Display/MobileView'));
 
 const App = () => {
   const { isDesktop } = useBreakpoints();
   if (isDesktop) {
-    return <DesktopView></DesktopView>;
+    return (
+      <Suspense>
+        <DesktopView></DesktopView>
+      </Suspense>
+    );
   }
-  return <MobileView></MobileView>;
+  return (
+    <Suspense>
+      <MobileView></MobileView>
+    </Suspense>
+  );
 };
 
 export default App;

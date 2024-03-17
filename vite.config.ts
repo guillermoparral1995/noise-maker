@@ -13,7 +13,10 @@ export default defineConfig({
   resolve: {
     alias: {
       '@styles': path.resolve(__dirname, './src/styles'),
-      '@components': path.resolve(__dirname, './src/components/shared'),
+      '@components': path.resolve(
+        __dirname,
+        './src/components/shared/index.ts',
+      ),
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@constants': path.resolve(__dirname, './src/constants'),
       '@providers': path.resolve(__dirname, './src/providers'),

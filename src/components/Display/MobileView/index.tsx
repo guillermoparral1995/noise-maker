@@ -1,4 +1,4 @@
-import Title from '@components/Title';
+import { Title } from '@components';
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import ThemeSelector from '../../Config/ThemeSelector';

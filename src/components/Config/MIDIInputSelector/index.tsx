@@ -1,4 +1,4 @@
-import Selector from '@components/Selector';
+import { Selector } from '@components';
 import { midiContext } from '@providers/MIDIProvider';
 import { Selectors } from '@types';
 import React, { useContext } from 'react';

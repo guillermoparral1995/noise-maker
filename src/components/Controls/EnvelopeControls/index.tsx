@@ -1,5 +1,4 @@
-import ControlsRow from '@components/ControlsRow';
-import Knob from '@components/Knob';
+import { ControlsRow, Knob } from '@components';
 import useAddMidiListeners from '@hooks/useAddMidiListeners';
 import { Knobs } from '@types';
 import React, { useContext } from 'react';

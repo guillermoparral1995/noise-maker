@@ -5,8 +5,8 @@
       "@styles/*": [
         "src/styles/*"
       ],
-      "@components/*": [
-        "src/components/shared/*"
+      "@components": [
+        "src/components/shared/index.ts"
       ],
       "@hooks/*": [
         "src/hooks/*"
